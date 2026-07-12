@@ -3150,7 +3150,7 @@ The engines below adapt based on the requested aesthetic.
 - **Impact Frames:** Collisions must trigger visceral impact frames (brief flashes of high-contrast black/white) to sell the power of the hit.
 - **Yutaka Nakamura Debris:** Destruction must feature distinct, blocky, cube-like debris floating or exploding outward.
 - **Smear Frames:** High-speed motion must stretch the character's geometry dynamically.
-- **High-Texture Anime Shading:** 90s dark anime OVA style, gritty rotoscoped animation, heavy hatching and crosshatching shadows, HDR volumetric lighting.
+- **Adaptive Anime Shading:** Modern anime style, crisp cel-shaded linework, HDR volumetric lighting, extreme peak brightness contrast. (Adapt the color palette and mood to the specific story, no need to force gritty or bright unless requested).
 
 ---
 
