@@ -3078,6 +3078,16 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 - **Alternative (Obscured Screen):** If the screen MUST be visible in a Medium or Wide shot along with the character, you MUST intentionally obscure the screen using camera physics to prevent AI glitches. Example: *"Heavy Depth of Field, the phone screen is completely out of focus (bokeh), blurred by intense screen glare (bloom), and overexposed. The contents of the screen are impossible to read."*
 
 
+### F. Motivated Camera Angles (Anti-Generic Shot Protocol)
+**CRITICAL:** AI video models default to boring, flat, eye-level Medium Shots. You MUST break this habit to create cinematic flair, BUT every unique angle must have a psychological reason ("Motivated Camera"), not just for showing off.
+- **Low Angle (Heroic/Dominant):** Use when a character gains power, threatens someone, or looks massive.
+- **High Angle (Vulnerable/Trapped):** Use when a character is defeated, lost, or overwhelmed by their environment.
+- **Dutch Angle (Canted/Tilted):** Use ONLY during moments of extreme psychological distress, confusion, or unnatural horror.
+- **Extreme Wide (Isolation):** Use to show how small a character is compared to their world (e.g., standing alone in a massive desert).
+- **Rule:** Never use a dramatic angle just to look "cool". The angle must reflect the emotion of the script. If it is a casual conversation at a diner, stick to grounded, intimate angles.
+
+
+
 
 
 
