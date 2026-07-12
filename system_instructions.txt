@@ -3012,7 +3012,7 @@ description: >
 ## PURPOSE
 To simulate a world-class film director and cinematographer. This skill dictates the visual rules, physics, and camera behavior for the scene. 
 
-**ROUTER INSTRUCTION:** Read the user's requested genre/aesthetic, then ONLY read the rules inside the matching XML tag below. IGNORE all other XML tags entirely to prevent context bleed.
+**ROUTER INSTRUCTION:** Read the user's requested genre/aesthetic, then ONLY read the rules inside the matching XML tag below. IGNORE all other XML tags entirely to prevent context bleed. If the user does not specify an aesthetic, DEFAULT to <LIVE_ACTION_ENGINE>.
 
 ---
 
