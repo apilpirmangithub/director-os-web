@@ -2452,7 +2452,7 @@ Every sentence should add visual information.
 
 **EXPLICIT TAGGING & 6-AXIS SPATIAL CONTINUITY (CRITICAL)**
 - **Explicit Tagging**: In any wide shot or multi-character shot, you MUST explicitly name every character/object in the prompt (e.g. "@image1 and @image2 are visible in @image4"). Do not assume the model knows they are there.
-- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*
+- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*`n- **6-Panel Character Blueprints**: When dealing with a character reference sheet (like @image1), instruct the video AI how to read it: *"Reference @image1 is a 6-panel character sheet. Read the 3 top panels for facial structure, and the 3 bottom panels for body/wardrobe layout."*
 
 **NO ARTIFICIAL BORDERS (Even on Vintage Requests)**  
 Even if the user asks for "vintage", "old film", "retro", "film look", "analog", "35mm", "kodak", "polaroid", or similar aesthetics:  
@@ -3021,11 +3021,11 @@ Use this skill whenever generating audio, sound effects, or music prompts, or wh
 
 ========== SKILL.md ==========
 ---
-name: "Anime PromptSkill â€” Anime Video Prompting Engine v1.0"
+name: "Anime PromptSkill — Anime Video Prompting Engine v1.0"
 description: >
   Compiles cinematic direction into highly optimized anime AI video prompts. Features Anime Vocabulary injection, Cel-Shaded LOD rules, and strict anime aesthetic enforcement. Translates Anime CinSkill intent into dense, physically observable prompts for models like Kling, Runway, or Sora.
 ---
-# Anime PromptSkill â€” Anime Video Prompting Engine v1.0
+# Anime PromptSkill — Anime Video Prompting Engine v1.0
 
 This skill handles the final compilation of Anime Prompts, replacing the live-action PromptSkill.
 
@@ -3060,7 +3060,7 @@ Do not use abstract cinematic terms like "masterpiece", "emotional depth", or "a
 ## 4. EYELINE, GEOGRAPHY & EXPLICIT TAGGING
 Even in anime, spatial continuity matters.
 - **Explicit Tagging**: In any wide shot or multi-character shot, you MUST explicitly name every character/object in the prompt (e.g. "@image1 and @image2 are visible in @image4"). Do not assume the model knows they are there.
-- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*
+- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*`n- **6-Panel Character Blueprints**: When dealing with a character reference sheet (like @image1), instruct the video AI how to read it: *"Reference @image1 is a 6-panel character sheet. Read the 3 top panels for facial structure, and the 3 bottom panels for body/wardrobe layout."*
 - Always specify character facing directions (e.g., "facing screen-left").
 - Maintain the 180-degree rule across cuts.
 
@@ -3070,24 +3070,24 @@ Use this skill to write the final prompt text whenever `anime_cinskill` or `anim
 
 ========== SKILL.md ==========
 ---
-name: "CharSheet â€” Cinematic Character Reference Sheet Generator"
+name: "CharSheet — Cinematic Character Reference Sheet Generator"
 description: >
   Generates photorealistic character reference sheet prompts for AI image generation models.
-  Produces multi-view sheets with extreme close-up, close-up, side profile, medium shot
-  (front/side/back), and full body (front/side/back) â€” all NO TEXT. Designed to feed directly
+  Produces multi-view sheets with extreme close-up, left/right profiles, medium shot,
+  and full body (front/back) with text annotations and white background. Designed to feed directly
   into CinSkill and PromptSkill as @image references for identity-locked AI video generation.
   Ensures absolute visual consistency across all views: same person, same clothing, same lighting,
-  same skin texture, same proportions. Supports photorealistic human characters only â€” grounded
+  same skin texture, same proportions. Supports photorealistic human characters only — grounded
   realism mandatory, no illustration, no stylization unless explicitly requested as anime.
 ---
 
-# CharSheet â€” Cinematic Character Reference Sheet Generator v1.0
+# CharSheet — Cinematic Character Reference Sheet Generator v1.0
 
 ## Purpose
 
-Generate **photorealistic multi-view character reference sheets** optimized for AI video production pipelines. These sheets become the `@image` references that CinSkill and PromptSkill use for identity-locked video generation.
+Generate **photorealistic multi-view character reference sheets** optimized for AI video production pipelines. These sheets become the @image references that CinSkill and PromptSkill use for identity-locked video generation.
 
-Every sheet must look like a **real photograph** of a real person â€” never illustrated, never stylized, never AI-looking.
+Every sheet must look like a **real photograph** of a real person — never illustrated, never stylized, never AI-looking.
 
 ---
 
@@ -3095,264 +3095,64 @@ Every sheet must look like a **real photograph** of a real person â€” never
 
 - The character sheet is **evidence**, not art. It documents a real person from multiple angles.
 - Every view must feel like a **professional casting photo** or **wardrobe department reference**.
-- Absolute consistency across all views â€” the viewer must believe all images are of the same physical person photographed in the same session.
+- Absolute consistency across all views — the viewer must believe all images are of the same physical person photographed in the same session.
 - **ZERO tolerance** for AI artifacts: plastic skin, symmetrical face, wax texture, dead eyes, missing pores, smooth hair blobs, melted fingers, or inconsistent proportions.
 
 ## Universal Tri-Sheet System (MANDATORY DEFAULT)
 For EVERY character sheet you generate, you MUST ALWAYS output **3 distinct CharSheet Prompts** and explain how the user should use them:
-1. **[AI ORIGINAL]**: `... [standard charsheet prompt] ...` (Explain: "Use this to generate the character entirely from scratch").
-2. **[FACE LOCK]**: `... [standard charsheet prompt] ...` (Explain: "Attach your photo to this prompt to lock your face, while the AI designs the costume").
-3. **[FULL CUSTOM LOCK]**: `... [standard charsheet prompt] ...` (Explain: "Attach your photo to this prompt with maximum weight to replicate your exact face and clothing").
+1. **[AI ORIGINAL]**: ... [standard charsheet prompt] ... (Explain: "Use this to generate the character entirely from scratch").
+2. **[FACE LOCK]**: ... [standard charsheet prompt] ... (Explain: "Attach your photo to this prompt to lock your face, while the AI designs the costume").
+3. **[FULL CUSTOM LOCK]**: ... [standard charsheet prompt] ... (Explain: "Attach your photo to this prompt with maximum weight to replicate your exact face and clothing").
 
 ---
 
-## Mandatory Views (9-Panel Layout)
+## Mandatory Views (6-Panel Blueprint Layout)
 
-The character sheet MUST contain exactly these 9 views, arranged in a clean grid:
+The character sheet MUST contain exactly these 6 views, arranged in a clean 2x3 or 3x2 grid on a **PURE SOLID WHITE BACKGROUND**:
 
-### Row 1 â€” Face Detail (3 panels)
+### Row 1 — Face Detail (3 panels)
 
 | Panel | View | Description |
 |-------|------|-------------|
-| 1 | **Extreme Close-Up â€” Face** | Eyes, nose, lips, skin pores, individual eyebrow hairs, natural skin texture, subtle oil, micro-imperfections (moles, freckles, fine lines, pore variation). Neutral expression or very subtle emotion. Sharp focus on eyes. |
-| 2 | **Close-Up â€” Head & Neck** | Full face from hairline to collarbone. Hair texture with individual strands, natural flyaways. Ears visible or partially visible. Neck texture. Jawline definition. Natural skin color variation. |
-| 3 | **Side Profile â€” Head** | Perfect 90Â° profile view. Nose bridge, lip line, chin projection, ear shape, hairline from side, neck curvature. This view is critical for 3D identity reconstruction. |
+| 1 | **Extreme Close-Up (Front)** | Eyes, nose, lips, skin pores, individual eyebrow hairs. Neutral expression. Sharp focus on eyes. |
+| 2 | **Tampak Kiri (Left Profile)** | Perfect 90° profile view of the left side of the face and head. Nose bridge, ear shape, jawline from the left. |
+| 3 | **Tampak Kanan (Right Profile)** | Perfect 90° profile view of the right side of the face and head. Asymmetrical details visible. |
 
-### Row 2 â€” Medium Shots (3 panels)
-
-| Panel | View | Description |
-|-------|------|-------------|
-| 4 | **Medium Shot â€” Front** | Waist-up, facing camera directly. Full clothing visible from waist up. Natural arm position (relaxed at sides or slightly forward). Shoulder width, body proportions, clothing fit and texture clearly visible. |
-| 5 | **Medium Shot â€” Side** | Waist-up, perfect 90Â° side view. Body depth, posture, clothing drape from side, arm position, chest/back curvature. Clothing wrinkles and fold behavior visible. |
-| 6 | **Medium Shot â€” Back** | Waist-up, back facing camera. Shoulder blade structure under clothing, hair from behind (length, texture, how it falls), back of neck, clothing back detail (collar, tag area, fabric tension). |
-
-### Row 3 â€” Full Body (3 panels)
+### Row 2 — Body & Wardrobe (3 panels)
 
 | Panel | View | Description |
 |-------|------|-------------|
-| 7 | **Full Body â€” Front** | Head to feet, facing camera. Complete outfit visible. Shoe detail. Body proportions from head to toe. Natural standing pose â€” weight slightly shifted, not perfectly symmetrical. Arms naturally at sides. |
-| 8 | **Full Body â€” Side** | Head to feet, perfect 90Â° side view. Full silhouette. Posture curvature. Clothing drape with gravity. Shoe profile. Natural body depth and volume. |
-| 9 | **Full Body â€” Back** | Head to feet, back facing camera. Hair from behind, clothing back detail, shoe heels, overall silhouette from rear. Any accessories (bag, belt) visible from back. |
+| 4 | **Medium Shot (Front)** | Waist-up, facing camera directly. Full clothing visible from waist up. Arm position relaxed. |
+| 5 | **Full Body Depan (Front)** | Entire body from head to toe facing camera. **MUST include typographic text annotations indicating the character's exact height (e.g., "HEIGHT: 185CM").** |
+| 6 | **Full Body Belakang (Back)** | Entire body from head to toe, back facing camera. Shows cape, weapon strapped to back, hair falling down the back, and shoe heels. |
 
 ---
 
-## Technical Requirements
+## The Master 6-Panel Prompt Template
 
-### Lighting
-- **Neutral studio lighting** â€” soft, even, professional.
-- Main key light: Large softbox slightly above eye level, 30â€“45Â° from center.
-- Fill light: Soft bounce from opposite side to reduce shadows without eliminating them.
-- Subtle rim/edge light to separate subject from background.
-- Color temperature: Consistent 5500Kâ€“6000K (neutral daylight) across ALL panels.
-- Lighting must reveal skin texture, fabric weave, and material detail â€” never flatten them.
+Every output prompt MUST follow this exact structural template:
 
-### Background
-- **Clean, seamless background** â€” neutral gray (#808080 to #A0A0A0) or pure white.
-- No gradients, patterns, textures, or environmental elements.
-- Background must not compete with subject. It exists only to separate and document.
-
-### Camera/Lens
-- Simulate **85mmâ€“105mm portrait lens** for face panels (natural facial proportions, no wide-angle distortion).
-- Simulate **50mmâ€“70mm** for medium and full body panels (natural body proportions).
-- Sharp focus across the subject. Shallow depth of field only if it enhances texture visibility.
-- No lens distortion, no barrel distortion, no chromatic aberration.
-
-### Pose
-- **Neutral, natural standing pose** â€” NOT a mannequin pose.
-- Weight slightly shifted to one leg (natural human standing).
-- Arms relaxed at sides, not stiffly pressed against body.
-- Fingers naturally curled (not splayed, not fisted).
-- Face: Neutral expression with very subtle life â€” not blank, not emoting.
-- Eyes: Looking directly at camera in front views. Looking forward naturally in side views.
-
-### Resolution & Quality
-- Every panel must be sharp enough to zoom in and see individual skin pores, fabric fibers, and hair strands.
-- Photorealistic rendering â€” indistinguishable from a real photograph.
-- Natural color science â€” no oversaturation, no HDR look, no Instagram filter.
-- Clean, professional, documentary-quality photography.
+> **[Aesthetic/Style Tags]**. A 6-panel casting character reference sheet on a **pure solid white background**. The image is split into 6 equal grid panels. Panel 1: Extreme Close-Up Face Front showing **[Facial Details/Pores/Eye Color]**. Panel 2: Perfect 90-degree Left Side Profile Face showing **[Left details]**. Panel 3: Perfect 90-degree Right Side Profile Face showing **[Right details]**. Panel 4: Medium Shot Waist-Up Front showing **[Upper Clothing]**. Panel 5: Full Body Front showing **[Full Wardrobe]**, with clear typography text annotations reading **"HEIGHT: [X]CM"**. Panel 6: Full Body Back showing **[Back Details/Weapons/Hair]**. The character is **[Age, Ethnicity, Body Type, Posture, Clothing Details]**. Photorealistic, shot on 85mm lens, flat even studio lighting, high resolution, absolutely consistent identity across all 6 panels. --ar 16:9
 
 ---
 
-## ABSOLUTE NO TEXT RULE
+## Step-by-Step Prompt Generation
 
-> **CRITICAL: The character sheet must contain ZERO text of any kind.**
+When the user asks you to design a character (e.g., "A grizzled space marine" or "A 1920s jazz singer"), follow these steps:
 
-- No labels ("Front View", "Side View", etc.)
-- No names
-- No watermarks
-- No panel numbers
-- No metadata text
-- No font of any kind anywhere in the image
-- No arrows, no annotations, no markers
+### 1. Establish the Aesthetic & Identity
+Define the demographic (age, ethnicity, body type) and the photographic style (e.g., Cinematic Arri Alexa, Kodak Portra 400, Gritty 90s OVA).
 
-The sheet communicates through visual layout ONLY. Panel arrangement makes the views self-explanatory.
+### 2. Detail the Face (Panels 1, 2, 3)
+Describe the eye color, skin texture, wrinkles, scars, and hair. Ensure the left and right profiles are defined.
 
----
+### 3. Detail the Wardrobe & Height (Panels 4, 5, 6)
+Determine the character's exact height in CM. Describe the clothing materials (leather, silk, rusted metal, etc.) and what is visible on the back (Panel 6). 
 
-## Grounded Realism Protocol (MANDATORY)
-
-### Skin
-- Visible pores at close range
-- Natural skin color variation (slightly different tone on forehead vs. cheeks vs. neck)
-- Subtle subsurface scattering (light passing through thin skin at ears, nostrils)
-- Natural oil/moisture â€” not matte, not glossy
-- Micro-imperfections: moles, freckles, fine lines, subtle acne scars, tiny veins
-- NO plastic skin, NO wax texture, NO airbrushed smoothness, NO uniform color
-
-### Hair
-- Individual strands visible, especially at hairline and edges
-- Natural flyaway hairs
-- Realistic volume and weight (hair responds to gravity)
-- Scalp slightly visible at part line
-- Natural color variation within hair (roots vs. tips, light-catching highlights)
-- NO helmet hair, NO blob hair, NO perfectly uniform strands
-
-### Eyes
-- Visible iris texture with natural color depth and variation
-- Realistic sclera with faint blood vessels
-- Natural moisture/catchlight
-- Eyelashes: individual, varying lengths, natural curve
-- Eyebrows: individual hairs with natural direction and density variation
-- NO dead/flat eyes, NO oversized iris, NO symmetrical perfection
-
-### Fabric/Clothing
-- Visible weave, fiber, or knit pattern appropriate to material
-- Natural wrinkles at joints and stress points
-- Gravity-responsive drape
-- Realistic button/zipper/seam detail
-- Material-appropriate behavior (cotton vs. silk vs. denim vs. leather)
-- NO flat/painted-on clothing, NO impossible smoothness
-
-### Hands & Fingers
-- Natural knuckle wrinkles
-- Visible nail texture and subtle cuticle
-- Proportional finger lengths
-- Natural skin fold patterns
-- Correct finger count (CRITICAL â€” verify 5 fingers per hand)
-- NO melted fingers, NO extra/missing digits, NO smooth plastic hands
-
-### Body Proportions
-- Anatomically correct proportions across ALL views
-- Head-to-body ratio must remain consistent between panels
-- Shoulder width consistent across front and side views
-- Limb lengths consistent
-- NO proportion shifting between panels
+### 4. Output the Prompt
+Deliver the final, ready-to-copy Midjourney/Flux prompt using the Master Template above. Do not output anything else in the final prompt block.
 
 ---
-
-## Consistency Rules Across Panels
-
-These elements MUST be identical across all 9 panels:
-
-- **Face** â€” exact same facial structure, features, and proportions
-- **Skin tone** â€” exact same color and texture
-- **Hair** â€” exact same style, color, length, and volume
-- **Clothing** â€” exact same outfit, colors, fit, and accessories
-- **Body proportions** â€” exact same height, build, shoulder width
-- **Jewelry/accessories** â€” exact same items in exact same positions
-- **Makeup (if any)** â€” exact same application
-- **Tattoos/scars/marks** â€” exact same placement and detail
-- **Nail color/condition** â€” consistent
-- **Shoe style** â€” consistent
-
-### Consistency Verification Checklist
-Before outputting the prompt, internally verify:
-
-- âœ“ Would a human viewer believe all 9 panels show the same person?
-- âœ“ Could a wardrobe department use this sheet to recreate the exact outfit?
-- âœ“ Could a makeup department match the face from these references?
-- âœ“ Are proportions physically possible for a real human?
-- âœ“ Is the lighting identical across all panels?
-- âœ“ Is there ZERO text anywhere in the image?
-
----
-
-## Prompt Construction
-
-### Structure
-When generating the character sheet prompt, always include in this order:
-
-1. **Format declaration** â€” "Photorealistic character reference sheet, 3x3 grid layout"
-2. **Subject identity** â€” Age, gender, ethnicity, build, distinguishing features
-3. **Hair** â€” Style, length, color, texture
-4. **Clothing** â€” Complete outfit description with materials and colors
-5. **View layout** â€” Describe the 9 panels and their camera angles
-6. **Lighting** â€” Studio setup description
-7. **Background** â€” Clean neutral specification
-8. **Quality anchors** â€” Photorealistic, natural skin texture, visible pores, individual hair strands, fabric fiber detail
-9. **Anti-AI enforcement** â€” No plastic skin, no wax texture, no airbrushed look, no text, no labels, no watermarks
-10. **Realism lock** â€” "Indistinguishable from professional studio photography, shot on Canon EOS R5 with 85mm f/1.4 lens"
-
-### Style
-- Write as one continuous descriptive paragraph (no bullets, no numbered lists in the final prompt).
-- Maximum 2000 characters for the prompt.
-- Every word must add visual information.
-- Use professional photography and fashion terminology.
-
-### Anti-AI Keywords (always include)
-```
-natural skin texture with visible pores, individual hair strands,
-fabric fiber detail, realistic subsurface scattering, natural skin
-color variation, anatomically correct proportions, no text no labels
-no watermarks, indistinguishable from real photography, 
-professional studio reference photography
-```
-
----
-
-## Workflow Integration
-
-### Pipeline Position
-```
-CharSheet (this skill)
-    â†“ generates reference images
-CinSkill (cinematic direction)
-    â†“ uses references for identity lock
-PromptSkill (prompt engineering)
-    â†“ embeds @image references in prompts
-VideoOrchestra (multi-clip orchestration)
-    â†“ maintains identity across all clips
-Final Video Output
-```
-
-### How References Are Used
-- CharSheet generates the character reference image(s)
-- The generated image becomes `@image1`, `@image2`, etc. in video prompts
-- CinSkill's Reference Intelligence System uses these for identity reconstruction
-- PromptSkill's Dynamic Reference Re-numbering manages them per clip
-- VideoOrchestra ensures consistency across the entire production
-
-### Multiple Characters
-- Generate ONE sheet per character
-- Each sheet is a separate `@image` reference
-- Never combine multiple characters on one sheet
-- Clearly distinguish which reference belongs to which character in the pipeline handoff
-
----
-
-## Activation Triggers
-
-Activate this skill when user requests:
-- "buat character sheet"
-- "buat referensi karakter"
-- "character reference"
-- "reference sheet"
-- "karakter untuk video"
-- "identity reference"
-- "casting reference"
-- Any request for character visualization intended for video production
-
----
-
-## Operating Principle
-
-This skill is the **identity foundation** of the entire video production pipeline.
-
-If the character sheet is weak, every downstream output (CinSkill direction, PromptSkill prompts, VideoOrchestra clips) will suffer from identity drift and inconsistency.
-
-**Quality of the character sheet = quality of identity consistency in the final video.**
-
-Every sheet must be so realistic that a human viewer would believe it is a real person photographed in a real studio.
 
 
 ========== SKILL.md ==========
