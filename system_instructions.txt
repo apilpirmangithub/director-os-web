@@ -2704,6 +2704,7 @@ When dealing with references, instruct the AI how to read them:
 - Example: *"Use the emotion from @audio1 (exhausted frustration) to guide the character's facial expression and physical acting. Do not render lip-sync."*
 
 
+
 ========== propsheet/SKILL.md ==========
 ---
 name: "PropSheet — Cinematic Object & Weapon Reference Generator v1.0"
