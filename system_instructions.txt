@@ -2630,14 +2630,14 @@ AI Video Generation
 
 ========== promptskill/SKILL.md ==========
 ---
-name: "PromptSkill — Cinematic Prompting Engine v2.0"
+name: "PromptSkill â€” Cinematic Prompting Engine v2.0"
 description: >
   Transforms cinematic direction into optimized AI video prompts. Contains perfectly isolated 
   aesthetic compilers via XML tags (LIVE_ACTION, ANIME, 3D_COMIC) to prevent context bleed.
   Covers the complete prompt structure, visual storytelling principles, reference mapping,
   and anti-border enforcement. Works with VideoOrchestra for multi-clip workflows.
 ---
-# PromptSkill — Cinematic Prompting Engine v2.0
+# PromptSkill â€” Cinematic Prompting Engine v2.0
 
 ## PURPOSE
 To act as the final "Compiler" that turns director intent into a dense, physically observable text prompt for AI Video Generators (like Sora, Kling, Runway, Midjourney).
@@ -2692,6 +2692,10 @@ When dealing with references, instruct the AI how to read them:
 
 ### 5. Continuity & Override Protocol (State-Changes)
 - **Wardrobe/Grooming (Minor Changes):** If a character changes clothes for a new day, or takes a shower (clean face/wet hair), do NOT request a new reference sheet. Instead, write an Override Command in the prompt: *"Use @image1 as the exact base identity for facial structure and proportions, but OVERRIDE the wardrobe to be a casual blue shirt, and OVERRIDE the hair to be wet."* This minimizes the need to generate endless references.- **Major Changes (State Change):** If a character undergoes a major scripted change (e.g., permanent battle damage, new costume), you MUST switch the tag to the damaged variant. Example: *"Use @image1_Damaged for the face and torn clothes."*
+
+### 6. Native Audio Lip-Sync Protocol (For Dialogue)
+- **CRITICAL:** Modern AI Video models (like Kling AI or Sora) support native lip-sync generation directly from the video prompt. If the user wants native audio, you MUST inject the dialogue text and the vocal reference directly into the Phase 2 Video Prompt.
+- **Action:** If the character speaks on-screen, append this tag to the prompt: *"**[NATIVE AUDIO PROTOCOL]:** The character speaks the exact dialogue: '[Insert exact dialogue line here]'. Perfectly synchronize the lip movements. Use the audio file `@audio1` as the exact vocal tone and emotional characteristic reference."*
 
 
 
