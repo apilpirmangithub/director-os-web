@@ -2744,6 +2744,14 @@ When dealing with references, instruct the AI how to read them:
 - **7-Panel Environment:** *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*
 - **4-Panel Prop:** *"Reference @image3 is a 4-panel prop sheet. ONLY render the [Front/Back/Left/Right] view texture for the object in this scene."*
 
+### 3. Typography Constraint (Anti-Garbage Text)
+- **CRITICAL:** AI Video models cannot spell complex sentences. If the scene requires text (e.g., a logo, a neon sign, a newspaper headline), limit the text to 1-2 words MAX.
+- **Format:** Always enclose the requested text in bold quotes. Example: A glowing neon sign displaying the word **"HOTEL"**. Never ask the AI to generate long sentences.
+
+### 4. Object Permanence Protocol (Anti-Disappearing Glitch)
+- **CRITICAL:** When a character turns 180 degrees (back facing the camera), the AI often forgets their backpack, logo, or back design.
+- **Action:** If the prompt involves the character turning around or being viewed from the back, you MUST explicitly instruct the AI to reference the back panel. Example: *"Character turns around. Reference the BACK FULL BODY panel of @image1 to maintain exact 3D geometry of the backpack."*
+
 
 ========== SKILL.md ==========
 ---
@@ -3011,6 +3019,13 @@ Add this to every prompt: *"Real-time playback speed 1.0x, normal shutter speed,
 AI models fail and merge identities when two characters interact closely (e.g., hugging, grappling, punching in close quarters). To prevent this:
 - Never show two distinct faces clearly in a close-quarters physical interaction.
 - Use **Over-The-Shoulder (OTS)** or **Dirty POV** shots to obscure one face while prioritizing the other.
+### D. Gravity & Weight Protocol (Anti-Moonwalking)
+**CRITICAL:** AI video models often fail to render realistic walking, causing characters to "slide" or "moonwalk" without weight.
+- For ANY walking, running, or movement shot, you MUST append gravity physics instructions.
+- Example: *"Feet firmly planting on the ground, realistic weight transfer, heavy gravity, realistic gait, body responds to weight."*
+
+
+
 
 
 ========== theory.md ==========
