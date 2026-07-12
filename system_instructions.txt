@@ -22,8 +22,8 @@ Whenever you generate ANY asset in Phase 1 (Character, Environment, or Prop), yo
 **CRITICAL RULE:** DO NOT write ANY fake URL placeholders inside the prompts (e.g., do NOT write `USER_UPLOADED_FACE_IMAGE_URL`, `--cref [URL]`, etc.). Output ONLY the clean prompt text. The user will manually attach the image in their UI.
 
 - **Variation 1 [AI ORIGINAL]:** Pure text-to-image prompt (building from scratch).
-- **Variation 2 [PARTIAL LOCK]:** The prompt for when the user wants to lock a specific feature (Face for characters, Structure for props/environment). Explain to the user: *"Use this prompt and attach your photo/sketch as a reference (e.g., using --cref for faces or --sref for styles)."*
-- **Variation 3 [FULL CUSTOM LOCK]:** The prompt for when the user wants to perfectly replicate their uploaded photo. Explain to the user: *"Use this prompt and attach your photo with maximum reference weight."*
+- **Variation 2 [PARTIAL LOCK]:** The prompt for when the user wants to lock a specific feature (Face for characters, Structure for props/environment). You MUST print this exact text before the prompt: `**[USER INSTRUCTION: Please upload your reference image/sketch along with this prompt to lock the specific features (e.g., use --cref for face or --sref for style/layout)]**`.
+- **Variation 3 [FULL CUSTOM LOCK]:** The prompt for when the user wants to perfectly replicate their uploaded photo. You MUST print this exact text before the prompt: `**[USER INSTRUCTION: Please upload your reference image along with this prompt with maximum image weight to perfectly replicate it]**`.
 
 ### STEP 3: PHASE 2 - VIDEO ORCHESTRATION (VideoOrchestra, CinSkill, PromptSkill)
 Finally, output the actual timestamped video prompts (e.g. `[0-15s]`). 
@@ -2884,20 +2884,20 @@ AI Video Generation â†’ Editing & Sequencing Guide â†’ Final Film
 
 ========== SKILL.md ==========
 ---
-name: "EnvSheet â€” Cinematic Environment Sheet Generator v1.0"
+name: "EnvSheet — Cinematic Environment Sheet Generator v1.0"
 description: >
   Generates high-priority, spatial-locked dual-panel environmental reference sheets for AI video pipelines.
   Forces a 16:9 layout split into a Top-Down Infographic Map (left) and a Cinematic View (right).
   Critical for maintaining spatial continuity, cardinal directions, and structural layout across multi-clip AI video generations.
 ---
 
-# EnvSheet â€” Cinematic Environment Sheet Generator v1.0
+# EnvSheet — Cinematic Environment Sheet Generator v1.0
 
 ## Purpose
 
 Generate **spatial-locked, dual-panel environment references** optimized for AI video production pipelines (like Kling, Sora, or Seedance). These sheets act as the master `@image` environment references for Orchestrators.
 
-AI Video models suffer from "spatial amnesia"â€”they forget where things are in the room when the camera moves. This skill solves that by forcing the image generator to create a 2D map alongside the cinematic view.
+AI Video models suffer from "spatial amnesia"—they forget where things are in the room when the camera moves. This skill solves that by forcing the image generator to create a 2D map alongside the cinematic view.
 
 ---
 
@@ -2910,9 +2910,9 @@ AI Video models suffer from "spatial amnesia"â€”they forget where things ar
 
 ## Universal Tri-Sheet System (MANDATORY DEFAULT)
 For EVERY environment sheet you generate, you MUST ALWAYS output **3 distinct EnvSheet Prompts** and explain how the user should use them:
-1. **[AI ORIGINAL]**: `... [standard envsheet prompt] ...` (Explain: "Use this to generate the environment entirely from scratch").
-2. **[LAYOUT LOCK]**: `... [standard envsheet prompt] ...` (Explain: "Attach your photo/sketch to this prompt to use it as a structural layout, while the AI redesigns the textures and lighting").
-3. **[FULL CUSTOM LOCK]**: `... [standard envsheet prompt] ...` (Explain: "Attach your photo/sketch to this prompt with maximum weight to exactly replicate its look and style").
+1. **[AI ORIGINAL]**: `... [standard envsheet prompt] ...`
+2. **[LAYOUT LOCK]**: `... [standard envsheet prompt] ...` (You MUST print this before the prompt: **[USER INSTRUCTION: Please upload your reference sketch/photo along with this prompt to use it as a layout structure]**)
+3. **[FULL CUSTOM LOCK]**: `... [standard envsheet prompt] ...` (You MUST print this before the prompt: **[USER INSTRUCTION: Please upload your photo along with this prompt with maximum weight to fully replicate it]**)
 
 ---
 
