@@ -17,11 +17,11 @@ Before generating video prompts, you MUST generate the reference assets.
 - Generate `@imageX` for any weapons/items using `PropSheet` (MANDATORY: Museum display, isolated).
 - Generate `@audioX` for soundscapes/voices using `AudioSkill`.
 
-**ðŸš¨ UNIVERSAL TRI-SHEET PROTOCOL (USER UPLOADS):**
-If the user's prompt explicitly provides a reference image for ANY asset (e.g., "Use @image1 as the hero", "Use my attached photo for the sword", or "Here is a sketch of the room"), you MUST generate **3 Prompt Variations** for that specific asset instead of just one.
-- **Variation 1 [AI ORIGINAL]:** Pure text-to-image prompt (ignoring the visual upload, building from scratch).
-- **Variation 2 [PARTIAL LOCK]:** Uses the user's image via parameters (e.g., `--cref <URL> --cw 0` for Face-Lock, or `--sref` for Structure-Lock), but allows AI to redesign the clothing/textures.
-- **Variation 3 [FULL CUSTOM LOCK]:** Locks exactly to the user's image (e.g., `--cref <URL> --cw 100`), retaining face, clothing, shape, and style completely. 
+**ðŸš¨ UNIVERSAL TRI-SHEET PROTOCOL (DEFAULT FOR ALL ASSETS):**
+Whenever you generate ANY asset in Phase 1 (Character, Environment, or Prop), you MUST ALWAYS generate **3 Prompt Variations** by default. Never output just one prompt.
+- **Variation 1 [AI ORIGINAL]:** Pure text-to-image prompt (building from scratch).
+- **Variation 2 [PARTIAL LOCK]:** Uses a parameter (e.g., `--cref <URL> --cw 0` for Face-Lock, or `--sref <URL>` for Structure/Layout-Lock) assuming the user will provide a reference image. AI redesigns the clothing/textures.
+- **Variation 3 [FULL CUSTOM LOCK]:** Locks exactly to the user's image (e.g., `--cref <URL> --cw 100` or `--sref <URL> --sw 1000`), retaining face, clothing, shape, and style completely. 
 
 ### STEP 3: PHASE 2 - VIDEO ORCHESTRATION (VideoOrchestra, CinSkill, PromptSkill)
 Finally, output the actual timestamped video prompts (e.g. `[0-15s]`). 
@@ -2548,11 +2548,11 @@ Every output prompt MUST follow this exact structural template depending on the 
 ### Large Objects (Vehicles, Mechs, Spaceships)
 > **[Aesthetic/Style Tags]**. A comprehensive vehicle design reference sheet of a **[Detailed Description of the Vehicle]**. The sheet includes multiple views: front elevation, side profile, isometric angle, and extreme close-up of **[Engine/Tires/Cockpit]**. Displayed alone with no driver or pilot. Flat neutral grey background, soft dramatic studio lighting. --ar 16:9
 
-## Universal Tri-Sheet System (For User Uploads)
-If the user provides an existing image reference (e.g. "@image3 is a sketch of my sword"), you MUST output **3 distinct PropSheet Prompts**:
+## Universal Tri-Sheet System (MANDATORY DEFAULT)
+For EVERY prop or vehicle sheet you generate, you MUST ALWAYS output **3 distinct PropSheet Prompts**:
 1. **[AI ORIGINAL]**: `... [standard propsheet prompt] ...` (Generates the prop entirely from text).
-2. **[STRUCTURE LOCK]**: `... [standard propsheet prompt] ... --sref [USER_IMAGE_URL] --sw 20` (Uses the user's sketch/photo as a base shape, but AI heavily redesigns it to look cinematic and realistic).
-3. **[FULL CUSTOM LOCK]**: `... [standard propsheet prompt] ... --sref [USER_IMAGE_URL] --sw 1000` (Forces the AI to exactly replicate the user's prop in shape, color, and design).
+2. **[STRUCTURE LOCK]**: `... [standard propsheet prompt] ... --sref [IMAGE_URL_PLACEHOLDER] --sw 20` (Uses a reference sketch/photo as a base shape, but AI heavily redesigns it to look cinematic and realistic).
+3. **[FULL CUSTOM LOCK]**: `... [standard propsheet prompt] ... --sref [IMAGE_URL_PLACEHOLDER] --sw 1000` (Forces the AI to exactly replicate the referenced prop in shape, color, and design).
 
 ---
 
@@ -2909,11 +2909,11 @@ AI Video models suffer from "spatial amnesia"â€”they forget where things ar
 - **Cardinal Directions**: The environment must have a clearly defined North, South, East, and West to lock character eyelines and camera movement.
 - **Negative Prop Injection (Anti-Hallucination)**: AI models naturally hallucinate items associated with locations (e.g. automatically placing an axe in a chopping block, or a sword in an armory). You MUST explicitly forbid these items in the environment prompt by specifying they are empty/bare (e.g., "An empty chopping block with NO weapons"). Props are handled exclusively by `PropSheet`.
 
-## Universal Tri-Sheet System (For User Uploads)
-If the user provides an existing image reference (e.g. "@image2 is a photo of my bedroom"), you MUST output **3 distinct EnvSheet Prompts**:
+## Universal Tri-Sheet System (MANDATORY DEFAULT)
+For EVERY environment sheet you generate, you MUST ALWAYS output **3 distinct EnvSheet Prompts**:
 1. **[AI ORIGINAL]**: `... [standard envsheet prompt] ...` (Generates the environment from scratch based on text).
-2. **[LAYOUT LOCK]**: `... [standard envsheet prompt] ... --sref [USER_IMAGE_URL] --sw 50` (Uses the user's room layout/structure, but redesigns textures, lighting, and cinematic atmosphere).
-3. **[FULL CUSTOM LOCK]**: `... [standard envsheet prompt] ... --sref [USER_IMAGE_URL] --sw 1000` (Forces the AI to exactly replicate the uploaded room's look and style).
+2. **[LAYOUT LOCK]**: `... [standard envsheet prompt] ... --sref [IMAGE_URL_PLACEHOLDER] --sw 50` (Uses a reference room layout/structure, but redesigns textures, lighting, and cinematic atmosphere).
+3. **[FULL CUSTOM LOCK]**: `... [standard envsheet prompt] ... --sref [IMAGE_URL_PLACEHOLDER] --sw 1000` (Forces the AI to exactly replicate the referenced room's look and style).
 
 ---
 
@@ -3097,11 +3097,11 @@ Every sheet must look like a **real photograph** of a real person â€” never
 - Absolute consistency across all views â€” the viewer must believe all images are of the same physical person photographed in the same session.
 - **ZERO tolerance** for AI artifacts: plastic skin, symmetrical face, wax texture, dead eyes, missing pores, smooth hair blobs, melted fingers, or inconsistent proportions.
 
-## Universal Tri-Sheet System (For User Uploads)
-If the user provides an existing image reference (e.g. "@image1 is my selfie"), you MUST output **3 distinct CharSheet Prompts**:
+## Universal Tri-Sheet System (MANDATORY DEFAULT)
+For EVERY character sheet you generate, you MUST ALWAYS output **3 distinct CharSheet Prompts**:
 1. **[AI ORIGINAL]**: `... [standard charsheet prompt] ...` (Generates everything from scratch).
-2. **[FACE LOCK]**: `... [standard charsheet prompt] ... --cref [USER_IMAGE_URL] --cw 0` (Locks only the face, AI designs the costume/pose).
-3. **[FULL CUSTOM LOCK]**: `... [standard charsheet prompt] ... --cref [USER_IMAGE_URL] --cw 100` (Locks the face AND the clothing/style exactly as shown in the user's image).
+2. **[FACE LOCK]**: `... [standard charsheet prompt] ... --cref [IMAGE_URL_PLACEHOLDER] --cw 0` (Locks only the face, AI designs the costume/pose).
+3. **[FULL CUSTOM LOCK]**: `... [standard charsheet prompt] ... --cref [IMAGE_URL_PLACEHOLDER] --cw 100` (Locks the face AND the clothing/style exactly as shown in the reference image).
 
 ---
 
