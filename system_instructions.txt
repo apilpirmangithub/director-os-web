@@ -2800,18 +2800,18 @@ When dealing with references, instruct the AI how to read them:
 
 ========== SKILL.md ==========
 ---
-name: "CharSheet â€” Cinematic Character Reference Sheet Generator"
+name: "CharSheet — Cinematic Character Reference Sheet Generator"
 description: >
   Generates photorealistic character reference sheet prompts for AI image generation models.
   Produces multi-view sheets with extreme close-up, left/right profiles, medium shot,
   and full body (front/back) with text annotations and white background. Designed to feed directly
   into CinSkill and PromptSkill as @image references for identity-locked AI video generation.
   Ensures absolute visual consistency across all views: same person, same clothing, same lighting,
-  same skin texture, same proportions. Supports photorealistic human characters only â€” grounded
+  same skin texture, same proportions. Supports photorealistic human characters only — grounded
   realism mandatory, no illustration, no stylization unless explicitly requested as anime.
 ---
 
-# CharSheet â€” Cinematic Character Reference Sheet Generator v1.0
+# CharSheet — Cinematic Character Reference Sheet Generator v1.0
 
 ## Purpose
 
@@ -2821,7 +2821,7 @@ Generate **multi-view character reference sheets** optimized for AI video produc
 
 - **Aesthetic Inheritance**: The CharSheet MUST perfectly inherit the visual aesthetic of the main film. If the film is "Gritty 90s Anime", the sheet must be Gritty 90s Anime. If it is "Cinematic HDR Live-Action", the sheet must be Cinematic HDR Live-Action. Do not force generic "professional photoshoot" styles if it contradicts the film's intended aesthetic.
 - The character sheet is **evidence**, not art. It documents a real person/character from multiple angles.
-- Absolute consistency across all views â€” the viewer must believe all images are of the same physical person captured in the same session.
+- Absolute consistency across all views — the viewer must believe all images are of the same physical person captured in the same session.
 - **ZERO tolerance** for AI artifacts: plastic skin, symmetrical face, wax texture, dead eyes, missing pores, smooth hair blobs, melted fingers, or inconsistent proportions.
 
 ## Universal Tri-Sheet System (MANDATORY DEFAULT)
@@ -2836,18 +2836,19 @@ For EVERY character sheet you generate, you MUST ALWAYS output **3 distinct Char
 
 The character sheet MUST contain exactly these 6 views, arranged in a clean 2x3 or 3x2 grid on a **PURE SOLID WHITE BACKGROUND**.
 **CRITICAL RULE:** The design of the character MUST be perfectly synchronized across all 6 panels. The same face, same hair length, same clothing wrinkles, same proportions.
+**ANTI-MORPHING PROTOCOL (Accessory & Scar Continuity):** AI often forgets small details between panels (e.g., an earring in Panel 1 disappears in Panel 4, or a scar switches sides). You MUST explicitly enforce continuity in the prompt by adding: *"Absolute identical continuity across all panels. The exact same scars, exact same tattoos, and exact same accessories (earrings, necklaces) MUST appear consistently in every single view. No morphing details."*
 
 Every panel MUST contain a typography text label written inside the image:
 
-### Row 1 â€” Face Detail (3 panels)
+### Row 1 — Face Detail (3 panels)
 
 | Panel | View | Description |
 |-------|------|-------------|
 | 1 | **Extreme Close-Up (Front)** | Eyes, nose, lips, skin pores. Labeled with typography: **"EXTREME CLOSE UP"** |
-| 2 | **Tampak Kiri (Left Profile)** | Perfect 90Â° profile view of the left side. Labeled with typography: **"LEFT PROFILE"** |
-| 3 | **Tampak Kanan (Right Profile)** | Perfect 90Â° profile view of the right side. Labeled with typography: **"RIGHT PROFILE"** |
+| 2 | **Tampak Kiri (Left Profile)** | Perfect 90° profile view of the left side. Labeled with typography: **"LEFT PROFILE"** |
+| 3 | **Tampak Kanan (Right Profile)** | Perfect 90° profile view of the right side. Labeled with typography: **"RIGHT PROFILE"** |
 
-### Row 2 â€” Body & Wardrobe (3 panels)
+### Row 2 — Body & Wardrobe (3 panels)
 
 | Panel | View | Description |
 |-------|------|-------------|
@@ -2861,9 +2862,11 @@ Every panel MUST contain a typography text label written inside the image:
 
 Every output prompt MUST follow this exact structural template:
 
-> **[Aesthetic/Style Tags (MUST MATCH FILM)]**. A 6-panel casting character reference sheet on a **pure solid white background**. The image is split into 6 equal grid panels. The character's design and identity are perfectly synchronized across all panels. Panel 1: Extreme Close-Up Face Front showing **[Facial Details/Pores/Eye Color]**, with typography text reading **"EXTREME CLOSE UP"**. Panel 2: Perfect 90-degree Left Side Profile Face showing **[Left details]**, with typography text reading **"LEFT PROFILE"**. Panel 3: Perfect 90-degree Right Side Profile Face showing **[Right details]**, with typography text reading **"RIGHT PROFILE"**. Panel 4: Medium Shot Waist-Up Front showing **[Upper Clothing]**, with typography text reading **"MEDIUM SHOT"**. Panel 5: Full Body Front showing **[Full Wardrobe]**, with clear typography text annotations reading **"FRONT FULL BODY"** and **"HEIGHT: [X]CM"**. Panel 6: Full Body Back showing **[Back Details/Weapons/Hair]**, with typography text reading **"BACK FULL BODY"**. The character is **[Age, Ethnicity, Body Type, Posture, Clothing Details]**. **[Specific camera/lighting settings that match the aesthetic]**, absolutely consistent identity. --ar 16:9
+> **[Aesthetic/Style Tags (MUST MATCH FILM)]**. A 6-panel casting character reference sheet on a **pure solid white background**. The image is split into 6 equal grid panels. The character's design and identity are perfectly synchronized across all panels. Panel 1: Extreme Close-Up Face Front showing **[Facial Details/Pores/Eye Color]**, with typography text reading **"EXTREME CLOSE UP"**. Panel 2: Perfect 90-degree Left Side Profile Face showing **[Left details]**, with typography text reading **"LEFT PROFILE"**. Panel 3: Perfect 90-degree Right Side Profile Face showing **[Right details]**, with typography text reading **"RIGHT PROFILE"**. Panel 4: Medium Shot Waist-Up Front showing **[Upper Clothing]**, with typography text reading **"MEDIUM SHOT"**. Panel 5: Full Body Front showing **[Full Wardrobe]**, with clear typography text annotations reading **"FRONT FULL BODY"** and **"HEIGHT: [X]CM"**. Panel 6: Full Body Back showing **[Back Details/Weapons/Hair]**, with typography text reading **"BACK FULL BODY"**. The character is **[Age, Ethnicity, Body Type, Posture, Clothing Details]**. **[Specific camera/lighting settings that match the aesthetic]**. Absolute identical continuity across all panels. The exact same scars, exact same tattoos, and exact same accessories MUST appear consistently in every single view. No morphing details. --ar 16:9
 
 ---
+
+
 
 
 ========== SKILL.md ==========
