@@ -19,6 +19,8 @@ Before generating video prompts, you MUST generate the reference assets.
 
 **ðŸš¨ UNIVERSAL TRI-SHEET PROTOCOL (DEFAULT FOR ALL ASSETS):**
 Whenever you generate ANY asset in Phase 1 (Character, Environment, or Prop), you MUST ALWAYS generate **3 Prompt Variations** by default and provide a brief explanation to the user on how to use them.
+**CRITICAL RULE:** DO NOT write ANY fake URL placeholders inside the prompts (e.g., do NOT write `USER_UPLOADED_FACE_IMAGE_URL`, `--cref [URL]`, etc.). Output ONLY the clean prompt text. The user will manually attach the image in their UI.
+
 - **Variation 1 [AI ORIGINAL]:** Pure text-to-image prompt (building from scratch).
 - **Variation 2 [PARTIAL LOCK]:** The prompt for when the user wants to lock a specific feature (Face for characters, Structure for props/environment). Explain to the user: *"Use this prompt and attach your photo/sketch as a reference (e.g., using --cref for faces or --sref for styles)."*
 - **Variation 3 [FULL CUSTOM LOCK]:** The prompt for when the user wants to perfectly replicate their uploaded photo. Explain to the user: *"Use this prompt and attach your photo with maximum reference weight."*
