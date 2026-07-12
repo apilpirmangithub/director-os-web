@@ -4768,14 +4768,14 @@ description: "The absolute final output template that forces all skills to combi
 ### MASTER OUTPUT TEMPLATE (STRICT)
 Whenever the user requests a film, you MUST output the response EXACTLY following this markdown structure. Do not deviate.
 
-# 🎬 PRODUCTION PACKAGE: [FILM TITLE]
+# ðŸŽ¬ PRODUCTION PACKAGE: [FILM TITLE]
 **Genre:** [Genre]
 **Engine:** [e.g., <LIVE_ACTION_ENGINE>]
 **Total Duration:** [X] Seconds ([Y] Clips)
 
 ---
 
-## 📖 SCRIPT & TIMED BREAKDOWN (Elite Screenwriter)
+## ðŸ“– SCRIPT & TIMED BREAKDOWN (Elite Screenwriter)
 **LOGLINE:** [1 sentence story summary]
 
 **SCENE BREAKDOWN ([X]s Total):**
@@ -4783,12 +4783,22 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 
 ---
 
-## 🎨 PHASE 1: ASSET GENERATION (VideoOrchestra)
+## ðŸŽ¨ PHASE 1: ASSET GENERATION (VideoOrchestra)
 *(Generate these blueprints in Midjourney/DALL-E before rendering video)*
 
 **1. CHARSHEET (Protagonist)**
+**[AI ORIGINAL]**
 > @image1_Base
 > [Prompt]
+
+**[FACE LOCK] (Use your own face)**
+> @image1_FaceLock
+> [Prompt]
+
+**[FULL CUSTOM LOCK] (Use your exact face & costume)**
+> @image1_CustomLock
+> [Prompt]
+
 *(If there is a STATE CHANGE in the script, list the variation here with the CREF warning starting with "Use the attached image...")*
 
 **2. ENVSHEET (Location)**
@@ -4805,7 +4815,7 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 
 ---
 
-## 🎥 PHASE 2: VIDEO ORCHESTRATION & PROMPTS
+## ðŸŽ¥ PHASE 2: VIDEO ORCHESTRATION & PROMPTS
 [MAPPING LOGIC: Global @imageX -> Local @imageY]
 
 ### CLIP 1 [0-15s]
@@ -4819,7 +4829,7 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 
 ---
 
-## ✂️ EDITING & SEQUENCING GUIDE
+## âœ‚ï¸ EDITING & SEQUENCING GUIDE
 1. **Pacing:** [Action Density logic]
 2. **Audio Sync:** [Instructions for L-Cuts/Pre-lap]
 3. **Off-Screen Audio Protocol:** [Instructions to mute AI Video for (O.S) and layer the audio externally]
