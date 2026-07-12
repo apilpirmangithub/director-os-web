@@ -2403,7 +2403,8 @@ When user requests a film:
      - Summary: Total clips needed, total runtime, scene breakdown.
      - **Per-clip prompts**: Fully independent and self-contained — numbered clearly with timestamp e.g. [0-15s].
        - **Explicit Tagging Rule**: If a shot is wide and multiple elements are visible, you MUST explicitly mention EVERY tag present in the frame (e.g., "@image1, @image2, and @image5 are visible in @image4"). Do not leave the AI guessing who is in the wide shot.
-       - **Spatial Continuity Rule**: Every clip must strictly obey the layout defined in Phase 1 and instruct the AI how to read it. (e.g., "STRICT SPATIAL CONTINUITY: @image4 is a dual-panel reference. Read the left panel map for layout, but ONLY render the right panel cinematic style").
+                - **Spatial Continuity Rule**: Every clip must strictly obey the layout defined in Phase 1 and instruct the AI how to read it. (e.g., "STRICT SPATIAL CONTINUITY: @image4 is a dual-panel reference. Read the left panel map for layout, but ONLY render the right panel cinematic style").
+         - **Master Lighting & Color Grade Protocol:** AI Video models are forgetful. If a scene occurs in a specific lighting environment (e.g., "Neon pink cyberpunk alley, heavy fog, high contrast"), you MUST copy-paste that EXACT lighting phrase into EVERY SINGLE CLIP PROMPT for that scene. Do not leave any clip without explicit lighting/weather instructions, or the AI will hallucinate different weather/lighting between cuts.
        - **Audio Integration**: When a character speaks, link their dialogue to their audio tag AND describe their dynamic emotional flow specifically for that scene. Example: `He speaks with a furious, trembling voice (@audio1): "It's too late for that!"` (The delivery must adapt dynamically to the action).
      - **Editing & Sequencing Guide** (separate section after all prompts):
        - How to stitch the clips (recommended order, transitions, crossfades).
@@ -2458,6 +2459,7 @@ VideoOrchestra (THIS SKILL — multi-clip orchestration + sequencing)
     ↓
 AI Video Generation → Editing & Sequencing Guide → Final Film
 ```
+
 
 
 
@@ -3083,8 +3085,15 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 - **Low Angle (Heroic/Dominant):** Use when a character gains power, threatens someone, or looks massive.
 - **High Angle (Vulnerable/Trapped):** Use when a character is defeated, lost, or overwhelmed by their environment.
 - **Dutch Angle (Canted/Tilted):** Use ONLY during moments of extreme psychological distress, confusion, or unnatural horror.
-- **Extreme Wide (Isolation):** Use to show how small a character is compared to their world (e.g., standing alone in a massive desert).
-- **Rule:** Never use a dramatic angle just to look "cool". The angle must reflect the emotion of the script. If it is a casual conversation at a diner, stick to grounded, intimate angles.
+- **Extreme Wide (Isolation):** Use to show how small a character is compared to their world.
+- **Rule:** Never use a dramatic angle just to look "cool". The angle must reflect the emotion.
+
+### G. The Implied Touch Protocol (Anti-Spaghetti Fingers)
+**CRITICAL:** AI video models CANNOT reliably render two human hands interacting (shaking hands, passing an object, holding hands). It will generate melted or extra fingers.
+- If a scene requires a complex physical exchange between characters, you MUST avoid showing the exact moment of physical contact in sharp focus.
+- **Solution 1 (Break the Shot):** Shot 1: Character A reaches out (item in hand). Shot 2: Character B's hand receives it.
+- **Solution 2 (Silhouette/Wide):** Show the handshake or item exchange from an Extreme Wide shot or as a Silhouette, so the AI does not have to render the microscopic details of the fingers.
+
 
 
 
