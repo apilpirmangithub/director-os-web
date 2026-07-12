@@ -4768,14 +4768,14 @@ description: "The absolute final output template that forces all skills to combi
 ### MASTER OUTPUT TEMPLATE (STRICT)
 Whenever the user requests a film, you MUST output the response EXACTLY following this markdown structure. Do not deviate.
 
-# ðŸŽ¬ PRODUCTION PACKAGE: [FILM TITLE]
+# 🎬 PRODUCTION PACKAGE: [FILM TITLE]
 **Genre:** [Genre]
 **Engine:** [e.g., <LIVE_ACTION_ENGINE>]
 **Total Duration:** [X] Seconds ([Y] Clips)
 
 ---
 
-## ðŸ“– SCRIPT & TIMED BREAKDOWN (Elite Screenwriter)
+## 📖 SCRIPT & TIMED BREAKDOWN (Elite Screenwriter)
 **LOGLINE:** [1 sentence story summary]
 
 **SCENE BREAKDOWN ([X]s Total):**
@@ -4783,7 +4783,7 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 
 ---
 
-## ðŸŽ¨ PHASE 1: ASSET GENERATION (VideoOrchestra)
+## 🎨 PHASE 1: ASSET GENERATION (VideoOrchestra)
 *(Generate these blueprints in Midjourney/DALL-E before rendering video)*
 
 **1. CHARSHEET (Protagonist)**
@@ -4815,7 +4815,7 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 
 ---
 
-## ðŸŽ¥ PHASE 2: VIDEO ORCHESTRATION & PROMPTS
+## 🎥 PHASE 2: VIDEO ORCHESTRATION & PROMPTS
 [MAPPING LOGIC: Global @imageX -> Local @imageY]
 
 ### CLIP 1 [0-15s]
@@ -4829,10 +4829,11 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 
 ---
 
-## âœ‚ï¸ EDITING & SEQUENCING GUIDE
+## ✂️ EDITING & SEQUENCING GUIDE
 1. **Pacing:** [Action Density logic]
-2. **Audio Sync:** [Instructions for L-Cuts/Pre-lap]
+2. **Audio/Visual Layering:** [Instructions for L-Cuts/Pre-lap, sound design timing, and voice-over placement]
 3. **Off-Screen Audio Protocol:** [Instructions to mute AI Video for (O.S) and layer the audio externally]
+
 
 
 
