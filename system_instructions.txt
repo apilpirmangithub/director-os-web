@@ -2320,11 +2320,11 @@ This is not a prompt template. This is an operating system for AI cinematography
 
 ========== SKILL.md ==========
 ---
-name: "Anime CinSkill â€” Anime Director Operating System v1.0"
+name: "Anime CinSkill — Anime Director Operating System v1.0"
 description: >
   A complete AI Anime Director OS. Replaces live-action grounded realism with Sakuga Physics, High-Texture Shading, dynamic 3D camera mapping, and exaggerated momentum. Forces studio-grade anime aesthetics (Ufotable, Shinkai, MAPPA) while maintaining spatial continuity and eyeline rules.
 ---
-# Anime CinSkill â€” Anime Director Operating System v1.0
+# Anime CinSkill — Anime Director Operating System v1.0
 
 This skill replaces live-action physics with Anime Physics. It is the core directorial brain for System 2 (The Anime Ecosystem).
 
@@ -2349,7 +2349,7 @@ Anime cameras are not bound by physical tripods or human operators.
 - **Dynamic 3D Camera Mapping:** The camera can rapidly rotate 360 degrees around a moving character, plunge through keyholes, or follow a projectile at hyper-speed.
 - **Spatial Geography & Eyeline Match (Enforced):** Despite wild camera moves, the 180-degree rule MUST be maintained during character interactions. If Character A looks screen-right, Character B MUST look screen-left.
 - **Explicit Tagging Rule**: In any wide shot, you MUST explicitly name every character/object in the prompt (e.g. "@image1 and @image2 are visible in @image4").
-- **Dual-Panel Environments**: When referencing locations, always use Dual-Panel map logic: "Read the left panel map for layout, but ONLY render the right panel cinematic style."
+- **6-Axis Cardinal Camera Blocking**: When planning shots using a 6-Axis EnvSheet, you MUST use strict cardinal directions (North, South, East, West, Up, Down) to describe the camera's position and where it is pointing. E.g., *"Camera is positioned South, tilting Up toward the ceiling."*
 
 ## 4. DYNAMIC CONSISTENCY PROTOCOL (Anime Edition)
 - **Identity Lock:** Character design, hair color, and wardrobe must match the reference image exactly.
@@ -3410,7 +3410,7 @@ To connect multiple 15-second AI generations into a continuous anime sequence, u
 
 ========== SKILL.md ==========
 ---
-name: "CinSkill â€” Master Director Operating System v2.0"
+name: "CinSkill — Master Director Operating System v2.0"
 description: >
   A complete AI Cinema Director Operating System with 23 integrated engines for generating
   professional-grade cinematic video prompts. CORE ENGINES: Camera Science (camera language,
@@ -3418,62 +3418,63 @@ description: >
   focus behavior, breathing, bokeh), Human Behavior (micro-expressions, body physics, gait,
   breathing, weight), Lighting Science (motivated lighting, ratio, quality, direction, color
   temperature), Composition (visual weight, eye flow, depth layers, framing, negative space),
-  Material Physics (glass, metal, fabric, skin, hair, liquid â€” how light interacts with surfaces),
-  Motion Physics (gravity, inertia, momentum, cloth sim, fluid dynamics), Color Science (color
-  theory, psychology, grading, palette), AI Video Optimization (ambiguity reduction, deterministic
-  prompts, memory management, compression, failure prediction, complexity budget), Commercial
-  Psychology (product hero, luxury, food, CTA), Environment Simulation (wind, weather, crowds,
-  vehicles, animals), Prompt Compiler (multi-stage compilation pipeline). DECISION ENGINES:
-  Priority Decision Engine, Error Detection, Adaptive Model Engine, Scene Complexity, Knowledge
-  Update. ADVANCED ENGINES: Director Intelligence (intent, emotion translation, visual economy),
-  Visual Language (camera as grammar), Hollywood Knowledge (cinematographer principles), Cinematic
-  Failure Database (known AI failure patterns and solutions), Self-Learning Engine (adaptive
-  improvement), Combat & Action Choreography (grounded fight choreography, group brawl behavior,
-  visceral camera work, physical consequence). Activate this skill when the user wants to create
-  cinematic video prompts, film-quality AI video directions, realistic human behavior in video,
-  or any director-level visual storytelling content â€” including intense action and fight scenes.
-  This is the cinema/film counterpart to BrandVideo â€” it prioritizes realism, storytelling, and
-  cinematic craft.
+  Material Physics (glass, metal, fabric, skin, hair, liquid — how light interacts with surfaces),
+  Motion Physics (gravity, inertia, momentum, cloth sim, fluid dynamics), Color Science
+  (color theory, psychology, grading, palette), AI Video Optimization (ambiguity reduction,
+  deterministic prompts, memory management, compression, failure prediction, complexity budget),
+  Commercial Psychology (product hero, luxury, food, CTA), Environment Simulation (wind, weather,
+  crowds, vehicles, animals), Prompt Compiler (multi-stage compilation pipeline). DECISION ENGINES:
+  Priority Decision Engine, Error Detection, Adaptive Model Engine, Scene Complexity, Knowledge Update.
+  ADVANCED ENGINES: Director Intelligence (intent, emotion translation, visual economy), Visual Language
+  (camera as grammar), Hollywood Knowledge (cinematographer principles), Cinematic Failure Database
+  (known AI failure patterns and solutions), Self-Learning Engine (adaptive improvement), Combat & Action
+  Choreography (grounded fight choreography, group brawl behavior, visceral camera work, physical consequence).
+  Activate this skill when the user wants to create cinematic video prompts, film-quality AI video directions,
+  realistic human behavior in video, or any director-level visual storytelling content — including
+  intense action and fight scenes. This is the cinema/film counterpart to BrandVideo — it prioritizes realism, storytelling, and cinematic craft.
 ---
+# CinSkill — Master Director Operating System v2.0
 
-# MASTER DIRECTOR OPERATING SYSTEM (MDOS) v2.0
+## PURPOSE
+To simulate a world-class film director, cinematographer, and motion choreographer. This skill orchestrates the visual, physical, and emotional rules required to generate ultra-realistic AI video prompts.
 
-```
+## ARCHITECTURE
+`
 Master Director v1.4
-        â”‚
-        â–¼
+        │
+        ▼
 Master Director v2.0
-        â”‚
-        â”œâ”€â”€ 01. Camera Science Engine
-        â”œâ”€â”€ 02. Lens Science Engine
-        â”œâ”€â”€ 03. Human Behavior Engine
-        â”œâ”€â”€ 04. Lighting Science Engine
-        â”œâ”€â”€ 05. Composition Engine
-        â”œâ”€â”€ 06. Material Physics Engine
-        â”œâ”€â”€ 07. Motion Physics Engine
-        â”œâ”€â”€ 08. Color Science Engine
-        â”œâ”€â”€ 09. AI Optimization Engine
-        â”œâ”€â”€ 10. Commercial Engine
-        â”œâ”€â”€ 11. Priority Decision Engine
-        â”œâ”€â”€ 12. Visual Perception Engine
-        â”œâ”€â”€ 13. Environment Simulation Engine
-        â”œâ”€â”€ 14. Prompt Compiler Engine
-        â”œâ”€â”€ 15. Error Detection Engine
-        â”œâ”€â”€ 16. Adaptive Model Engine
-        â”œâ”€â”€ 17. Scene Complexity Engine
-        â”œâ”€â”€ 18. Director Intelligence Engine
-        â”œâ”€â”€ 19. Visual Language Engine
-        â”œâ”€â”€ 20. Hollywood Knowledge Engine
-        â”œâ”€â”€ 21. Cinematic Failure Database
-        â”œâ”€â”€ 22. Self Learning Engine
-        â””â”€â”€ 23. Combat & Action Choreography Engine
-```
+        │
+        ├── 01. Camera Science Engine
+        ├── 02. Lens Science Engine
+        ├── 03. Human Behavior Engine
+        ├── 04. Lighting Science Engine
+        ├── 05. Composition Engine
+        ├── 06. Material Physics Engine
+        ├── 07. Motion Physics Engine
+        ├── 08. Color Science Engine
+        ├── 09. AI Optimization Engine
+        ├── 10. Commercial Engine
+        ├── 11. Priority Decision Engine
+        ├── 12. Visual Perception Engine
+        ├── 13. Environment Simulation Engine
+        ├── 14. Prompt Compiler Engine
+        ├── 15. Error Detection Engine
+        ├── 16. Adaptive Model Engine
+        ├── 17. Scene Complexity Engine
+        ├── 18. Director Intelligence Engine
+        ├── 19. Visual Language Engine
+        ├── 20. Hollywood Knowledge Engine
+        ├── 21. Cinematic Failure Database
+        ├── 22. Self Learning Engine
+        └── 23. Combat & Action Choreography Engine
+`
 
 Every engine stands alone. Every engine is upgradeable independently. All engines integrate through the Decision and Compiler layers.
 
 ---
 
-## ENGINE 01 â€” CAMERA SCIENCE ENGINE
+## ENGINE 01 — CAMERA SCIENCE ENGINE
 
 ### A. Camera Language
 
@@ -3481,6 +3482,7 @@ Every camera movement has a narrative motivation.
 
 Observe first. React second. Never anticipate.
 The camera behaves like an invisible human operator.
+**6-Axis Cardinal Camera Blocking**: You MUST use strict cardinal directions (North, South, East, West, Up, Down) to describe camera placement and movement if a 6-Axis EnvSheet is provided. E.g., *"Camera positioned South, tracking the subject moving East."* Avoid relative terms like "from the front" when possible.
 The operator naturally searches for information.
 The operator slightly reframes after important actions.
 The operator never perfectly centers every subject.
@@ -3510,39 +3512,35 @@ Natural rolling shutter behavior.
 
 The camera must feel like it is physically held by a real human being.
 
-### C. Shot Size Engine
+### C. Shot Sizes
 
-AI must know the function of every shot size â€” not just the name.
+Extreme Wide Shot (EWS) — Subject is lost in environment. Scale.
+Wide Shot (WS) — Full body visible. Context.
+Medium Wide Shot (MWS) — Knees up. Body language.
+Medium Shot (MS) — Waist up. Interaction.
+Medium Close-Up (MCU) — Chest up. Emotion.
+Close-Up (CU) — Shoulders up. Intimacy.
+Extreme Close-Up (ECU) — Eyes only. Pure thought.
 
-### D. Camera Height Engine
+### D. Camera Heights
 
-Every height has a psychological reason. Never choose arbitrarily.
+Bird's Eye View — God-like observation.
+High Angle — Subject diminished, vulnerable.
+Eye Level — Neutral, empathetic observation.
+Shoulder Level — Over-the-shoulder connection.
+Waist Level — Classic western, powerful stance.
+Knee Level — Imposing, grounded.
+Low Angle — Subject empowered, threatening.
+Worm's Eye View — Extreme vulnerability or scale.
 
-### E. Camera Distance (Proxemics)
+### E. Camera Distances
 
-Based on Edward T. Hall's proxemics theory â€” framing should feel socially natural.
-
-### F. Operator Mistakes (Realism Layer)
-
-These micro-imperfections make video feel real:
-
-Tiny delayed pan
-Slight overshoot on reframe
-Small correction after overshoot
-Minor framing adjustment mid-shot
-Tiny exposure adaptation when entering new light
-Natural hesitation before movement
-Momentary loss of subject during fast action
-
-Perfect camera work feels robotic. Imperfect camera work feels human.
+Far — Observation, detachment.
+Mid — Engagement, conversation.
+Close — Intimacy, tension.
+Intimate — Invasive, psychological.
 
 ---
-
----
-
-## ?? CINEMATIC ENGINES & COMPILATION
-For the remaining engines (Lens, Human Behavior, Lighting, Materials, Composition, Prompt Compilation, Explicit Tagging rules, etc), you MUST read 
-eferences/engines.md.
 
 
 ========== theory.md ==========
