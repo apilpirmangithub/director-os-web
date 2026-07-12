@@ -2320,6 +2320,42 @@ This is not a prompt template. This is an operating system for AI cinematography
 
 ========== SKILL.md ==========
 ---
+name: "3D ComicSkill — Stylized 3D Animation Engine"
+description: >
+  A dedicated skill for generating 3D cartoon animations with a specific highly stylized, comic-book aesthetic
+  (replicating the "Spider-Verse" look WITHOUT mentioning the IP). Features rules for halftone shading, 
+  animating on twos, 2D motion smears, and CMYK chromatic aberration. Use this exclusively when the user
+  requests a "3D cartoon", "3D animation", or "Spider-Verse style" project.
+---
+
+# 3D ComicSkill — Stylized 3D Animation Engine v1.0
+
+## PURPOSE
+To override standard 3D rendering (like Pixar or generic CGI) and replace it with a hyper-stylized **Non-Photorealistic Rendering (NPR)** aesthetic that mimics the collision of 3D geometry with 2D comic book art (the "Spider-Verse" technique).
+
+**CRITICAL RULE:** NEVER use the words "Spider-Man", "Miles Morales", or "Spider-Verse" in the output prompt. Doing so causes AI video models to hallucinate copyright suits. We must dictate the *technique* instead.
+
+## 1. TEXTURE & SHADING ENGINE (The Comic Book Look)
+- **Halftone & Ben-Day Dots:** Shadows must not be smooth gradients. Instead, shadows must be rendered using comic book halftone dot patterns.
+- **CMYK Offset / Chromatic Aberration:** Edges of objects (especially out-of-focus areas or fast-moving limbs) should have a slight red/blue chromatic aberration, simulating misaligned comic book printing plates.
+- **2D Linework on 3D:** The models are 3D, but they must have expressive 2D hand-drawn linework tracing their features, wrinkles, and expressions.
+- **Vibrant Graphic Lighting:** Use highly saturated, contrasting neon/pop-art lighting colors (e.g., bright pink rim light against cyan shadow).
+
+## 2. MOTION PHYSICS ENGINE (The Stop-Motion Feel)
+- **Animating on Twos/Threes:** Do not use 60fps smooth CGI movement. The characters must move with a slightly staggered, stop-motion feel (simulating 12 frames per second in a 24fps world).
+- **2D Motion Smears:** When characters move fast or swing, DO NOT use realistic motion blur. Instead, use elongated 2D "smear frames" and multiple limb afterimages.
+- **Graphic Impact:** Physical impacts should trigger 2D comic burst flashes (jagged action stars, burst lines) instead of realistic physics dust.
+
+## 3. GLOBAL STYLE TAG FOR PROMPTS
+When constructing prompts for 3D Cartoons under this skill, you MUST start the prompt with this exact string:
+> *"Stylized 3D comic book animation, non-photorealistic rendering (NPR), halftone dot shading, Ben-Day dots, CMYK offset chromatic aberration, vibrant pop-art lighting, 2D hand-drawn linework over 3D models, animating on twos, stop-motion feel, graphic 2D motion smears."*
+
+## 4. TRIGGER CONDITIONS
+Activate this skill whenever the user asks to create a "Kartun 3D", "3D animation", or explicitly asks for the "Spider-Verse style".
+
+
+========== SKILL.md ==========
+---
 name: "Seedance 2.0 Cinematic Prompting Skill"
 description: >
   Transforms any concept into a cinematic prompt optimized for Seedance 2.0 and other AI video
@@ -2442,6 +2478,13 @@ When generating a prompt for a specific scene or clip:
 
 
 
+
+**3D COMIC PROMPT COMPILATION (CONDITIONAL)**
+If the requested aesthetic is 3D Cartoon / Spider-Verse, you MUST start every prompt with the 3D ComicSkill global tag:
+*"Stylized 3D comic book animation, non-photorealistic rendering (NPR), halftone dot shading, Ben-Day dots, CMYK offset chromatic aberration, vibrant pop-art lighting, 2D hand-drawn linework over 3D models, animating on twos, stop-motion feel, graphic 2D motion smears."*
+DO NOT use the words Spider-Man, Miles Morales, or Spider-Verse.
+
+
 **ANIME PROMPT COMPILATION (CONDITIONAL)**
 If the requested aesthetic is Anime/Sakuga, you MUST modify the standard prompt structure by choosing one of the two Universal Default Styles based on the script's tone:
 - **Option 1 (Dark/Mature Tone):** *"90s dark anime OVA style, gritty rotoscoped animation, heavy hatching and crosshatching shadows, HDR volumetric lighting, extreme peak brightness contrast, muted cinematic color palette, celluloid film texture, crisp cel-shaded linework."*
@@ -2505,6 +2548,68 @@ For deep camera psychology, lens effects, and physical constraints, refer to the
 
 
 
+
+
+
+========== SKILL.md ==========
+---
+name: "PropSheet — Cinematic Object & Weapon Reference Generator v1.0"
+description: >
+  Generates high-priority, standalone reference sheets for significant props, weapons, tools,
+  vehicles, logos, and symbols. Prevents AI duplication or hallucination by separating objects from character
+  sheets.
+---
+
+# PropSheet — Cinematic Object & Weapon Reference Generator v1.0
+
+## Purpose
+AI Video models often hallucinate or duplicate objects if a character is holding a complex item in their main character reference sheet (e.g. an AI might render a Viking holding two axes if the axe was baked into his character sheet). 
+
+To prevent this, **every significant prop, weapon, vehicle, logo, or symbol MUST have its own standalone reference sheet**.
+
+---
+
+## Core Philosophy (CRITICAL PRIORITY)
+
+- **Isolation Principle**: The prop MUST be shown alone, completely isolated from any human characters. Do not show anyone holding it.
+- **4-Panel Blueprint Layout**: Props must be displayed in a clean 2x2 grid representing 4 precise angles to provide the AI with perfect 3D geometry reference.
+- **No Floating Hands**: Never include hands, arms, or people in the prop sheet.
+
+---
+
+## The Master 4-Panel Prop Blueprint
+
+Every output prompt MUST follow this exact structural template, regardless of whether it is a small weapon, a large vehicle, or a graphic logo:
+
+> **[Aesthetic/Style Tags]**. A comprehensive 4-panel object design reference sheet of a **[Detailed Description of the Prop/Logo/Vehicle]**. The image is split into a 2x2 grid on a flat neutral grey background. Panel 1 (Top-Left): Perfect Front Elevation view showing **[Front Details]**. Panel 2 (Top-Right): Perfect Back Elevation view showing **[Back Details]**. Panel 3 (Bottom-Left): Perfect 90-degree Left Side Profile showing **[Left Details]**. Panel 4 (Bottom-Right): Perfect 90-degree Right Side Profile showing **[Right Details]**. The object is displayed completely alone. Soft dramatic studio lighting, high resolution, precise structural consistency across all 4 panels. --ar 16:9
+
+---
+
+## Universal Tri-Sheet System (MANDATORY DEFAULT)
+For EVERY prop or vehicle sheet you generate, you MUST ALWAYS output **3 distinct PropSheet Prompts** and explain how the user should use them:
+1. **[AI ORIGINAL]**: ... [standard propsheet prompt] ... (Explain: "Use this to generate the prop entirely from scratch").
+2. **[STRUCTURE LOCK]**: ... [standard propsheet prompt] ... (Explain: "Attach your sketch/photo to this prompt to use it as a base shape, while the AI redesigns the cinematic details").
+3. **[FULL CUSTOM LOCK]**: ... [standard propsheet prompt] ... (Explain: "Attach your sketch/photo to this prompt with maximum weight to exactly replicate its shape, color, and design").
+
+---
+
+## Step-by-Step Prompt Generation
+
+When Orchestrator Phase 1 calls for a prop (e.g. "The Viking's Battleaxe", "The Umbrella Corp Logo", or "A Cyberpunk Motorcycle"), follow these steps:
+
+### 1. Establish the Aesthetic
+Ensure the aesthetic matches the main film (e.g., Cinematic live-action photography, Bright modern shonen anime, Flat vector graphic).
+
+### 2. Define the Material & Details
+Is it scarred rusted iron with a splintered oak handle? Is it sleek carbon fiber? Is it a glowing neon hologram logo? Texture is everything. Describe what is visible on the front, back, left, and right.
+
+### 3. Output the Prompt
+Deliver the final, ready-to-copy prompt using the Master Template above. 
+
+---
+
+## Integration with Orchestrators
+This skill is a **Dependency** for ideoorchestra and nime_orchestra. When Phase 1 identifies a significant item being used in the script, it MUST generate a @imageX reference using this PropSheet logic.
 
 
 ========== SKILL.md ==========
@@ -2817,63 +2922,70 @@ AI Video Generation â†’ Editing & Sequencing Guide â†’ Final Film
 
 ========== SKILL.md ==========
 ---
-name: "PropSheet — Cinematic Object & Weapon Reference Generator v1.0"
+name: "CharSheet — Cinematic Character Reference Sheet Generator"
 description: >
-  Generates high-priority, standalone reference sheets for significant props, weapons, tools,
-  vehicles, logos, and symbols. Prevents AI duplication or hallucination by separating objects from character
-  sheets.
+  Generates photorealistic character reference sheet prompts for AI image generation models.
+  Produces multi-view sheets with extreme close-up, left/right profiles, medium shot,
+  and full body (front/back) with text annotations and white background. Designed to feed directly
+  into CinSkill and PromptSkill as @image references for identity-locked AI video generation.
+  Ensures absolute visual consistency across all views: same person, same clothing, same lighting,
+  same skin texture, same proportions. Supports photorealistic human characters only — grounded
+  realism mandatory, no illustration, no stylization unless explicitly requested as anime.
 ---
 
-# PropSheet — Cinematic Object & Weapon Reference Generator v1.0
+# CharSheet — Cinematic Character Reference Sheet Generator v1.0
 
 ## Purpose
-AI Video models often hallucinate or duplicate objects if a character is holding a complex item in their main character reference sheet (e.g. an AI might render a Viking holding two axes if the axe was baked into his character sheet). 
 
-To prevent this, **every significant prop, weapon, vehicle, logo, or symbol MUST have its own standalone reference sheet**.
+Generate **multi-view character reference sheets** optimized for AI video production pipelines. These sheets become the @image references that CinSkill and PromptSkill use for identity-locked video generation.
 
----
+## Core Philosophy
 
-## Core Philosophy (CRITICAL PRIORITY)
-
-- **Isolation Principle**: The prop MUST be shown alone, completely isolated from any human characters. Do not show anyone holding it.
-- **4-Panel Blueprint Layout**: Props must be displayed in a clean 2x2 grid representing 4 precise angles to provide the AI with perfect 3D geometry reference.
-- **No Floating Hands**: Never include hands, arms, or people in the prop sheet.
-
----
-
-## The Master 4-Panel Prop Blueprint
-
-Every output prompt MUST follow this exact structural template, regardless of whether it is a small weapon, a large vehicle, or a graphic logo:
-
-> **[Aesthetic/Style Tags]**. A comprehensive 4-panel object design reference sheet of a **[Detailed Description of the Prop/Logo/Vehicle]**. The image is split into a 2x2 grid on a flat neutral grey background. Panel 1 (Top-Left): Perfect Front Elevation view showing **[Front Details]**. Panel 2 (Top-Right): Perfect Back Elevation view showing **[Back Details]**. Panel 3 (Bottom-Left): Perfect 90-degree Left Side Profile showing **[Left Details]**. Panel 4 (Bottom-Right): Perfect 90-degree Right Side Profile showing **[Right Details]**. The object is displayed completely alone. Soft dramatic studio lighting, high resolution, precise structural consistency across all 4 panels. --ar 16:9
-
----
+- **Aesthetic Inheritance**: The CharSheet MUST perfectly inherit the visual aesthetic of the main film. If the film is "Gritty 90s Anime", the sheet must be Gritty 90s Anime. If it is "Cinematic HDR Live-Action", the sheet must be Cinematic HDR Live-Action. Do not force generic "professional photoshoot" styles if it contradicts the film's intended aesthetic.
+- The character sheet is **evidence**, not art. It documents a real person/character from multiple angles.
+- Absolute consistency across all views — the viewer must believe all images are of the same physical person captured in the same session.
+- **ZERO tolerance** for AI artifacts: plastic skin, symmetrical face, wax texture, dead eyes, missing pores, smooth hair blobs, melted fingers, or inconsistent proportions.
 
 ## Universal Tri-Sheet System (MANDATORY DEFAULT)
-For EVERY prop or vehicle sheet you generate, you MUST ALWAYS output **3 distinct PropSheet Prompts** and explain how the user should use them:
-1. **[AI ORIGINAL]**: ... [standard propsheet prompt] ... (Explain: "Use this to generate the prop entirely from scratch").
-2. **[STRUCTURE LOCK]**: ... [standard propsheet prompt] ... (Explain: "Attach your sketch/photo to this prompt to use it as a base shape, while the AI redesigns the cinematic details").
-3. **[FULL CUSTOM LOCK]**: ... [standard propsheet prompt] ... (Explain: "Attach your sketch/photo to this prompt with maximum weight to exactly replicate its shape, color, and design").
+For EVERY character sheet you generate, you MUST ALWAYS output **3 distinct CharSheet Prompts** and explain how the user should use them:
+1. **[AI ORIGINAL]**: ... [standard charsheet prompt] ... (Explain: "Use this to generate the character entirely from scratch").
+2. **[FACE LOCK]**: "Please use the attached image as a character reference to lock the face. Preserve exact facial structure, bone structure, eye shape, and skin texture fidelity with 100% fidelity. Do not airbrush or beautify. [standard charsheet prompt]" (Explain: "Attach your photo to this prompt to lock your face, while the AI designs the costume").
+3. **[FULL CUSTOM LOCK]**: "Please use the attached image as a character reference to lock the exact face and clothing. Preserve exact facial structure, skin texture fidelity, and clothing details with 100% fidelity. Do not airbrush or beautify. [standard charsheet prompt]" (Explain: "Attach your photo to this prompt with maximum weight to replicate your exact face and clothing").
 
 ---
 
-## Step-by-Step Prompt Generation
+## Mandatory Views (6-Panel Blueprint Layout)
 
-When Orchestrator Phase 1 calls for a prop (e.g. "The Viking's Battleaxe", "The Umbrella Corp Logo", or "A Cyberpunk Motorcycle"), follow these steps:
+The character sheet MUST contain exactly these 6 views, arranged in a clean 2x3 or 3x2 grid on a **PURE SOLID WHITE BACKGROUND**.
+**CRITICAL RULE:** The design of the character MUST be perfectly synchronized across all 6 panels. The same face, same hair length, same clothing wrinkles, same proportions.
 
-### 1. Establish the Aesthetic
-Ensure the aesthetic matches the main film (e.g., Cinematic live-action photography, Bright modern shonen anime, Flat vector graphic).
+Every panel MUST contain a typography text label written inside the image:
 
-### 2. Define the Material & Details
-Is it scarred rusted iron with a splintered oak handle? Is it sleek carbon fiber? Is it a glowing neon hologram logo? Texture is everything. Describe what is visible on the front, back, left, and right.
+### Row 1 — Face Detail (3 panels)
 
-### 3. Output the Prompt
-Deliver the final, ready-to-copy prompt using the Master Template above. 
+| Panel | View | Description |
+|-------|------|-------------|
+| 1 | **Extreme Close-Up (Front)** | Eyes, nose, lips, skin pores. Labeled with typography: **"EXTREME CLOSE UP"** |
+| 2 | **Tampak Kiri (Left Profile)** | Perfect 90° profile view of the left side. Labeled with typography: **"LEFT PROFILE"** |
+| 3 | **Tampak Kanan (Right Profile)** | Perfect 90° profile view of the right side. Labeled with typography: **"RIGHT PROFILE"** |
+
+### Row 2 — Body & Wardrobe (3 panels)
+
+| Panel | View | Description |
+|-------|------|-------------|
+| 4 | **Medium Shot (Front)** | Waist-up. Labeled with typography: **"MEDIUM SHOT"** |
+| 5 | **Full Body Depan (Front)** | Entire body from head to toe facing camera. Labeled with typography: **"FRONT FULL BODY"** and **"HEIGHT: [X]CM"** |
+| 6 | **Full Body Belakang (Back)** | Entire body back facing camera. Labeled with typography: **"BACK FULL BODY"** |
 
 ---
 
-## Integration with Orchestrators
-This skill is a **Dependency** for ideoorchestra and nime_orchestra. When Phase 1 identifies a significant item being used in the script, it MUST generate a @imageX reference using this PropSheet logic.
+## The Master 6-Panel Prompt Template
+
+Every output prompt MUST follow this exact structural template:
+
+> **[Aesthetic/Style Tags (MUST MATCH FILM)]**. A 6-panel casting character reference sheet on a **pure solid white background**. The image is split into 6 equal grid panels. The character's design and identity are perfectly synchronized across all panels. Panel 1: Extreme Close-Up Face Front showing **[Facial Details/Pores/Eye Color]**, with typography text reading **"EXTREME CLOSE UP"**. Panel 2: Perfect 90-degree Left Side Profile Face showing **[Left details]**, with typography text reading **"LEFT PROFILE"**. Panel 3: Perfect 90-degree Right Side Profile Face showing **[Right details]**, with typography text reading **"RIGHT PROFILE"**. Panel 4: Medium Shot Waist-Up Front showing **[Upper Clothing]**, with typography text reading **"MEDIUM SHOT"**. Panel 5: Full Body Front showing **[Full Wardrobe]**, with clear typography text annotations reading **"FRONT FULL BODY"** and **"HEIGHT: [X]CM"**. Panel 6: Full Body Back showing **[Back Details/Weapons/Hair]**, with typography text reading **"BACK FULL BODY"**. The character is **[Age, Ethnicity, Body Type, Posture, Clothing Details]**. **[Specific camera/lighting settings that match the aesthetic]**, absolutely consistent identity. --ar 16:9
+
+---
 
 
 ========== SKILL.md ==========
@@ -2947,123 +3059,67 @@ Use this skill whenever generating audio, sound effects, or music prompts, or wh
 
 ========== SKILL.md ==========
 ---
-name: "Anime VideoOrchestra â€” Anime Conductor v1.0"
+name: "CinSkill — Master Director Operating System v2.0"
 description: >
-  Orchestrates multi-clip Anime productions. Breaks down timelines into clips (â‰¤15s), handles dynamic reference renumbering, applies Anime Pacing Logic (the art of 'Ma' / stillness before action), and dictates invisible anime stitching transitions.
+  A complete AI Cinema Director Operating System for generating professional-grade cinematic video prompts.
+  Handles BOTH Live-Action and Anime aesthetics conditionally.
+  CORE ENGINES: Camera Science, Lens Science, Human Behavior, Lighting Science, Composition,
+  Material Physics, Motion Physics, Color Science, AI Video Optimization, Commercial Psychology,
+  Environment Simulation, Prompt Compiler. ADVANCED PROTOCOLS: Stunt Double Protocol, Real-Time Shutter Protocol.
+  Activate this skill when the user wants to create cinematic video prompts, film-quality AI video directions,
+  realistic human behavior in video, or stylized high-end Anime (Sakuga) — including intense action and fight scenes.
 ---
-# Anime VideoOrchestra â€” Anime Conductor v1.0
+# CinSkill — Master Director Operating System v2.0
 
-This skill breaks long-form anime projects into independent 15-second clips and provides sequencing instructions, replacing the live-action VideoOrchestra.
+## PURPOSE
+To simulate a world-class film director, cinematographer, and motion choreographer. This skill orchestrates the visual, physical, and emotional rules required to generate ultra-realistic OR highly stylized AI video prompts.
 
-## 1. DURATION & PACING (Anime Rhythm)
-- **Max Clip Length**: 15 seconds max per generation.
-- **Anime Pacing Logic ('Ma'):** Anime relies heavily on the contrast between extreme stillness and hyper-speed. 
-  - *Stillness:* Use wide shots where only a cape blows in the wind or a single tear falls before an attack.
-  - *Explosion:* Follow stillness with a rapid burst of action (Sakuga).
-- **Duration Breakdown**: Divide the total requested seconds by 15. Create a seamless narrative rhythm.
+## CONDITIONAL AESTHETIC ENGINE (Live-Action vs Anime)
+The engines below adapt based on the requested aesthetic.
+**If Live-Action (Default):** Use Grounded Realism, realistic physics, realistic lighting, and natural human behavior.
+**If Anime / Sakuga:** Activate the **Sakuga Physics Engine**:
+- **Exaggerated Momentum:** Characters move faster than the eye can see. Jumping shatters the ground. Sword swings create massive wind pressure and energy arcs.
+- **Impact Frames:** Collisions must trigger visceral impact frames (brief flashes of high-contrast black/white) to sell the power of the hit.
+- **Yutaka Nakamura Debris:** Destruction must feature distinct, blocky, cube-like debris floating or exploding outward.
+- **Smear Frames:** High-speed motion must stretch the character's geometry dynamically.
+- **Adaptive Anime Shading:** Modern anime style, crisp cel-shaded linework, HDR volumetric lighting, extreme peak brightness contrast. (Adapt the color palette and mood to the specific story, no need to force gritty or bright unless requested).
 
-## 2. INVISIBLE STITCHING (Anime Transitions)
-To connect multiple 15-second AI generations into a continuous anime sequence, use these anime-specific stitching tricks at the cut points:
-- **The Energy Flash Cut:** End Clip 1 with a massive explosion of white/colored light that fills the screen. Begin Clip 2 fading in from that exact same colored light.
-- **The Speed Line Wipe:** End Clip 1 with the camera whipping past the character into stylized abstract speed lines. Start Clip 2 pulling out from identical speed lines.
-- **The Foreground Object Cut:** End Clip 1 with a large piece of Nakamura cube debris flying directly into the lens, blacking it out. Start Clip 2 pulling back from a dark object.
-
-## 3. PROMPT CONSTRUCTION RULES
-- Each prompt must be **fully self-contained**.
-- Incorporate the styles and rules from `anime_cinskill` and `anime_promptskill`.
-- Explicitly repeat character clothing, lighting, and environmental details in every clip where consistency is needed.
-
-## 4. REFERENCE PROTOCOL (MANDATORY MAPPING LOGIC)
-- For each clip, **only include the reference images that are actually used** in that specific scene.
-- **Re-number them sequentially** starting from @image1, @image2... (no gaps). 
-- **CRITICAL PRE-FLIGHT CHECK**: Before you write ANY video prompt in Phase 2, you MUST output an explicit mapping logic block on its own line to force yourself to re-number correctly.
-  *Format:* `[MAPPING LOGIC: Global @imageX (Item/Person) -> Local @image1 | Global @imageY (Item/Person) -> Local @image2]`
-  *Example:* If the global Phase 1 generated @image1 (Hero) and @image3 (City), you MUST write: `[MAPPING LOGIC: Global @image1 (Hero) -> Local @image1 | Global @image3 (City) -> Local @image2]` before writing the prompt.
-- Then, inside the prompt itself, strictly use the new Local numbering (@image1, @image2).
-- Mention each used reference **exactly once**.
-
-## 5. OUTPUT STRUCTURE (2-Phase Protocol)
-1. **PHASE 1: Asset & Audio Generation Sheet (MANDATORY)**: Before writing video prompts, identify which characters and locations need consistent references. 
-   - **Image Assets:** Write Image Generation Prompts for each required asset (e.g. @image1, @image2). Use CharSheet rules.
-     - **Environmental Asset Rule**: Any location/stadium/environment asset MUST be a dual-panel 16:9 prompt (Panel 1: Top-down infographic map with cardinal directions, Panel 2: Cinematic view).
-     - **Dedicated Prop Sheets (Anti-Duplication)**: If a character interacts with or uses a specific significant item, weapon, vehicle, or equipment (e.g. a sword, a ping pong ball), it MUST be assigned its own dedicated reference sheet in Phase 1 (generated via PropSheet skill). Never rely on the character sheet to define the item.
-   - **Audio Assets (Vocal Persona):** Write Voice Design Prompts for ElevenLabs for each speaking character (e.g. @audio1, @audio2). Focus on **Vocal Characteristics and Dialect**, NOT lip-syncing. Example: `@audio1 (Kael's Voice): "Deep, raspy young male voice, late 20s, American accent, sounds battle-worn and exhausted but highly determined. Slight grit in the throat."` (MANDATORY: Always append "Wide dynamic range audio, uncompressed HDR mix, zero audio clipping" to ensure high-fidelity voice generation).
-   - **CRITICAL:** You must ALWAYS output this exact **Immutable Global Style Tag** in Phase 1: "90s dark anime OVA style, gritty rotoscoped animation, heavy hatching and crosshatching shadows, muted cinematic color palette, celluloid film texture, crisp cel-shaded linework".
-2. **PHASE 2: Video Orchestration**:
-   - **Summary**: Total clips, total runtime, anime studio style.
-   - **Per-Clip Prompts**: Timestamped (e.g. [0-15s]), fully self-contained. 
-     - **Explicit Tagging Rule**: If a shot is wide and multiple elements are visible, you MUST explicitly mention EVERY tag present in the frame (e.g., "@image1, @image2, and @image5 are visible in @image4"). Do not leave the AI guessing who is in the wide shot.
-     - **Spatial Continuity Rule**: Every clip must strictly obey the layout defined in Phase 1 and instruct the AI how to read it. (e.g., "STRICT SPATIAL CONTINUITY: @image4 is a dual-panel reference. Read the left panel map for layout, but ONLY render the right panel cinematic style").
-     - **Audio Integration**: When a character speaks, link their dialogue to their audio tag AND describe their dynamic emotional flow specifically for that scene. Example: `He speaks in English with a panicked, breathless flow (@audio1): "We can't hold them back!"` (The delivery must adapt dynamically to the action).
-   - **Anime Editing & Sequencing Guide**: Instructions on how to execute the Energy Flash / Speed Line wipes during post-production.
-
-
-========== SKILL.md ==========
----
-name: "CharSheet — Cinematic Character Reference Sheet Generator"
-description: >
-  Generates photorealistic character reference sheet prompts for AI image generation models.
-  Produces multi-view sheets with extreme close-up, left/right profiles, medium shot,
-  and full body (front/back) with text annotations and white background. Designed to feed directly
-  into CinSkill and PromptSkill as @image references for identity-locked AI video generation.
-  Ensures absolute visual consistency across all views: same person, same clothing, same lighting,
-  same skin texture, same proportions. Supports photorealistic human characters only — grounded
-  realism mandatory, no illustration, no stylization unless explicitly requested as anime.
----
-
-# CharSheet — Cinematic Character Reference Sheet Generator v1.0
-
-## Purpose
-
-Generate **multi-view character reference sheets** optimized for AI video production pipelines. These sheets become the @image references that CinSkill and PromptSkill use for identity-locked video generation.
-
-## Core Philosophy
-
-- **Aesthetic Inheritance**: The CharSheet MUST perfectly inherit the visual aesthetic of the main film. If the film is "Gritty 90s Anime", the sheet must be Gritty 90s Anime. If it is "Cinematic HDR Live-Action", the sheet must be Cinematic HDR Live-Action. Do not force generic "professional photoshoot" styles if it contradicts the film's intended aesthetic.
-- The character sheet is **evidence**, not art. It documents a real person/character from multiple angles.
-- Absolute consistency across all views — the viewer must believe all images are of the same physical person captured in the same session.
-- **ZERO tolerance** for AI artifacts: plastic skin, symmetrical face, wax texture, dead eyes, missing pores, smooth hair blobs, melted fingers, or inconsistent proportions.
-
-## Universal Tri-Sheet System (MANDATORY DEFAULT)
-For EVERY character sheet you generate, you MUST ALWAYS output **3 distinct CharSheet Prompts** and explain how the user should use them:
-1. **[AI ORIGINAL]**: ... [standard charsheet prompt] ... (Explain: "Use this to generate the character entirely from scratch").
-2. **[FACE LOCK]**: "Please use the attached image as a character reference to lock the face. Preserve exact facial structure, bone structure, eye shape, and skin texture fidelity with 100% fidelity. Do not airbrush or beautify. [standard charsheet prompt]" (Explain: "Attach your photo to this prompt to lock your face, while the AI designs the costume").
-3. **[FULL CUSTOM LOCK]**: "Please use the attached image as a character reference to lock the exact face and clothing. Preserve exact facial structure, skin texture fidelity, and clothing details with 100% fidelity. Do not airbrush or beautify. [standard charsheet prompt]" (Explain: "Attach your photo to this prompt with maximum weight to replicate your exact face and clothing").
+**If Comic-Book 3D (Spider-Verse Aesthetic):** Activate the **Comic-Book 3D Engine**:
+- **Texture & Shading:** Stylized 3D CGI animation, hand-painted 3D textures, Ben-Day dot shading (comic halftones), offset CMYK printing errors (chromatic aberration), bold graphic outlines. No photorealism.
+- **Motion Physics:** Step-animation physics (animated on twos or threes), staccato motion, crunchy timing. Fast actions must leave 2D hand-drawn smear frames overlaid on the 3D models.
+- **Graphic VFX:** Impacts must trigger 2D hand-drawn abstract flashes or floating comic-book onomatopeia (action words like BOOM!).
 
 ---
 
-## Mandatory Views (6-Panel Blueprint Layout)
+## ENGINE 01 — CAMERA SCIENCE ENGINE
 
-The character sheet MUST contain exactly these 6 views, arranged in a clean 2x3 or 3x2 grid on a **PURE SOLID WHITE BACKGROUND**.
-**CRITICAL RULE:** The design of the character MUST be perfectly synchronized across all 6 panels. The same face, same hair length, same clothing wrinkles, same proportions.
+### A. Camera Language
+Every camera movement has a narrative motivation.
+Observe first. React second. Never anticipate.
+**6-Axis Cardinal Camera Blocking**: You MUST use strict cardinal directions (North, South, East, West, Up, Down) to describe camera placement and movement if a 6-Axis EnvSheet is provided. E.g., *"Camera positioned South, tracking the subject moving East."* Avoid relative terms like "from the front" when possible.
 
-Every panel MUST contain a typography text label written inside the image:
-
-### Row 1 — Face Detail (3 panels)
-
-| Panel | View | Description |
-|-------|------|-------------|
-| 1 | **Extreme Close-Up (Front)** | Eyes, nose, lips, skin pores. Labeled with typography: **"EXTREME CLOSE UP"** |
-| 2 | **Tampak Kiri (Left Profile)** | Perfect 90° profile view of the left side. Labeled with typography: **"LEFT PROFILE"** |
-| 3 | **Tampak Kanan (Right Profile)** | Perfect 90° profile view of the right side. Labeled with typography: **"RIGHT PROFILE"** |
-
-### Row 2 — Body & Wardrobe (3 panels)
-
-| Panel | View | Description |
-|-------|------|-------------|
-| 4 | **Medium Shot (Front)** | Waist-up. Labeled with typography: **"MEDIUM SHOT"** |
-| 5 | **Full Body Depan (Front)** | Entire body from head to toe facing camera. Labeled with typography: **"FRONT FULL BODY"** and **"HEIGHT: [X]CM"** |
-| 6 | **Full Body Belakang (Back)** | Entire body back facing camera. Labeled with typography: **"BACK FULL BODY"** |
+### B. Real-Time Shutter Protocol (ANTI-SLOMO)
+**CRITICAL:** AI video generators default to dramatic slow-motion. You MUST explicitly ban slow-motion unless the user specifically asks for it, OR if the scene reaches a peak emotional/climactic moment that genuinely warrants dramatic slow-motion.
+Add this to every prompt: *"Real-time playback speed 1.0x, normal shutter speed, no slow-motion, true-to-life pacing."*
 
 ---
 
-## The Master 6-Panel Prompt Template
+## ENGINE 02 — LENS SCIENCE ENGINE
+- Define focal length (e.g. 14mm for distortion, 35mm for documentary, 85mm for portrait).
+- If Anime: Use **Extreme Foreshortening** (limbs punching toward the camera must be massively distorted/enlarged).
 
-Every output prompt MUST follow this exact structural template:
+## ENGINE 03 — HUMAN BEHAVIOR ENGINE
+- Micro-expressions, body physics, gait, breathing, weight.
+- If Anime: Exaggerate expressions (enlarged pupils for shock, heavy hatching on face for despair). Do not use realistic pores.
 
-> **[Aesthetic/Style Tags (MUST MATCH FILM)]**. A 6-panel casting character reference sheet on a **pure solid white background**. The image is split into 6 equal grid panels. The character's design and identity are perfectly synchronized across all panels. Panel 1: Extreme Close-Up Face Front showing **[Facial Details/Pores/Eye Color]**, with typography text reading **"EXTREME CLOSE UP"**. Panel 2: Perfect 90-degree Left Side Profile Face showing **[Left details]**, with typography text reading **"LEFT PROFILE"**. Panel 3: Perfect 90-degree Right Side Profile Face showing **[Right details]**, with typography text reading **"RIGHT PROFILE"**. Panel 4: Medium Shot Waist-Up Front showing **[Upper Clothing]**, with typography text reading **"MEDIUM SHOT"**. Panel 5: Full Body Front showing **[Full Wardrobe]**, with clear typography text annotations reading **"FRONT FULL BODY"** and **"HEIGHT: [X]CM"**. Panel 6: Full Body Back showing **[Back Details/Weapons/Hair]**, with typography text reading **"BACK FULL BODY"**. The character is **[Age, Ethnicity, Body Type, Posture, Clothing Details]**. **[Specific camera/lighting settings that match the aesthetic]**, absolutely consistent identity. --ar 16:9
+## ENGINE 04 — ACTION & COMBAT ENGINE
+**Stunt Double Protocol (The Anti-Merger Glitch):**
+AI models fail and merge identities when two characters interact closely (e.g., hugging, grappling, punching in close quarters).
+To prevent this, you MUST enforce the Stunt Double Protocol:
+- Never show two distinct faces clearly in a close-quarters physical interaction.
+- Use **Over-The-Shoulder (OTS)** or **Dirty POV** shots. Force the AI to prioritize one character's identity while obscuring the other.
+- Example: *"Over-the-shoulder shot from behind Character A (whose back obscures the frame) looking at Character B taking the punch."*
 
----
 
 
 ========== SKILL.md ==========
@@ -3134,67 +3190,55 @@ This skill is a **Level 1 Priority Dependency** for `videoorchestra` and `anime_
 
 ========== SKILL.md ==========
 ---
-name: "CinSkill — Master Director Operating System v2.0"
+name: "Anime VideoOrchestra â€” Anime Conductor v1.0"
 description: >
-  A complete AI Cinema Director Operating System for generating professional-grade cinematic video prompts.
-  Handles BOTH Live-Action and Anime aesthetics conditionally.
-  CORE ENGINES: Camera Science, Lens Science, Human Behavior, Lighting Science, Composition,
-  Material Physics, Motion Physics, Color Science, AI Video Optimization, Commercial Psychology,
-  Environment Simulation, Prompt Compiler. ADVANCED PROTOCOLS: Stunt Double Protocol, Real-Time Shutter Protocol.
-  Activate this skill when the user wants to create cinematic video prompts, film-quality AI video directions,
-  realistic human behavior in video, or stylized high-end Anime (Sakuga) — including intense action and fight scenes.
+  Orchestrates multi-clip Anime productions. Breaks down timelines into clips (â‰¤15s), handles dynamic reference renumbering, applies Anime Pacing Logic (the art of 'Ma' / stillness before action), and dictates invisible anime stitching transitions.
 ---
-# CinSkill — Master Director Operating System v2.0
+# Anime VideoOrchestra â€” Anime Conductor v1.0
 
-## PURPOSE
-To simulate a world-class film director, cinematographer, and motion choreographer. This skill orchestrates the visual, physical, and emotional rules required to generate ultra-realistic OR highly stylized AI video prompts.
+This skill breaks long-form anime projects into independent 15-second clips and provides sequencing instructions, replacing the live-action VideoOrchestra.
 
-## CONDITIONAL AESTHETIC ENGINE (Live-Action vs Anime)
-The engines below adapt based on the requested aesthetic.
-**If Live-Action (Default):** Use Grounded Realism, realistic physics, realistic lighting, and natural human behavior.
-**If Anime / Sakuga:** Activate the **Sakuga Physics Engine**:
-- **Exaggerated Momentum:** Characters move faster than the eye can see. Jumping shatters the ground. Sword swings create massive wind pressure and energy arcs.
-- **Impact Frames:** Collisions must trigger visceral impact frames (brief flashes of high-contrast black/white) to sell the power of the hit.
-- **Yutaka Nakamura Debris:** Destruction must feature distinct, blocky, cube-like debris floating or exploding outward.
-- **Smear Frames:** High-speed motion must stretch the character's geometry dynamically.
-- **Adaptive Anime Shading:** Modern anime style, crisp cel-shaded linework, HDR volumetric lighting, extreme peak brightness contrast. (Adapt the color palette and mood to the specific story, no need to force gritty or bright unless requested).
+## 1. DURATION & PACING (Anime Rhythm)
+- **Max Clip Length**: 15 seconds max per generation.
+- **Anime Pacing Logic ('Ma'):** Anime relies heavily on the contrast between extreme stillness and hyper-speed. 
+  - *Stillness:* Use wide shots where only a cape blows in the wind or a single tear falls before an attack.
+  - *Explosion:* Follow stillness with a rapid burst of action (Sakuga).
+- **Duration Breakdown**: Divide the total requested seconds by 15. Create a seamless narrative rhythm.
 
-**If Comic-Book 3D (Spider-Verse Aesthetic):** Activate the **Comic-Book 3D Engine**:
-- **Texture & Shading:** Stylized 3D CGI animation, hand-painted 3D textures, Ben-Day dot shading (comic halftones), offset CMYK printing errors (chromatic aberration), bold graphic outlines. No photorealism.
-- **Motion Physics:** Step-animation physics (animated on twos or threes), staccato motion, crunchy timing. Fast actions must leave 2D hand-drawn smear frames overlaid on the 3D models.
-- **Graphic VFX:** Impacts must trigger 2D hand-drawn abstract flashes or floating comic-book onomatopeia (action words like BOOM!).
+## 2. INVISIBLE STITCHING (Anime Transitions)
+To connect multiple 15-second AI generations into a continuous anime sequence, use these anime-specific stitching tricks at the cut points:
+- **The Energy Flash Cut:** End Clip 1 with a massive explosion of white/colored light that fills the screen. Begin Clip 2 fading in from that exact same colored light.
+- **The Speed Line Wipe:** End Clip 1 with the camera whipping past the character into stylized abstract speed lines. Start Clip 2 pulling out from identical speed lines.
+- **The Foreground Object Cut:** End Clip 1 with a large piece of Nakamura cube debris flying directly into the lens, blacking it out. Start Clip 2 pulling back from a dark object.
 
----
+## 3. PROMPT CONSTRUCTION RULES
+- Each prompt must be **fully self-contained**.
+- Incorporate the styles and rules from `anime_cinskill` and `anime_promptskill`.
+- Explicitly repeat character clothing, lighting, and environmental details in every clip where consistency is needed.
 
-## ENGINE 01 — CAMERA SCIENCE ENGINE
+## 4. REFERENCE PROTOCOL (MANDATORY MAPPING LOGIC)
+- For each clip, **only include the reference images that are actually used** in that specific scene.
+- **Re-number them sequentially** starting from @image1, @image2... (no gaps). 
+- **CRITICAL PRE-FLIGHT CHECK**: Before you write ANY video prompt in Phase 2, you MUST output an explicit mapping logic block on its own line to force yourself to re-number correctly.
+  *Format:* `[MAPPING LOGIC: Global @imageX (Item/Person) -> Local @image1 | Global @imageY (Item/Person) -> Local @image2]`
+  *Example:* If the global Phase 1 generated @image1 (Hero) and @image3 (City), you MUST write: `[MAPPING LOGIC: Global @image1 (Hero) -> Local @image1 | Global @image3 (City) -> Local @image2]` before writing the prompt.
+- Then, inside the prompt itself, strictly use the new Local numbering (@image1, @image2).
+- Mention each used reference **exactly once**.
 
-### A. Camera Language
-Every camera movement has a narrative motivation.
-Observe first. React second. Never anticipate.
-**6-Axis Cardinal Camera Blocking**: You MUST use strict cardinal directions (North, South, East, West, Up, Down) to describe camera placement and movement if a 6-Axis EnvSheet is provided. E.g., *"Camera positioned South, tracking the subject moving East."* Avoid relative terms like "from the front" when possible.
-
-### B. Real-Time Shutter Protocol (ANTI-SLOMO)
-**CRITICAL:** AI video generators default to dramatic slow-motion. You MUST explicitly ban slow-motion unless the user specifically asks for it, OR if the scene reaches a peak emotional/climactic moment that genuinely warrants dramatic slow-motion.
-Add this to every prompt: *"Real-time playback speed 1.0x, normal shutter speed, no slow-motion, true-to-life pacing."*
-
----
-
-## ENGINE 02 — LENS SCIENCE ENGINE
-- Define focal length (e.g. 14mm for distortion, 35mm for documentary, 85mm for portrait).
-- If Anime: Use **Extreme Foreshortening** (limbs punching toward the camera must be massively distorted/enlarged).
-
-## ENGINE 03 — HUMAN BEHAVIOR ENGINE
-- Micro-expressions, body physics, gait, breathing, weight.
-- If Anime: Exaggerate expressions (enlarged pupils for shock, heavy hatching on face for despair). Do not use realistic pores.
-
-## ENGINE 04 — ACTION & COMBAT ENGINE
-**Stunt Double Protocol (The Anti-Merger Glitch):**
-AI models fail and merge identities when two characters interact closely (e.g., hugging, grappling, punching in close quarters).
-To prevent this, you MUST enforce the Stunt Double Protocol:
-- Never show two distinct faces clearly in a close-quarters physical interaction.
-- Use **Over-The-Shoulder (OTS)** or **Dirty POV** shots. Force the AI to prioritize one character's identity while obscuring the other.
-- Example: *"Over-the-shoulder shot from behind Character A (whose back obscures the frame) looking at Character B taking the punch."*
-
+## 5. OUTPUT STRUCTURE (2-Phase Protocol)
+1. **PHASE 1: Asset & Audio Generation Sheet (MANDATORY)**: Before writing video prompts, identify which characters and locations need consistent references. 
+   - **Image Assets:** Write Image Generation Prompts for each required asset (e.g. @image1, @image2). Use CharSheet rules.
+     - **Environmental Asset Rule**: Any location/stadium/environment asset MUST be a dual-panel 16:9 prompt (Panel 1: Top-down infographic map with cardinal directions, Panel 2: Cinematic view).
+     - **Dedicated Prop Sheets (Anti-Duplication)**: If a character interacts with or uses a specific significant item, weapon, vehicle, or equipment (e.g. a sword, a ping pong ball), it MUST be assigned its own dedicated reference sheet in Phase 1 (generated via PropSheet skill). Never rely on the character sheet to define the item.
+   - **Audio Assets (Vocal Persona):** Write Voice Design Prompts for ElevenLabs for each speaking character (e.g. @audio1, @audio2). Focus on **Vocal Characteristics and Dialect**, NOT lip-syncing. Example: `@audio1 (Kael's Voice): "Deep, raspy young male voice, late 20s, American accent, sounds battle-worn and exhausted but highly determined. Slight grit in the throat."` (MANDATORY: Always append "Wide dynamic range audio, uncompressed HDR mix, zero audio clipping" to ensure high-fidelity voice generation).
+   - **CRITICAL:** You must ALWAYS output this exact **Immutable Global Style Tag** in Phase 1: "90s dark anime OVA style, gritty rotoscoped animation, heavy hatching and crosshatching shadows, muted cinematic color palette, celluloid film texture, crisp cel-shaded linework".
+2. **PHASE 2: Video Orchestration**:
+   - **Summary**: Total clips, total runtime, anime studio style.
+   - **Per-Clip Prompts**: Timestamped (e.g. [0-15s]), fully self-contained. 
+     - **Explicit Tagging Rule**: If a shot is wide and multiple elements are visible, you MUST explicitly mention EVERY tag present in the frame (e.g., "@image1, @image2, and @image5 are visible in @image4"). Do not leave the AI guessing who is in the wide shot.
+     - **Spatial Continuity Rule**: Every clip must strictly obey the layout defined in Phase 1 and instruct the AI how to read it. (e.g., "STRICT SPATIAL CONTINUITY: @image4 is a dual-panel reference. Read the left panel map for layout, but ONLY render the right panel cinematic style").
+     - **Audio Integration**: When a character speaks, link their dialogue to their audio tag AND describe their dynamic emotional flow specifically for that scene. Example: `He speaks in English with a panicked, breathless flow (@audio1): "We can't hold them back!"` (The delivery must adapt dynamically to the action).
+   - **Anime Editing & Sequencing Guide**: Instructions on how to execute the Energy Flash / Speed Line wipes during post-production.
 
 
 ========== theory.md ==========
