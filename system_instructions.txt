@@ -3071,8 +3071,10 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 - If the script requires a character reading a phone/monitor, you MUST split the action into TWO camera shots:
   1. **Reaction Shot (Face):** *"Camera points at character's face illuminated by the glow of the screen. The screen itself is NOT visible to the camera."*
   2. **Insert Shot (Screen):** *"Extreme Close-Up (Macro) of the phone screen ONLY. No human face visible. The screen displays [Text/Image]."*
-- Never attempt an "Over-The-Shoulder" shot where both the face and a highly-detailed screen are simultaneously in sharp focus.
+- **Over-The-Shoulder (OTS) Insert (Allowed):** You CAN use an Over-The-Shoulder shot looking DOWN at the phone/screen. This works because the character's face is turned away (we only see the back of their head/shoulder), allowing the AI to dedicate 100% of its rendering power to the screen without causing a face-screen melting glitch.
+- Never attempt a front-facing shot where both the face and a highly-detailed screen are simultaneously in sharp focus.
 - **Alternative (Obscured Screen):** If the screen MUST be visible in a Medium or Wide shot along with the character, you MUST intentionally obscure the screen using camera physics to prevent AI glitches. Example: *"Heavy Depth of Field, the phone screen is completely out of focus (bokeh), blurred by intense screen glare (bloom), and overexposed. The contents of the screen are impossible to read."*
+
 
 
 
