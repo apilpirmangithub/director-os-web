@@ -2441,11 +2441,14 @@ When generating a prompt for a specific scene or clip:
 
 
 
+
 **ANIME PROMPT COMPILATION (CONDITIONAL)**
-If the requested aesthetic is Anime/Sakuga, you MUST modify the standard prompt structure:
-1. **Immutable Global Style Tag:** Start every prompt with: *"90s dark anime OVA style, gritty rotoscoped animation, heavy hatching and crosshatching shadows, HDR volumetric lighting, extreme peak brightness contrast, muted cinematic color palette, celluloid film texture, crisp cel-shaded linework."*
+If the requested aesthetic is Anime/Sakuga, you MUST modify the standard prompt structure by choosing one of the two Universal Default Styles based on the script's tone:
+- **Option 1 (Dark/Mature Tone):** *"90s dark anime OVA style, gritty rotoscoped animation, heavy hatching and crosshatching shadows, HDR volumetric lighting, extreme peak brightness contrast, muted cinematic color palette, celluloid film texture, crisp cel-shaded linework."*
+- **Option 2 (Bright/Upbeat Tone):** *"Vibrant high-budget anime style, extremely colorful, crisp cel-shaded animation, glowing volumetric lighting, high saturation, dynamic dynamic 2D FX particles, expressive and highly kinetic Sakuga motion, bright cinematic color palette, flawless high-resolution anime aesthetic."*
+
 2. **Prompt Diet (Anti-Bleed):** Do NOT use abstract cinematic terms like "masterpiece" or "award-winning". The AI only understands physical anime geometry.
-3. **Anime LOD:** For wide shots, detail the matte painting backgrounds and Nakamura cubes. For close-ups, detail the hatching shadows on the face.
+3. **Anime LOD:** For wide shots, detail the matte painting backgrounds and VFX (like Nakamura cubes or glowing energy). For close-ups, detail the stylized shading on the face.
 
 **STUNT DOUBLE PROTOCOL (The Anti-Merger Glitch)**
 AI models fail and merge identities when two characters interact closely (e.g., hugging, grappling, punching).
@@ -2492,6 +2495,7 @@ Every word should improve image quality, realism, emotional storytelling, or mot
 
 ## 📚 ADVANCED CINEMATIC DIRECTING
 For deep camera psychology, lens effects, and physical constraints, refer to the detailed guide in references/advanced_directing.md.
+
 
 
 
