@@ -2452,7 +2452,7 @@ Every sentence should add visual information.
 
 **EXPLICIT TAGGING & 6-AXIS SPATIAL CONTINUITY (CRITICAL)**
 - **Explicit Tagging**: In any wide shot or multi-character shot, you MUST explicitly name every character/object in the prompt (e.g. "@image1 and @image2 are visible in @image4"). Do not assume the model knows they are there.
-- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*`n- **6-Panel Character Blueprints**: When dealing with a character reference sheet (like @image1), instruct the video AI how to read it: *"Reference @image1 is a 6-panel character sheet. Read the 3 top panels for facial structure, and the 3 bottom panels for body/wardrobe layout."*
+- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*`n- **6-Panel Character Blueprints**: When dealing with a character reference sheet (like @image1), instruct the video AI how to read it: *"Reference @image1 is a 6-panel character sheet. Read the 3 top panels for facial structure, and the 3 bottom panels for body/wardrobe layout."*`n- **4-Panel Prop Blueprints**: When dealing with an object, weapon, or logo reference (like @image3), explicitly instruct the video AI which side it is looking at. Add an instruction like: *"Reference @image3 is a 4-panel prop sheet. ONLY render the [Front/Back/Left/Right] view texture for the object in this scene."*
 
 **NO ARTIFICIAL BORDERS (Even on Vintage Requests)**  
 Even if the user asks for "vintage", "old film", "retro", "film look", "analog", "35mm", "kodak", "polaroid", or similar aesthetics:  
@@ -2515,57 +2515,55 @@ For deep camera psychology, lens effects, and physical constraints, refer to the
 
 ========== SKILL.md ==========
 ---
-name: "PropSheet â€” Cinematic Object & Weapon Reference Generator v1.0"
+name: "PropSheet — Cinematic Object & Weapon Reference Generator v1.0"
 description: >
-  Generates high-priority, standalone reference sheets for significant props, weapons, tools, 
-  and vehicles. Prevents AI duplication or hallucination by separating objects from character 
+  Generates high-priority, standalone reference sheets for significant props, weapons, tools,
+  vehicles, logos, and symbols. Prevents AI duplication or hallucination by separating objects from character
   sheets.
 ---
 
-# PropSheet â€” Cinematic Object & Weapon Reference Generator v1.0
+# PropSheet — Cinematic Object & Weapon Reference Generator v1.0
 
 ## Purpose
 AI Video models often hallucinate or duplicate objects if a character is holding a complex item in their main character reference sheet (e.g. an AI might render a Viking holding two axes if the axe was baked into his character sheet). 
 
-To prevent this, **every significant prop MUST have its own standalone reference sheet**.
+To prevent this, **every significant prop, weapon, vehicle, logo, or symbol MUST have its own standalone reference sheet**.
 
 ---
 
 ## Core Philosophy (CRITICAL PRIORITY)
 
 - **Isolation Principle**: The prop MUST be shown alone, completely isolated from any human characters. Do not show anyone holding it.
-- **Museum Display Layout**: Props must be displayed in a clean, multi-angle "museum" layout or against a flat neutral background to provide the AI with perfect geometry reference.
+- **4-Panel Blueprint Layout**: Props must be displayed in a clean 2x2 grid representing 4 precise angles to provide the AI with perfect 3D geometry reference.
 - **No Floating Hands**: Never include hands, arms, or people in the prop sheet.
 
 ---
 
-## The Master PropSheet Layout
+## The Master 4-Panel Prop Blueprint
 
-Every output prompt MUST follow this exact structural template depending on the object size:
+Every output prompt MUST follow this exact structural template, regardless of whether it is a small weapon, a large vehicle, or a graphic logo:
 
-### Small to Medium Objects (Weapons, Gadgets, Books, Balls)
-> **[Aesthetic/Style Tags]**. A comprehensive object design reference sheet of a **[Detailed Description of the Prop]**. The sheet includes multiple views: full side profile, top-down view, and extreme macro close-up revealing **[Material Textures/Engravings]**. The object is displayed alone. Flat neutral grey background, soft dramatic studio lighting. --ar 16:9
+> **[Aesthetic/Style Tags]**. A comprehensive 4-panel object design reference sheet of a **[Detailed Description of the Prop/Logo/Vehicle]**. The image is split into a 2x2 grid on a flat neutral grey background. Panel 1 (Top-Left): Perfect Front Elevation view showing **[Front Details]**. Panel 2 (Top-Right): Perfect Back Elevation view showing **[Back Details]**. Panel 3 (Bottom-Left): Perfect 90-degree Left Side Profile showing **[Left Details]**. Panel 4 (Bottom-Right): Perfect 90-degree Right Side Profile showing **[Right Details]**. The object is displayed completely alone. Soft dramatic studio lighting, high resolution, precise structural consistency across all 4 panels. --ar 16:9
 
-### Large Objects (Vehicles, Mechs, Spaceships)
-> **[Aesthetic/Style Tags]**. A comprehensive vehicle design reference sheet of a **[Detailed Description of the Vehicle]**. The sheet includes multiple views: front elevation, side profile, isometric angle, and extreme close-up of **[Engine/Tires/Cockpit]**. Displayed alone with no driver or pilot. Flat neutral grey background, soft dramatic studio lighting. --ar 16:9
+---
 
 ## Universal Tri-Sheet System (MANDATORY DEFAULT)
 For EVERY prop or vehicle sheet you generate, you MUST ALWAYS output **3 distinct PropSheet Prompts** and explain how the user should use them:
-1. **[AI ORIGINAL]**: `... [standard propsheet prompt] ...` (Explain: "Use this to generate the prop entirely from scratch").
-2. **[STRUCTURE LOCK]**: `... [standard propsheet prompt] ...` (Explain: "Attach your sketch/photo to this prompt to use it as a base shape, while the AI redesigns the cinematic details").
-3. **[FULL CUSTOM LOCK]**: `... [standard propsheet prompt] ...` (Explain: "Attach your sketch/photo to this prompt with maximum weight to exactly replicate its shape, color, and design").
+1. **[AI ORIGINAL]**: ... [standard propsheet prompt] ... (Explain: "Use this to generate the prop entirely from scratch").
+2. **[STRUCTURE LOCK]**: ... [standard propsheet prompt] ... (Explain: "Attach your sketch/photo to this prompt to use it as a base shape, while the AI redesigns the cinematic details").
+3. **[FULL CUSTOM LOCK]**: ... [standard propsheet prompt] ... (Explain: "Attach your sketch/photo to this prompt with maximum weight to exactly replicate its shape, color, and design").
 
 ---
 
 ## Step-by-Step Prompt Generation
 
-When Orchestrator Phase 1 calls for a prop (e.g. "The Viking's Battleaxe" or "The MOCHI Ping Pong Ball"), follow these steps:
+When Orchestrator Phase 1 calls for a prop (e.g. "The Viking's Battleaxe", "The Umbrella Corp Logo", or "A Cyberpunk Motorcycle"), follow these steps:
 
 ### 1. Establish the Aesthetic
-Ensure the aesthetic matches the main film (e.g., `Cinematic live-action photography`, `Bright modern shonen anime`).
+Ensure the aesthetic matches the main film (e.g., Cinematic live-action photography, Bright modern shonen anime, Flat vector graphic).
 
-### 2. Define the Material
-Is it `scarred rusted iron with a splintered oak handle`? Is it `sleek carbon fiber with glowing blue LED accents`? Texture is everything.
+### 2. Define the Material & Details
+Is it scarred rusted iron with a splintered oak handle? Is it sleek carbon fiber? Is it a glowing neon hologram logo? Texture is everything. Describe what is visible on the front, back, left, and right.
 
 ### 3. Output the Prompt
 Deliver the final, ready-to-copy prompt using the Master Template above. 
@@ -2573,7 +2571,7 @@ Deliver the final, ready-to-copy prompt using the Master Template above.
 ---
 
 ## Integration with Orchestrators
-This skill is a **Dependency** for `videoorchestra` and `anime_orchestra`. When Phase 1 identifies a significant item being used in the script, it MUST generate a `@imageX` reference using this `PropSheet` logic.
+This skill is a **Dependency** for ideoorchestra and nime_orchestra. When Phase 1 identifies a significant item being used in the script, it MUST generate a @imageX reference using this PropSheet logic.
 
 
 ========== SKILL.md ==========
@@ -3060,7 +3058,7 @@ Do not use abstract cinematic terms like "masterpiece", "emotional depth", or "a
 ## 4. EYELINE, GEOGRAPHY & EXPLICIT TAGGING
 Even in anime, spatial continuity matters.
 - **Explicit Tagging**: In any wide shot or multi-character shot, you MUST explicitly name every character/object in the prompt (e.g. "@image1 and @image2 are visible in @image4"). Do not assume the model knows they are there.
-- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*`n- **6-Panel Character Blueprints**: When dealing with a character reference sheet (like @image1), instruct the video AI how to read it: *"Reference @image1 is a 6-panel character sheet. Read the 3 top panels for facial structure, and the 3 bottom panels for body/wardrobe layout."*
+- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*`n- **6-Panel Character Blueprints**: When dealing with a character reference sheet (like @image1), instruct the video AI how to read it: *"Reference @image1 is a 6-panel character sheet. Read the 3 top panels for facial structure, and the 3 bottom panels for body/wardrobe layout."*`n- **4-Panel Prop Blueprints**: When dealing with an object, weapon, or logo reference (like @image3), explicitly instruct the video AI which side it is looking at. Add an instruction like: *"Reference @image3 is a 4-panel prop sheet. ONLY render the [Front/Back/Left/Right] view texture for the object in this scene."*
 - Always specify character facing directions (e.g., "facing screen-left").
 - Maintain the 180-degree rule across cuts.
 
