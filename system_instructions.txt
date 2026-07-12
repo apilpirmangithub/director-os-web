@@ -2408,7 +2408,8 @@ When user requests a film:
      - **Editing & Sequencing Guide** (separate section after all prompts):
        - How to stitch the clips (recommended order, transitions, crossfades).
        - Which visual elements must match across clips (lighting, color grade, wardrobe, environment, character details) — so the user can check/adjust during editing.
-       - Any post-production notes (sound design, music sync, etc.).
+                - Any post-production notes (sound design, music sync, etc.).
+         - **Audio Editing Guide for (V.O.) and (O.S.):** If a clip contains Voice-Over or Off-Screen dialogue, explicitly instruct the user: *"RENDER CLIP INI TANPA GERAKAN MULUT (Bungkam). Sinkronisasi suara (O.S.) atau (V.O.) ditaruh di layer audio terpisah di aplikasi editing Anda (CapCut/Premiere)."*
 
 ## Best Practices
 - **Each prompt is independent** â€” never assume the video model can "see" or remember previous clips. All consistency must come from within the prompt itself (strong descriptions + reference images).
@@ -2457,6 +2458,7 @@ VideoOrchestra (THIS SKILL — multi-clip orchestration + sequencing)
     ↓
 AI Video Generation → Editing & Sequencing Guide → Final Film
 ```
+
 
 
 
@@ -2645,6 +2647,13 @@ When breaking down a script for AI Video generation, you MUST calculate the dens
 - Do not write dense paragraphs of rapid-fire actions for a short 5-second clip (the AI will render it as a hyper-speed glitch).
 - Do not write an empty 15-second clip with only one micro-action (the AI will render it as slow-motion or freeze).
 
+
+### ADVANCED AUDIO ORCHESTRATION (Voice & Dialogue)
+Film is an audio-visual medium. Do not limit dialogue to "on-camera talking heads". You MUST use advanced audio script formatting to give the video orchestrator maximum cinematic flexibility:
+1. **(V.O.) Voice Over:** Use this for internal monologues, narrator voices, or thoughts. E.g., JOHN (V.O.)
+2. **(O.S.) Off-Screen:** Use this when a character is physically in the scene (or on the phone), but the camera is looking at something or someone else. This is critical for "Audio Bleed" or "Bocor". E.g., SARAH (O.S.)
+3. **Pre-lap / L-Cut (Cross-Dialogue):** When writing fast-paced trailers or tense sequences, allow dialogue from Scene 2 to begin playing over the visuals of the end of Scene 1. Use the tag [PRE-LAP AUDIO: Scene X dialogue begins here].
+
 ### CONTINUITY & TIME-AWARENESS (Temporal Logic)
 In film, characters undergo physical transformations, and time passes. You MUST track both.
 1. **Time Jumps & Wardrobe (Minor Changes):** If the story jumps to a new day, or a character takes a shower/goes to sleep, you MUST explicitly log a wardrobe/grooming change. 
@@ -2653,6 +2662,7 @@ In film, characters undergo physical transformations, and time passes. You MUST 
 2. **Permanent Damage (Major State Change):** If a character undergoes a major permanent physical change (e.g., getting a permanent scar, losing a limb, getting completely covered in mud for the rest of the film), you MUST explicitly log this.
    - Tag Format: [STATE CHANGE: Character A now has a bloody gash on his cheek. Use Damaged Reference from now on.]
    - This tag signals the production pipeline to generate a brand new physical reference sheet variation.
+
 
 
 
@@ -3054,6 +3064,17 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 **CRITICAL:** AI video models often fail to render realistic walking, causing characters to "slide" or "moonwalk" without weight.
 - For ANY walking, running, or movement shot, you MUST append gravity physics instructions.
 - Example: *"Feet firmly planting on the ground, realistic weight transfer, heavy gravity, realistic gait, body responds to weight."*
+
+
+### E. The "Insert Shot" Protocol (Anti-Screen Glitch)
+**CRITICAL:** AI Video models CANNOT accurately render a character's face AND a legible phone/computer screen in the same frame (it will melt the screen or paste the UI onto the face).
+- If the script requires a character reading a phone/monitor, you MUST split the action into TWO camera shots:
+  1. **Reaction Shot (Face):** *"Camera points at character's face illuminated by the glow of the screen. The screen itself is NOT visible to the camera."*
+  2. **Insert Shot (Screen):** *"Extreme Close-Up (Macro) of the phone screen ONLY. No human face visible. The screen displays [Text/Image]."*
+- Never attempt an "Over-The-Shoulder" shot where both the face and a highly-detailed screen are simultaneously in sharp focus.
+- **Alternative (Obscured Screen):** If the screen MUST be visible in a Medium or Wide shot along with the character, you MUST intentionally obscure the screen using camera physics to prevent AI glitches. Example: *"Heavy Depth of Field, the phone screen is completely out of focus (bokeh), blurred by intense screen glare (bloom), and overexposed. The contents of the screen are impossible to read."*
+
+
 
 
 
