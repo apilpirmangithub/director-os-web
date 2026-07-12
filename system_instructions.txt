@@ -2797,12 +2797,14 @@ When user requests a film:
    - Use cineskill engines for cinematic quality.
    - Keep each prompt under model limits.
 
-4. **Reference Protocol**:
+5. **Reference Protocol (MANDATORY MAPPING LOGIC)**:
    - For each clip, **only include the reference images that are actually used** in that specific scene.
-   - **Re-number them sequentially** starting from @image1, @image2... (no gaps). Example: If globally there are @image1, @image2, @image4 but this clip doesn't use @image1, then in this prompt B becomes @image1 and C becomes @image2.
+   - **Re-number them sequentially** starting from @image1, @image2... (no gaps). 
+   - **CRITICAL PRE-FLIGHT CHECK**: Before you write ANY video prompt in Phase 2, you MUST output an explicit mapping logic block on its own line to force yourself to re-number correctly.
+     *Format:* `[MAPPING LOGIC: Global @imageX (Item/Person) -> Local @image1 | Global @imageY (Item/Person) -> Local @image2]`
+     *Example:* If the global Phase 1 generated @image3 (Viking) and @image5 (Forest), you MUST write: `[MAPPING LOGIC: Global @image3 (Viking) -> Local @image1 | Global @image5 (Forest) -> Local @image2]` before writing the prompt.
+   - Then, inside the prompt itself, strictly use the new Local numbering (@image1, @image2).
    - Mention each used reference **exactly once**, early in the identity section of that prompt.
-   - Do **not** carry over global numbering with skipped numbers into individual prompts.
-   - For consistency across clips: Repeat key descriptive text explicitly instead of saying "same as previous". Reference images (re-numbered per prompt) + repeated descriptions are the tools for consistency.
 
 6. **Output Structure (2-Phase Protocol)**:
    - **PHASE 1: Asset & Audio Generation Sheet (MANDATORY)**: Before writing video prompts, identify which characters and locations need consistent references. 
@@ -3356,10 +3358,14 @@ To connect multiple 15-second AI generations into a continuous anime sequence, u
 - Incorporate the styles and rules from `anime_cinskill` and `anime_promptskill`.
 - Explicitly repeat character clothing, lighting, and environmental details in every clip where consistency is needed.
 
-## 4. REFERENCE PROTOCOL (Dynamic Re-numbering)
-- Mention each reference **exactly once**.
-- Only include reference images actually used in that specific scene.
-- **Re-number them sequentially** starting from @image1 for each prompt (no gaps). If global references are @image1 (Hero), @image2 (Villain), @image3 (City) and a clip only uses Hero and City, the prompt must use @image1 (Hero) and @image2 (City).
+## 4. REFERENCE PROTOCOL (MANDATORY MAPPING LOGIC)
+- For each clip, **only include the reference images that are actually used** in that specific scene.
+- **Re-number them sequentially** starting from @image1, @image2... (no gaps). 
+- **CRITICAL PRE-FLIGHT CHECK**: Before you write ANY video prompt in Phase 2, you MUST output an explicit mapping logic block on its own line to force yourself to re-number correctly.
+  *Format:* `[MAPPING LOGIC: Global @imageX (Item/Person) -> Local @image1 | Global @imageY (Item/Person) -> Local @image2]`
+  *Example:* If the global Phase 1 generated @image1 (Hero) and @image3 (City), you MUST write: `[MAPPING LOGIC: Global @image1 (Hero) -> Local @image1 | Global @image3 (City) -> Local @image2]` before writing the prompt.
+- Then, inside the prompt itself, strictly use the new Local numbering (@image1, @image2).
+- Mention each used reference **exactly once**.
 
 ## 5. OUTPUT STRUCTURE (2-Phase Protocol)
 1. **PHASE 1: Asset & Audio Generation Sheet (MANDATORY)**: Before writing video prompts, identify which characters and locations need consistent references. 
