@@ -2452,7 +2452,7 @@ Every sentence should add visual information.
 
 **EXPLICIT TAGGING & 6-AXIS SPATIAL CONTINUITY (CRITICAL)**
 - **Explicit Tagging**: In any wide shot or multi-character shot, you MUST explicitly name every character/object in the prompt (e.g. "@image1 and @image2 are visible in @image4"). Do not assume the model knows they are there.
-- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*`n- **6-Panel Character Blueprints**: When dealing with a character reference sheet (like @image1), instruct the video AI how to read it: *"Reference @image1 is a 6-panel character sheet. Read the 3 top panels for facial structure, and the 3 bottom panels for body/wardrobe layout."*`n- **4-Panel Prop Blueprints**: When dealing with an object, weapon, or logo reference (like @image3), explicitly instruct the video AI which side it is looking at. Add an instruction like: *"Reference @image3 is a 4-panel prop sheet. ONLY render the [Front/Back/Left/Right] view texture for the object in this scene."*
+- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*`n- **6-Panel Character Blueprints**: When dealing with a character reference sheet (like @image1), instruct the video AI how to read its typography labels: *"Reference @image1 is a 6-panel character sheet with text labels. Read the 3 top panels (labeled EXTREME CLOSE UP, LEFT PROFILE, RIGHT PROFILE) for facial structure, and the 3 bottom panels (MEDIUM SHOT, FRONT FULL BODY, BACK FULL BODY) for body/wardrobe layout."*`n- **4-Panel Prop Blueprints**: When dealing with an object, weapon, or logo reference (like @image3), explicitly instruct the video AI which side it is looking at. Add an instruction like: *"Reference @image3 is a 4-panel prop sheet. ONLY render the [Front/Back/Left/Right] view texture for the object in this scene."*
 
 **NO ARTIFICIAL BORDERS (Even on Vintage Requests)**  
 Even if the user asks for "vintage", "old film", "retro", "film look", "analog", "35mm", "kodak", "polaroid", or similar aesthetics:  
@@ -3058,7 +3058,7 @@ Do not use abstract cinematic terms like "masterpiece", "emotional depth", or "a
 ## 4. EYELINE, GEOGRAPHY & EXPLICIT TAGGING
 Even in anime, spatial continuity matters.
 - **Explicit Tagging**: In any wide shot or multi-character shot, you MUST explicitly name every character/object in the prompt (e.g. "@image1 and @image2 are visible in @image4"). Do not assume the model knows they are there.
-- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*`n- **6-Panel Character Blueprints**: When dealing with a character reference sheet (like @image1), instruct the video AI how to read it: *"Reference @image1 is a 6-panel character sheet. Read the 3 top panels for facial structure, and the 3 bottom panels for body/wardrobe layout."*`n- **4-Panel Prop Blueprints**: When dealing with an object, weapon, or logo reference (like @image3), explicitly instruct the video AI which side it is looking at. Add an instruction like: *"Reference @image3 is a 4-panel prop sheet. ONLY render the [Front/Back/Left/Right] view texture for the object in this scene."*
+- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*`n- **6-Panel Character Blueprints**: When dealing with a character reference sheet (like @image1), instruct the video AI how to read its typography labels: *"Reference @image1 is a 6-panel character sheet with text labels. Read the 3 top panels (labeled EXTREME CLOSE UP, LEFT PROFILE, RIGHT PROFILE) for facial structure, and the 3 bottom panels (MEDIUM SHOT, FRONT FULL BODY, BACK FULL BODY) for body/wardrobe layout."*`n- **4-Panel Prop Blueprints**: When dealing with an object, weapon, or logo reference (like @image3), explicitly instruct the video AI which side it is looking at. Add an instruction like: *"Reference @image3 is a 4-panel prop sheet. ONLY render the [Front/Back/Left/Right] view texture for the object in this scene."*
 - Always specify character facing directions (e.g., "facing screen-left").
 - Maintain the 180-degree rule across cuts.
 
@@ -3099,30 +3099,33 @@ Every sheet must look like a **real photograph** of a real person — never illu
 ## Universal Tri-Sheet System (MANDATORY DEFAULT)
 For EVERY character sheet you generate, you MUST ALWAYS output **3 distinct CharSheet Prompts** and explain how the user should use them:
 1. **[AI ORIGINAL]**: ... [standard charsheet prompt] ... (Explain: "Use this to generate the character entirely from scratch").
-2. **[FACE LOCK]**: ... [standard charsheet prompt] ... (Explain: "Attach your photo to this prompt to lock your face, while the AI designs the costume").
-3. **[FULL CUSTOM LOCK]**: ... [standard charsheet prompt] ... (Explain: "Attach your photo to this prompt with maximum weight to replicate your exact face and clothing").
+2. **[FACE LOCK]**: "Please use the attached image as a character reference to lock the face. [standard charsheet prompt]" (Explain: "Attach your photo to this prompt to lock your face, while the AI designs the costume").
+3. **[FULL CUSTOM LOCK]**: "Please use the attached image as a character reference to lock the exact face and clothing. [standard charsheet prompt]" (Explain: "Attach your photo to this prompt with maximum weight to replicate your exact face and clothing").
 
 ---
 
 ## Mandatory Views (6-Panel Blueprint Layout)
 
-The character sheet MUST contain exactly these 6 views, arranged in a clean 2x3 or 3x2 grid on a **PURE SOLID WHITE BACKGROUND**:
+The character sheet MUST contain exactly these 6 views, arranged in a clean 2x3 or 3x2 grid on a **PURE SOLID WHITE BACKGROUND**.
+**CRITICAL RULE:** The design of the character MUST be perfectly synchronized across all 6 panels. The same face, same hair length, same clothing wrinkles, same proportions.
+
+Every panel MUST contain a typography text label written inside the image:
 
 ### Row 1 — Face Detail (3 panels)
 
 | Panel | View | Description |
 |-------|------|-------------|
-| 1 | **Extreme Close-Up (Front)** | Eyes, nose, lips, skin pores, individual eyebrow hairs. Neutral expression. Sharp focus on eyes. |
-| 2 | **Tampak Kiri (Left Profile)** | Perfect 90° profile view of the left side of the face and head. Nose bridge, ear shape, jawline from the left. |
-| 3 | **Tampak Kanan (Right Profile)** | Perfect 90° profile view of the right side of the face and head. Asymmetrical details visible. |
+| 1 | **Extreme Close-Up (Front)** | Eyes, nose, lips, skin pores. Labeled with typography: **"EXTREME CLOSE UP"** |
+| 2 | **Tampak Kiri (Left Profile)** | Perfect 90° profile view of the left side. Labeled with typography: **"LEFT PROFILE"** |
+| 3 | **Tampak Kanan (Right Profile)** | Perfect 90° profile view of the right side. Labeled with typography: **"RIGHT PROFILE"** |
 
 ### Row 2 — Body & Wardrobe (3 panels)
 
 | Panel | View | Description |
 |-------|------|-------------|
-| 4 | **Medium Shot (Front)** | Waist-up, facing camera directly. Full clothing visible from waist up. Arm position relaxed. |
-| 5 | **Full Body Depan (Front)** | Entire body from head to toe facing camera. **MUST include typographic text annotations indicating the character's exact height (e.g., "HEIGHT: 185CM").** |
-| 6 | **Full Body Belakang (Back)** | Entire body from head to toe, back facing camera. Shows cape, weapon strapped to back, hair falling down the back, and shoe heels. |
+| 4 | **Medium Shot (Front)** | Waist-up. Labeled with typography: **"MEDIUM SHOT"** |
+| 5 | **Full Body Depan (Front)** | Entire body from head to toe facing camera. Labeled with typography: **"FRONT FULL BODY"** and **"HEIGHT: [X]CM"** |
+| 6 | **Full Body Belakang (Back)** | Entire body back facing camera. Labeled with typography: **"BACK FULL BODY"** |
 
 ---
 
@@ -3130,7 +3133,7 @@ The character sheet MUST contain exactly these 6 views, arranged in a clean 2x3 
 
 Every output prompt MUST follow this exact structural template:
 
-> **[Aesthetic/Style Tags]**. A 6-panel casting character reference sheet on a **pure solid white background**. The image is split into 6 equal grid panels. Panel 1: Extreme Close-Up Face Front showing **[Facial Details/Pores/Eye Color]**. Panel 2: Perfect 90-degree Left Side Profile Face showing **[Left details]**. Panel 3: Perfect 90-degree Right Side Profile Face showing **[Right details]**. Panel 4: Medium Shot Waist-Up Front showing **[Upper Clothing]**. Panel 5: Full Body Front showing **[Full Wardrobe]**, with clear typography text annotations reading **"HEIGHT: [X]CM"**. Panel 6: Full Body Back showing **[Back Details/Weapons/Hair]**. The character is **[Age, Ethnicity, Body Type, Posture, Clothing Details]**. Photorealistic, shot on 85mm lens, flat even studio lighting, high resolution, absolutely consistent identity across all 6 panels. --ar 16:9
+> **[Aesthetic/Style Tags]**. A 6-panel casting character reference sheet on a **pure solid white background**. The image is split into 6 equal grid panels. The character's design and identity are perfectly synchronized across all panels. Panel 1: Extreme Close-Up Face Front showing **[Facial Details/Pores/Eye Color]**, with typography text reading **"EXTREME CLOSE UP"**. Panel 2: Perfect 90-degree Left Side Profile Face showing **[Left details]**, with typography text reading **"LEFT PROFILE"**. Panel 3: Perfect 90-degree Right Side Profile Face showing **[Right details]**, with typography text reading **"RIGHT PROFILE"**. Panel 4: Medium Shot Waist-Up Front showing **[Upper Clothing]**, with typography text reading **"MEDIUM SHOT"**. Panel 5: Full Body Front showing **[Full Wardrobe]**, with clear typography text annotations reading **"FRONT FULL BODY"** and **"HEIGHT: [X]CM"**. Panel 6: Full Body Back showing **[Back Details/Weapons/Hair]**, with typography text reading **"BACK FULL BODY"**. The character is **[Age, Ethnicity, Body Type, Posture, Clothing Details]**. Photorealistic, shot on 85mm lens, flat even studio lighting, high resolution, absolutely consistent identity. --ar 16:9
 
 ---
 
