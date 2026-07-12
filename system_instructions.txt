@@ -2800,18 +2800,18 @@ When dealing with references, instruct the AI how to read them:
 
 ========== SKILL.md ==========
 ---
-name: "CharSheet — Cinematic Character Reference Sheet Generator"
+name: "CharSheet â€” Cinematic Character Reference Sheet Generator"
 description: >
   Generates photorealistic character reference sheet prompts for AI image generation models.
   Produces multi-view sheets with extreme close-up, left/right profiles, medium shot,
   and full body (front/back) with text annotations and white background. Designed to feed directly
   into CinSkill and PromptSkill as @image references for identity-locked AI video generation.
   Ensures absolute visual consistency across all views: same person, same clothing, same lighting,
-  same skin texture, same proportions. Supports photorealistic human characters only — grounded
+  same skin texture, same proportions. Supports photorealistic human characters only â€” grounded
   realism mandatory, no illustration, no stylization unless explicitly requested as anime.
 ---
 
-# CharSheet — Cinematic Character Reference Sheet Generator v1.0
+# CharSheet â€” Cinematic Character Reference Sheet Generator v1.0
 
 ## Purpose
 
@@ -2821,14 +2821,14 @@ Generate **multi-view character reference sheets** optimized for AI video produc
 
 - **Aesthetic Inheritance**: The CharSheet MUST perfectly inherit the visual aesthetic of the main film. If the film is "Gritty 90s Anime", the sheet must be Gritty 90s Anime. If it is "Cinematic HDR Live-Action", the sheet must be Cinematic HDR Live-Action. Do not force generic "professional photoshoot" styles if it contradicts the film's intended aesthetic.
 - The character sheet is **evidence**, not art. It documents a real person/character from multiple angles.
-- Absolute consistency across all views — the viewer must believe all images are of the same physical person captured in the same session.
+- Absolute consistency across all views â€” the viewer must believe all images are of the same physical person captured in the same session.
 - **ZERO tolerance** for AI artifacts: plastic skin, symmetrical face, wax texture, dead eyes, missing pores, smooth hair blobs, melted fingers, or inconsistent proportions.
 
 ## Universal Tri-Sheet System (MANDATORY DEFAULT)
 For EVERY character sheet you generate, you MUST ALWAYS output **3 distinct CharSheet Prompts** and explain how the user should use them:
-1. **[AI ORIGINAL]**: ... [standard charsheet prompt] ... (Explain: "Use this to generate the character entirely from scratch").
-2. **[FACE LOCK]**: "Please use the attached image as a character reference to lock the face. Preserve exact facial structure, bone structure, eye shape, and skin texture fidelity with 100% fidelity. Do not airbrush or beautify. [standard charsheet prompt]" (Explain: "Attach your photo to this prompt to lock your face, while the AI designs the costume").
-3. **[FULL CUSTOM LOCK]**: "Please use the attached image as a character reference to lock the exact face and clothing. Preserve exact facial structure, skin texture fidelity, and clothing details with 100% fidelity. Do not airbrush or beautify. [standard charsheet prompt]" (Explain: "Attach your photo to this prompt with maximum weight to replicate your exact face and clothing").
+1. **[AI ORIGINAL]**: (Explain: "Use this to generate the character entirely from scratch"). Output the prompt in a clean code block.
+2. **[FACE LOCK]**: (Explain: "Attach your photo to this prompt using --cref (Midjourney) or Image-to-Image to lock your face, while the AI designs the costume"). Output the prompt in a clean code block. DO NOT include polite conversational text like "Please use the attached image" inside the prompt itself. The prompt must be pure copy-paste tags.
+3. **[FULL CUSTOM LOCK]**: (Explain: "Attach your photo to this prompt with maximum weight to replicate your exact face and clothing"). Output the prompt in a clean code block. DO NOT include conversational text inside the prompt.
 
 ---
 
@@ -2839,15 +2839,15 @@ The character sheet MUST contain exactly these 6 views, arranged in a clean 2x3 
 
 Every panel MUST contain a typography text label written inside the image:
 
-### Row 1 — Face Detail (3 panels)
+### Row 1 â€” Face Detail (3 panels)
 
 | Panel | View | Description |
 |-------|------|-------------|
 | 1 | **Extreme Close-Up (Front)** | Eyes, nose, lips, skin pores. Labeled with typography: **"EXTREME CLOSE UP"** |
-| 2 | **Tampak Kiri (Left Profile)** | Perfect 90° profile view of the left side. Labeled with typography: **"LEFT PROFILE"** |
-| 3 | **Tampak Kanan (Right Profile)** | Perfect 90° profile view of the right side. Labeled with typography: **"RIGHT PROFILE"** |
+| 2 | **Tampak Kiri (Left Profile)** | Perfect 90Â° profile view of the left side. Labeled with typography: **"LEFT PROFILE"** |
+| 3 | **Tampak Kanan (Right Profile)** | Perfect 90Â° profile view of the right side. Labeled with typography: **"RIGHT PROFILE"** |
 
-### Row 2 — Body & Wardrobe (3 panels)
+### Row 2 â€” Body & Wardrobe (3 panels)
 
 | Panel | View | Description |
 |-------|------|-------------|
