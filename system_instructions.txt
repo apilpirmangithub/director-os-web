@@ -2473,6 +2473,14 @@ When generating a prompt for a specific scene or clip:
 - Always mention each used reference **exactly once**, early in the identity/character section.  
 - This keeps every prompt clean and avoids confusing the model with skipped numbers.
 
+
+**MULTI-REFERENCE PROTOCOL & IDENTITY LOCK**
+- When the user provides multiple reference images (e.g., Image 1 for Body, Image 2 for Face), you MUST explicitly assign roles in the prompt.
+- Example: *"Using the exact person across all provided reference images. Take the face, facial structure, skin texture, and eye shape from @image2. Take the full body proportions, clothing, and pose from @image1."*
+- **Anatomy & Lighting:** Always add an instruction to recalculate lighting based on the new environment/pose: *"Completely recalculate all lighting, shadows, and reflections to match the new environment. Ensure perfect proportional consistency and a seamless natural skin transition between the face and neck."*
+- **Anti-AI Filter:** Ensure the prompt enforces the aesthetic of the film (e.g. Gritty, Cinematic HDR) and explicitly bans plastic, waxy, or beautified skin.
+
+
 **DYNAMIC BUT STRICT IDENTITY LOCK**
 - The character's visual identity, wardrobe, clothing, and accessories MUST strictly and exactly match the reference image provided, UNLESS the user explicitly asks for a change (e.g., "change her shirt to red").
 - **Crucial Balance**: While the identity and wardrobe are strictly locked, the character MUST NOT appear stiff, frozen, or robotic. The character must remain fully dynamic, fluidly synchronized with the scene's action, physically interacting with the environment, and exhibiting natural human micro-behavior (breathing, blinking, weight shifts) without losing the reference identity.
@@ -2511,6 +2519,7 @@ Every word should improve image quality, realism, emotional storytelling, or mot
 
 ## 📚 ADVANCED CINEMATIC DIRECTING
 For deep camera psychology, lens effects, and physical constraints, refer to the detailed guide in references/advanced_directing.md.
+
 
 
 ========== SKILL.md ==========
@@ -3083,24 +3092,20 @@ description: >
 
 ## Purpose
 
-Generate **photorealistic multi-view character reference sheets** optimized for AI video production pipelines. These sheets become the @image references that CinSkill and PromptSkill use for identity-locked video generation.
-
-Every sheet must look like a **real photograph** of a real person — never illustrated, never stylized, never AI-looking.
-
----
+Generate **multi-view character reference sheets** optimized for AI video production pipelines. These sheets become the @image references that CinSkill and PromptSkill use for identity-locked video generation.
 
 ## Core Philosophy
 
-- The character sheet is **evidence**, not art. It documents a real person from multiple angles.
-- Every view must feel like a **professional casting photo** or **wardrobe department reference**.
-- Absolute consistency across all views — the viewer must believe all images are of the same physical person photographed in the same session.
+- **Aesthetic Inheritance**: The CharSheet MUST perfectly inherit the visual aesthetic of the main film. If the film is "Gritty 90s Anime", the sheet must be Gritty 90s Anime. If it is "Cinematic HDR Live-Action", the sheet must be Cinematic HDR Live-Action. Do not force generic "professional photoshoot" styles if it contradicts the film's intended aesthetic.
+- The character sheet is **evidence**, not art. It documents a real person/character from multiple angles.
+- Absolute consistency across all views — the viewer must believe all images are of the same physical person captured in the same session.
 - **ZERO tolerance** for AI artifacts: plastic skin, symmetrical face, wax texture, dead eyes, missing pores, smooth hair blobs, melted fingers, or inconsistent proportions.
 
 ## Universal Tri-Sheet System (MANDATORY DEFAULT)
 For EVERY character sheet you generate, you MUST ALWAYS output **3 distinct CharSheet Prompts** and explain how the user should use them:
 1. **[AI ORIGINAL]**: ... [standard charsheet prompt] ... (Explain: "Use this to generate the character entirely from scratch").
-2. **[FACE LOCK]**: "Please use the attached image as a character reference to lock the face. [standard charsheet prompt]" (Explain: "Attach your photo to this prompt to lock your face, while the AI designs the costume").
-3. **[FULL CUSTOM LOCK]**: "Please use the attached image as a character reference to lock the exact face and clothing. [standard charsheet prompt]" (Explain: "Attach your photo to this prompt with maximum weight to replicate your exact face and clothing").
+2. **[FACE LOCK]**: "Please use the attached image as a character reference to lock the face. Preserve exact facial structure, bone structure, eye shape, and skin texture fidelity with 100% fidelity. Do not airbrush or beautify. [standard charsheet prompt]" (Explain: "Attach your photo to this prompt to lock your face, while the AI designs the costume").
+3. **[FULL CUSTOM LOCK]**: "Please use the attached image as a character reference to lock the exact face and clothing. Preserve exact facial structure, skin texture fidelity, and clothing details with 100% fidelity. Do not airbrush or beautify. [standard charsheet prompt]" (Explain: "Attach your photo to this prompt with maximum weight to replicate your exact face and clothing").
 
 ---
 
@@ -3133,25 +3138,7 @@ Every panel MUST contain a typography text label written inside the image:
 
 Every output prompt MUST follow this exact structural template:
 
-> **[Aesthetic/Style Tags]**. A 6-panel casting character reference sheet on a **pure solid white background**. The image is split into 6 equal grid panels. The character's design and identity are perfectly synchronized across all panels. Panel 1: Extreme Close-Up Face Front showing **[Facial Details/Pores/Eye Color]**, with typography text reading **"EXTREME CLOSE UP"**. Panel 2: Perfect 90-degree Left Side Profile Face showing **[Left details]**, with typography text reading **"LEFT PROFILE"**. Panel 3: Perfect 90-degree Right Side Profile Face showing **[Right details]**, with typography text reading **"RIGHT PROFILE"**. Panel 4: Medium Shot Waist-Up Front showing **[Upper Clothing]**, with typography text reading **"MEDIUM SHOT"**. Panel 5: Full Body Front showing **[Full Wardrobe]**, with clear typography text annotations reading **"FRONT FULL BODY"** and **"HEIGHT: [X]CM"**. Panel 6: Full Body Back showing **[Back Details/Weapons/Hair]**, with typography text reading **"BACK FULL BODY"**. The character is **[Age, Ethnicity, Body Type, Posture, Clothing Details]**. Photorealistic, shot on 85mm lens, flat even studio lighting, high resolution, absolutely consistent identity. --ar 16:9
-
----
-
-## Step-by-Step Prompt Generation
-
-When the user asks you to design a character (e.g., "A grizzled space marine" or "A 1920s jazz singer"), follow these steps:
-
-### 1. Establish the Aesthetic & Identity
-Define the demographic (age, ethnicity, body type) and the photographic style (e.g., Cinematic Arri Alexa, Kodak Portra 400, Gritty 90s OVA).
-
-### 2. Detail the Face (Panels 1, 2, 3)
-Describe the eye color, skin texture, wrinkles, scars, and hair. Ensure the left and right profiles are defined.
-
-### 3. Detail the Wardrobe & Height (Panels 4, 5, 6)
-Determine the character's exact height in CM. Describe the clothing materials (leather, silk, rusted metal, etc.) and what is visible on the back (Panel 6). 
-
-### 4. Output the Prompt
-Deliver the final, ready-to-copy Midjourney/Flux prompt using the Master Template above. Do not output anything else in the final prompt block.
+> **[Aesthetic/Style Tags (MUST MATCH FILM)]**. A 6-panel casting character reference sheet on a **pure solid white background**. The image is split into 6 equal grid panels. The character's design and identity are perfectly synchronized across all panels. Panel 1: Extreme Close-Up Face Front showing **[Facial Details/Pores/Eye Color]**, with typography text reading **"EXTREME CLOSE UP"**. Panel 2: Perfect 90-degree Left Side Profile Face showing **[Left details]**, with typography text reading **"LEFT PROFILE"**. Panel 3: Perfect 90-degree Right Side Profile Face showing **[Right details]**, with typography text reading **"RIGHT PROFILE"**. Panel 4: Medium Shot Waist-Up Front showing **[Upper Clothing]**, with typography text reading **"MEDIUM SHOT"**. Panel 5: Full Body Front showing **[Full Wardrobe]**, with clear typography text annotations reading **"FRONT FULL BODY"** and **"HEIGHT: [X]CM"**. Panel 6: Full Body Back showing **[Back Details/Weapons/Hair]**, with typography text reading **"BACK FULL BODY"**. The character is **[Age, Ethnicity, Body Type, Posture, Clothing Details]**. **[Specific camera/lighting settings that match the aesthetic]**, absolutely consistent identity. --ar 16:9
 
 ---
 
