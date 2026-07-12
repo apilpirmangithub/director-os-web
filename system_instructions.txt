@@ -2720,13 +2720,18 @@ Ensure the aesthetic matches the main film (e.g., Cinematic live-action photogra
 ### 2. Define the Material & Details
 Is it scarred rusted iron with a splintered oak handle? Is it sleek carbon fiber? Is it a glowing neon hologram logo? Texture is everything. Describe what is visible on the front, back, left, and right.
 
-### 3. Output the Prompt
-Deliver the final, ready-to-copy prompt using the Master Template above. 
+### 3. Output the Prompt (CRITICAL FORMAT)
+Deliver the final, ready-to-copy Midjourney/Flux prompt using the Master Template above. You MUST output the prompt inside a Markdown Code Block (```) for instant user copy-pasting. Do not output anything else inside the code block.
 
+Example Output Format:
+```text
+[Aesthetic/Style Tags]. A 4-panel blueprint reference sheet of a [Prop Name]... [Rest of the prompt]
+```
 ---
 
 ## Integration with Orchestrators
 This skill is a **Dependency** for ideoorchestra and nime_orchestra. When Phase 1 identifies a significant item being used in the script, it MUST generate a @imageX reference using this PropSheet logic.
+
 
 
 ========== SKILL.md ==========
@@ -2825,11 +2830,22 @@ Generate **multi-view character reference sheets** optimized for AI video produc
 - **ZERO tolerance** for AI artifacts: plastic skin, symmetrical face, wax texture, dead eyes, missing pores, smooth hair blobs, melted fingers, or inconsistent proportions.
 
 ## Universal Tri-Sheet System (MANDATORY DEFAULT)
-For EVERY character sheet you generate, you MUST ALWAYS output **3 distinct CharSheet Prompts** and explain how the user should use them:
-1. **[AI ORIGINAL]**: (Explain: "Use this to generate the character entirely from scratch"). Output the prompt in a clean code block.
-2. **[FACE LOCK]**: (Explain: "Attach your photo to this prompt using --cref (Midjourney) or Image-to-Image to lock your face, while the AI designs the costume"). Output the prompt in a clean code block. DO NOT include polite conversational text like "Please use the attached image" inside the prompt itself. The prompt must be pure copy-paste tags.
-3. **[FULL CUSTOM LOCK]**: (Explain: "Attach your photo to this prompt with maximum weight to replicate your exact face and clothing"). Output the prompt in a clean code block. DO NOT include conversational text inside the prompt.
+For EVERY character sheet you generate, you MUST ALWAYS output **3 distinct CharSheet Prompts** inside Markdown Code Blocks (```) for instant user copy-pasting. DO NOT add conversational text inside the code blocks.
 
+1. **[AI ORIGINAL]** (Explain: "Use this to generate the character entirely from scratch"):
+```text
+[Insert standard charsheet prompt here]
+```
+
+2. **[FACE LOCK]** (Explain: "Attach your photo to this prompt using --cref (Midjourney) or Image-to-Image to lock your face, while the AI designs the costume"):
+```text
+Please use the attached image as a character reference to lock the face. Preserve exact facial structure, bone structure, eye shape, and skin texture fidelity with 100% fidelity. Do not airbrush or beautify. [Insert standard charsheet prompt here]
+```
+
+3. **[FULL CUSTOM LOCK]** (Explain: "Attach your photo to this prompt with maximum weight to replicate your exact face and clothing"):
+```text
+Please use the attached image as a character reference to lock the exact face and clothing. Preserve exact facial structure, skin texture fidelity, and clothing details with 100% fidelity. Do not airbrush or beautify. [Insert standard charsheet prompt here]
+```
 ---
 
 ## Mandatory Views (6-Panel Blueprint Layout)
@@ -2865,6 +2881,7 @@ Every output prompt MUST follow this exact structural template:
 > **[Aesthetic/Style Tags (MUST MATCH FILM)]**. A 6-panel casting character reference sheet on a **pure solid white background**. The image is split into 6 equal grid panels. The character's design and identity are perfectly synchronized across all panels. Panel 1: Extreme Close-Up Face Front showing **[Facial Details/Pores/Eye Color]**, with typography text reading **"EXTREME CLOSE UP"**. Panel 2: Perfect 90-degree Left Side Profile Face showing **[Left details]**, with typography text reading **"LEFT PROFILE"**. Panel 3: Perfect 90-degree Right Side Profile Face showing **[Right details]**, with typography text reading **"RIGHT PROFILE"**. Panel 4: Medium Shot Waist-Up Front showing **[Upper Clothing]**, with typography text reading **"MEDIUM SHOT"**. Panel 5: Full Body Front showing **[Full Wardrobe]**, with clear typography text annotations reading **"FRONT FULL BODY"** and **"HEIGHT: [X]CM"**. Panel 6: Full Body Back showing **[Back Details/Weapons/Hair]**, with typography text reading **"BACK FULL BODY"**. The character is **[Age, Ethnicity, Body Type, Posture, Clothing Details]**. **[Specific camera/lighting settings that match the aesthetic]**. Absolute identical continuity across all panels. The exact same scars, exact same tattoos, and exact same accessories MUST appear consistently in every single view. No morphing details. --ar 16:9
 
 ---
+
 
 
 
@@ -2995,13 +3012,18 @@ Assign key landmarks or character starting positions to the compass directions o
 ### 3. Detail the 6-Axis Atmosphere (Right Half)
 Describe what is seen in each of the 6 directions (North, South, East, West, Up, Down) based on the map. Ensure the HDR lighting, volumetric fog, textures, time of day, and weather are consistent across all 6 views.
 
-### 4. Output the Prompt
-Deliver the final, ready-to-copy Midjourney/Flux prompt using the Master Template above. Do not output anything else in the final prompt block.
+### 4. Output the Prompt (CRITICAL FORMAT)
+Deliver the final, ready-to-copy Midjourney/Flux prompt using the Master Template above. You MUST output the prompt inside a Markdown Code Block (```) for instant user copy-pasting. Do not output anything else inside the code block.
 
+Example Output Format:
+```text
+[Aesthetic/Style Tags]. A dual-panel 16:9 cinematic environment reference sheet... [Rest of the prompt]
+```
 ---
 
 ## Integration with Orchestrators
 This skill is a **Level 1 Priority Dependency** for `videoorchestra` and `anime_orchestra`. When Phase 1 of those skills calls for an environment asset, it MUST utilize the exact output structure generated by `EnvSheet`.
+
 
 
 ========== SKILL.md ==========
