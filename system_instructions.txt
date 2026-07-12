@@ -3158,7 +3158,7 @@ Observe first. React second. Never anticipate.
 **6-Axis Cardinal Camera Blocking**: You MUST use strict cardinal directions (North, South, East, West, Up, Down) to describe camera placement and movement if a 6-Axis EnvSheet is provided. E.g., *"Camera positioned South, tracking the subject moving East."* Avoid relative terms like "from the front" when possible.
 
 ### B. Real-Time Shutter Protocol (ANTI-SLOMO)
-**CRITICAL:** AI video generators default to dramatic slow-motion. You MUST explicitly ban slow-motion unless the user specifically asks for it.
+**CRITICAL:** AI video generators default to dramatic slow-motion. You MUST explicitly ban slow-motion unless the user specifically asks for it, OR if the scene reaches a peak emotional/climactic moment that genuinely warrants dramatic slow-motion.
 Add this to every prompt: *"Real-time playback speed 1.0x, normal shutter speed, no slow-motion, true-to-life pacing."*
 
 ---
