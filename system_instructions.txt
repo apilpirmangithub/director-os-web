@@ -2379,7 +2379,7 @@ PURPOSE
 
 Transform any concept into a prompt that maximizes realism, cinematic quality, emotional impact, and temporal consistency inside Seedance 2.0.
 
-Â 
+ 
 
 CORE STRUCTURE
 
@@ -2428,7 +2428,7 @@ LEVEL OF DETAIL (LOD) & PROMPT DIET RULES
 - **Wide Shot LOD**: Dedicate 80% of words to environment, lighting, weather, and physics. Do NOT describe skin pores, sweat, or micro-expressions from afar; the AI will hallucinate.
 - **Close-Up LOD**: Dedicate 80% of words to face, eyes, micro-expressions, and skin texture. The environment will be out of focus anyway.
 
-Â 
+ 
 
 RULES
 
@@ -2450,14 +2450,14 @@ Replace "sad" with expressions and movement.
 
 Every sentence should add visual information.
 
-**EXPLICIT TAGGING & SPATIAL CONTINUITY (CRITICAL)**
+**EXPLICIT TAGGING & 6-AXIS SPATIAL CONTINUITY (CRITICAL)**
 - **Explicit Tagging**: In any wide shot or multi-character shot, you MUST explicitly name every character/object in the prompt (e.g. "@image1 and @image2 are visible in @image4"). Do not assume the model knows they are there.
-- **Dual-Panel Environments**: When dealing with a dual-panel location reference (like @image4), always instruct the AI to: "Read the left panel map for layout, but ONLY render the right panel cinematic style."
+- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*
 
 **NO ARTIFICIAL BORDERS (Even on Vintage Requests)**  
 Even if the user asks for "vintage", "old film", "retro", "film look", "analog", "35mm", "kodak", "polaroid", or similar aesthetics:  
 - Strictly forbid any film borders, sprocket holes, film strip edges, stamp/perforation effects, decorative frames, postcard borders, or any kind of artificial border around the frame.  
-- Vintage feel must only come from color grading, subtle natural film grain, lens characteristics, and atmosphere â€” never from borders or stamp-like effects.
+- Vintage feel must only come from color grading, subtle natural film grain, lens characteristics, and atmosphere — never from borders or stamp-like effects.
 
 **COLOR GRADING CONSISTENCY & USER INSTRUCTIONS**  
 - If the user gives specific color grading instructions (e.g. "teal and orange cinematic", "cold blue tone", "warm golden hour faded", "vintage Kodak 2383", "high contrast moody", "soft pastel", etc.), **lock it in** and repeat a clear description of that color grade in every prompt.  
@@ -2484,7 +2484,7 @@ When generating a prompt for a specific scene or clip:
 - If Character A looks screen-right in Clip 1, Character B MUST look screen-left in Clip 2.
 - If a character is moving, explicitly state the screen direction: "walking from screen-left to screen-right". This direction must remain consistent across cuts unless a turn is shown on-screen.
 
-Â 
+ 
 
 PROMPT STYLE
 
@@ -2509,9 +2509,8 @@ Every word should improve image quality, realism, emotional storytelling, or mot
 
 ---
 
-## ?? ADVANCED CINEMATIC DIRECTING
-For deep camera psychology, lens effects, and physical constraints, refer to the detailed guide in 
-eferences/advanced_directing.md.
+## 📚 ADVANCED CINEMATIC DIRECTING
+For deep camera psychology, lens effects, and physical constraints, refer to the detailed guide in references/advanced_directing.md.
 
 
 ========== SKILL.md ==========
@@ -3061,7 +3060,7 @@ Do not use abstract cinematic terms like "masterpiece", "emotional depth", or "a
 ## 4. EYELINE, GEOGRAPHY & EXPLICIT TAGGING
 Even in anime, spatial continuity matters.
 - **Explicit Tagging**: In any wide shot or multi-character shot, you MUST explicitly name every character/object in the prompt (e.g. "@image1 and @image2 are visible in @image4"). Do not assume the model knows they are there.
-- **Dual-Panel Environments**: When dealing with a dual-panel location reference (like @image4), always instruct the AI to: "Read the left panel map for layout, but ONLY render the right panel cinematic style."
+- **7-Panel (6-Axis) Environments**: When dealing with a location reference (like @image4), you MUST explicitly tell the video AI which direction the camera is facing based on the reference sheet. Add an instruction like: *"Reference @image4: Read the left panel map for layout, but ONLY render the cinematic style from the [North/South/East/West/Up/Down] view on the right grid."*
 - Always specify character facing directions (e.g., "facing screen-left").
 - Maintain the 180-degree rule across cuts.
 
