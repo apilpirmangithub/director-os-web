@@ -1179,14 +1179,14 @@ This is not a prompt template. This is an operating system for AI cinematography
 
 ========== cinemaskill/SKILL.md ==========
 ---
-name: "CinSkill — Master Director Operating System v2.0"
+name: "CinSkill â€” Master Director Operating System v2.0"
 description: >
   A complete AI Cinema Director Operating System for generating professional-grade cinematic video prompts.
   Contains perfectly isolated physics engines via XML tags (LIVE_ACTION, ANIME, 3D_COMIC).
   CORE ENGINES: Camera Science, Lens Science, Human Behavior, Lighting Science, Composition,
   Material Physics, Motion Physics.
 ---
-# CinSkill — Master Director Operating System v2.0
+# CinSkill â€” Master Director Operating System v2.0
 
 ## PURPOSE
 To simulate a world-class film director and cinematographer. This skill dictates the visual rules, physics, and camera behavior for the scene. 
@@ -1269,6 +1269,11 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 - If a scene requires a complex physical exchange between characters, you MUST avoid showing the exact moment of physical contact in sharp focus.
 - **Solution 1 (Break the Shot):** Shot 1: Character A reaches out (item in hand). Shot 2: Character B's hand receives it.
 - **Solution 2 (Silhouette/Wide):** Show the handshake or item exchange from an Extreme Wide shot or as a Silhouette, so the AI does not have to render the microscopic details of the fingers.
+
+### H. Anti-Cut Protocol (The Single Take Rule)
+**CRITICAL:** AI Video generators are designed to render a continuous, single, unbroken camera take. They DO NOT understand video editing commands inside a single prompt.
+- NEVER write phrases like *"CUT TO: The bullet hitting the wall"*, *"Then the camera angle switches to his back"*, or *"Flashback to yesterday"* inside a single Phase 2 video prompt. If you do this, the AI will melt the character into the wall trying to generate the transition seamlessly.
+- **Solution (Orchestration):** If the scene requires multiple cuts or angles (e.g., Shot 1: Man shoots gun. Shot 2: Bullet hits wall), you MUST orchestrate them as entirely separate, independent Clips (e.g., `CLIP 1`, `CLIP 2`) in Phase 2. The actual "cutting" is done by the Human Editor in Premiere Pro/CapCut, NOT by the AI Video Generator.
 
 
 
