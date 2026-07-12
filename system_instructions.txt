@@ -2394,6 +2394,10 @@ When user requests a film:
    - **PHASE 1: Asset & Audio Generation Sheet (MANDATORY)**: Before writing video prompts, identify which characters and locations need consistent references. 
      - **Image Assets:** Write Image Generation Prompts (Midjourney/Flux style) for each required asset (e.g. @image1, @image2). Use CharSheet rules.
        - **Environmental Asset Rule**: Any location/stadium/environment asset MUST be a dual-panel 16:9 prompt (Panel 1: Top-down infographic map with cardinal directions, Panel 2: Cinematic view).
+
+       - **State-Change Protocol (Character Evolution):** If the script contains a [STATE CHANGE] tag for a character (e.g., they get a permanent scar or change clothes), you MUST generate TWO CharSheets for them in Phase 1.
+         - 1. @image1_Base: The clean/original version. (Generate this with a normal text prompt).
+         - 2. @image1_Damaged: The changed version. **DO NOT write a pure text prompt for this.** Instead, output this exact warning: *"🚨 UNTUK MENJAGA IDENTITAS 100%: Anda wajib memasukkan hasil gambar @image1_Base sebagai Character Reference (--cref atau Image-to-Image) ke dalam AI, lalu gunakan prompt berikut: [Prompt baju robek & wajah kotor/berdarah]."*
      - **Audio Assets (Vocal Persona):** Write Voice Design Prompts for ElevenLabs for each speaking character (e.g. @audio1, @audio2). Focus on **Vocal Characteristics, Persona, and Dialect**, NOT mechanical lip-syncing. Example: `@audio1 (John's Voice): "Deep, raspy older male voice, 50s, Southern US drawl, sounds exhausted and cynical. Slow, deliberate dynamic flow."` (MANDATORY: Always append "Wide dynamic range audio, uncompressed HDR mix, zero audio clipping" to ensure high-fidelity voice generation).
    - **PHASE 2: Video Orchestration**:
      - Summary: Total clips needed, total runtime, scene breakdown.
@@ -2453,6 +2457,7 @@ VideoOrchestra (THIS SKILL — multi-clip orchestration + sequencing)
     ↓
 AI Video Generation → Editing & Sequencing Guide → Final Film
 ```
+
 
 
 
@@ -2640,6 +2645,12 @@ When breaking down a script for AI Video generation, you MUST calculate the dens
 - Do not write dense paragraphs of rapid-fire actions for a short 5-second clip (the AI will render it as a hyper-speed glitch).
 - Do not write an empty 15-second clip with only one micro-action (the AI will render it as slow-motion or freeze).
 
+### CONTINUITY & STATE-CHANGE TRACKING
+In film, characters undergo physical transformations (e.g., getting a permanent scar, changing outfits, becoming covered in mud/blood).
+- If a character undergoes a major physical change that must be maintained in future scenes, you MUST explicitly log this at the end of the scene breakdown block.
+- Format: [STATE CHANGE: Character A now has a bloody gash on his left cheek and his suit is torn. Use Damaged Reference from now on.]
+- This tag signals the production pipeline to generate a new variation of the character's reference sheet.
+
 
 ========== SKILL.md ==========
 ---
@@ -2763,6 +2774,10 @@ When dealing with references, instruct the AI how to read them:
 ### 4. Object Permanence Protocol (Anti-Disappearing Glitch)
 - **CRITICAL:** When a character turns 180 degrees (back facing the camera), the AI often forgets their backpack, logo, or back design.
 - **Action:** If the prompt involves the character turning around or being viewed from the back, you MUST explicitly instruct the AI to reference the back panel. Example: *"Character turns around. Reference the BACK FULL BODY panel of @image1 to maintain exact 3D geometry of the backpack."*
+
+### 5. Continuity & Override Protocol (State-Changes)
+- **Minor Changes (Temporary):** If a character gets wet, has their hair blown, or gets a small scratch for one scene, do NOT use a new reference. Instead, write an Override Command in the prompt: *"Use @image1 as the exact base identity, but OVERRIDE the hair to be wet and messy."*
+- **Major Changes (State Change):** If a character undergoes a major scripted change (e.g., permanent battle damage, new costume), you MUST switch the tag to the damaged variant. Example: *"Use @image1_Damaged for the face and torn clothes."*
 
 
 ========== SKILL.md ==========
