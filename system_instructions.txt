@@ -2920,6 +2920,7 @@ AI Video Generation → Editing & Sequencing Guide → Final Film
 
 
 
+
 ========== references/theory.md ==========
 STORY FIRST
 
@@ -4822,7 +4823,7 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 **Audio:** [Soundscape / Exact Dialogue Line for V.O/O.S]
 **Prompt:**
 <ENGINE_COMPILER>
-[CRITICAL WARDROBE CHECK: If the character's clothing or state in this specific scene differs from their base CharSheet image (e.g., they are at home but their CharSheet wears armor), you MUST start the prompt with [OVERRIDE: Wardrobe. Description of new clothes]. Then write the exact video prompt using Local tags, Anti-Screen Glitch, Bokeh Trick, etc. CRITICAL: YOU MUST END THIS PROMPT BY COPY-PASTING THE MASTER LIGHTING AND CAMERA AESTHETIC TAGS SO EVERY CLIP MATCHES PERFECTLY]
+[CRITICAL WARDROBE CHECK: If the character's clothing or state in this specific scene differs from their base CharSheet image (e.g., they are at home but their CharSheet wears armor), you MUST start the prompt with [OVERRIDE: Wardrobe. Description of new clothes]. Then write the exact video prompt Using Local tags, explicitly writing character ages (e.g., "a 17-year-old boy"), Anti-Screen Glitch, Bokeh Trick, etc. CRITICAL: YOU MUST END THIS PROMPT BY COPY-PASTING THE MASTER LIGHTING AND CAMERA AESTHETIC TAGS SO EVERY CLIP MATCHES PERFECTLY]
 
 *(Repeat for Clip 2, Clip 3...)*
 
@@ -4832,6 +4833,7 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 1. **Pacing:** [Action Density logic]
 2. **Audio Sync / Layering:** [Instructions for L-Cuts/Pre-lap, sound design timing, and voice-over placement]
 3. **Off-Screen Audio Protocol:** [Instructions to mute AI Video for (O.S) and layer the audio externally]
+
 
 
 
