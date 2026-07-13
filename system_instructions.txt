@@ -4845,9 +4845,10 @@ eferences/theory.md.
 ### TIMING, ACTION, & DIALOGUE DENSITY (THE RHYTHM PROTOCOL)
 When breaking down a script, you MUST consciously design the pacing and dialogue density to match the scene's intent. Do not just blindly fill the duration with random actions or random dialogue.
 1. **The High-Density Rhythm (Tektokan / Rapid Banter):** Use this for panic, heated arguments, interrogations, or high-stakes negotiations. The dialogue must be dense, fast, and overlapping. Characters do not let each other finish sentences (use `/` to indicate interruption). Example for 10s: 3-4 rapid-fire lines stacked together with zero breathing room.
-2. **The Low-Density Rhythm (Heavy Silence):** Use this for emotional realization, shock, grief, or tension building. Silence is your strongest weapon. If a clip is 10s long, let 8s be completely silent, driven ONLY by physical micro-expressions, followed by a single devastating word. NEVER fill emotional silence with exposition.
-3. **Audience Comprehension:** Dialogue must serve the story, not just sound "cool". The audience must understand exactly *what the stakes are* and *why the characters are fighting or quiet*.
-4. **The Golden Action Ratio:** 1 single distinct action (e.g., character turns head, a punch lands) equals roughly 3 to 5 seconds of screen time. Do not write a dense paragraph of 10 rapid-fire actions for a short 5-second clip (it will render as a glitch).
+2. **The Medium-Density Rhythm (Normal Conversation):** Use this for standard interactions, casual talks, or calm exposition. Characters speak at a normal, steady pace (~2.5 words per second). There is a natural pause (1-2 seconds) between one character finishing a sentence and the other replying. 
+3. **The Low-Density Rhythm (Heavy Silence):** Use this for emotional realization, shock, grief, or tension building. Silence is your strongest weapon. If a clip is 10s long, let 8s be completely silent, driven ONLY by physical micro-expressions, followed by a single devastating word. NEVER fill emotional silence with exposition.
+4. **Audience Comprehension:** Dialogue must serve the story, not just sound "cool". The audience must understand exactly *what the stakes are* and *why the characters are fighting or quiet*.
+5. **The Golden Action Ratio:** 1 single distinct action (e.g., character turns head, a punch lands) equals roughly 3 to 5 seconds of screen time. Do not write a dense paragraph of 10 rapid-fire actions for a short 5-second clip (it will render as a glitch).
 
 
 ### ADVANCED AUDIO ORCHESTRATION (Voice & Dialogue)
