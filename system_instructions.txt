@@ -4900,7 +4900,7 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 
 ## ðŸŽ¨ PHASE 1: ASSET GENERATION (VideoOrchestra)
 *(Generate these blueprints in Midjourney/DALL-E before rendering video)*
-**[CRITICAL MANDATE]: You MUST create a dedicated CHARSHEET for EVERY named character who physically interacts with others in the script, even if they only appear for 1 second (e.g., antagonists, bullies, sidekicks). DO NOT leave them out.**
+**[CRITICAL MANDATE]: You MUST create a dedicated CHARSHEET for EVERY named character who physically interacts with others AND appears in MORE THAN ONE CLIP. (Exception: If a minor character only appears in a single clip and never returns, DO NOT waste space making a CharSheet for them. The AI video generator will handle them locally).**
 
 **1. CHARSHEET (Protagonist)**
 **[AI ORIGINAL]**
