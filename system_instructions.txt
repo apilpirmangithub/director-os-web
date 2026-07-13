@@ -4864,11 +4864,10 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 [COMPASS RULE: Write compass logic here (Origin vs Destination)]
 [MOMENTUM CARRY-OVER: Write momentum continuity from previous clip here]
 [NATIVE AUDIO PROTOCOL: Include if character speaks on screen]
+[ANTI-GLITCH PROTOCOL: YOU MUST ALWAYS PRINT THIS EXACT STRING -> Continuous forward chronological motion. NO reverse motion. NO boomerang effect.]
 
 [NARRATIVE ACTION PARAGRAPH]:
-Using the exact person from Local @imageX, explicitly writing character ages (e.g., "a 17-year-old boy")... [Write the narrative action here, obeying all 7 Pillars above].
-**ANTI-GLITCH PROTOCOL: Continuous forward chronological motion. NO reverse motion. NO boomerang effect.**
-CRITICAL: YOU MUST END THIS PROMPT BY COPY-PASTING THE MASTER LIGHTING AND CAMERA AESTHETIC TAGS SO EVERY CLIP MATCHES PERFECTLY.
+Using the exact person from Local @imageX, explicitly writing character ages (e.g., "a 17-year-old boy")... [Write the narrative action here, obeying all rules above].
 </ENGINE_COMPILER>
 
 *(Repeat for Clip 2, Clip 3...)*
