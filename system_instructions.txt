@@ -4858,7 +4858,7 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 [TIME & LIGHTING LOCK: Write time of day and lighting direction here]
 [PROXIMITY LOCK: Write exact physical distance between subjects here]
 [CAMERA MOVEMENT: Write camera hardware movement here]
-[SUBJECT MOVEMENT: Write subject movement here]
+[SUBJECT MOVEMENT: Write subject movement here. CRITICAL: You MUST append the exact phrase "Continuous forward chronological motion. NO reverse motion. NO boomerang effect." to prevent temporal glitches]
 [GAZE DIRECTION: Write exactly where subjects are looking. DO NOT look at camera]
 [BODY ORIENTATION: Write body angles here. Break the frontal bias]
 [COMPASS RULE: Write compass logic here (Origin vs Destination)]
@@ -4877,5 +4877,6 @@ Using the exact person from Local @imageX, explicitly writing character ages (e.
 1. **Pacing:** [Action Density logic]
 2. **Audio Sync / Layering:** [Instructions for L-Cuts/Pre-lap, sound design timing, and voice-over placement]
 3. **Off-Screen Audio Protocol:** [Instructions to mute AI Video for (O.S) and layer the audio externally]
+
 
 
