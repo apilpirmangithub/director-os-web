@@ -4864,7 +4864,7 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 [COMPASS RULE: Write compass logic here (Origin vs Destination)]
 [MOMENTUM CARRY-OVER: Write momentum continuity from previous clip here]
 [NATIVE AUDIO PROTOCOL: Include if character speaks on screen]
-[ANTI-GLITCH PROTOCOL: YOU MUST ALWAYS PRINT THIS EXACT STRING -> Continuous forward chronological motion. NO reverse motion. NO boomerang effect.]
+[ANTI-GLITCH PROTOCOL: Continuous forward chronological motion. NO reverse motion. NO boomerang effect.]
 
 [NARRATIVE ACTION PARAGRAPH]:
 Using the exact person from Local @imageX, explicitly writing character ages (e.g., "a 17-year-old boy")... [Write the narrative action here, obeying all rules above].
@@ -4878,5 +4878,6 @@ Using the exact person from Local @imageX, explicitly writing character ages (e.
 1. **Pacing:** [Action Density logic]
 2. **Audio Sync / Layering:** [Instructions for L-Cuts/Pre-lap, sound design timing, and voice-over placement]
 3. **Off-Screen Audio Protocol:** [Instructions to mute AI Video for (O.S) and layer the audio externally]
+
 
 
