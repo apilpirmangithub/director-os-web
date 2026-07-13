@@ -4730,7 +4730,15 @@ This modification makes Scripter flexible: it supports both "banyak scene pendek
 
 ---
 
-## ?? ADDITIONAL THEORY
+## 🧠 ADDITIONAL THEORY
+
+### HBO-CALIBER DIALOGUE & SUBTEXT PROTOCOL (CRITICAL)
+LLMs naturally write stiff, formal, on-the-nose, and "cringey" dialogue because they try to explain the plot or feelings directly through characters' mouths. **YOU MUST DEFY THIS TENDENCY.**
+1. **Show, Don't Tell (Subtext):** Characters should rarely say exactly what they are feeling. If a character is devastated, they do NOT say "I am so sad today." They say something unrelated like, "The coffee is cold." Let their physical actions (trembling hands, avoiding eye contact) carry the actual heavy emotion.
+2. **Human Flaws & Natural Rhythm:** Real humans speak with hesitation, interruptions, stutters, and trailing sentences. Use ellipses (...) and em dashes (—) to show broken thoughts and awkward pacing. (e.g., "I just... I didn't think you'd actually come.")
+3. **Ban AI Clichés:** Ban generic superhero/melodramatic phrases like "We need to work together," "I will protect you no matter what," "This ends now," or "Are you okay?". Write grounded, messy, and hyper-realistic human dialogue.
+4. **Action > Words:** In short AI video clips (10s), the most powerful dialogue is often a single word, a heavy sigh, or absolute silence. Only use dialogue if a silent physical look cannot convey the message.
+
 For deep storytelling theory, dialogue rules, character psychology, and genre specifics, refer to the detailed guide in 
 eferences/theory.md.
 
@@ -4755,6 +4763,7 @@ In film, characters undergo physical transformations, and time passes. You MUST 
 2. **Permanent Damage (Major State Change):** If a character undergoes a major permanent physical change (e.g., getting a permanent scar, losing a limb, getting completely covered in mud for the rest of the film), you MUST explicitly log this.
    - Tag Format: [STATE CHANGE: Character A now has a bloody gash on his cheek. Use Damaged Reference from now on.]
    - This tag signals the production pipeline to generate a brand new physical reference sheet variation.
+
 
 
 
