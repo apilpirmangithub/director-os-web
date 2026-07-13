@@ -4918,6 +4918,7 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 *(If there is a STATE CHANGE in the script, list the variation here with the CREF warning starting with "Use the attached image...")*
 
 **2. ENVSHEET (Location)**
+**[CRITICAL MANDATE]: You MUST create an ENVSHEET for core locations that span MULTIPLE CLIPS or require strict spatial continuity. If a location only appears in a single transition clip, DO NOT make an EnvSheet for it. Let the video generator handle it locally.**
 > @image2_Location
 > [Prompt]
 
