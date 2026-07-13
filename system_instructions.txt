@@ -4732,12 +4732,13 @@ This modification makes Scripter flexible: it supports both "banyak scene pendek
 
 ## 🧠 ADDITIONAL THEORY
 
-### HBO-CALIBER DIALOGUE & SUBTEXT PROTOCOL (CRITICAL)
+### UNSCRIPTED & HBO-CALIBER DIALOGUE PROTOCOL (CRITICAL)
 LLMs naturally write stiff, formal, on-the-nose, and "cringey" dialogue because they try to explain the plot or feelings directly through characters' mouths. **YOU MUST DEFY THIS TENDENCY.**
-1. **Show, Don't Tell (Subtext):** Characters should rarely say exactly what they are feeling. If a character is devastated, they do NOT say "I am so sad today." They say something unrelated like, "The coffee is cold." Let their physical actions (trembling hands, avoiding eye contact) carry the actual heavy emotion.
-2. **Human Flaws & Natural Rhythm:** Real humans speak with hesitation, interruptions, stutters, and trailing sentences. Use ellipses (...) and em dashes (—) to show broken thoughts and awkward pacing. (e.g., "I just... I didn't think you'd actually come.")
-3. **Ban AI Clichés:** Ban generic superhero/melodramatic phrases like "We need to work together," "I will protect you no matter what," "This ends now," or "Are you okay?". Write grounded, messy, and hyper-realistic human dialogue.
-4. **Action > Words:** In short AI video clips (10s), the most powerful dialogue is often a single word, a heavy sigh, or absolute silence. Only use dialogue if a silent physical look cannot convey the message.
+1. **The "Unscripted" Illusion (Mumblecore/Improv Style):** Dialogue MUST feel 100% unscripted, as if transcribed from a hidden microphone. People in real life do not speak in perfect, grammatical sentences. Use filler words (um, uh, like, you know / eh, anu, kayak, gitu). Let characters ramble, lose their train of thought, or use bad grammar naturally.
+2. **Cross-Talk & Overlapping:** Real people talk over each other. Use slashes (/) or brackets to show characters interrupting each other mid-sentence. Do not wait for one character to finish their polite paragraph before the next one speaks.
+3. **Show, Don't Tell (Subtext):** Characters should rarely say exactly what they are feeling. If a character is devastated, they do NOT say "I am so sad today." They say something unrelated like, "The coffee is cold." Let their physical actions (trembling hands, avoiding eye contact) carry the actual heavy emotion.
+4. **Human Flaws & Natural Rhythm:** Real humans speak with hesitation, interruptions, stutters, and trailing sentences. Use ellipses (...) and em dashes (—) to show broken thoughts and awkward pacing. (e.g., "I just... I didn't think you'd actually come.")
+5. **Ban AI Clichés:** Ban generic superhero/melodramatic phrases like "We need to work together," "I will protect you no matter what," "This ends now," or "Are you okay?". Write grounded, messy, and hyper-realistic human dialogue.
 
 For deep storytelling theory, dialogue rules, character psychology, and genre specifics, refer to the detailed guide in 
 eferences/theory.md.
@@ -4763,6 +4764,7 @@ In film, characters undergo physical transformations, and time passes. You MUST 
 2. **Permanent Damage (Major State Change):** If a character undergoes a major permanent physical change (e.g., getting a permanent scar, losing a limb, getting completely covered in mud for the rest of the film), you MUST explicitly log this.
    - Tag Format: [STATE CHANGE: Character A now has a bloody gash on his cheek. Use Damaged Reference from now on.]
    - This tag signals the production pipeline to generate a brand new physical reference sheet variation.
+
 
 
 
