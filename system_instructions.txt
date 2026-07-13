@@ -4815,9 +4815,8 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 ---
 
 ## 🎥 PHASE 2: VIDEO ORCHESTRATION & PROMPTS
-[MAPPING LOGIC: Global @imageX -> Local @imageY]
-
 ### CLIP 1 [0-15s]
+**[MAPPING LOGIC: Global @imageX -> Local @image1 | etc (Only map what is used in THIS clip to avoid gaps)]**
 **Cinematography:** [Motivated Camera Angle & Insert Shot logic]
 **Audio:** [Soundscape / Exact Dialogue Line for V.O/O.S]
 **Prompt:**
@@ -4832,6 +4831,7 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 1. **Pacing:** [Action Density logic]
 2. **Audio Sync / Layering:** [Instructions for L-Cuts/Pre-lap, sound design timing, and voice-over placement]
 3. **Off-Screen Audio Protocol:** [Instructions to mute AI Video for (O.S) and layer the audio externally]
+
 
 
 
