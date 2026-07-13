@@ -2847,6 +2847,7 @@ When user requests a film:
    - **PHASE 1: Asset & Audio Generation Sheet (MANDATORY)**: Before writing video prompts, identify which characters and locations need consistent references. 
      - **Image Assets:** Write Image Generation Prompts (Midjourney/Flux style) for each required asset (e.g. @image1, @image2). Use CharSheet rules.
        - **Environmental Asset Rule**: Any location/stadium/environment asset MUST be a dual-panel 16:9 prompt (Panel 1: Top-down infographic map with cardinal directions, Panel 2: Cinematic view).
+       - **PropSheet Enforcement (CRITICAL)**: If the scene features a significant object, weapon, vehicle, or artifact (e.g., a time bomb, a specific car, a magical sword) that characters interact with or focus on, you MUST generate a PropSheet (4-panel macro blueprint) for it in Phase 1. NEVER let the AI video generator hallucinate central story objects from pure text.
 
        - **State-Change Protocol (Character Evolution):** If the script contains a [STATE CHANGE] tag for a character (e.g., they get a permanent scar or change clothes), you MUST generate TWO CharSheets for them in Phase 1.
          - 1. @image1_Base: The clean/original version. (Generate this with a normal text prompt).
@@ -2912,6 +2913,7 @@ VideoOrchestra (THIS SKILL — multi-clip orchestration + sequencing)
     ↓
 AI Video Generation → Editing & Sequencing Guide → Final Film
 ```
+
 
 
 
