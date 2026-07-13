@@ -4852,17 +4852,20 @@ Whenever the user requests a film, you MUST output the response EXACTLY followin
 **Audio:** [Soundscape / Exact Dialogue Line for V.O/O.S]
 **Prompt:**
 <ENGINE_COMPILER>
-[CRITICAL WARDROBE CHECK: If the character's clothing or state in this specific scene differs from their base CharSheet image, you MUST start the prompt with [OVERRIDE: Wardrobe. Description of new clothes].]
-[TIME & LIGHTING LOCK: e.g. Late afternoon Golden Hour, long heavy shadows cast to the East, warm sunlight.]
-[PROXIMITY LOCK: e.g. @image1 is standing exactly 5 meters away from @image2. Do NOT merge their bodies.]
-[CAMERA MOVEMENT: e.g. Static on tripod, panning right.]
-[SUBJECT MOVEMENT: e.g. Sprinting intensely to the right side of the screen.]
-[GAZE DIRECTION: e.g. Looking off-screen right, maintaining eye contact with @image2. DO NOT look at the camera.]
-[BODY ORIENTATION: e.g. Seen from behind (Over-the-Shoulder), back facing the camera, torso angled 45-degrees.]
-[COMPASS RULE: e.g. Camera points North towards the mountain (Destination). The character is walking North.]
-[MOMENTUM CARRY-OVER: e.g. The character is in mid-sprint, hair blowing violently backwards, chest heaving.]
+[CRITICAL WARDROBE CHECK: Write override here if needed, or N/A]
+[TIME & LIGHTING LOCK: Write time of day and lighting direction here]
+[PROXIMITY LOCK: Write exact physical distance between subjects here]
+[CAMERA MOVEMENT: Write camera hardware movement here]
+[SUBJECT MOVEMENT: Write subject movement here]
+[GAZE DIRECTION: Write exactly where subjects are looking. DO NOT look at camera]
+[BODY ORIENTATION: Write body angles here. Break the frontal bias]
+[COMPASS RULE: Write compass logic here (Origin vs Destination)]
+[MOMENTUM CARRY-OVER: Write momentum continuity from previous clip here]
 [NATIVE AUDIO PROTOCOL: Include if character speaks on screen]
+
+[NARRATIVE ACTION PARAGRAPH]:
 Using the exact person from Local @imageX, explicitly writing character ages (e.g., "a 17-year-old boy")... [Write the narrative action here, obeying all 7 Pillars above]. CRITICAL: YOU MUST END THIS PROMPT BY COPY-PASTING THE MASTER LIGHTING AND CAMERA AESTHETIC TAGS SO EVERY CLIP MATCHES PERFECTLY.
+</ENGINE_COMPILER>
 
 *(Repeat for Clip 2, Clip 3...)*
 
