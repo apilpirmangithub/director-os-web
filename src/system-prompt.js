@@ -1096,6 +1096,7 @@ When user requests a film:
      \`**[IMAGE MAPPING: Global @imageX -> Local @image1 (Name) | Global @imageY -> Local @image2 (Name)]**\`
      \`**[AUDIO MAPPING: Global @AudioX -> Local @Audio1 (Name) | Global @AudioY -> Local @Audio2 (Name)]**\`
    - **Single-Clip Exemption:** Do NOT request CharSheets or EnvSheets in Phase 1 for extras/locations that only appear in a single clip. Let the AI generate them locally from pure text.
+   - **"No Ref" (Zero Reference Protocol):** If the user explicitly requests "no ref" or "tanpa referensi", you MUST completely skip Phase 1 (Asset Generation). In Phase 2, you MUST NOT use any \`@image\` or \`@audio\` tags anywhere in the prompt. All descriptions and voice characteristics must be purely textual without any \`@\` variables.
 
 6. **Output Structure (2-Phase Protocol)**:
    - **PHASE 1: Asset & Audio Generation Sheet (MANDATORY)**: Before writing video prompts, identify which characters and locations need consistent references. 
