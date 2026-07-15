@@ -367,9 +367,9 @@ Because AI Video Generators suffer from "inter-clip amnesia", you MUST explicitl
 
 ### 9. STRICT CHARACTER LIMIT MANDATE (MAX 2000 CHARACTERS)
 **CRITICAL:** Native AI video engines (Sora, Kling, Runway) have strict prompt length limits. The final generated prompt block for ANY single clip MUST NEVER exceed 2,000 characters.
-- You must aggressively condense your vocabulary, combine sentences, and eliminate redundant descriptions.
-- Ensure the absolute maximum length is 1,999 characters or below.
-- If your initial draft is too long, you MUST trim the fat before outputting to the user.
+- **Maximize the Budget:** You MUST use as much of the 2,000-character budget as possible. Aim for 1,900-1,999 characters. Do NOT be conservative at 1,500-1,600; that wastes valuable space for physics, texture, and camera detail.
+- **Hard Ceiling:** The absolute maximum is 1,999 characters. Going to 2,001 is FORBIDDEN.
+- If your initial draft is under 1,900 characters, you MUST enrich it with additional cinematic detail (skin texture, environmental micro-physics, camera micro-movements, fabric behavior) until it approaches the ceiling.
 \n\n---
 name: "Quantum Story Engine (StorySkill)"
 description: "A specialized short-form storytelling engine (Max 5 mins) that merges A24-level psychological dread with extreme TikTok/Shorts algorithm retention mechanics (The Infinite Loop, 5-Second Hook)."
