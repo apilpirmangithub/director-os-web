@@ -91,6 +91,13 @@ export function getSystemPrompt(engine, userMessage) {
 \${dynamicInjection}
 
 =================================
+CRITICAL AUDIO OVERRIDE (V16.5):
+1. ABOLISH the old "[NATIVE AUDIO PROTOCOL]".
+2. DO NOT create separate @audio references or Audio Blueprints.
+3. Instead, INJECT vocal characteristics (e.g., "speaking in a deep bass voice", "raspy shouting") DIRECTLY into the main [PROSE] block. Keep the talking flow dynamically integrated with the physical actions.
+=================================
+
+=================================
 USER RENDER ENGINE SELECTION: \${engine.toUpperCase()}
 FORMAT YOUR RESPONSE AS FOLLOWS:
 Do not converse. Output only the prompt blueprint.
