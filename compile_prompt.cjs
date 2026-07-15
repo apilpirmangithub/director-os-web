@@ -6,6 +6,8 @@ const configDir = 'C:\\Users\\apilp\\.gemini\\config';
 const filesToCompile = [
   path.join(configDir, 'AGENTS.md'),
   path.join(configDir, 'director_os_master_workflow.txt'),
+  path.join(configDir, 'skills', '00_MASTER_OS.md'),
+  path.join(configDir, 'skills', 'audioskill', 'SKILL.md'),
   path.join(configDir, 'skills', 'storyskill', 'SKILL.md'),
   path.join(configDir, 'skills', 'cinemaskill', 'SKILL.md'),
   path.join(configDir, 'skills', 'promptskill', 'SKILL.md'),
