@@ -336,7 +336,7 @@ When dealing with references, instruct the AI how to read them:
 If the clip contains character dialogue, do NOT use rigid protocol brackets. Instead, treat \`@audio\` tags as **Voice Characteristic References** (e.g., bass, raspiness, pitch) and integrate them fluidly into the dynamic prose.
 - **Dynamic Flow:** The flow of the dialogue and the physical act of speaking must adapt dynamically to the action in the video.
 - **Prose Integration:** Describe *how* they speak alongside their actions. Example: \`Rama dodges the strike, his chest heaving as he shouts "Sini lo!" with a deep, raspy bass voice (Local @audio1).\`
-- **Avoid O.S./V.O.:** If a character speaks off-screen, do not include their dialogue or \`@audio\` tag in the video prompt, as it will cause facial hallucinations.
+- **Voice-Over (V.O.) & Off-Screen (O.S.) Rule:** You MUST include dialogue and \`@audio\` tags even if the character is not visible (V.O. or O.S.). Integrate it dynamically into the prose but explicitly label it to prevent the AI from hallucinating a speaking face. Example: \`The camera slowly pans across the empty, blood-stained room. Rama's voice (V.O., Local @audio1) echoes with a chilling, resonant bass: "I warned you."\`
 - **Anti-Typo Dialogue (Verbatim Protocol):** To prevent AI video models from hallucinating or generating "typo" audio (e.g., saying B when the prompt says A), you MUST strictly follow this formatting:
   1. **Verbatim Extraction:** You must copy the dialogue EXACTLY character-for-character from the original script. Do NOT summarize, rephrase, or translate it. If the script dialogue is in Indonesian, write the exact Indonesian text inside the prompt.
   2. **Strict Quotation:** The spoken dialogue MUST be wrapped in standard double quotes \`""\`.
