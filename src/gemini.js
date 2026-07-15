@@ -19,7 +19,7 @@ export async function callGeminiAPI(apiKey, model, engine, history, userMessage)
   });
 
   const systemInstruction = {
-    parts: [{ text: getSystemPrompt(engine) }]
+    parts: [{ text: getSystemPrompt(engine, userMessage) }]
   };
 
   const payload = {
