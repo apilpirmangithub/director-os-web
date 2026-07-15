@@ -9,11 +9,11 @@ const coreFiles = [
   path.join(configDir, 'skills', '00_MASTER_OS.md'),
   path.join(configDir, 'skills', 'cinemaskill', 'SKILL.md'),
   path.join(configDir, 'skills', 'promptskill', 'SKILL.md'),
+  path.join(configDir, 'skills', 'storyskill', 'SKILL.md'),
+  path.join(configDir, 'skills', 'writerskill', 'SKILL.md'),
 ];
 
 const dynamicSkills = {
-  storyskill: path.join(configDir, 'skills', 'storyskill', 'SKILL.md'),
-  writerskill: path.join(configDir, 'skills', 'writerskill', 'SKILL.md'),
   fashionskill: path.join(configDir, 'skills', 'fashionskill', 'SKILL.md'),
   indoskill: path.join(configDir, 'skills', 'indoskill', 'SKILL.md'),
   japanskill: path.join(configDir, 'skills', 'japanskill', 'SKILL.md'),
@@ -73,10 +73,7 @@ export function getSystemPrompt(engine, userMessage) {
     dynamicInjection += "\\n\\n--- AUDIOSKILL ---\\n" + skills.audioskill;
   }
 
-  // 4. STORY & SCRIPT ROUTER
-  if (msg.includes('cerita') || msg.includes('naskah') || msg.includes('plot') || msg.includes('hook') || msg.includes('konsep')) {
-    dynamicInjection += "\\n\\n--- STORYSKILL & WRITERSKILL ---\\n" + skills.storyskill + "\\n" + skills.writerskill;
-  }
+
 
   // 5. MULTI-CLIP ORCHESTRATION ROUTER (Time/Duration)
   const isMultiClip = msg.includes('menit') || msg.includes('orchestra') || msg.match(/\\b(1[1-9]|[2-9][0-9]|100)\\s*detik\\b/);
@@ -89,13 +86,6 @@ export function getSystemPrompt(engine, userMessage) {
 \${coreEngine}
 
 \${dynamicInjection}
-
-=================================
-CRITICAL AUDIO OVERRIDE (V16.5):
-1. ABOLISH the old "[NATIVE AUDIO PROTOCOL]".
-2. DO NOT create separate @audio references or Audio Blueprints.
-3. Instead, INJECT vocal characteristics (e.g., "speaking in a deep bass voice", "raspy shouting") DIRECTLY into the main [PROSE] block. Keep the talking flow dynamically integrated with the physical actions.
-=================================
 
 =================================
 USER RENDER ENGINE SELECTION: \${engine.toUpperCase()}
