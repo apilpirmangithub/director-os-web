@@ -2,6 +2,7 @@
 
 import { loadSettings, saveSettings, loadSessions, saveSessions, createSession, updateSession, defaultSettings } from './session.js';
 import { callGeminiAPI } from './gemini.js';
+import { callGrokAPI } from './grok.js';
 import { renderMessage, renderTypingIndicator, removeTypingIndicator } from './chat.js';
 import { updateResultPanel, copyToClipboard, downloadMarkdown, downloadPDF } from './result.js';
 
@@ -22,6 +23,7 @@ const els = {
   modelSelect: document.getElementById('model-select'),
   langBtns: document.querySelectorAll('[data-lang]'),
   engineBtns: document.querySelectorAll('[data-engine]'),
+  providerBtns: document.querySelectorAll('[data-provider]'),
   
   // Sidebar
   btnNewSession: document.getElementById('btn-new-session'),
@@ -54,6 +56,7 @@ function init() {
   els.modelSelect.value = settings.model;
   updateToggleUI(els.langBtns, settings.language, 'data-lang');
   updateToggleUI(els.engineBtns, settings.engine, 'data-engine');
+  updateToggleUI(els.providerBtns, settings.provider || 'gemini', 'data-provider');
   updateEngineIndicator();
 
   // Load last session or create new
@@ -82,6 +85,9 @@ function bindEvents() {
   }));
   els.engineBtns.forEach(btn => btn.addEventListener('click', (e) => {
     updateToggleUI(els.engineBtns, e.target.dataset.engine, 'data-engine');
+  }));
+  els.providerBtns.forEach(btn => btn.addEventListener('click', (e) => {
+    updateToggleUI(els.providerBtns, e.target.dataset.provider, 'data-provider');
   }));
 
   // Sidebar
@@ -142,12 +148,14 @@ function updateEngineIndicator() {
 function handleSaveSettings() {
   const activeLang = document.querySelector('.toggle-btn[data-lang].active').dataset.lang;
   const activeEngine = document.querySelector('.toggle-btn[data-engine].active').dataset.engine;
+  const activeProvider = document.querySelector('.toggle-btn[data-provider].active').dataset.provider;
   
   settings = {
     apiKey: els.apiKeyInput.value.trim(),
     language: activeLang,
     engine: activeEngine,
-    model: els.modelSelect.value
+    model: els.modelSelect.value,
+    provider: activeProvider
   };
   
   saveSettings(settings);
@@ -229,7 +237,7 @@ async function handleSendMessage() {
   const text = els.chatInput.value.trim();
   if (!text) return;
   if (!settings.apiKey) {
-    alert("Please enter your Gemini API Key in Settings first.");
+    alert("Please enter your API Key in Settings first.");
     els.modal.classList.remove('hidden');
     return;
   }
@@ -250,7 +258,13 @@ async function handleSendMessage() {
   renderTypingIndicator(els.chatMessages);
 
   try {
-    const aiResponse = await callGeminiAPI(settings.apiKey, settings.model, settings.engine, session.history.slice(0, -1), text);
+    let aiResponse;
+    const provider = settings.provider || 'gemini';
+    if (provider === 'grok') {
+      aiResponse = await callGrokAPI(settings.apiKey, settings.model, settings.engine, session.history.slice(0, -1), text);
+    } else {
+      aiResponse = await callGeminiAPI(settings.apiKey, settings.model, settings.engine, session.history.slice(0, -1), text);
+    }
     removeTypingIndicator();
     
     // Render AI message in chat

@@ -7,7 +7,8 @@ export const defaultSettings = {
   apiKey: '',
   language: 'id', // 'id' or 'en'
   engine: 'live-action',
-  model: 'gemini-2.5-flash'
+  model: 'gemini-2.5-flash',
+  provider: 'gemini' // 'gemini' or 'grok'
 };
 
 export function loadSettings() {
