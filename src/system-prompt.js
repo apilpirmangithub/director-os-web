@@ -363,6 +363,12 @@ Because AI Video Generators suffer from "inter-clip amnesia", you MUST explicitl
 1. **Camera Logic:** Force an Extreme Close-Up (ECU) with a Macro Lens. (e.g., "Macro lens, extreme close-up insert shot, ultra-shallow depth of field completely blurring the background"). This forces the AI to spend 100% of its processing power on the object and fingers.
 2. **Mechanical Physics:** Do NOT use vague verbs like "He unlocks the padlock". You must describe the mechanical physics. (e.g., "A steel key is inserted into a brass keyhole and turned 90-degrees clockwise until a mechanical click is heard").
 3. **Anti-Melting Tag:** You MUST append this exact phrase to the Narrative Action Paragraph: *"Physically accurate object permanence, 5 distinct human fingers, fingers do NOT melt or merge with the metal object, maintaining strict structural boundaries."*
+
+### 9. STRICT CHARACTER LIMIT MANDATE (MAX 2000 CHARACTERS)
+**CRITICAL:** Native AI video engines (Sora, Kling, Runway) have strict prompt length limits. The final generated prompt block for ANY single clip MUST NEVER exceed 2,000 characters.
+- You must aggressively condense your vocabulary, combine sentences, and eliminate redundant descriptions.
+- Ensure the absolute maximum length is 1,999 characters or below.
+- If your initial draft is too long, you MUST trim the fat before outputting to the user.
 \n\n---
 name: "Quantum Story Engine (StorySkill)"
 description: "A specialized short-form storytelling engine (Max 5 mins) that merges A24-level psychological dread with extreme TikTok/Shorts algorithm retention mechanics (The Infinite Loop, 5-Second Hook)."
