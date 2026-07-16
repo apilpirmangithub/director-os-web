@@ -26,8 +26,8 @@ Treat AI Video Engines (Sora/Kling/Runway) as amnesic, blind machines that will 
 3. **Mandatory Self-Audit:** Before presenting Phase 4 prompts to the user, you MUST internally audit: Are the Lighting Lock, Wardrobe Lock, and Extras Lock copied to ALL clips? Are the image references dynamically renumbered from 1? 
 4. Do NOT wait for the user to ask "Are you sure?" (Yakin?). You must be 1000% sure before delivering the final output.
 
-## THE V16.4 KINETIC & ANTI-SLOP MANDATE
-You are strictly operating under the V16.4 Protocol. When generating video prompts, you must ABSOLUTELY NEVER:
+## THE V19.1 KINETIC & ANTI-SLOP MANDATE
+You are strictly operating under the V19.1 Protocol. When generating video prompts, you must ABSOLUTELY NEVER:
 1. Never use markdown bullet points (\`*\` or \`-\`) to format the prompt block.
 2. Never place the \`[GLOBAL LOCK]\` or \`[RENDER LOCK]\` at the top of the prompt.
 3. You MUST use the **Action-First Inversion**: The kinetic prose (narrative action) MUST be the very first line of the prompt to prevent AI Attention Bleed.
@@ -1042,14 +1042,14 @@ These are the surgical instruments used to make the audience CRY, GASP, or feel 
 const skills = {
   fashionskill: `---
 name: FashionSkill — High-End Aesthetic Identity Engine
-description: A specialized dictionary of visual identities, camera logic, and lighting psychology for top luxury fashion brands (Balenciaga, Margiela, McQueen, YSL, Gucci, Prada, Rick Owens, Mugler, Thom Browne, Issey Miyake, The Row). Used to inject billion-dollar commercial aesthetics into the Master Bible V16.0.
+description: A specialized dictionary of visual identities, camera logic, and lighting psychology for top luxury fashion brands (Balenciaga, Margiela, McQueen, YSL, Gucci, Prada, Rick Owens, Mugler, Thom Browne, Issey Miyake, The Row). Used to inject billion-dollar commercial aesthetics into the Master Bible V19.1.
 ---
 
 # 🖤 FASHION-SKILL: THE AESTHETIC IDENTITY ENGINE
 **Versi:** 2.1 (Patched: Kinetic Camera + Dermatological Compliance)
 **Fungsi:** Menyuntikkan jiwa sinematik (*lighting, camera, psychology, philosophical texture*) dari rumah mode kelas atas ke dalam parameter \`[RENDER & ACTING LOCK]\` dan \`[CAMERA & PHYSICS LOCK]\`.
 
-Saat Anda diminta membuat video *fashion*, pilih salah satu dari 11 identitas di bawah ini dan salin parameternya ke dalam Kerangka V16.0.
+Saat Anda diminta membuat video *fashion*, pilih salah satu dari 11 identitas di bawah ini dan salin parameternya ke dalam Kerangka V19.1.
 
 ---
 
@@ -1214,7 +1214,7 @@ Saat Anda diminta membuat video *fashion*, pilih salah satu dari 11 identitas di
 
 ---
 **ATURAN MUTLAK KETIKA SKILL INI DIPANGGIL:**
-1. Parameter di atas **WAJIB** dimasukkan ke dalam Kerangka V16.0.
+1. Parameter di atas **WAJIB** dimasukkan ke dalam Kerangka V19.1.
 2. Tetap patuhi hukum **Zero Buffering** (Prosa aksi di baris pertama).
 3. Jika *user* tidak menyebut *brand*, pilih gaya yang paling sesuai dengan tema mereka.
 4. Semua model **WAJIB** mematuhi **THE DERMATOLOGICAL MICRO-DOSING LAW** dari Master Bible (Subtle skin texture, faint pores, healthy but unpolished realism, peach-fuzz catching backlights, zero grotesque exaggeration). DILARANG merender kulit plastik sempurna maupun kotoran berlebih.
@@ -1228,10 +1228,10 @@ description: Pustaka estetika Sinema Indonesia kelas festival (Joko Anwar, Timo 
 ---
 
 # 🇮🇩 INDO-SKILL: THE NUSANTARA CINEMATIC ENGINE
-**Versi:** 2.0 (Kompatibel dengan Master Bible V16.4)
+**Versi:** 2.0 (Kompatibel dengan Master Bible V19.1)
 **Fungsi Utama:** Menyuntikkan estetika visual khas Sutradara Papan Atas Indonesia DAN **Mesin Dialog Lokal** agar terhindar dari hasil *render* dan naskah AI yang terlihat "kebarat-baratan" atau terdengar kaku seperti terjemahan Google Translate.
 
-Saat membuat video/naskah bertema Indonesia, panggil salah satu dari estetika di bawah ini dan masukkan ke dalam kerangka V16.4.
+Saat membuat video/naskah bertema Indonesia, panggil salah satu dari estetika di bawah ini dan masukkan ke dalam kerangka V19.1.
 
 ---
 
@@ -1303,7 +1303,7 @@ Saat membuat video/naskah bertema Indonesia, panggil salah satu dari estetika di
 
 ---
 **ATURAN MUTLAK KETIKA SKILL INI DIPANGGIL:**
-1. Parameter Visual **WAJIB** dimasukkan ke dalam Kerangka V16.4.
+1. Parameter Visual **WAJIB** dimasukkan ke dalam Kerangka V19.1.
 2. Parameter Dialog **WAJIB** menggantikan gaya dialog Hollywood di Fase 1 (Elite Screenwriting).
 3. Jika ada bentrokan dengan *FashionSkill*, utamakan cuaca tropis dari *IndoSkill* untuk mempertahankan realisme lokal.
 4. Selalu asumsikan warna kulit (*skin tone*) karakter adalah sawo matang khas Asia Tenggara (*Southeast Asian golden-brown complexion*), patuhi *The Dermatological Law*.
@@ -1314,10 +1314,10 @@ description: Pustaka estetika dan dialog Sinema Jepang (Ozu, Kitano, Kurosawa, S
 ---
 
 # 🇯🇵 JAPAN-SKILL: THE NIHON CINEMATIC ENGINE
-**Versi:** 1.0 (Kompatibel dengan Master Bible V16.4)
+**Versi:** 1.0 (Kompatibel dengan Master Bible V19.1)
 **Fungsi Utama:** Menyuntikkan estetika visual khas Sutradara Jepang DAN **Mesin Dialog Nihon** agar AI mengerti sosiologi kesopanan Jepang (*Honne vs Tatemae*) serta estetika kekerasan yang sangat spesifik.
 
-Saat membuat video/naskah bertema Jepang, panggil salah satu dari estetika di bawah ini dan masukkan ke dalam kerangka V16.4.
+Saat membuat video/naskah bertema Jepang, panggil salah satu dari estetika di bawah ini dan masukkan ke dalam kerangka V19.1.
 
 ---
 
@@ -1386,9 +1386,9 @@ Saat membuat video/naskah bertema Jepang, panggil salah satu dari estetika di ba
 
 ---
 **ATURAN MUTLAK KETIKA SKILL INI DIPANGGIL:**
-1. Parameter Visual **WAJIB** dimasukkan ke dalam Kerangka V16.4.
+1. Parameter Visual **WAJIB** dimasukkan ke dalam Kerangka V19.1.
 2. Jika setting di dalam rumah tradisional Jepang, **HARAM** menggunakan kamera *eye-level* orang berdiri. Wajib gunakan *Tatami-Shot*.
-3. Model/Aktor WAJIB mematuhi *The Dermatological Law* (V16.4). Dilarang merender kulit anime/plastik CGI murahan meskipun ini setting Jepang.
+3. Model/Aktor WAJIB mematuhi *The Dermatological Law* (V19.1). Dilarang merender kulit anime/plastik CGI murahan meskipun ini setting Jepang.
 `,
   ugcskill: `---
 name: UGCSkill — The Viral Algorithm Engine
@@ -1396,7 +1396,7 @@ description: Manipulasi algoritma TikTok/Reels tingkat tinggi. Berisi psikologi 
 ---
 
 # 📱 UGC-SKILL: THE VIRAL ALGORITHM ENGINE
-**Versi:** 1.0 (Kompatibel dengan Master Bible V16.0)
+**Versi:** 1.0 (Kompatibel dengan Master Bible V19.1)
 **Fungsi:** Mengganti logika sinematik (Oscar-level) menjadi logika *Attention Hacking* (TikTok/Reels). Merusak kualitas secara disengaja agar video terlihat organik dan menghindari deteksi "Iklan" oleh otak penonton.
 
 ---
