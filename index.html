@@ -28,14 +28,7 @@
               <button class="toggle-btn provider-btn" data-provider="grok">🧠 Grok (xAI)</button>
             </div>
           </div>
-          <div class="setting-group">
-            <label for="api-key-input" id="label-api-key">API Key</label>
-            <div class="input-row">
-              <input type="password" id="api-key-input" placeholder="AIza... or xai-..." autocomplete="off" />
-              <button id="btn-toggle-key" class="btn-icon" title="Show/Hide">👁️</button>
-            </div>
-            <p class="setting-hint" id="hint-api-key">Gemini: <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a> · Grok: <a href="https://console.x.ai" target="_blank">xAI Console</a></p>
-          </div>
+
           <div class="setting-group">
             <label id="label-language">Language / Bahasa</label>
             <div class="toggle-group">
@@ -137,6 +130,12 @@
           </div>
 
           <div class="chat-input-area">
+            <div class="mode-selector">
+              <span class="mode-label">📐 Mode:</span>
+              <button class="mode-btn active" data-mode="mini" title="Prompt under 2000 characters">⚡ Mini</button>
+              <button class="mode-btn" data-mode="standard" title="Prompt under 3000 characters">🎬 Standard</button>
+              <span class="mode-hint" id="mode-hint">< 2K chars</span>
+            </div>
             <div class="input-container glass-panel">
               <textarea id="chat-input" placeholder="Ketik perintah film Anda..." rows="1"></textarea>
               <button id="btn-send" class="btn-send" disabled>

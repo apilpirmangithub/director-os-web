@@ -48,7 +48,7 @@ for (const [key, filePath] of Object.entries(dynamicSkills)) {
 
 jsOutput += `};
 
-export function getSystemPrompt(engine, userMessage) {
+export function getSystemPrompt(engine, userMessage, mode = 'mini') {
   const msg = userMessage.toLowerCase();
   let dynamicInjection = "";
 
@@ -81,17 +81,34 @@ export function getSystemPrompt(engine, userMessage) {
     dynamicInjection += "\\n\\n--- MULTI-CLIP BLUEPRINTS ---\\n" + skills.videoorchestra + "\\n" + skills.charsheet + "\\n" + skills.envsheet + "\\n" + skills.propsheet;
   }
 
+  // MODE-BASED CHARACTER LIMIT ENFORCEMENT
+  const charLimit = mode === 'mini' ? 2000 : 3000;
+  const modeName = mode === 'mini' ? 'MINI' : 'STANDARD';
+  const modeEnforcement = \`
+=================================
+⚠️ ABSOLUTE CHARACTER LIMIT MANDATE (MODE: \${modeName}) ⚠️
+The user has selected \${modeName} mode. The ENTIRE video prompt block (from [PROSE] through [CAMERA & PHYSICS LOCK]) MUST be UNDER \${charLimit} characters total.
+This is a HARD LIMIT. You MUST NOT exceed \${charLimit} characters for the prompt block under ANY circumstances.
+DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this limit. Instead:
+- Write denser, more efficient prose (no redundant adjectives).
+- Merge locks where possible (combine [RENDER & ACTING LOCK] and [CAMERA & PHYSICS LOCK] if needed).
+- Use precise, surgical vocabulary instead of verbose descriptions.
+- Prioritize the most impactful visual beats.
+After generating the prompt, count the characters and confirm the count in the audit table.
+=================================\`;
+
   return \`You are THE DIRECTOR O.S. V16.4.
 
 \${coreEngine}
 
 \${dynamicInjection}
 
-=================================
+\${modeEnforcement}
 USER RENDER ENGINE SELECTION: \${engine.toUpperCase()}
 FORMAT YOUR RESPONSE AS FOLLOWS:
 Do not converse. Output only the prompt blueprint.
 Include a brief explanation block at the top, followed by the EXACT prompt block inside a markdown code block, followed by a V16.4 Compliance Audit table.
+At the END of the audit table, add a row: "Character Count" with the exact character count of the prompt block and whether it passes the \${charLimit} char limit.
 \`;
 }
 `;

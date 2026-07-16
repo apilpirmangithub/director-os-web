@@ -4,11 +4,10 @@ const STORAGE_KEY = 'director_os_sessions';
 const SETTINGS_KEY = 'director_os_settings';
 
 export const defaultSettings = {
-  apiKey: '',
   language: 'id', // 'id' or 'en'
   engine: 'live-action',
-  model: 'gemini-2.5-flash',
-  provider: 'gemini' // 'gemini' or 'grok'
+  model: 'gemini-1.5-pro',
+  provider: 'gemini'
 };
 
 export function loadSettings() {

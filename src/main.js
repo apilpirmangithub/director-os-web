@@ -1,15 +1,15 @@
 // src/main.js
 
 import { loadSettings, saveSettings, loadSessions, saveSessions, createSession, updateSession, defaultSettings } from './session.js';
-import { callGeminiAPI } from './gemini.js';
-import { callGrokAPI } from './grok.js';
 import { renderMessage, renderTypingIndicator, removeTypingIndicator } from './chat.js';
+import { updateResultPanel, copyToClipboard, downloadMarkdown, downloadPDF } from './result.js';
 import { updateResultPanel, copyToClipboard, downloadMarkdown, downloadPDF } from './result.js';
 
 // Global State
 let settings = defaultSettings;
 let sessions = [];
 let currentSessionId = null;
+let currentMode = 'mini'; // 'mini' (under 2K) or 'standard' (under 3K)
 
 // DOM Elements
 const els = {
@@ -43,7 +43,11 @@ const els = {
   btnDownloadPdf: document.getElementById('btn-download-pdf'),
   
   // Quick Actions
-  quickBtns: document.querySelectorAll('.quick-btn')
+  quickBtns: document.querySelectorAll('.quick-btn'),
+  
+  // Mode Selector
+  modeBtns: document.querySelectorAll('.mode-btn'),
+  modeHint: document.getElementById('mode-hint')
 };
 
 // Initialize
@@ -52,7 +56,6 @@ function init() {
   sessions = loadSessions();
   
   // Apply settings
-  els.apiKeyInput.value = settings.apiKey;
   els.modelSelect.value = settings.model;
   updateToggleUI(els.langBtns, settings.language, 'data-lang');
   updateToggleUI(els.engineBtns, settings.engine, 'data-engine');
@@ -74,9 +77,6 @@ function bindEvents() {
   // Settings Modal
   els.btnSettings.addEventListener('click', () => els.modal.classList.remove('hidden'));
   els.btnCloseSettings.addEventListener('click', () => els.modal.classList.add('hidden'));
-  els.btnToggleKey.addEventListener('click', () => {
-    els.apiKeyInput.type = els.apiKeyInput.type === 'password' ? 'text' : 'password';
-  });
   els.btnSaveSettings.addEventListener('click', handleSaveSettings);
 
   // Toggles
@@ -120,6 +120,16 @@ function bindEvents() {
     });
   });
 
+  // Mode toggle
+  els.modeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      els.modeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentMode = btn.dataset.mode;
+      els.modeHint.textContent = currentMode === 'mini' ? '< 2K chars' : '< 3K chars';
+    });
+  });
+
   // Result actions
   els.btnCopy.addEventListener('click', copyToClipboard);
   els.btnDownloadMd.addEventListener('click', downloadMarkdown);
@@ -151,7 +161,6 @@ function handleSaveSettings() {
   const activeProvider = document.querySelector('.toggle-btn[data-provider].active').dataset.provider;
   
   settings = {
-    apiKey: els.apiKeyInput.value.trim(),
     language: activeLang,
     engine: activeEngine,
     model: els.modelSelect.value,
@@ -236,11 +245,6 @@ function handleClearChat() {
 async function handleSendMessage() {
   const text = els.chatInput.value.trim();
   if (!text) return;
-  if (!settings.apiKey) {
-    alert("Please enter your API Key in Settings first.");
-    els.modal.classList.remove('hidden');
-    return;
-  }
 
   // Update UI
   els.chatInput.value = '';
@@ -258,13 +262,26 @@ async function handleSendMessage() {
   renderTypingIndicator(els.chatMessages);
 
   try {
-    let aiResponse;
-    const provider = settings.provider || 'gemini';
-    if (provider === 'grok') {
-      aiResponse = await callGrokAPI(settings.apiKey, settings.model, settings.engine, session.history.slice(0, -1), text);
-    } else {
-      aiResponse = await callGeminiAPI(settings.apiKey, settings.model, settings.engine, session.history.slice(0, -1), text);
+    const response = await fetch('/api/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: settings.model,
+        engine: settings.engine,
+        history: session.history.slice(0, -1),
+        userMessage: text,
+        mode: currentMode
+      })
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Failed to communicate with Serverless API");
     }
+
+    const data = await response.json();
+    const aiResponse = data.text;
+
     removeTypingIndicator();
     
     // Render AI message in chat

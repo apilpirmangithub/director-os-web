@@ -5,14 +5,41 @@ export function renderMessage(container, role, content) {
   const messageDiv = document.createElement('div');
   messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
   
-  // Clean up content for display (if AI returned markdown, basic formatting)
   let displayContent = content;
   if (!isUser) {
-    // If the AI returned a prompt block, we only want to show the conversational part in the chat
-    // The prompt block will go to the result panel.
-    const promptMatch = content.match(/```([\s\S]*?)```/);
-    if (promptMatch) {
-      displayContent = content.replace(promptMatch[0], '*(Prompt generated in right panel)*');
+    // Detect production output by looking for Director O.S. markers
+    const isProduction = /\[PROSE\]|\[GLOBAL LOCK\]|\[RENDER & ACTING LOCK\]|\[CAMERA & PHYSICS LOCK\]|PHASE [012]|CharSheet|EnvSheet|PropSheet/i.test(content);
+
+    if (isProduction) {
+      // Extract the brief explanation block if it exists
+      const briefMatch = content.match(/(?:BRIEF EXPLANATION BLOCK:?|implementation_plan)/i);
+      
+      // Try to extract a short summary before the first production marker
+      const firstMarker = content.search(/\[PROSE\]|#{1,3}\s|PHASE\s[012]|\*{3}/);
+      let summary = '';
+      
+      if (firstMarker > 0) {
+        summary = content.substring(0, firstMarker).trim();
+        // Clean up: remove markdown artifacts
+        summary = summary.replace(/```(?:markdown|text)?\s*/g, '').replace(/```/g, '').trim();
+      }
+      
+      if (!summary || summary.length < 10) {
+        summary = '✅ Produksi selesai! Prompt sinematik telah di-compile.';
+      }
+      
+      // Truncate summary if too long (keep only first ~500 chars)
+      if (summary.length > 500) {
+        summary = summary.substring(0, 500).trim() + '...';
+      }
+      
+      displayContent = summary + '\n\n*(Full production output displayed in right panel →)*';
+    } else {
+      // Non-production response: also check for old code-block pattern
+      const promptMatch = content.match(/```([\s\S]*?)```/);
+      if (promptMatch) {
+        displayContent = content.replace(promptMatch[0], '*(Prompt generated in right panel)*');
+      }
     }
   }
 
