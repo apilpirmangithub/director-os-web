@@ -31,14 +31,6 @@
             </div>
           </div>
           <div class="setting-group">
-            <label id="label-engine">Render Engine</label>
-            <div class="toggle-group">
-              <button class="toggle-btn engine-btn active" data-engine="live-action">🎬 Live-Action</button>
-              <button class="toggle-btn engine-btn" data-engine="anime">🎌 Anime</button>
-              <button class="toggle-btn engine-btn" data-engine="3d-comic">🕷️ 3D Comic</button>
-            </div>
-          </div>
-          <div class="setting-group">
             <label id="label-model">Model</label>
             <select id="model-select">
 
@@ -82,10 +74,6 @@
             <span>⚙️</span>
             <span id="label-settings-btn">Settings</span>
           </button>
-          <div class="engine-indicator">
-            <span id="current-engine-icon">🎬</span>
-            <span id="current-engine-label">Live-Action</span>
-          </div>
         </div>
       </aside>
 
@@ -120,11 +108,19 @@
           </div>
 
           <div class="chat-input-area">
-            <div class="mode-selector">
-              <span class="mode-label">📐 Mode:</span>
-              <button class="mode-btn active" data-mode="mini" title="Prompt under 2000 characters">⚡ Mini</button>
-              <button class="mode-btn" data-mode="standard" title="Prompt under 3000 characters">🎬 Standard</button>
-              <span class="mode-hint" id="mode-hint">&lt; 2K chars</span>
+            <div class="quick-toggles-row">
+              <div class="mode-selector engine-selector">
+                <span class="mode-label">🎥 Engine:</span>
+                <button class="mode-btn engine-btn active" data-engine="live-action" title="Live Action">🎬 Live</button>
+                <button class="mode-btn engine-btn" data-engine="anime" title="Anime">🎌 Anime</button>
+                <button class="mode-btn engine-btn" data-engine="3d-comic" title="3D Comic">🕷️ 3D</button>
+              </div>
+              <div class="mode-selector">
+                <span class="mode-label">📐 Mode:</span>
+                <button class="mode-btn active" data-mode="mini" title="Prompt under 2000 characters">⚡ Mini</button>
+                <button class="mode-btn" data-mode="standard" title="Prompt under 3000 characters">🎬 Standard</button>
+                <span class="mode-hint" id="mode-hint">&lt; 2K chars</span>
+              </div>
             </div>
             <div class="input-container glass-panel">
               <textarea id="chat-input" placeholder="Ketik perintah film Anda..." rows="1"></textarea>

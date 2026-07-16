@@ -27,8 +27,7 @@ const els = {
   // Sidebar
   btnNewSession: document.getElementById('btn-new-session'),
   sessionList: document.getElementById('session-list'),
-  currentEngineIcon: document.getElementById('current-engine-icon'),
-  currentEngineLabel: document.getElementById('current-engine-label'),
+
   
   // Chat
   chatInput: document.getElementById('chat-input'),
@@ -59,8 +58,6 @@ function init() {
   updateToggleUI(els.langBtns, settings.language, 'data-lang');
   updateToggleUI(els.engineBtns, settings.engine, 'data-engine');
 
-  updateEngineIndicator();
-
   // Load last session or create new
   if (sessions.length > 0) {
     switchSession(sessions[0].id);
@@ -84,6 +81,8 @@ function bindEvents() {
   }));
   els.engineBtns.forEach(btn => btn.addEventListener('click', (e) => {
     updateToggleUI(els.engineBtns, e.target.dataset.engine, 'data-engine');
+    settings.engine = e.target.dataset.engine;
+    saveSettings(settings);
   }));
 
 
@@ -144,26 +143,16 @@ function updateToggleUI(buttons, activeValue, dataAttr) {
   });
 }
 
-function updateEngineIndicator() {
-  const icons = { 'live-action': '🎬', 'anime': '🎌', '3d-comic': '🕷️' };
-  const labels = { 'live-action': 'Live-Action', 'anime': 'Anime', '3d-comic': '3D Comic' };
-  els.currentEngineIcon.innerText = icons[settings.engine] || '🎬';
-  els.currentEngineLabel.innerText = labels[settings.engine] || 'Live-Action';
-}
+
 
 // Actions
 function handleSaveSettings() {
   const activeLang = document.querySelector('.toggle-btn[data-lang].active').dataset.lang;
-  const activeEngine = document.querySelector('.toggle-btn[data-engine].active').dataset.engine;
   
-  settings = {
-    language: activeLang,
-    engine: activeEngine,
-    model: els.modelSelect.value
-  };
+  settings.language = activeLang;
+  settings.model = els.modelSelect.value;
   
   saveSettings(settings);
-  updateEngineIndicator();
   els.modal.classList.add('hidden');
 }
 
