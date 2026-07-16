@@ -1111,6 +1111,19 @@ html, body {
     border-top: 1px solid var(--glass-border);
   }
   
+  .result-content {
+    padding: 12px;
+  }
+  
+  .result-block-body {
+    padding: 12px;
+  }
+
+  .code-block-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
   /* iOS Safari auto-zoom fix (inputs must be at least 16px on mobile) */
   #chat-input, input, select, textarea {
     font-size: 16px;
