@@ -771,7 +771,7 @@ html, body {
   background: var(--bg-tertiary);
   border: 1px solid var(--glass-border);
   color: var(--text-secondary);
-  padding: 6px 12px;
+  padding: 4px 10px;
   border-radius: var(--radius-sm);
   font-family: var(--font-primary);
   font-size: 11px;
@@ -1120,13 +1120,16 @@ html, body {
   }
 
   .code-block-header {
-    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: stretch;
     gap: 8px;
   }
   
   .btn-copy-code {
-    padding: 8px 14px;
-    font-size: 12px;
+    padding: 10px;
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
   }
 
   /* iOS Safari auto-zoom fix (inputs must be at least 16px on mobile) */
