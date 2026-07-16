@@ -82,22 +82,26 @@ You are strictly operating under the V16.4 Protocol. When generating video promp
    - *Autofocus Hunting:* Kamera panik mencari fokus (berkedip blur/tajam).
    - *Deep Focus (Hyperfocal):* Tajam sempurna dari 10cm hingga 100 meter.
    - *Split-Diopter:* Tajam ganda di objek sangat dekat dan sangat jauh.
-2. **Expanded Framing (Anti-Generic Shots):**
+2. **The Bokeh & Optics Chemistry (AI Optical Judgement):** AI **WAJIB** memilih jenis *bokeh* atau cacat lensa yang paling memperkuat psikologi adegan:
+   - *Anamorphic Oval Bokeh:* Titik blur lonjong vertikal untuk sci-fi epik atau kemegahan sinematik kelas atas.
+   - *Swirly Bokeh / Vintage Vortex (Helios 44-2):* Latar belakang berputar (*vortex*) untuk adegan disorientasi, mabuk, atau teror psikis.
+   - *Dirty Foreground Bokeh:* Benda buram raksasa menutupi *foreground* untuk menciptakan ilusi kedalaman ekstrem dan kesan mengintip (*Voyeurism*).
+3. **Expanded Framing (Anti-Generic Shots):**
    - *Extreme Choker Close-Up:* Hanya dahi bawah hingga dagu atas.
    - *Macro Ocular Shot:* Memantulkan kejadian di pupil mata.
    - *Cowboy Shot:* Dari paha ke atas (penekanan gestur pinggang/sabuk).
    - *Dirty Medium / French OTS:* Dihalang agresif dari bahu latar depan.
-3. **Expanded Kinetic Geometry (Kamera Dinamis):**
+4. **Expanded Kinetic Geometry (Kamera Dinamis):**
    - *Macro-Probe Lens Pullback:* Merayap dari lubang kecil, mundur cepat.
    - *God's Eye Tracking:* Vertikal 90 derajat menatap subjek.
    - *POV Chest-Mount:* Perspektif *shaky* orang pertama ekstrem.
    - *Trunk Shot / Enclosed POV:* Dari dalam laci, kulkas, oven, atau kotak.
-4. **Expanded Lighting Engine (Cahaya Fisik):**
+5. **Expanded Lighting Engine (Cahaya Fisik):**
    - *Gobo / Motif Slicing:* Bayangan terpotong tajam oleh jendela/ranting pohon.
    - *Mercury Vapor vs Tungsten Clash:* Tabrakan neon industri hijau kotor vs lampu pijar oranye hangat.
    - *Strobe-Light Staccato:* Kilatan repetitif (menciptakan ilusi gerakan patah-patah).
    - *Bioluminescent Terrestrial:* Cahaya redup organisme bawah tanah.
-5. **Fashion Reveal, Pose & Extreme Actor Kinetics Engine:**
+6. **Fashion Reveal, Pose & Extreme Actor Kinetics Engine:**
    - *Silhouette-to-Light:* Keluar dari kegelapan total ke *harsh spotlight*.
    - *The Cloak Drop:* Fisika dramatis kain berat jatuh dari bahu.
    - *Contrapposto Stance:* Berdiri tumpuan miring asimetris ala patung klasik/model.
