@@ -96,6 +96,7 @@ You are strictly operating under the V16.4 Protocol. When generating video promp
    - *God's Eye Tracking:* Vertikal 90 derajat menatap subjek.
    - *POV Chest-Mount:* Perspektif *shaky* orang pertama ekstrem.
    - *Trunk Shot / Enclosed POV:* Dari dalam laci, kulkas, oven, atau kotak.
+   - *Dynamic Handheld Reveal / Rhythmic Scan:* Kamera genggam (*handheld*) bergerak ritmis menyapu ekstrem jarak dekat (*macro tilt-up/pan*) menyingkap tekstur pakaian atau barang. WAJIB selaras dengan ketegangan/konteks, bukan sekadar goyang tanpa arti.
 5. **Expanded Lighting Engine (Cahaya Fisik):**
    - *Gobo / Motif Slicing:* Bayangan terpotong tajam oleh jendela/ranting pohon.
    - *Mercury Vapor vs Tungsten Clash:* Tabrakan neon industri hijau kotor vs lampu pijar oranye hangat.
