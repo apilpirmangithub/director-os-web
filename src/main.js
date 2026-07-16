@@ -44,7 +44,7 @@ const els = {
   quickBtns: document.querySelectorAll('.quick-btn'),
   
   // Mode Selector
-  modeBtns: document.querySelectorAll('.mode-btn'),
+  modeBtns: document.querySelectorAll('[data-mode]'),
   modeHint: document.getElementById('mode-hint')
 };
 
