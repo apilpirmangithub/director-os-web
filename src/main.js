@@ -22,7 +22,7 @@ const els = {
   modelSelect: document.getElementById('model-select'),
   langBtns: document.querySelectorAll('[data-lang]'),
   engineBtns: document.querySelectorAll('[data-engine]'),
-  providerBtns: document.querySelectorAll('[data-provider]'),
+
   
   // Sidebar
   btnNewSession: document.getElementById('btn-new-session'),
@@ -58,7 +58,7 @@ function init() {
   els.modelSelect.value = settings.model;
   updateToggleUI(els.langBtns, settings.language, 'data-lang');
   updateToggleUI(els.engineBtns, settings.engine, 'data-engine');
-  updateToggleUI(els.providerBtns, settings.provider || 'gemini', 'data-provider');
+
   updateEngineIndicator();
 
   // Load last session or create new
@@ -85,9 +85,7 @@ function bindEvents() {
   els.engineBtns.forEach(btn => btn.addEventListener('click', (e) => {
     updateToggleUI(els.engineBtns, e.target.dataset.engine, 'data-engine');
   }));
-  els.providerBtns.forEach(btn => btn.addEventListener('click', (e) => {
-    updateToggleUI(els.providerBtns, e.target.dataset.provider, 'data-provider');
-  }));
+
 
   // Sidebar
   els.btnNewSession.addEventListener('click', handleNewSession);
@@ -157,13 +155,11 @@ function updateEngineIndicator() {
 function handleSaveSettings() {
   const activeLang = document.querySelector('.toggle-btn[data-lang].active').dataset.lang;
   const activeEngine = document.querySelector('.toggle-btn[data-engine].active').dataset.engine;
-  const activeProvider = document.querySelector('.toggle-btn[data-provider].active').dataset.provider;
   
   settings = {
     language: activeLang,
     engine: activeEngine,
-    model: els.modelSelect.value,
-    provider: activeProvider
+    model: els.modelSelect.value
   };
   
   saveSettings(settings);

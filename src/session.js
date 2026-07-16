@@ -6,8 +6,7 @@ const SETTINGS_KEY = 'director_os_settings';
 export const defaultSettings = {
   language: 'id', // 'id' or 'en'
   engine: 'live-action',
-  model: 'gemini-1.5-pro',
-  provider: 'gemini'
+  model: 'grok-4.5'
 };
 
 export function loadSettings() {
