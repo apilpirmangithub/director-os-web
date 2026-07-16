@@ -31,37 +31,84 @@ export function updateResultPanel(aiResponse) {
     promptText = promptMatch ? promptMatch[1].trim() : aiResponse.trim();
   }
 
-  // Convert markdown to basic HTML for display
-  let displayHtml = promptText
-    // Headers
-    .replace(/^### (.*$)/gm, '<h3>$1</h3>')
-    .replace(/^## (.*$)/gm, '<h2>$1</h2>')
-    .replace(/^# (.*$)/gm, '<h1>$1</h1>')
-    // Bold
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    // Italic
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    // Horizontal rules (*** or ---)
-    .replace(/^\*{3,}$/gm, '<hr>')
-    .replace(/^-{3,}$/gm, '<hr>')
-    // Code blocks
-    .replace(/```(?:text|markdown)?\n([\s\S]*?)```/g, '<pre><code>$1</code></pre>')
-    // Inline code
-    .replace(/`(.*?)`/g, '<code>$1</code>')
-    // Line breaks
-    .replace(/\n/g, '<br>');
+  // Split into sections/phases
+  const sections = promptText.split(/(?=^(?:### |\*\*\[SYS-LOG|\*\*KLIP|\*\*CLIP|KLIP |CLIP |Phase |Fase ))/mi);
+  
+  let blocksHtml = '';
+
+  sections.forEach((section) => {
+    if (!section.trim()) return;
+    
+    // Determine title for the block header
+    let title = '🎬 Director O.S. Block';
+    const firstLine = section.trim().split('\n')[0].toUpperCase();
+    if (firstLine.includes('SYS-LOG') || firstLine.includes('RNG')) title = '🎲 RNG Initiative Log';
+    else if (firstLine.includes('PHASE 1') || firstLine.includes('ASSETS')) title = '📁 Phase 1: Assets & Lock';
+    else if (firstLine.includes('CLIP') || firstLine.includes('KLIP')) title = '🎥 Video Clip Prompt';
+    else if (firstLine.includes('PHASE')) title = '⚙️ Phase Setup';
+    else title = '📝 Generated Text';
+
+    // Convert markdown to basic HTML for display
+    let displayHtml = section.trim()
+      // Headers
+      .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+      .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+      .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+      // Bold
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      // Italic
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      // Horizontal rules
+      .replace(/^\*{3,}$/gm, '<hr>')
+      .replace(/^-{3,}$/gm, '<hr>')
+      // Code blocks with Copy Button
+      .replace(/```(?:text|markdown|json|html)?\n([\s\S]*?)```/g, (match, code) => {
+         const escapedCode = encodeURIComponent(code.trim());
+         return `
+          <div class="code-block-wrapper">
+            <div class="code-block-header">
+              <span class="code-title">Terminal Output</span>
+              <button class="btn-copy-code" data-code="${escapedCode}">📋 Copy Prompt</button>
+            </div>
+            <pre><code>${code.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>
+          </div>
+         `;
+      })
+      // Inline code
+      .replace(/`(.*?)`/g, '<code>$1</code>')
+      // Line breaks
+      .replace(/\n/g, '<br>');
+
+    blocksHtml += `
+      <div class="result-block">
+        <div class="result-block-header">
+          ${title}
+        </div>
+        <div class="result-block-body">
+          <div class="result-prompt-text">${displayHtml}</div>
+        </div>
+      </div>
+    `;
+  });
 
   // Render Result Block
-  resultContainer.innerHTML = `
-    <div class="result-block">
-      <div class="result-block-header">
-        🎬 Director O.S. V16.4 — Compiled Production
-      </div>
-      <div class="result-block-body">
-        <div class="result-prompt-text" id="raw-prompt-text" data-raw="${encodeURIComponent(promptText)}">${displayHtml}</div>
-      </div>
-    </div>
-  `;
+  resultContainer.innerHTML = blocksHtml + `<div id="raw-prompt-text" data-raw="${encodeURIComponent(promptText)}" style="display:none;"></div>`;
+
+  // Attach event listeners for dynamic copy buttons
+  document.querySelectorAll('.btn-copy-code').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const code = decodeURIComponent(e.target.dataset.code);
+      navigator.clipboard.writeText(code).then(() => {
+        const original = e.target.innerText;
+        e.target.innerText = '✅ Copied!';
+        e.target.classList.add('copied');
+        setTimeout(() => {
+          e.target.innerText = original;
+          e.target.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  });
 
   // Perform V16.4 compliance audit
   const textLower = aiResponse.toLowerCase();
