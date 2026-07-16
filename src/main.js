@@ -45,7 +45,11 @@ const els = {
   
   // Mode Selector
   modeBtns: document.querySelectorAll('[data-mode]'),
-  modeHint: document.getElementById('mode-hint')
+  modeHint: document.getElementById('mode-hint'),
+  
+  // Mobile Tabs
+  mobileTabs: document.querySelectorAll('.mobile-tab-btn'),
+  layout: document.querySelector('.layout')
 };
 
 // Initialize
@@ -130,6 +134,19 @@ function bindEvents() {
   els.btnCopy.addEventListener('click', copyToClipboard);
   els.btnDownloadMd.addEventListener('click', downloadMarkdown);
   els.btnDownloadPdf.addEventListener('click', downloadPDF);
+
+  // Mobile Tabs
+  els.mobileTabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      els.mobileTabs.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (btn.dataset.tab === 'result') {
+        els.layout.classList.add('show-result');
+      } else {
+        els.layout.classList.remove('show-result');
+      }
+    });
+  });
 }
 
 // UI Helpers
@@ -273,6 +290,12 @@ async function handleSendMessage() {
     
     // Update Result Panel
     updateResultPanel(aiResponse);
+
+    // Auto-switch to result tab on mobile
+    els.layout.classList.add('show-result');
+    els.mobileTabs.forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.tab === 'result');
+    });
 
     // Save to session
     session.history.push({ role: 'ai', content: aiResponse });
