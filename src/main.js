@@ -48,8 +48,9 @@ const els = {
   modeHint: document.getElementById('mode-hint'),
   
   // Mobile Tabs
-  mobileTabs: document.querySelectorAll('.mobile-tab-btn'),
-  layout: document.querySelector('.layout')
+  mobileTabBtns: document.querySelectorAll('.mobile-tab-btn'),
+  chatPanel: document.getElementById('chat-panel'),
+  resultPanel: document.getElementById('result-panel')
 };
 
 // Initialize
@@ -134,19 +135,26 @@ function bindEvents() {
   els.btnCopy.addEventListener('click', copyToClipboard);
   els.btnDownloadMd.addEventListener('click', downloadMarkdown);
   els.btnDownloadPdf.addEventListener('click', downloadPDF);
-
+  
   // Mobile Tabs
-  els.mobileTabs.forEach(btn => {
+  els.mobileTabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      els.mobileTabs.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      if (btn.dataset.tab === 'result') {
-        els.layout.classList.add('show-result');
-      } else {
-        els.layout.classList.remove('show-result');
-      }
+      switchMobileTab(btn.dataset.tab);
     });
   });
+}
+
+function switchMobileTab(tabName) {
+  els.mobileTabBtns.forEach(b => b.classList.remove('active'));
+  document.querySelector(`.mobile-tab-btn[data-tab="${tabName}"]`).classList.add('active');
+  
+  if (tabName === 'chat') {
+    els.chatPanel.classList.add('active-tab');
+    els.resultPanel.classList.remove('active-tab');
+  } else {
+    els.resultPanel.classList.add('active-tab');
+    els.chatPanel.classList.remove('active-tab');
+  }
 }
 
 // UI Helpers
@@ -291,15 +299,14 @@ async function handleSendMessage() {
     // Update Result Panel
     updateResultPanel(aiResponse);
 
-    // Auto-switch to result tab on mobile
-    els.layout.classList.add('show-result');
-    els.mobileTabs.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.tab === 'result');
-    });
-
     // Save to session
     session.history.push({ role: 'ai', content: aiResponse });
     updateSession(sessions, currentSessionId, session.history);
+
+    // On mobile, auto switch to result tab
+    if (window.innerWidth <= 700) {
+      switchMobileTab('result');
+    }
 
   } catch (error) {
     removeTypingIndicator();

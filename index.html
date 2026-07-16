@@ -79,8 +79,15 @@
 
       <!-- MAIN CONTENT (SPLIT PANEL) -->
       <main class="main-content">
+        
+        <!-- MOBILE TABS (HIDDEN ON DESKTOP) -->
+        <div class="mobile-tabs hidden-desktop">
+          <button class="mobile-tab-btn active" data-tab="chat">💬 Command Center</button>
+          <button class="mobile-tab-btn" data-tab="result">📋 Prompt Result</button>
+        </div>
+
         <!-- LEFT PANEL: CHAT -->
-        <section id="chat-panel" class="panel chat-panel">
+        <section id="chat-panel" class="panel chat-panel active-tab">
           <div class="panel-header glass-panel">
             <h1 id="chat-title">💬 Command Center</h1>
             <div class="header-actions">
@@ -164,18 +171,6 @@
           </div>
         </section>
       </main>
-
-      <!-- MOBILE TAB BAR -->
-      <nav id="mobile-tabs" class="mobile-tabs hidden-desktop">
-        <button class="mobile-tab-btn active" data-tab="chat">
-          <span class="tab-icon">💬</span>
-          <span class="tab-label">Chat</span>
-        </button>
-        <button class="mobile-tab-btn" data-tab="result">
-          <span class="tab-icon">📋</span>
-          <span class="tab-label">Result</span>
-        </button>
-      </nav>
     </div>
   </div>
 
