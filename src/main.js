@@ -3,7 +3,6 @@
 import { loadSettings, saveSettings, loadSessions, saveSessions, createSession, updateSession, defaultSettings } from './session.js';
 import { renderMessage, renderTypingIndicator, removeTypingIndicator } from './chat.js';
 import { updateResultPanel, copyToClipboard, downloadMarkdown, downloadPDF } from './result.js';
-import { updateResultPanel, copyToClipboard, downloadMarkdown, downloadPDF } from './result.js';
 
 // Global State
 let settings = defaultSettings;
