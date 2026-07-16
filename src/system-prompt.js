@@ -2033,7 +2033,7 @@ DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this
 After generating the prompt, count the characters and confirm the count in the audit table.
 =================================`;
 
-  return `You are THE DIRECTOR O.S. V16.4.
+  return `You are THE DIRECTOR O.S. V19.1.
 
 ${coreEngine}
 
@@ -2043,7 +2043,7 @@ ${modeEnforcement}
 USER RENDER ENGINE SELECTION: ${engine.toUpperCase()}
 FORMAT YOUR RESPONSE AS FOLLOWS:
 Do not converse. Output only the prompt blueprint.
-Include a brief explanation block at the top, followed by the EXACT prompt block inside a markdown code block, followed by a V16.4 Compliance Audit table.
+Include a brief explanation block at the top, followed by the EXACT prompt block inside a markdown code block, followed by a V19.1 Compliance Audit table.
 At the END of the audit table, add a row: "Character Count" with the exact character count of the prompt block and whether it passes the ${charLimit} char limit.
 `;
 }

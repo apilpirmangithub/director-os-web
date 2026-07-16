@@ -110,20 +110,20 @@ export function updateResultPanel(aiResponse) {
     });
   });
 
-  // Perform V16.4 compliance audit
+  // Perform V19.1 compliance audit
   const textLower = aiResponse.toLowerCase();
   
   const rules = [
     { name: "Action-First Inversion", pass: /\[prose\]/.test(textLower) },
-    { name: "3-Second Mandate", pass: /hard.?cut|jump.?cut/i.test(textLower) },
-    { name: "7 Pillars Continuity", pass: /\[gaze direction\]/i.test(textLower) && /\[proximity lock\]/i.test(textLower) },
-    { name: "Triadic Color Law", pass: /color|triadic|green|red|cyan|orange/i.test(textLower) },
-    { name: "Anti-Slop Protocol", pass: !/masterpiece|ultra realistic|best quality/i.test(textLower) },
-    { name: "Dermatological Law", pass: /skin|pores|sweat|texture|epidermis|capillary/i.test(textLower) },
-    { name: "Full Wardrobe Lock", pass: /wardrobe|barefoot|shoes|heels|pants|shorts|blouse|shirt/i.test(textLower) },
-    { name: "Anti-Slowmo Law", pass: /1\.0x|no slow|real.?time/i.test(textLower) },
-    { name: "Clean Frame Protocol", pass: /clean frame|borderless|zero black bars|no letterboxing/i.test(textLower) },
-    { name: "Premium Aesthetic", pass: !/dull|boring|ugly|basic/i.test(textLower) && /cinematic|beautiful|striking|high-end|luxury|aesthetic/i.test(textLower) }
+    { name: "Kinetic Syntax (3s Mandate)", pass: /hard.?cut|jump.?cut|smash.?cut|match.?cut|whip.?pan|fast.?tracking|dynamic.?swoop|rack.?focus|handheld.?reveal/i.test(textLower) },
+    { name: "The Barrel-Stare Ban", pass: /zero barrel stare|eyeline|off.?screen|concealing eyes/i.test(textLower) },
+    { name: "Triadic Color Law", pass: /color|triadic|red|blue|yellow|cyan|orange|crimson/i.test(textLower) },
+    { name: "The Anti-Wet-Floor Law", pass: /zero wet floor|dry|solid/i.test(textLower) },
+    { name: "The Anti-Particle Law", pass: /zero artificial particles|no floating dust|zero glowing bokeh|clean frame/i.test(textLower) },
+    { name: "Dermatological Law", pass: /skin|pores|texture|healthy unpolished realism/i.test(textLower) },
+    { name: "Full Wardrobe Lock", pass: /wardrobe|shoes|boots|heels|pants|shorts|trousers|skirt/i.test(textLower) },
+    { name: "Spatial Depth & Optics", pass: /spatial depth|focus prerogative|anamorphic|swirly bokeh|helios|dirty foreground|split.?diopter/i.test(textLower) },
+    { name: "Anti-Slowmo Law", pass: /1\.0x|no slow|real.?time|zero slow.?motion/i.test(textLower) }
   ];
 
   auditTable.innerHTML = rules.map(rule => `
