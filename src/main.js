@@ -284,8 +284,15 @@ async function handleSendMessage() {
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error || "Failed to communicate with Serverless API");
+      const errorText = await response.text();
+      let errorMessage = "Failed to communicate with Serverless API";
+      try {
+        const errorData = JSON.parse(errorText);
+        errorMessage = errorData.error || errorMessage;
+      } catch (e) {
+        errorMessage = `${errorMessage} (HTTP ${response.status}): ${errorText.substring(0, 100)}`;
+      }
+      throw new Error(errorMessage);
     }
 
     const data = await response.json();
