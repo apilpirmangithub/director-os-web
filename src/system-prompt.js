@@ -88,12 +88,14 @@ You are strictly operating under the V16.4 Protocol. When generating video promp
    - *Mercury Vapor vs Tungsten Clash:* Tabrakan neon industri hijau kotor vs lampu pijar oranye hangat.
    - *Strobe-Light Staccato:* Kilatan repetitif (menciptakan ilusi gerakan patah-patah).
    - *Bioluminescent Terrestrial:* Cahaya redup organisme bawah tanah.
-5. **Fashion Reveal, Pose & Gesture Engine:**
+5. **Fashion Reveal, Pose & Extreme Actor Kinetics Engine:**
    - *Silhouette-to-Light:* Keluar dari kegelapan total ke *harsh spotlight*.
    - *The Cloak Drop:* Fisika dramatis kain berat jatuh dari bahu.
    - *Contrapposto Stance:* Berdiri tumpuan miring asimetris ala patung klasik/model.
    - *The Margiela Slouch:* Bungkuk, apatis, tangan di dalam saku *oversized*.
    - *Kinetic Micro-Gestures:* Jari mengetuk ritmis di sabuk, sentakan rahang tajam, ibu jari mengusap bibir.
+   - *Extreme Actor Kinetics (Movement):* DILARANG aksi generik seperti "berlari" atau "melompat". WAJIB hiper-spesifik: *Parkour Vaulting* (melompati rintangan mulus dengan satu tangan), *Tactical Combat Roll* (berguling menghindar), *Weightless Wire-Fu Leap* (lompatan anggun menolak gravitasi ala Wuxia), *Desperate Scramble* (merangkak kabur penuh kepanikan).
+   - *Tactical & Emotional Sign Language:* Isyarat tangan militer (*stack up, hold*), kepalan tangan bergetar menahan amarah, menunjuk dengan pistol secara merendahkan.
 6. **THE ANTI-REPETITION MANDATE (Dadu Estetika):** Anda **WAJIB** merandom kombinasi Kamera + Framing + Fokus + Cahaya + Pose dari daftar di atas. DILARANG menggunakan gaya/kombinasi yang sama berulang-ulang!
 
 ---
