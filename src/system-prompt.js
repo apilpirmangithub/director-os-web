@@ -558,16 +558,16 @@ If the clip contains character dialogue, do NOT use rigid protocol brackets. Ins
 - **Lip-Sync Anchoring (Anti-Ventriloquist Glitch):** When Rapid Banter occurs, the AI model will often move both mouths at the same time. To prevent this, you MUST explicitly dictate the mechanical turn-taking of their mouths in the \`[NARRATIVE ACTION PARAGRAPH]\`. 
   - **Rule of One Compliance:** Even in Rapid Banter, NEVER use their \`@image\` tags more than once in the paragraph. Use their physical descriptions or names to anchor the lip-sync instructions.
 
-### 7. SPATIAL, GAZE, & TEMPORAL CONTINUITY (THE 7 PILLARS OF ABSOLUTE CONTINUITY) - CRITICAL
-Because AI Video Generators suffer from "inter-clip amnesia", you MUST explicitly dictate the spatial and temporal continuity in EVERY SINGLE CLIP PROMPT using these 7 specific bracketed tags before describing the narrative action.
-**NUCLEAR DIRECTIVE:** You MUST output these 7 brackets EXACTLY as separate list items. **DO NOT MERGE THEM into a single paragraph.** If you merge them into \`[CAMERA & PHYSICS LOCK]\`, you have FAILED. Each pillar MUST be on its own line:
-1. **[GAZE DIRECTION]:** Prevent the AI from breaking the fourth wall. Explicitly state where the character is looking.
-2. **[BODY ORIENTATION]:** Break the frontal-bias of CharSheets. State the angle of the character's body relative to the lens.
-3. **[COMPASS RULE]:** Use **screen-relative directions** (screen-left, screen-right, toward camera, away from camera) instead of cardinal directions (N/S/E/W). AI engines work in 2D screen space, not 3D map space. Example: "Subject walks screen-left to screen-right, camera tracks parallel." Only use cardinal directions if an EnvSheet top-down map is provided AND the user explicitly references compass layout.
-4. **[MOMENTUM CARRY-OVER]:** Preserve inertia between cuts to prevent characters from stopping. State their current kinetic energy.
-5. **[TIME & LIGHTING LOCK]:** Prevent weather/time from randomly changing between clips.
-6. **[PROXIMITY LOCK]:** Prevent characters from magically merging or changing distance in close-ups. State the exact distance.
-7. **[CAMERA vs SUBJECT MOVEMENT]:** Strictly separate hardware movement from software movement to prevent hallucinated walking.
+### 8.1 THE 7 PHYSICS PILLARS (Anti-Amnesia Data)
+Because AI Video Generators suffer from "inter-clip amnesia", you MUST explicitly dictate the spatial and temporal continuity in EVERY SINGLE CLIP PROMPT using these 7 specific physics variables.
+**NUCLEAR DIRECTIVE:** To save token space and prevent the 2000-character cutoff, you MUST compress all 7 variables into a SINGLE line formatted as **\`[PHYSICS VECTORS]: Gaze: [val] | Body: [val] | Compass: [val] | Momentum: [val] | Light: [val] | Prox: [val] | Relativity: [val]\`**. Do not write them on separate lines.
+- **Gaze:** Where the character is looking (e.g. off-screen right, unblinking). Do not break the fourth wall.
+- **Body:** Angle of the character's body relative to the lens (e.g. 3/4 screen-right).
+- **Compass:** Screen-relative directions (e.g. walks screen-left to screen-right, camera tracks parallel).
+- **Momentum:** Current kinetic energy (e.g. full sprint, slow pour).
+- **Light:** Weather/time continuity (e.g. Night mercury green).
+- **Prox:** Exact distance (e.g. 0.8m table camera push 1.5m).
+- **Relativity:** Hardware vs software movement (e.g. camera slow push-in subject micro only).
 
 ### 8. MACRO & FINE-MOTOR PROTOCOL (Anti-Melting Insert Shots)
 **CRITICAL:** AI Video Generators are notoriously bad at rendering fine-motor skills (fingers interacting with small objects like keys, locks, wires, keyboards) and will often melt the fingers into the metal.
@@ -1659,14 +1659,9 @@ When user requests a film:
            * **NATIVE LANGUAGE LOCK (CRITICAL):** You MUST explicitly define the language next to the \`@audio\` tag in the prose if it's not English, otherwise the TTS engine will hallucinate an English accent regardless of the audio reference file.
            * If the dialogue is ON-SCREEN and requires lip-sync: write the dialogue normally and inject the language lock (e.g., \`Kenji shouts (Local @Audio1: fluent native Japanese, NO English) "Ikiro!"\`).
            * If the dialogue is (O.S.) or (V.O.): You MUST include the dialogue text for native TTS engines, but you MUST forcefully lock the on-screen character's mouth to prevent the AI from lip-syncing them. (e.g., \`Voice O.S. (Local @Audio1: fluent native Japanese, NO English): "System breach." [CRITICAL PHYSICS: Kenji's mouth is strictly CLOSED, zero lip movement, jaws locked, he is only listening]\`).
-       - **MANDATORY 7 PILLARS CONTINUITY LOCK (MULTI-CLIP ONLY):** Dalam mode multi-clip, setiap klip WAJIB menyertakan 7 tag kontinuitas berikut SETELAH blok \`[LENS & CAMERA PHYSICS LOCK]\`. Tag-tag ini berfungsi sebagai "GPS spasial" agar AI Video Engine tidak berhalusinasi arah pandang, posisi tubuh, atau pencahayaan antar klip. Ketujuh tag tersebut adalah:
-         1. \`[GAZE DIRECTION]:\` Ke mana mata setiap karakter melihat (off-screen ke arah mana, atau ke objek apa). DILARANG menatap lensa kecuali konteks UGC.
-         2. \`[BODY ORIENTATION]:\` Posisi dan arah tubuh karakter (menghadap screen-left, duduk bersila, berdiri menyamping ke kamera, dll).
-         3. \`[COMPASS RULE]:\` Peta arah relatif layar (screen-left = jendela, screen-right = pintu, toward camera = koridor, away from camera = dinding, dst). Gunakan arah kardinal (Utara/Selatan) HANYA jika ada EnvSheet top-down map. Wajib konsisten antar klip dalam lokasi yang sama.
-         4. \`[MOMENTUM CARRY-OVER]:\` Bagaimana gerakan di akhir klip ini menyambung ke awal klip berikutnya (misal: "Pukulan tangan kanan bergerak ke kiri → klip berikutnya dimulai dari dampak pukulan").
-         5. \`[TIME & LIGHTING LOCK]:\` Waktu dan pencahayaan yang dikunci (misal: "Malam; lampu fluorescent + cahaya neon biru dari jendela").
-         6. \`[PROXIMITY LOCK]:\` Jarak fisik antar karakter dan objek penting (misal: "HP 30cm dari wajah; Aiko 2m dari futon").
-         7. \`[CAMERA vs SUBJECT MOVEMENT]:\` Relasi antara gerakan kamera dan gerakan subjek (misal: "Kamera diam, subjek berjalan ke kiri" atau "Kamera tracking ke kanan, subjek diam").
+         - **MANDATORY PHYSICS VECTORS COMPRESSION (MULTI-CLIP ONLY):** Dalam mode multi-clip, setiap klip WAJIB menyertakan vektor fisika spasial SETELAH blok \`[LENS & CAMERA PHYSICS LOCK]\`. Tag ini berfungsi sebagai "GPS spasial" agar AI Video Engine tidak berhalusinasi arah pandang atau pencahayaan antar klip. Untuk menghemat batas 2000 karakter, Anda WAJIB menggabungkannya ke dalam satu baris dengan format:
+         **\`[PHYSICS VECTORS]: Gaze: [val] | Body: [val] | Compass: [val] | Momentum: [val] | Light: [val] | Prox: [val] | Relativity: [val]\`**
+         (Contoh: \`[PHYSICS VECTORS]: Gaze: off-screen right | Body: 3/4 screen-right | Compass: toward camera | Momentum: slow pour | Light: Night mercury green | Prox: 0.8m | Relativity: camera slow push-in subject micro\`) 
      - **Editing & Sequencing Guide** (separate section after all prompts):
        - How to stitch the clips (recommended order, transitions, crossfades).
        - Which visual elements must match across clips (lighting, color grade, wardrobe, environment, character details) — so the user can check/adjust during editing.
