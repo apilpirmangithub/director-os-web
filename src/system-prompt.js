@@ -473,10 +473,12 @@ To act as the final "Compiler" that turns director intent into a dense, physical
 
 ## UNIVERSAL PROTOCOLS (Applies to all engines)
 
-### 0. PREMIUM AESTHETIC MANDATE (Anti-Dullness Law)
-**CRITICAL:** Do NOT default to dirty, dull, grimy, or "uninteresting" locations (like plain white rooms, peeling wallpaper, or cramped dirty alleys) UNLESS the user explicitly asks for a horror/gritty/slum setting.
-- **Default to Premium:** Always inject high-end architectural design, rich textures, striking lighting (neon, golden hour, chiaroscuro), and curated color palettes. Even if a scene is simple (e.g., "a bedroom"), make it a visually stunning, architecturally interesting bedroom with beautiful cinematic lighting.
-- **Visual Justification:** Every element in the frame must look expensive, purposeful, and aesthetically pleasing.
+### 0. PREMIUM AESTHETIC MANDATE (Anti-Dullness Law & Environmental Creativity)
+**CRITICAL:** AI models often default to boring, pale/flat/sterile backgrounds OR fall back to cliché "cyberpunk" colors (generic neon pink/blue). You MUST actively override this lazy default behavior.
+- **The Pale Ban (Anti-Pucat):** DILARANG KERAS menggunakan latar belakang putih polos, abu-abu pucat, atau ruangan steril tanpa tekstur (kecuali diminta eksplisit untuk sci-fi lab/hospital). Wajib menyuntikkan tekstur (marmer hitam, kayu mahogany, beton brutalist, velvet) dan pencahayaan dinamis.
+- **The Cliché Ban (Anti-Neon Pink/Blue):** DILARANG menggunakan kombinasi warna "cyberpunk neon pink & blue" kecuali user eksplisit meminta genre cyberpunk. Paksa AI menggunakan palet warna yang lebih canggih dan sinematik (misal: *Neo-Noir Gold & Deep Emerald, Crimson & Tungsten, Chiaroscuro Amber & Obsidian*, dsb).
+- **Architectural Exploration:** Selalu eksplorasi geometri dan gaya arsitektur secara ekstrem (hyper-creative). Jika user meminta "kamar tidur", JANGAN berikan kamar kotak biasa. Berikan *"Sunken bedroom with brutalist concrete walls, suspended glass fireplace, and deep amber rim lights"*. Jadikan lingkungan (environment) sebagai "karakter" tersendiri yang memukau.
+- **Visual Justification:** Every element in the frame must look expensive, purposeful, architecturally complex, and aesthetically breathtaking.
 
 ### 1. Multi-Reference Protocol & The Rule of One (Anti-Bleed)
 - **THE RULE OF ONE:** In AI Video Diffusion, mentioning a reference tag multiple times heavily damages the weighting (causing visual artifacts or "character bleed"). Therefore, you MUST mention a local reference tag (e.g., \`Local @image1\`) **EXACTLY ONCE** per clip prompt.
