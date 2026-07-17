@@ -150,7 +150,7 @@ KLIP 1 (0-10 Detik) - [JUDUL ADEGAN]
 
 \`\`\`text
 **[PROSE]:** [Langsung ledakkan Aksi Kinetik Cepat. Patuhi ACTION-FIRST INVERSION]. [HARD CUT] [Karakter bereaksi]. [Karakter] SPEAK (Emosi, NATIVE LANGUAGE LOCK): "Teks pendek."
-**[SPATIAL DEPTH ENGINE]:** [WAJIB JIKA BUKAN CLOSE-UP. Gunakan 3 hingga 7 Layer BERDASARKAN LOGIKA ARSITEKTUR/CERITA. Jangan paksa Layer 5/6 jika di ruangan sempit. Format: LAYER 0 (Voyeur FG): [teks] | LAYER 1 (Extreme FG): [teks] | LAYER 3 (SUBJECT): [teks] | dst...]
+**[SPATIAL DEPTH ENGINE]:** [WAJIB JIKA BUKAN CLOSE-UP. Gunakan 3 hingga 7 Layer BERDASARKAN LOGIKA ARSITEKTUR/CERITA. Jangan paksa Layer 5/6 jika di ruangan sempit. WAJIB patuhi kurva ketajaman ekstrem: LAYER 0/6 (Total Optical Obliteration/Abstract Bokeh), LAYER 1/5 (Heavy Defocus), LAYER 2/4 (Soft Falloff), LAYER 3 (Apex of Sharpness). Format: LAYER 0 (Voyeur FG): [teks] (Total Optical Obliteration) | LAYER 1 (Extreme FG): [teks] (Heavy Defocus) | LAYER 3 (SUBJECT): [teks] (Apex of Sharpness) | dst...]
 
 **[GLOBAL LOCK]:** [Karakter desc & clothes]. Location: [place]. Time: [time].
 **[RENDER & ACTING LOCK]:** [Forbidden Lore]. [Lighting Psychology]. The Dermatological Law: Translucent epidermis, capillary veins. Continuous micro-movements. [Low/High] Kinetic Flow.
@@ -433,12 +433,12 @@ Gunakan lapisan kedalaman (3 hingga 6 layer) **HANYA berdasarkan logika arsitekt
 - **Layer 5: Deep Background (The Scale):** Konteks skala ruang, HANYA JIKA LOGIS (misal: *the glowing cyberpunk city visible through the window, the distant mountain range*). Makin jauh, makin *creamy* blur-nya.
 - **Layer 6: Infinite Background (The Atmosphere):** Lapisan tak terhingga, HANYA JIKA BERADA DI LUAR RUANGAN (misal: *distant rolling fog, the moon, atmospheric haze*).
 
-**3. The Gaussian Optical Blur Curve (Depth of Field Physics):**
-Wajib membentuk kurva ketajaman (*optical bell curve*) dari Layer 0 hingga Layer 6 di mana **HANYA Layer 3** yang berada di puncak ketajaman absolut (*The Apex of Sharpness*). Lapisan di depannya dan di belakangnya harus terdegradasi menjadi *organic blur* secara progresif (makin jauh dari Layer 3, makin buram):
-- **Layer 0 & Layer 6:** Extreme organic creamy blur (Sangat buram absolut, bokeh meleleh).
-- **Layer 1 & Layer 5:** Heavy organic blur (Buram berat).
-- **Layer 2 & Layer 4:** Soft organic bokeh (Buram tipis/lembut).
-- **Layer 3:** Absolute razor-sharp focus (Ketajaman absolut tanpa blur).
+**3. The Gaussian Optical Blur Curve (Extreme Depth of Field Physics):**
+Wajib membentuk kurva ketajaman (*optical bell curve*) yang **SANGAT CURAM** dari Layer 0 hingga Layer 6 di mana **HANYA Layer 3** yang berada di puncak ketajaman absolut (*The Apex of Sharpness*). Lapisan di depannya dan di belakangnya harus terdegradasi menjadi *organic blur* secara brutal:
+- **Layer 0 & Layer 6 (Total Optical Obliteration):** Abstract, completely unrecognizable creamy bokeh. ZERO structural detail. Bentuk fisik hancur total menjadi genangan warna/cahaya (*macroscopic crush*). Model AI dilarang keras merender detail di layer ini.
+- **Layer 1 & Layer 5 (Heavy Defocus):** Buram berat. Objek kehilangan tekstur dan garis tepi, hanya tersisa siluet buram.
+- **Layer 2 & Layer 4 (Soft Falloff):** *Shallow depth of field*. Sedikit di luar jangkauan fokus, *soft organic bokeh*, bentuk objek masih bisa dikenali tapi tidak tajam.
+- **Layer 3 (The Apex of Sharpness):** **Absolute hyper-focal razor-sharp detail.** Satu-satunya elemen di seluruh ruang yang memiliki ketajaman piksel sempurna.
 - **Subordination Principle:** Layer 0, 1, 2, 4, 5, dan 6 **TIDAK BOLEH** mencuri fokus dari Layer 3. Anda bisa menggunakan \`[RACK FOCUS]\` untuk memutar kurva ini (misal menggeser fokus tajam dari Layer 1 perlahan ke Layer 3).
 
 *Example (The 6-Plane Prompt):*
