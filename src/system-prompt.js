@@ -2091,7 +2091,7 @@ export function getSystemPrompt(engine, userMessage, mode = 'mini') {
 =================================
 ⚠️ ABSOLUTE CHARACTER LIMIT MANDATE (MODE: ${modeName}) ⚠️
 The user has selected ${modeName} mode. The character limit is STRICTLY ${charLimit} characters.
-${mode === 'mini' ? 'TARGET LENGTH: 1600 - 1850 characters to be absolutely safe. DO NOT exceed 1950 characters.' : ''}
+${mode === 'mini' ? 'TARGET LENGTH: 1400 - 1650 characters to be absolutely safe. DO NOT exceed 1850 characters. If you exceed 1999 characters, the video engine will crash.' : ''}
 
 CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the individual Phase 2 Video Clip Prompt (the text from [SYS-LOG] down to the final 7-Pillar tag). It does NOT apply to the entire response or Phase 1 assets. THIS OVERRIDES any other character limit rules (e.g. PromptSkill Section 10 which says 1900-1950). For this web session, the ONLY limit that matters is ${charLimit} characters.
 
