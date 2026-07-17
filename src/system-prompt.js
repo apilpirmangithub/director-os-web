@@ -149,7 +149,7 @@ KLIP 1 (0-10 Detik) - [JUDUL ADEGAN]
 - Rolled Kinetics: [Action details]
 
 **[PROSE]:** [Langsung ledakkan Aksi Kinetik Cepat. Patuhi ACTION-FIRST INVERSION]. [HARD CUT] [Karakter bereaksi]. [Karakter] SPEAK (Emosi, NATIVE LANGUAGE LOCK): "Teks pendek."
-**[SPATIAL DEPTH ENGINE]:** [WAJIB JIKA BUKAN CLOSE-UP. Tuliskan struktur: LAYER 1 (Extreme FG): [teks] | LAYER 2 (FG): [teks] | LAYER 3 (SUBJECT): [teks] | LAYER 4 (Near BG): [teks] | LAYER 5 (Deep BG): [teks] | LAYER 6 (Infinite): [teks]]
+**[SPATIAL DEPTH ENGINE]:** [WAJIB JIKA BUKAN CLOSE-UP. Gunakan 3 hingga 6 Layer BERDASARKAN LOGIKA ARSITEKTUR/CERITA. Jangan paksa Layer 5/6 jika di ruangan sempit. Format: LAYER 1 (Extreme FG): [teks] | LAYER 3 (SUBJECT): [teks] | dst...]
 
 **[GLOBAL LOCK]:** [Karakter desc & clothes]. Location: [place]. Time: [time].
 **[RENDER & ACTING LOCK]:** [Forbidden Lore]. [Lighting Psychology]. The Dermatological Law: Translucent epidermis, capillary veins. Continuous micro-movements. [Low/High] Kinetic Flow.
@@ -425,14 +425,14 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 - **Logical Coherence:** Struktur ruang HARUS masuk akal secara fisik. Walaupun latar tersebut unik, surealis, atau hancur berantakan, kerusakannya harus memiliki alasan logis (misal: *rubble from an explosion*, *abandoned overgrown greenhouse*). DILARANG membiarkan AI meletakkan benda acak tanpa alasan spasial.
 - **Relatable Grounding:** Lingkungan harus *relatable*. (Misal: Sebuah lab futuristik tetap membutuhkan saklar lampu, kabel, atau kursi logis, bukan sekadar lampu neon melayang).
 
-**2. The 6-Plane Depth System (Kedalaman Sinematik Maksimal):**
-Jangan hanya menggunakan *Foreground* dan *Background*. Gunakan hingga 6 lapisan kedalaman untuk menciptakan ruang bernapas 3D yang megah:
+**2. The 6-Plane Depth System (Architectural & Narrative Justification):**
+Gunakan lapisan kedalaman (3 hingga 6 layer) **HANYA berdasarkan logika arsitektur ruang dan narasi cerita**. Jangan memaksakan Layer 5 & 6 secara buta jika adegan berada di ruangan tertutup/sempit. Setiap penggunaan layer wajib memiliki alasan spasial yang kuat!
 - **Layer 1: Extreme Foreground (The Dirty Lens):** Sangat dekat dengan kamera, SANGAT BURAM (misal: *raindrops on the lens, out-of-focus cigarette smoke, extreme blurred shoulder of another person*).
 - **Layer 2: Foreground (The Approach):** Objek yang berada di antara kamera dan subjek (misal: *a blurry coffee cup on the table, branches swaying*).
 - **Layer 3: THE SUBJECT / MIDGROUND (THE SHARPEST FOCUS):** Ini adalah lapisan utama. **TITIK FOKUS PALING TAJAM DAN ABSOLUT.** Subjek utama wajib berada di sini.
 - **Layer 4: Near Background (The Room):** Lingkungan terdekat di belakang subjek (misal: *the dimly lit brick wall, bookshelves*). Wajib sedikit *out of focus* (*organic bokeh*).
-- **Layer 5: Deep Background (The Scale):** Konteks skala ruang (misal: *the glowing cyberpunk city visible through the window, the distant mountain range*). Makin jauh, makin *creamy* blur-nya.
-- **Layer 6: Infinite Background (The Atmosphere):** Lapisan tak terhingga (misal: *distant rolling fog, the moon, atmospheric haze*).
+- **Layer 5: Deep Background (The Scale):** Konteks skala ruang, HANYA JIKA LOGIS (misal: *the glowing cyberpunk city visible through the window, the distant mountain range*). Makin jauh, makin *creamy* blur-nya.
+- **Layer 6: Infinite Background (The Atmosphere):** Lapisan tak terhingga, HANYA JIKA BERADA DI LUAR RUANGAN (misal: *distant rolling fog, the moon, atmospheric haze*).
 
 **3. The Bokeh Mandate & Layer Manipulation:**
 - Anda (Grok) berhak memainkan lingkup 6 layer ini. Anda bisa menggunakan \`[RACK FOCUS]\` untuk menggeser ketajaman dari Layer 1 perlahan ke Layer 3. 
