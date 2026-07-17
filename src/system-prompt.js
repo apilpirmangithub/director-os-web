@@ -1480,6 +1480,7 @@ Never just write "A man talking." Voice prompts must dictate the emotional perfo
 \`[Character Type], [Emotional State], [Vocal Timbre], [Pacing/Flow], [Micro-expressions/Breathing]. [Technical Spec].\`
 
 ### Rules:
+- **Language Lock (CRITICAL):** If the dialogue is NOT in English (e.g., Japanese, Indonesian), you MUST explicitly state the native language to prevent the AI from generating an English accent or translating it to English. (e.g., "Speaking fluent native Japanese, strictly NOT English").
 - **Timbre:** Raspy, booming, breathy, squeaky, resonant, nasal.
 - **Pacing/Flow:** Machine-gun fast, slow and deliberate, trembling, hesitant, arrogant flow.
 - **Micro-expressions:** Include physical vocalizations in the description (e.g., "heavy breathing between words", "stifling a sob", "gritting teeth").
