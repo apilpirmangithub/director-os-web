@@ -315,6 +315,11 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 - NEVER write phrases like *"CUT TO: The bullet hitting the wall"*, *"Then the camera angle switches to his back"*, or *"Flashback to yesterday"* inside a single Phase 2 video prompt. If you do this, the AI will melt the character into the wall trying to generate the transition seamlessly.
 - **Solution (Orchestration):** If the scene requires multiple cuts or angles (e.g., Shot 1: Man shoots gun. Shot 2: Bullet hits wall), you MUST orchestrate them as entirely separate, independent Clips (e.g., \`CLIP 1\`, \`CLIP 2\`) in Phase 2. The actual "cutting" is done by the Human Editor in Premiere Pro/CapCut, NOT by the AI Video Generator.
 
+### H.1 INTENTIONALITY OF GESTURE (Anti-Hesitation & Anti-Confusion)
+**CRITICAL:** Model AI Video sering merender karakter dengan gestur yang ragu-ragu, kebingungan, atau gerakan tangan tak bertujuan (*aimless wandering*), membuat mereka terlihat seperti NPC yang *glitch*.
+- **The Absolute Purpose Law:** SETIAP gestur dan gerakan fisik HARUS memiliki tujuan mekanis atau emosional yang absolut. DILARANG menggunakan kata kerja pasif seperti *"he stands there looking around"*.
+- **Force Intentionality:** Gunakan kata kerja berbobot tajam: *"He plants his feet firmly, locks his eyes onto the target without blinking, hands aggressively adjusting his collar with absolute certainty"*. Karakter DILARANG terlihat bingung kecuali naskah secara eksplisit meminta adegan kebingungan.
+
 ### I. HDR Color Space & Gamut Protocol (Anti-Flat Color)
 **CRITICAL:** AI video generators often default to flat, compressed, or standard dynamic range (SDR) color profiles. To ensure the output meets professional broadcast standards, you MUST explicitly force the AI to render in a high dynamic range color space.
 - Always append explicit color science instructions to the lighting/global style tags.
@@ -1454,7 +1459,7 @@ Di UGC, 3 detik itu terlalu lama. Anda punya **setengah detik**.
 
 ### 2. Manufactured Authenticity (Ilusi Kamera Murah)
 Hapus semua elemen sinematik. Jika terlalu bagus, penonton akan *skip*.
-*   **[RENDER & ACTING LOCK] Injection:** \`UGC-Style organic video. Manufactured authenticity. Zero cinematic gloss. Slight digital noise and compression artifacts. Overexposed harsh ring-light reflections. Deep focus (infinite depth of field, ZERO background blur/bokeh). Models exhibit highly relatable, raw, unpolished, and slightly chaotic energy.\`
+*   **[RENDER & ACTING LOCK] Injection:** \`UGC-Style organic video. Manufactured authenticity. Zero cinematic gloss. Slight digital noise and compression artifacts. Rich diegetic practical lighting (e.g., harsh window daylight, messy desk lamps, screen glow). ABSOLUTELY NO generic circular ring-lights in the eyes. Deep focus (infinite depth of field, ZERO background blur/bokeh). Models exhibit highly relatable, raw, unpolished, and slightly chaotic energy.\`
 
 ### 3. Parasocial Intimacy (0.5x Distorsi Lensa)
 Ciptakan keintiman agresif dengan menempatkan wajah kreator sangat dekat dengan lensa (seperti *FaceTime*).
