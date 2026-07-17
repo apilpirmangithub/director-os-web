@@ -366,12 +366,6 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 - *HMI (Hard Daylight):* Harsh, directional, punchy contrast simulating a spotlight or full moon.
 - *Chiaroscuro / Rembrandt:* High contrast, half the face in pitch black, tiny triangle of light on the cheek.
 
-**4. Film Stock & Emulsion (Texture):**
-- *Kodak Vision3 500T:* Heavy cinematic film grain, nostalgic organic texture, warm halation.
-- *CineStill 800T:* Aggressive red halation around practical lights, cyberpunk neon bleed.
-- *Bleach Bypass:* Desaturated colors, crushed blacks, extreme contrast (War films, gritty thrillers).
-- *Ilford HP5:* High-contrast, gritty, raw black-and-white.
-
 ### K. COMPOSITION & FRAMING SCIENCE (The Geometry of Emotion)
 **CRITICAL:** AI video models default to boring center-frame compositions. You MUST explicitly dictate the compositional geometry to inject psychological meaning into every frame:
 
@@ -525,11 +519,13 @@ To act as the final "Compiler" that turns director intent into a dense, physical
 - **Multi-Ref Assembly:** When assigning multiple references to ONE character (e.g., Face from Image 1, Body from Image 2), assign roles explicitly: *"Using the exact person across all provided reference images. Take the face from @image2. Take the full body from @image1."* 
 - **Lighting Recalculation:** Always add: *"Completely recalculate all lighting, shadows, and reflections to match the new environment. Ensure a seamless natural skin transition between the face and neck."*
 
-### 1.5 THE OBJECT PERMANENCE LAW (Anti-Disappearing Props)
-**CRITICAL:** AI Video Generators menderita **Amnesia Objek 100%**. Jika sebuah barang (pistol, payung, cangkir kopi, kacamata) sedang dipakai/dipegang oleh karakter di Klip 1, AI *akan menghapus barang tersebut* di Klip 2 JIKA barang itu tidak disebutkan ulang.
-- **Continuous Prop Binding:** Anda WAJIB mendeskripsikan ulang keberadaan/status barang bawaan di SETIAP klip (di bagian \`[PROSE]\` maupun \`[GLOBAL LOCK]\`).
-- *Contoh Salah:* (Klip 1: Dia memegang pedang. Klip 2: Dia berlari menembus hujan). -> Hasil: AI menghapus pedang di Klip 2, tangan kosong.
-- *Contoh Benar:* (Klip 2: Dia berlari menembus hujan, **tangan kanannya masih menggenggam erat pedang baja yang berkilat**). JANGAN biarkan AI berasumsi! Tuliskan benda tersebut secara fisik dan eksplisit di setiap klip jika masih berada di dalam layar.
+### 1.5 THE UNIFIED OBJECT PERMANENCE LAW (Anti-Disappearing Glitch)
+**CRITICAL:** AI Video Generators menderita **Amnesia Objek 100%**. Jika barang/desain tidak terus-menerus diingatkan, AI akan menghapusnya dari layar.
+- **Continuous Prop Binding (Cross-Clip):** Jika sebuah barang (pistol, payung, tas) dipegang di Klip 1, Anda WAJIB mendeskripsikan ulang barang tersebut di Klip 2 jika masih ada di *frame* (baik di \`[PROSE]\` maupun \`[GLOBAL LOCK]\`).
+  - *Contoh Salah:* (Klip 2: Dia berlari menembus hujan). -> AI menghapus pedang di Klip 2.
+  - *Contoh Benar:* (Klip 2: Dia berlari menembus hujan, **tangan kanannya masih menggenggam erat pedang baja**).
+- **The 180-Degree Blindspot (Cross-Angle):** Saat karakter berbalik badan 180 derajat (membelakangi kamera), AI sering melupakan desain ransel, jubah, atau logo punggung. Anda WAJIB memaksa AI membaca referensi punggung.
+  - *Contoh Benar:* *"Character turns around. Reference the BACK FULL BODY panel of @image1 to maintain exact 3D geometry of the backpack."*
 
 ### 2. Tri-Sheet Reading Protocol (The Blueprints & Anti-Grid Glitch)
 **CRITICAL:** When feeding a multi-panel grid (CharSheet/EnvSheet) into an AI Video Generator (like Sora/Kling) as a reference, you MUST explicitly forbid it from rendering the grid lines, or it will generate a video of a floating grid.
@@ -537,13 +533,11 @@ When dealing with references, instruct the AI how to read them:
 - **6-Panel Character:** *"Reference @image1 is a 6-panel character sheet. ONLY use it as an identity reference. DO NOT render the grid lines, text labels, or multiple panels. Render a single, unified cinematic frame. Read the top panels for facial structure, and bottom panels for body/wardrobe."*
 - **7-Panel Environment:** *"Reference @image4 is a 7-panel map. DO NOT render the map or grid lines. ONLY render a single cinematic frame from the [North/South/East/West/Up/Down] POV."*
 - **4-Panel Prop:** *"Reference @image3 is a 4-panel prop sheet. DO NOT render the grid. ONLY render the [Front/Back/Left/Right] view texture for the object in this scene."*
+
 ### 3. Typography Constraint & Background Blur (Anti-Garbage Text)
 - **CRITICAL:** AI Video models cannot spell complex sentences and will generate alien/melting text on background signs (e.g., in supermarkets, cyberpunk cities, billboards).
 - **Foreground Text:** If the scene requires readable text (e.g., a logo on a shirt), limit it to 1-2 words MAX and enclose it in bold quotes. Example: A glowing neon sign displaying the word **"HOTEL"**.
 - **Background Text (The Bokeh Trick - Use with Logic):** If the scene takes place in a sign-heavy environment (like a supermarket aisle), you can blur the background to hide AI spelling errors using shallow depth of field (bokeh). **HOWEVER, this must make cinematographic sense.** Only use this on Medium or Close-Up shots focused on a character. Do NOT artificially blur Wide Establishing Shots just to hide text (it looks unnatural).
-### 4. Object Permanence Protocol (Anti-Disappearing Glitch)
-- **CRITICAL:** When a character turns 180 degrees (back facing the camera), the AI often forgets their backpack, logo, or back design.
-- **Action:** If the prompt involves the character turning around or being viewed from the back, you MUST explicitly instruct the AI to reference the back panel. Example: *"Character turns around. Reference the BACK FULL BODY panel of @image1 to maintain exact 3D geometry of the backpack."*
 
 ### 5. Continuity & Override Protocol (State-Changes)
 - **Wardrobe/Grooming (Minor Changes):** If a character changes clothes for a new day, or takes a shower (clean face/wet hair), do NOT request a new reference sheet. Instead, write an Override Command in the prompt: *"Use @image1 as the exact base identity for facial structure and proportions, but OVERRIDE the wardrobe to be a casual blue shirt, and OVERRIDE the hair to be wet."* This minimizes the need to generate endless references.
@@ -576,47 +570,12 @@ Because AI Video Generators suffer from "inter-clip amnesia", you MUST explicitl
 6. **[PROXIMITY LOCK]:** Prevent characters from magically merging or changing distance in close-ups. State the exact distance.
 7. **[CAMERA vs SUBJECT MOVEMENT]:** Strictly separate hardware movement from software movement to prevent hallucinated walking.
 
-### 7.1 EXACT OUTPUT TEMPLATE MANDATE
-You MUST structure every single video prompt exactly like this template. Do NOT deviate. Do NOT merge blocks.
-
-[PROSE]:
-(Your kinetic action paragraph here. Must be under 1900 chars).
-
-[GLOBAL LOCK]:
-(Identity, wardrobe, location).
-
-[RENDER & ACTING LOCK]:
-(Cinematic engine, physics, skin texture).
-
-[CAMERA & PHYSICS LOCK]:
-(Hardware, shutter angle, color grading).
-
-[GAZE DIRECTION]:
-...
-[BODY ORIENTATION]:
-...
-[COMPASS RULE]: Subject advances screen-left to screen-right, camera tracks parallel
-...
-[MOMENTUM CARRY-OVER]:
-...
-[TIME & LIGHTING LOCK]:
-...
-[PROXIMITY LOCK]:
-...
-[CAMERA vs SUBJECT MOVEMENT]:
-...
-
 ### 8. MACRO & FINE-MOTOR PROTOCOL (Anti-Melting Insert Shots)
 **CRITICAL:** AI Video Generators are notoriously bad at rendering fine-motor skills (fingers interacting with small objects like keys, locks, wires, keyboards) and will often melt the fingers into the metal.
 **Action:** If the scene involves an Insert Shot of a character manipulating an object with their hands, you MUST apply these three rules in the prompt:
 1. **Camera Logic:** Force an Extreme Close-Up (ECU) with a Macro Lens. (e.g., "Macro lens, extreme close-up insert shot, ultra-shallow depth of field completely blurring the background"). This forces the AI to spend 100% of its processing power on the object and fingers.
 2. **Mechanical Physics:** Do NOT use vague verbs like "He unlocks the padlock". You must describe the mechanical physics. (e.g., "A steel key is inserted into a brass keyhole and turned 90-degrees clockwise until a mechanical click is heard").
 3. **Anti-Melting Tag:** You MUST append this exact phrase to the Narrative Action Paragraph: *"Physically accurate object permanence, 5 distinct human fingers, fingers do NOT melt or merge with the metal object, maintaining strict structural boundaries."*
-
-### 9. CLEAN FRAME PROTOCOL (Anti-Border & Overlay Glitch)
-**CRITICAL:** AI Video Generators sometimes hallucinate UI overlays, black bars, or fake film artifacts.
-**Action:** Append this condensed tag to the \`[CAMERA & PHYSICS LOCK]\` of EVERY clip:
-*"Clean frame: zero vignette, zero borders, zero film artifacts, zero text overlays, zero camera UI."*
 
 ### 9.1 ANTI-ZOOM-ZOOM LAW (Anti-Position-Teleport)
 **CRITICAL:** AI Video Engines have zero 3D spatial memory. When you zoom in then zoom out, the AI reconstructs the scene from scratch and often teleports the subject to a different position.
