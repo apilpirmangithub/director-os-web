@@ -148,6 +148,7 @@ KLIP 1 (0-10 Detik) - [JUDUL ADEGAN]
 - Rolled Focus: [Focus details]
 - Rolled Kinetics: [Action details]
 
+\`\`\`text
 **[PROSE]:** [Langsung ledakkan Aksi Kinetik Cepat. Patuhi ACTION-FIRST INVERSION]. [HARD CUT] [Karakter bereaksi]. [Karakter] SPEAK (Emosi, NATIVE LANGUAGE LOCK): "Teks pendek."
 **[SPATIAL DEPTH ENGINE]:** [WAJIB JIKA BUKAN CLOSE-UP. Gunakan 3 hingga 6 Layer BERDASARKAN LOGIKA ARSITEKTUR/CERITA. Jangan paksa Layer 5/6 jika di ruangan sempit. Format: LAYER 1 (Extreme FG): [teks] | LAYER 3 (SUBJECT): [teks] | dst...]
 
@@ -156,6 +157,7 @@ KLIP 1 (0-10 Detik) - [JUDUL ADEGAN]
 **[CAMERA & PHYSICS LOCK]:** MANDATORY: Dynamic camera movement. [WAJIB DUMP 5+ ISTILAH DARI MASTER CAMERA & ANGLE DATABASE, misal: Low-angle 35mm tracking, Split Diopter, Spielberg Oner]. [WAJIB DUMP 10+ ISTILAH DARI MASTER COLOR & SENSOR DATABASE, misal: 16-bit OpenEXR, ACEScg, PBR textile, dsb]. Clean frame: zero vignette zero borders. Real-time 1.0x.
 
 **[PHYSICS VECTORS]:** Gaze: [val] | Body: [val] | Compass: [val] | Momentum: [val] | Light: [val] | Prox: [val] | Relativity: [val]
+\`\`\`
 ***
 ---
 **[END OF THE ULTIMATE DIRECTOR OS BIBLE]**
@@ -1789,7 +1791,9 @@ Every panel MUST contain a typography text label written inside the image:
 
 Every output prompt MUST follow this exact structural template:
 
-> **[Aesthetic/Style Tags (MUST MATCH FILM)]**. A 6-panel casting character reference sheet on a **pure solid white background**. The image is split into 6 equal grid panels. The character's design and identity are perfectly synchronized across all panels. Panel 1: Extreme Close-Up Face Front showing **[Facial Details/Pores/Eye Color]**, with typography text reading **"EXTREME CLOSE UP"**. Panel 2: Perfect 90-degree Left Side Profile Face showing **[Left details]**, with typography text reading **"LEFT PROFILE"**. Panel 3: Perfect 90-degree Right Side Profile Face showing **[Right details]**, with typography text reading **"RIGHT PROFILE"**. Panel 4: Medium Shot Waist-Up Front showing **[Upper Clothing]**, with typography text reading **"MEDIUM SHOT"**. Panel 5: Full Body Front showing **[Full Wardrobe]**, with clear typography text annotations reading **"FRONT FULL BODY"**, **"AGE: [X] YRS"**, and **"HEIGHT: [X]CM"**. Panel 6: Full Body Back showing **[Back Details/Weapons/Hair]**, with typography text reading **"BACK FULL BODY"**. The character is **[Age, Ethnicity, Body Type, Posture, Clothing Details]**. **[Specific camera/lighting settings that match the aesthetic]**, absolutely consistent identity. --ar 16:9
+\`\`\`text
+**[Aesthetic/Style Tags (MUST MATCH FILM)]**. A 6-panel casting character reference sheet on a **pure solid white background**. The image is split into 6 equal grid panels. The character's design and identity are perfectly synchronized across all panels. Panel 1: Extreme Close-Up Face Front showing **[Facial Details/Pores/Eye Color]**, with typography text reading **"EXTREME CLOSE UP"**. Panel 2: Perfect 90-degree Left Side Profile Face showing **[Left details]**, with typography text reading **"LEFT PROFILE"**. Panel 3: Perfect 90-degree Right Side Profile Face showing **[Right details]**, with typography text reading **"RIGHT PROFILE"**. Panel 4: Medium Shot Waist-Up Front showing **[Upper Clothing]**, with typography text reading **"MEDIUM SHOT"**. Panel 5: Full Body Front showing **[Full Wardrobe]**, with clear typography text annotations reading **"FRONT FULL BODY"**, **"AGE: [X] YRS"**, and **"HEIGHT: [X]CM"**. Panel 6: Full Body Back showing **[Back Details/Weapons/Hair]**, with typography text reading **"BACK FULL BODY"**. The character is **[Age, Ethnicity, Body Type, Posture, Clothing Details]**. **[Specific camera/lighting settings that match the aesthetic]**, absolutely consistent identity. --ar 16:9
+\`\`\`
 
 ---
 
@@ -1995,7 +1999,9 @@ To prevent this, **every significant prop, weapon, vehicle, logo, or symbol that
 
 Every output prompt MUST follow this exact structural template, regardless of whether it is a small weapon, a large vehicle, or a graphic logo:
 
-> **[Aesthetic/Style Tags]**. A comprehensive 4-panel object design reference sheet of a **[Detailed Description of the Prop/Logo/Vehicle]**. The image is split into a 2x2 grid on a flat neutral grey background. Panel 1 (Top-Left): Perfect Front Elevation view showing **[Front Details]**. Panel 2 (Top-Right): Perfect Back Elevation view showing **[Back Details]**. Panel 3 (Bottom-Left): Perfect 90-degree Left Side Profile showing **[Left Details]**. Panel 4 (Bottom-Right): Perfect 90-degree Right Side Profile showing **[Right Details]**. The object is displayed completely alone. Soft dramatic studio lighting, high resolution, precise structural consistency across all 4 panels. --ar 16:9
+\`\`\`text
+**[Aesthetic/Style Tags]**. A comprehensive 4-panel object design reference sheet of a **[Detailed Description of the Prop/Logo/Vehicle]**. The image is split into a 2x2 grid on a flat neutral grey background. Panel 1 (Top-Left): Perfect Front Elevation view showing **[Front Details]**. Panel 2 (Top-Right): Perfect Back Elevation view showing **[Back Details]**. Panel 3 (Bottom-Left): Perfect 90-degree Left Side Profile showing **[Left Details]**. Panel 4 (Bottom-Right): Perfect 90-degree Right Side Profile showing **[Right Details]**. The object is displayed completely alone. Soft dramatic studio lighting, high resolution, precise structural consistency across all 4 panels. --ar 16:9
+\`\`\`
 
 ---
 
