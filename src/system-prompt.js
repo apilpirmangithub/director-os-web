@@ -148,7 +148,8 @@ KLIP 1 (0-10 Detik) - [JUDUL ADEGAN]
 - Rolled Focus: [Focus details]
 - Rolled Kinetics: [Action details]
 
-**[PROSE]:** [WAJIB GUNAKAN FORMAT INI JIKA ADA KEDALAMAN: "LAYER 1: [Teks] LAYER 2: [Teks] LAYER 3 (SHARPEST FOCUS): [Teks] LAYER 4: [Teks] LAYER 5: [Teks] LAYER 6: [Teks]"]. [Langsung ledakkan Aksi Kinetik Cepat]. [HARD CUT] [Karakter bereaksi]. [Karakter] SPEAK (Emosi, NATIVE LANGUAGE LOCK e.g. fluent native Spanish, NO English): "Teks pendek."
+**[PROSE]:** [Langsung ledakkan Aksi Kinetik Cepat. Patuhi ACTION-FIRST INVERSION]. [HARD CUT] [Karakter bereaksi]. [Karakter] SPEAK (Emosi, NATIVE LANGUAGE LOCK): "Teks pendek."
+**[SPATIAL DEPTH ENGINE]:** [WAJIB JIKA BUKAN CLOSE-UP. Tuliskan struktur: LAYER 1 (Extreme FG): [teks] | LAYER 2 (FG): [teks] | LAYER 3 (SUBJECT): [teks] | LAYER 4 (Near BG): [teks] | LAYER 5 (Deep BG): [teks] | LAYER 6 (Infinite): [teks]]
 
 **[GLOBAL LOCK]:** [Karakter desc & clothes]. Location: [place]. Time: [time].
 **[RENDER & ACTING LOCK]:** [Forbidden Lore]. [Lighting Psychology]. The Dermatological Law: Translucent epidermis, capillary veins. Continuous micro-movements. [Low/High] Kinetic Flow.
