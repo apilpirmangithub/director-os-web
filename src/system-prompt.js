@@ -1619,6 +1619,14 @@ When user requests a film:
                 - **Spatial Continuity Rule**: Every clip must strictly obey the layout defined in Phase 1 and instruct the AI how to read it. (e.g., "STRICT SPATIAL CONTINUITY: @image4 is a dual-panel reference. Read the left panel map for layout, but ONLY render the right panel cinematic style").
          - **Master Lighting & Color Grade Protocol:** AI Video models are forgetful. If a scene occurs in a specific lighting environment (e.g., "Neon pink cyberpunk alley, heavy fog, high contrast"), you MUST copy-paste that EXACT lighting phrase into EVERY SINGLE CLIP PROMPT for that scene. Do not leave any clip without explicit lighting/weather instructions, or the AI will hallucinate different weather/lighting between cuts.
          - **Audio Integration**: Inject \`@audio\` tags directly into the prose as Voice Characteristic References to define how the character speaks. Do NOT use brackets. Example: \`Kenji shouts "Too late!" with a rough, gravelly voice (Local @Audio1). A massive explosion (Local @Audio2) erupts behind him.\`
+       - **MANDATORY 7 PILLARS CONTINUITY LOCK (MULTI-CLIP ONLY):** Dalam mode multi-clip, setiap klip WAJIB menyertakan 7 tag kontinuitas berikut SETELAH blok \`[LENS & CAMERA PHYSICS LOCK]\`. Tag-tag ini berfungsi sebagai "GPS spasial" agar AI Video Engine tidak berhalusinasi arah pandang, posisi tubuh, atau pencahayaan antar klip. Ketujuh tag tersebut adalah:
+         1. \`[GAZE DIRECTION]:\` Ke mana mata setiap karakter melihat (off-screen ke arah mana, atau ke objek apa). DILARANG menatap lensa kecuali konteks UGC.
+         2. \`[BODY ORIENTATION]:\` Posisi dan arah tubuh karakter (menghadap utara, duduk bersila, berdiri menyamping, dll).
+         3. \`[COMPASS RULE]:\` Peta arah mata angin ruangan (Utara = jendela, Selatan = pintu, dst). Wajib konsisten antar klip dalam lokasi yang sama.
+         4. \`[MOMENTUM CARRY-OVER]:\` Bagaimana gerakan di akhir klip ini menyambung ke awal klip berikutnya (misal: "Pukulan tangan kanan bergerak ke kiri → klip berikutnya dimulai dari dampak pukulan").
+         5. \`[TIME & LIGHTING LOCK]:\` Waktu dan pencahayaan yang dikunci (misal: "Malam; lampu fluorescent + cahaya neon biru dari jendela").
+         6. \`[PROXIMITY LOCK]:\` Jarak fisik antar karakter dan objek penting (misal: "HP 30cm dari wajah; Aiko 2m dari futon").
+         7. \`[CAMERA vs SUBJECT MOVEMENT]:\` Relasi antara gerakan kamera dan gerakan subjek (misal: "Kamera diam, subjek berjalan ke kiri" atau "Kamera tracking ke kanan, subjek diam").
      - **Editing & Sequencing Guide** (separate section after all prompts):
        - How to stitch the clips (recommended order, transitions, crossfades).
        - Which visual elements must match across clips (lighting, color grade, wardrobe, environment, character details) — so the user can check/adjust during editing.

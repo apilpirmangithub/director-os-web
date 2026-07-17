@@ -129,6 +129,21 @@ export function updateResultPanel(aiResponse) {
     { name: "Anti-Slowmo Law", pass: /1\.0x|no slow|real.?time|zero slow.?motion/i.test(textLower) }
   ];
 
+  // CONDITIONAL: 7 Pillars Continuity Lock (MULTI-CLIP ONLY)
+  const isMultiClip = /clip\s*2|klip\s*2|phase\s*2|10-20|15-30|5-10/i.test(textLower);
+  if (isMultiClip) {
+    const pillarChecks = [
+      { name: "⑦ Gaze Direction", pass: /gaze.?direction/i.test(textLower) },
+      { name: "⑦ Body Orientation", pass: /body.?orientation/i.test(textLower) },
+      { name: "⑦ Compass Rule", pass: /compass.?rule/i.test(textLower) },
+      { name: "⑦ Momentum Carry-Over", pass: /momentum.?carry/i.test(textLower) },
+      { name: "⑦ Time & Lighting Lock", pass: /time.{0,3}lighting.?lock/i.test(textLower) },
+      { name: "⑦ Proximity Lock", pass: /proximity.?lock/i.test(textLower) },
+      { name: "⑦ Camera vs Subject", pass: /camera.{0,5}subject/i.test(textLower) }
+    ];
+    rules.push(...pillarChecks);
+  }
+
   auditTable.innerHTML = rules.map(rule => `
     <div class="audit-row ${rule.pass ? 'pass' : 'fail'}">
       <span>${rule.pass ? '✅' : '❌'}</span>
