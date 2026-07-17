@@ -138,17 +138,29 @@ HAPUS SEMUA PARAMETER AUDIO. Prompt murni Lensa & Cahaya. Output WAJIB dimulai d
 - Rolled Location: [Sebutkan lokasi Avant-Garde/Surealis]
 - Rolled Wardrobe & Prop: [Sebutkan desainer/tekstur pakaian & properti avant-garde]
 - Rolled Camera & Framing: [Sebutkan pilihan dari FASE 2 ATAU rig/angle eksperimental luar]
-- Rolled Lighting & Color: [Sebutkan Harmoni Triadik ATAU teknik pencahayaan langka luar]
-- Rolled Focus Engine: [Sebutkan jenis fokus/lensa spesifik]
-- Rolled Actor Kinetics: [Sebutkan pilihan dari FASE 2 ATAU gaya teater/gerak obscure luar]
+KLIP 1 (0-10 Detik) - [JUDUL ADEGAN]
 
-KLIP 1 (0-10s) - [JUDUL ADEGAN]
+[SYS-LOG: RNG INITIATIVE]
+- Rolled Location: [Location details]
+- Rolled Wardrobe & Prop: [Wardrobe details]
+- Rolled Camera: [Camera details]
+- Rolled Lighting: [Lighting details]
+- Rolled Focus: [Focus details]
+- Rolled Kinetics: [Action details]
 
-**[PROSE]:** [Langsung ledakkan Aksi Kinetik 1]. [KINETIC SYNTAX (Pilih Transisi Sesuai Emosi)]: [Karakter bereaksi / Bressonian Anti-acting]. [Karakter] SPEAK (Emosi Subteks): "Teks pendek [Tarantino Tangent]." [KINETIC SYNTAX (Pilih Transisi)]: [Aksi Kinetik penutup atau Pinter Pause].
+**[PROSE]:** [Langsung ledakkan Aksi Kinetik Cepat]. [HARD CUT] [Karakter bereaksi]. [Karakter] SPEAK (Emosi, NATIVE LANGUAGE LOCK e.g. fluent native Spanish, NO English): "Teks pendek."
 
-**[GLOBAL LOCK]:** [Karakter desc]. Wardrobe & Prop: [Wardrobe & Prop dari RNG]. Location: [Unique Location dari RNG]. Time: [time].
-**[RENDER, COLOR, LIGHTING & ACTING LOCK]:** [Forbidden Lore: e.g., Bressonian Anti-acting]. [Actor Kinetics dari RNG]. [Lighting Engine & Color Chemistry dari RNG]. Subtle skin texture, faint pores, healthy but unpolished realism. [Sweat Threshold Logic]. Continuous micro-movements.
-**[LENS & CAMERA PHYSICS LOCK]:** [Focus Engine dari RNG]. [Spatial Depth Engine]. [Kinetic Geometry & Framing dari RNG]. [Emulsion Logic]. Hyper-stable edge retention.
+**[GLOBAL LOCK]:** [Karakter desc & clothes]. Location: [place]. Time: [time].
+**[RENDER & ACTING LOCK]:** [Forbidden Lore]. [Lighting Psychology]. The Dermatological Law: Translucent epidermis, capillary veins. Continuous micro-movements. [Low/High] Kinetic Flow.
+**[CAMERA & PHYSICS LOCK]:** MANDATORY: Dynamic camera movement. [Kinetic Geometry]. [Color Chemistry]. [Emulsion Logic]. Clean frame: zero vignette zero borders. Real-time 1.0x.
+
+[GAZE DIRECTION]: [Target]
+[BODY ORIENTATION]: [Position]
+[COMPASS RULE]: [Directions]
+[MOMENTUM CARRY-OVER]: [Motion]
+[TIME & LIGHTING LOCK]: [Light]
+[PROXIMITY LOCK]: [Distance]
+[CAMERA vs SUBJECT MOVEMENT]: [Relativity]
 ***
 ---
 **[END OF THE ULTIMATE DIRECTOR OS BIBLE]**
@@ -2049,7 +2061,6 @@ DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this
 - Use precise, surgical vocabulary instead of verbose descriptions (e.g. "zero vignette/borders" instead of "zero vignette, zero borders").
 - Prioritize the most impactful visual beats.
 
-After generating, you MUST count the exact characters of the Phase 2 prompt block and verify it is under ${charLimit}.
 =================================`;
 
   return `You are THE DIRECTOR O.S. V19.1.
@@ -2062,8 +2073,8 @@ ${modeEnforcement}
 USER RENDER ENGINE SELECTION: ${engine.toUpperCase()}
 FORMAT YOUR RESPONSE AS FOLLOWS:
 Do not converse. Output only the prompt blueprint.
-Include a brief explanation block at the top, followed by the EXACT prompt block inside a markdown code block, followed by a V19.1 Compliance Audit table.
+Include a brief explanation block at the top, followed by the EXACT prompt blocks inside markdown code blocks.
 CRITICAL MULTI-CLIP RULE: If the output contains multiple clips (Phase 2 Video Orchestration), EVERY individual clip prompt MUST begin with its own [SYS-LOG: RNG INITIATIVE] block BEFORE [PROSE]. This is mandatory for both single-clip and multi-clip outputs. A clip without [SYS-LOG] is INVALID.
-At the END of the audit table, add a row: "Character Count" with the exact character count of the prompt block and whether it passes the ${charLimit} char limit.
+DO NOT print any audit tables or character counts at the end of your response. The web UI will handle the audit and character counting automatically.
 `;
 }

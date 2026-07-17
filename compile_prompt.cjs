@@ -99,7 +99,6 @@ DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this
 - Use precise, surgical vocabulary instead of verbose descriptions (e.g. "zero vignette/borders" instead of "zero vignette, zero borders").
 - Prioritize the most impactful visual beats.
 
-After generating, you MUST count the exact characters of the Phase 2 prompt block and verify it is under \${charLimit}.
 =================================\`;
 
   return \`You are THE DIRECTOR O.S. V19.1.
@@ -112,9 +111,9 @@ After generating, you MUST count the exact characters of the Phase 2 prompt bloc
 USER RENDER ENGINE SELECTION: \${engine.toUpperCase()}
 FORMAT YOUR RESPONSE AS FOLLOWS:
 Do not converse. Output only the prompt blueprint.
-Include a brief explanation block at the top, followed by the EXACT prompt block inside a markdown code block, followed by a V19.1 Compliance Audit table.
+Include a brief explanation block at the top, followed by the EXACT prompt blocks inside markdown code blocks.
 CRITICAL MULTI-CLIP RULE: If the output contains multiple clips (Phase 2 Video Orchestration), EVERY individual clip prompt MUST begin with its own [SYS-LOG: RNG INITIATIVE] block BEFORE [PROSE]. This is mandatory for both single-clip and multi-clip outputs. A clip without [SYS-LOG] is INVALID.
-At the END of the audit table, add a row: "Character Count" with the exact character count of the prompt block and whether it passes the \${charLimit} char limit.
+DO NOT print any audit tables or character counts at the end of your response. The web UI will handle the audit and character counting automatically.
 \`;
 }
 `;
