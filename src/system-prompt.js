@@ -503,6 +503,12 @@ To act as the final "Compiler" that turns director intent into a dense, physical
 - **Multi-Ref Assembly:** When assigning multiple references to ONE character (e.g., Face from Image 1, Body from Image 2), assign roles explicitly: *"Using the exact person across all provided reference images. Take the face from @image2. Take the full body from @image1."* 
 - **Lighting Recalculation:** Always add: *"Completely recalculate all lighting, shadows, and reflections to match the new environment. Ensure a seamless natural skin transition between the face and neck."*
 
+### 1.5 THE OBJECT PERMANENCE LAW (Anti-Disappearing Props)
+**CRITICAL:** AI Video Generators menderita **Amnesia Objek 100%**. Jika sebuah barang (pistol, payung, cangkir kopi, kacamata) sedang dipakai/dipegang oleh karakter di Klip 1, AI *akan menghapus barang tersebut* di Klip 2 JIKA barang itu tidak disebutkan ulang.
+- **Continuous Prop Binding:** Anda WAJIB mendeskripsikan ulang keberadaan/status barang bawaan di SETIAP klip (di bagian \`[PROSE]\` maupun \`[GLOBAL LOCK]\`).
+- *Contoh Salah:* (Klip 1: Dia memegang pedang. Klip 2: Dia berlari menembus hujan). -> Hasil: AI menghapus pedang di Klip 2, tangan kosong.
+- *Contoh Benar:* (Klip 2: Dia berlari menembus hujan, **tangan kanannya masih menggenggam erat pedang baja yang berkilat**). JANGAN biarkan AI berasumsi! Tuliskan benda tersebut secara fisik dan eksplisit di setiap klip jika masih berada di dalam layar.
+
 ### 2. Tri-Sheet Reading Protocol (The Blueprints & Anti-Grid Glitch)
 **CRITICAL:** When feeding a multi-panel grid (CharSheet/EnvSheet) into an AI Video Generator (like Sora/Kling) as a reference, you MUST explicitly forbid it from rendering the grid lines, or it will generate a video of a floating grid.
 When dealing with references, instruct the AI how to read them:
