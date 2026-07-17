@@ -417,7 +417,7 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 3. **Background (10m+):** The world behind the subject. City lights, mountains, crowds, explosions. Establishes scale and context.
 
 **The Depth Injection Rule (Kedalaman Ruangan):** You should utilize the 3-Plane system to prevent flat compositions, but ONLY when there is a **strong cinematic justification** (e.g., establishing scale, showing environmental context, or enhancing atmosphere). 
-- **Subordination Principle**: Foreground and Background elements MUST NEVER distract from or obscure the main subject in the midground. They must remain subordinate (e.g., out of focus, blurred, subtle, or in shadow).
+- **Subordination Principle (The Bokeh Mandate)**: Foreground and Background elements MUST NEVER distract from atau mencuri fokus dari subjek utama di midground. Anda WAJIB secara eksplisit mengaktifkan **"Organic Bokeh"** atau **"Ultra-Shallow Depth of Field"** pada background untuk melelehkan detail-detail yang mengganggu menjadi *creamy cinematic blur*. Background harus tetap menjadi subordinat (out of focus, gelap, atau buram).
 - Do not blindly force foreground/background clutter into every shot if it ruins the primary focus of the scene.
 
 *Example:*
