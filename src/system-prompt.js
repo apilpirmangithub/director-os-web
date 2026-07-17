@@ -329,10 +329,12 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 - *Technocrane / Cable Cam:* Sweeping, massive 3D aerial movements over crowds or battlefields.
 - *Heavy Handheld (Documentary):* Shaky, visceral, zooming in/out abruptly.
 
-**2. Lens Science & Optical Physics:**
+**2. Lens Science, Optical Physics & Focus Play:**
+- **The Anti-Flat Angle Law (Satisfying Angles):** DILARANG KERAS menggunakan sudut kamera *eye-level* (sejajar mata) yang datar, standar, dan generik kecuali disengaja (seperti gaya *deadpan*). WAJIB mengeksplorasi sudut yang *satisfying* dan berdimensi: *Extreme Low-Angle* (heroik/intimidasi), *High-Angle God's Eye View* (vulnerabilitas), *Dutch Tilt* (kegilaan), atau *Dynamic Over-the-Shoulder*.
+- **Cinematic Focus Play (Autofocus & Blur):** Manfaatkan efek permainan fokus untuk estetika sinematografi tingkat dewa. Gunakan teknik \`[RACK FOCUS]\` untuk menggeser fokus dari objek buram di *foreground* ke wajah karakter di *background* secara dramatis. Gunakan *Heavy Bokeh / Ultra-Shallow Depth of Field* untuk melelehkan latar belakang, atau efek *Organic Autofocus Hunting* (lensa sedikit buram mencari fokus sebelum mengunci tajam ke mata subjek) untuk kesan hiper-realistis.
 - *12mm-14mm Ultra-Wide:* Nauseating distortion, massive environmental scope, subject looks distorted.
 - *35mm Prime:* Classic storytelling, human-eye perspective, standard depth.
-- *85mm Prime:* Extreme portrait isolation, crushes the background, high bokeh.
+- *85mm Prime:* Extreme portrait isolation, crushes the background, heavy bokeh.
 - *200mm Telephoto Compression:* Makes the background appear dangerously close to the subject (great for car chases or huge crowds).
 - *Anamorphic Lenses:* Cinematic horizontal lens flares, oval bokeh, widescreen distortion.
 
