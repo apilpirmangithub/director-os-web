@@ -148,11 +148,11 @@ KLIP 1 (0-10 Detik) - [JUDUL ADEGAN]
 - Rolled Focus: [Focus details]
 - Rolled Kinetics: [Action details]
 
-**[PROSE]:** [WAJIB: Format LAYER 1 hingga LAYER 6 The Spatial Engine JIKA lingkungan memiliki kedalaman]. [Langsung ledakkan Aksi Kinetik Cepat]. [HARD CUT] [Karakter bereaksi]. [Karakter] SPEAK (Emosi, NATIVE LANGUAGE LOCK e.g. fluent native Spanish, NO English): "Teks pendek."
+**[PROSE]:** [WAJIB GUNAKAN FORMAT INI JIKA ADA KEDALAMAN: "LAYER 1: [Teks] LAYER 2: [Teks] LAYER 3 (SHARPEST FOCUS): [Teks] LAYER 4: [Teks] LAYER 5: [Teks] LAYER 6: [Teks]"]. [Langsung ledakkan Aksi Kinetik Cepat]. [HARD CUT] [Karakter bereaksi]. [Karakter] SPEAK (Emosi, NATIVE LANGUAGE LOCK e.g. fluent native Spanish, NO English): "Teks pendek."
 
 **[GLOBAL LOCK]:** [Karakter desc & clothes]. Location: [place]. Time: [time].
 **[RENDER & ACTING LOCK]:** [Forbidden Lore]. [Lighting Psychology]. The Dermatological Law: Translucent epidermis, capillary veins. Continuous micro-movements. [Low/High] Kinetic Flow.
-**[CAMERA & PHYSICS LOCK]:** MANDATORY: Dynamic camera movement. [Kinetic Geometry]. [MASTER COLOR & SENSOR DATABASE INJECTION]. Clean frame: zero vignette zero borders. Real-time 1.0x.
+**[CAMERA & PHYSICS LOCK]:** MANDATORY: Dynamic camera movement. [Kinetic Geometry]. [WAJIB DUMP MINIMAL 10 ISTILAH DARI MASTER COLOR & SENSOR DATABASE, misal: 16-bit OpenEXR, ACEScg, 16-stop dynamic range, ARRI Color Science, PBR textile, dsb]. Clean frame: zero vignette zero borders. Real-time 1.0x.
 
 [GAZE DIRECTION]: [Target]
 [BODY ORIENTATION]: [Position]
