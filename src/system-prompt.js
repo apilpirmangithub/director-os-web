@@ -2089,11 +2089,11 @@ export function getSystemPrompt(engine, userMessage, mode = 'mini') {
   const modeName = mode === 'mini' ? 'MINI' : 'STANDARD';
   const modeEnforcement = `
 =================================
-⚠️ ABSOLUTE CHARACTER LIMIT MANDATE (MODE: ${modeName}) ⚠️
-The user has selected ${modeName} mode. The character limit is STRICTLY ${charLimit} characters.
-${mode === 'mini' ? 'TARGET LENGTH: 1400 - 1650 characters to be absolutely safe. DO NOT exceed 1850 characters. If you exceed 1999 characters, the video engine will crash.' : ''}
+⚠️ FATAL SYSTEM MANDATE: ABSOLUTE CHARACTER LIMIT (MODE: ${modeName}) ⚠️
+The user has selected ${modeName} mode.
+${mode === 'mini' ? 'TARGET LENGTH: 1800 - 1900 CHARACTERS MAXIMUM.\nFATAL ERROR TRIGGER: IF YOUR PROMPT EXCEEDS 2000 CHARACTERS, THE RENDER ENGINE WILL CRASH. YOU MUST BE EXTREMELY SURGICAL.' : 'TARGET LENGTH: Under 3000 characters.'}
 
-CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the individual Phase 2 Video Clip Prompt (the text from [SYS-LOG] down to the final 7-Pillar tag). It does NOT apply to the entire response or Phase 1 assets. THIS OVERRIDES any other character limit rules (e.g. PromptSkill Section 10 which says 1900-1950). For this web session, the ONLY limit that matters is ${charLimit} characters.
+CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the individual Phase 2 Video Clip Prompt (the text from [SYS-LOG] down to the final [PHYSICS VECTORS] tag). This OVERRIDES any other rules.
 
 This is a HARD, UNFORGIVING LIMIT for the video prompt. You MUST NOT exceed ${charLimit} characters for the clip prompt.
 DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this limit. Instead, use SURGICAL COMPRESSION:
