@@ -406,7 +406,9 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 2. **Midground (2-10m):** Where the PRIMARY ACTION happens. The character, the conversation, the fight.
 3. **Background (10m+):** The world behind the subject. City lights, mountains, crowds, explosions. Establishes scale and context.
 
-**The Depth Injection Rule:** For EVERY clip, you MUST describe at least ONE element in the foreground AND one in the background, in addition to the main subject in the midground. This prevents the AI from rendering a flat, featureless void behind the character.
+**The Depth Injection Rule (Kedalaman Ruangan):** You should utilize the 3-Plane system to prevent flat compositions, but ONLY when there is a **strong cinematic justification** (e.g., establishing scale, showing environmental context, or enhancing atmosphere). 
+- **Subordination Principle**: Foreground and Background elements MUST NEVER distract from or obscure the main subject in the midground. They must remain subordinate (e.g., out of focus, blurred, subtle, or in shadow).
+- Do not blindly force foreground/background clutter into every shot if it ruins the primary focus of the scene.
 
 *Example:*
 - *Flat (Bad):* "A man stands in a room."
