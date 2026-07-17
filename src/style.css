@@ -1137,3 +1137,99 @@ html, body {
     font-size: 16px;
   }
 }
+/* === UI/UX REVAMP: ACCORDION & PREMIUM PROMPT CARDS === */
+
+.sys-log-accordion {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.sys-log-accordion summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+}
+
+.sys-log-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.sys-log-accordion summary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+}
+
+.summary-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.accordion-arrow {
+  font-size: 10px;
+  transition: transform 0.3s ease;
+}
+
+.sys-log-accordion[open] summary .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  padding: 16px;
+  border-top: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Enhancing Code Block / Prompt Card */
+.code-block-wrapper {
+  background: rgba(10, 10, 15, 0.95) !important;
+  border: 1px solid rgba(231, 76, 60, 0.3) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+}
+
+.code-block-header {
+  background: rgba(231, 76, 60, 0.1) !important;
+  border-bottom: 1px solid rgba(231, 76, 60, 0.2) !important;
+}
+
+.code-title {
+  color: var(--accent-gold) !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.btn-copy-code {
+  background: linear-gradient(135deg, var(--accent-primary), #c0392b) !important;
+  color: white !important;
+  border: none !important;
+  padding: 6px 14px !important;
+  font-size: 12px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3) !important;
+}
+
+.btn-copy-code:hover {
+  background: linear-gradient(135deg, #ff6b6b, var(--accent-primary)) !important;
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.6) !important;
+  transform: translateY(-1px);
+}
+
+.code-block-wrapper pre {
+  color: #a8b2d1 !important;
+  font-family: var(--font-mono) !important;
+  font-size: 13.5px !important;
+  line-height: 1.6;
+}

@@ -79,16 +79,35 @@ export function updateResultPanel(aiResponse) {
       // Line breaks
       .replace(/\n/g, '<br>');
 
-    blocksHtml += `
-      <div class="result-block">
-        <div class="result-block-header">
-          ${title}
+    const isSysLog = firstLine.includes('SYS-LOG') || firstLine.includes('RNG');
+
+    if (isSysLog) {
+      blocksHtml += `
+        <details class="sys-log-accordion">
+          <summary>
+            <div class="summary-content">
+              <span class="accordion-icon">🎲</span>
+              <span class="accordion-title">RNG Initiative Log (Behind the Scenes)</span>
+            </div>
+            <span class="accordion-arrow">▼</span>
+          </summary>
+          <div class="accordion-content">
+            <div class="result-prompt-text">${displayHtml}</div>
+          </div>
+        </details>
+      `;
+    } else {
+      blocksHtml += `
+        <div class="result-block">
+          <div class="result-block-header">
+            ${title}
+          </div>
+          <div class="result-block-body">
+            <div class="result-prompt-text">${displayHtml}</div>
+          </div>
         </div>
-        <div class="result-block-body">
-          <div class="result-prompt-text">${displayHtml}</div>
-        </div>
-      </div>
-    `;
+      `;
+    }
   });
 
   // Render Result Block
@@ -145,17 +164,12 @@ export function updateResultPanel(aiResponse) {
     { name: "Anti-Slowmo Law", pass: /1\.0x|no slow|real.?time|zero slow.?motion/i.test(textLower) }
   ];
 
-  // CONDITIONAL: 7 Pillars Continuity Lock (MULTI-CLIP ONLY)
+  // CONDITIONAL: Physics Vectors Compression (MULTI-CLIP ONLY)
   const isMultiClip = /clip\s*2|klip\s*2|phase\s*2|10-20|15-30|5-10/i.test(textLower);
   if (isMultiClip) {
     const pillarChecks = [
-      { name: "⑦ Gaze Direction", pass: /gaze.?direction/i.test(textLower) },
-      { name: "⑦ Body Orientation", pass: /body.?orientation/i.test(textLower) },
-      { name: "⑦ Compass Rule", pass: /compass.?rule/i.test(textLower) },
-      { name: "⑦ Momentum Carry-Over", pass: /momentum.?carry/i.test(textLower) },
-      { name: "⑦ Time & Lighting Lock", pass: /time.{0,3}lighting.?lock/i.test(textLower) },
-      { name: "⑦ Proximity Lock", pass: /proximity.?lock/i.test(textLower) },
-      { name: "⑦ Camera vs Subject", pass: /camera.{0,5}subject/i.test(textLower) }
+      { name: "⚙️ Physics Vectors Compressed", pass: /physics.?vectors/i.test(textLower) },
+      { name: "↳ Relativity & Distance", pass: /relativity/i.test(textLower) && /prox/i.test(textLower) }
     ];
     rules.push(...pillarChecks);
   }
