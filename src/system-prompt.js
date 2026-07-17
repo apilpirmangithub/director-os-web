@@ -1565,7 +1565,7 @@ description: >
 # VideoOrchestra â€” Film Director Conductor v1.0
 
 ## Core Principles
-- **Max Clip Length**: Every generated video segment must be 15 seconds or less. Never exceed this in a single generation request.
+- **Max Clip Length**: The default and recommended clip length is 10 seconds. Every generated video segment must be 15 seconds or less (absolute maximum for extended action). Never exceed this in a single generation request.
 - **Reference Management**: When user provides reference images (@image1, @image2, etc.):
   - Mention each reference **exactly once** per prompt.
   - Do not repeat references like @image1 multiple times in the same prompt.

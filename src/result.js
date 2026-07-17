@@ -54,13 +54,13 @@ export function updateResultPanel(aiResponse) {
       .replace(/^### (.*$)/gm, '<h3>$1</h3>')
       .replace(/^## (.*$)/gm, '<h2>$1</h2>')
       .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+      // Horizontal rules
+      .replace(/^\*{3,}$/gm, '<hr>')
+      .replace(/^-{3,}$/gm, '<hr>')
       // Bold
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       // Italic
       .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      // Horizontal rules
-      .replace(/^\*{3,}$/gm, '<hr>')
-      .replace(/^-{3,}$/gm, '<hr>')
       // Code blocks with Copy Button
       .replace(/```(?:text|markdown|json|html)?\n([\s\S]*?)```/g, (match, code) => {
          const escapedCode = encodeURIComponent(code.trim());

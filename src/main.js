@@ -17,8 +17,6 @@ const els = {
   btnSettings: document.getElementById('btn-settings'),
   btnCloseSettings: document.getElementById('btn-close-settings'),
   btnSaveSettings: document.getElementById('btn-save-settings'),
-  apiKeyInput: document.getElementById('api-key-input'),
-  btnToggleKey: document.getElementById('btn-toggle-key'),
   modelSelect: document.getElementById('model-select'),
   langBtns: document.querySelectorAll('[data-lang]'),
   engineBtns: document.querySelectorAll('[data-engine]'),
@@ -181,10 +179,19 @@ function handleSaveSettings() {
   els.modal.classList.add('hidden');
 }
 
+function escapeHtml(unsafe) {
+  return (unsafe || '').toString()
+       .replace(/&/g, "&amp;")
+       .replace(/</g, "&lt;")
+       .replace(/>/g, "&gt;")
+       .replace(/"/g, "&quot;")
+       .replace(/'/g, "&#039;");
+}
+
 function renderSessionList() {
   els.sessionList.innerHTML = sessions.map(s => `
     <div class="session-item ${s.id === currentSessionId ? 'active' : ''}" data-id="${s.id}">
-      <span class="session-title">${s.title}</span>
+      <span class="session-title">${escapeHtml(s.title)}</span>
       <button class="session-delete" title="Delete">✕</button>
     </div>
   `).join('');
@@ -214,13 +221,13 @@ function switchSession(id) {
   });
 
   // Render history
+  let lastAiContent = null;
   session.history.forEach(msg => {
     renderMessage(els.chatMessages, msg.role, msg.content);
-    // If it's the last AI message, update result panel
-    if (msg.role === 'ai') {
-      updateResultPanel(msg.content);
-    }
+    if (msg.role === 'ai') lastAiContent = msg.content;
   });
+  
+  if (lastAiContent) updateResultPanel(lastAiContent);
 }
 
 function handleNewSession() {

@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
-  // Determine provider based on model
+  // We exclusively use Grok models via x.ai API
   const apiKey = process.env.GROK_API_KEY;
 
   if (!apiKey) {
