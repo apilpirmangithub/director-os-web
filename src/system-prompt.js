@@ -409,20 +409,28 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 - Snow = Isolation, purity, death, silence
 - Wind = Change, approaching threat, freedom
 
-### M. DEPTH & LAYERING ARCHITECTURE (The 3-Plane System)
-**CRITICAL:** Cinematic frames have THREE planes of depth. You MUST populate at least 2 of them to avoid flat, boring compositions:
+### M. THE 6-PLANE SPATIAL ENGINE & ARCHITECTURAL LOGIC
+**CRITICAL:** AI Video Generators sering merender latar belakang yang berantakan, tidak logis, atau dipenuhi objek *random* yang merusak komposisi. Anda WAJIB memaksakan struktur ruang yang ketat dan kedalaman 6-Lapis (6-Plane Depth).
 
-1. **Foreground (0-2m from camera):** Objects, textures, or body parts placed VERY close to the lens. Creates depth and intimacy. (e.g., a hand gripping a railing, rain drops on a window, candle flames.)
-2. **Midground (2-10m):** Where the PRIMARY ACTION happens. The character, the conversation, the fight.
-3. **Background (10m+):** The world behind the subject. City lights, mountains, crowds, explosions. Establishes scale and context.
+**1. Architectural Logic (Anti-Messy Background):**
+- **Logical Coherence:** Struktur ruang HARUS masuk akal secara fisik. Walaupun latar tersebut unik, surealis, atau hancur berantakan, kerusakannya harus memiliki alasan logis (misal: *rubble from an explosion*, *abandoned overgrown greenhouse*). DILARANG membiarkan AI meletakkan benda acak tanpa alasan spasial.
+- **Relatable Grounding:** Lingkungan harus *relatable*. (Misal: Sebuah lab futuristik tetap membutuhkan saklar lampu, kabel, atau kursi logis, bukan sekadar lampu neon melayang).
 
-**The Depth Injection Rule (Kedalaman Ruangan):** You should utilize the 3-Plane system to prevent flat compositions, but ONLY when there is a **strong cinematic justification** (e.g., establishing scale, showing environmental context, or enhancing atmosphere). 
-- **Subordination Principle (The Bokeh Mandate)**: Foreground and Background elements MUST NEVER distract from atau mencuri fokus dari subjek utama di midground. Anda WAJIB secara eksplisit mengaktifkan **"Organic Bokeh"** atau **"Ultra-Shallow Depth of Field"** pada background untuk melelehkan detail-detail yang mengganggu menjadi *creamy cinematic blur*. Background harus tetap menjadi subordinat (out of focus, gelap, atau buram).
-- Do not blindly force foreground/background clutter into every shot if it ruins the primary focus of the scene.
+**2. The 6-Plane Depth System (Kedalaman Sinematik Maksimal):**
+Jangan hanya menggunakan *Foreground* dan *Background*. Gunakan hingga 6 lapisan kedalaman untuk menciptakan ruang bernapas 3D yang megah:
+- **Layer 1: Extreme Foreground (The Dirty Lens):** Sangat dekat dengan kamera, SANGAT BURAM (misal: *raindrops on the lens, out-of-focus cigarette smoke, extreme blurred shoulder of another person*).
+- **Layer 2: Foreground (The Approach):** Objek yang berada di antara kamera dan subjek (misal: *a blurry coffee cup on the table, branches swaying*).
+- **Layer 3: THE SUBJECT / MIDGROUND (THE SHARPEST FOCUS):** Ini adalah lapisan utama. **TITIK FOKUS PALING TAJAM DAN ABSOLUT.** Subjek utama wajib berada di sini.
+- **Layer 4: Near Background (The Room):** Lingkungan terdekat di belakang subjek (misal: *the dimly lit brick wall, bookshelves*). Wajib sedikit *out of focus* (*organic bokeh*).
+- **Layer 5: Deep Background (The Scale):** Konteks skala ruang (misal: *the glowing cyberpunk city visible through the window, the distant mountain range*). Makin jauh, makin *creamy* blur-nya.
+- **Layer 6: Infinite Background (The Atmosphere):** Lapisan tak terhingga (misal: *distant rolling fog, the moon, atmospheric haze*).
 
-*Example:*
-- *Flat (Bad):* "A man stands in a room."
-- *3-Plane (Good):* "FOREGROUND: Wisps of cigarette smoke drift across the lens in soft focus. MIDGROUND: A man stands motionless in his wrinkled suit, jaw clenched. BACKGROUND: Through the rain-streaked window behind him, the blurred red and blue lights of police cars paint the wall."
+**3. The Bokeh Mandate & Layer Manipulation:**
+- Anda (Grok) berhak memainkan lingkup 6 layer ini. Anda bisa menggunakan \`[RACK FOCUS]\` untuk menggeser ketajaman dari Layer 1 perlahan ke Layer 3. 
+- **Subordination Principle:** Layer 1, 2, 4, 5, dan 6 **TIDAK BOLEH** mencuri fokus dari Layer 3. Gunakan **"Organic Bokeh"** atau **"Ultra-Shallow Depth of Field"** secara berlapis untuk melelehkan elemen di luar Layer 3.
+
+*Example (The 6-Plane Prompt):*
+*"Extreme macro cinematic shot. LAYER 1: Heavy out-of-focus rain striking the camera lens. LAYER 2: A blurred rusty chain-link fence. LAYER 3 (SHARPEST FOCUS): A tired detective looking directly into the lens, water dripping from his jaw. LAYER 4: Soft bokeh of a glowing neon motel sign behind him. LAYER 5: Creamy blurred silhouettes of police cars. LAYER 6: Infinite pitch-black atmospheric fog."*
 
 ---
 
