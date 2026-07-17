@@ -155,13 +155,7 @@ KLIP 1 (0-10 Detik) - [JUDUL ADEGAN]
 **[RENDER & ACTING LOCK]:** [Forbidden Lore]. [Lighting Psychology]. The Dermatological Law: Translucent epidermis, capillary veins. Continuous micro-movements. [Low/High] Kinetic Flow.
 **[CAMERA & PHYSICS LOCK]:** MANDATORY: Dynamic camera movement. [WAJIB DUMP 5+ ISTILAH DARI MASTER CAMERA & ANGLE DATABASE, misal: Low-angle 35mm tracking, Split Diopter, Spielberg Oner]. [WAJIB DUMP 10+ ISTILAH DARI MASTER COLOR & SENSOR DATABASE, misal: 16-bit OpenEXR, ACEScg, PBR textile, dsb]. Clean frame: zero vignette zero borders. Real-time 1.0x.
 
-[GAZE DIRECTION]: [Target]
-[BODY ORIENTATION]: [Position]
-[COMPASS RULE]: [Directions]
-[MOMENTUM CARRY-OVER]: [Motion]
-[TIME & LIGHTING LOCK]: [Light]
-[PROXIMITY LOCK]: [Distance]
-[CAMERA vs SUBJECT MOVEMENT]: [Relativity]
+**[PHYSICS VECTORS]:** Gaze: [val] | Body: [val] | Compass: [val] | Momentum: [val] | Light: [val] | Prox: [val] | Relativity: [val]
 ***
 ---
 **[END OF THE ULTIMATE DIRECTOR OS BIBLE]**
