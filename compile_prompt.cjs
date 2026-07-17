@@ -108,6 +108,7 @@ USER RENDER ENGINE SELECTION: \${engine.toUpperCase()}
 FORMAT YOUR RESPONSE AS FOLLOWS:
 Do not converse. Output only the prompt blueprint.
 Include a brief explanation block at the top, followed by the EXACT prompt block inside a markdown code block, followed by a V19.1 Compliance Audit table.
+CRITICAL MULTI-CLIP RULE: If the output contains multiple clips (Phase 2 Video Orchestration), EVERY individual clip prompt MUST begin with its own [SYS-LOG: RNG INITIATIVE] block BEFORE [PROSE]. This is mandatory for both single-clip and multi-clip outputs. A clip without [SYS-LOG] is INVALID.
 At the END of the audit table, add a row: "Character Count" with the exact character count of the prompt block and whether it passes the \${charLimit} char limit.
 \`;
 }

@@ -1614,6 +1614,7 @@ When user requests a film:
    - **PHASE 2: Video Orchestration**:
      - Summary: Total clips needed, total runtime, scene breakdown.
      - **Per-clip prompts**: Fully independent and self-contained — numbered clearly with timestamp e.g. [0-15s].
+       - **MANDATORY SYS-LOG PER CLIP:** Setiap klip dalam mode multi-clip WAJIB dimulai dengan blok \`[SYS-LOG: RNG INITIATIVE]\` yang berisi keputusan lokasi, wardrobe, kamera, pencahayaan, dan kinetik untuk klip tersebut. Ini adalah hukum yang sama dengan single-clip (Fase 4 Template). Tanpa \`[SYS-LOG]\`, prompt dianggap TIDAK VALID. Blok SYS-LOG harus dicetak SEBELUM \`[PROSE]\` di setiap klip.
        - **Explicit Tagging Rule**: If a shot is wide and multiple elements are visible, you MUST explicitly mention EVERY tag present in the frame (e.g., "@image1, @image2, and @image5 are visible in @image4"). Do not leave the AI guessing who is in the wide shot.
                 - **Spatial Continuity Rule**: Every clip must strictly obey the layout defined in Phase 1 and instruct the AI how to read it. (e.g., "STRICT SPATIAL CONTINUITY: @image4 is a dual-panel reference. Read the left panel map for layout, but ONLY render the right panel cinematic style").
          - **Master Lighting & Color Grade Protocol:** AI Video models are forgetful. If a scene occurs in a specific lighting environment (e.g., "Neon pink cyberpunk alley, heavy fog, high contrast"), you MUST copy-paste that EXACT lighting phrase into EVERY SINGLE CLIP PROMPT for that scene. Do not leave any clip without explicit lighting/weather instructions, or the AI will hallucinate different weather/lighting between cuts.
@@ -2045,6 +2046,7 @@ USER RENDER ENGINE SELECTION: ${engine.toUpperCase()}
 FORMAT YOUR RESPONSE AS FOLLOWS:
 Do not converse. Output only the prompt blueprint.
 Include a brief explanation block at the top, followed by the EXACT prompt block inside a markdown code block, followed by a V19.1 Compliance Audit table.
+CRITICAL MULTI-CLIP RULE: If the output contains multiple clips (Phase 2 Video Orchestration), EVERY individual clip prompt MUST begin with its own [SYS-LOG: RNG INITIATIVE] block BEFORE [PROSE]. This is mandatory for both single-clip and multi-clip outputs. A clip without [SYS-LOG] is INVALID.
 At the END of the audit table, add a row: "Character Count" with the exact character count of the prompt block and whether it passes the ${charLimit} char limit.
 `;
 }
