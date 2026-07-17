@@ -1624,15 +1624,18 @@ When user requests a film:
    - **Absolute Dynamic Re-numbering**: You MUST re-number both Images AND Audio sequentially starting from 1 (e.g., \`@image1\`, \`@Audio1\`) to prevent gaps in node-based workflows (like ComfyUI). 
    - **CRITICAL PRE-FLIGHT CHECK**: Before writing ANY prompt in Phase 2, you MUST output explicit mapping logic blocks:
      \`**[IMAGE MAPPING: Global @imageX -> Local @image1 (Name) | Global @imageY -> Local @image2 (Name)]**\`
-     \`**[AUDIO MAPPING: Global @AudioX -> Local @Audio1 (Name) | Global @AudioY -> Local @Audio2 (Name)]**\`
-   - **Single-Clip Exemption:** Do NOT request CharSheets or EnvSheets in Phase 1 for extras/locations that only appear in a single clip. Let the AI generate them locally from pure text.
-   - **"No Ref" (Zero Reference Protocol):** If the user explicitly requests "no ref" or "tanpa referensi", you MUST completely skip Phase 1 (Asset Generation). In Phase 2, you MUST NOT use any \`@image\` or \`@audio\` tags anywhere in the prompt. All descriptions and voice characteristics must be purely textual without any \`@\` variables.
+     \`**[AUDIO MAPPING: Global @AudioX -> Local @Audio1 (Name) | Global @AudioY -> Local @audio2 (Name)]**\`
+   - **Single-Clip Exemption (NUCLEAR — ZERO EXCEPTIONS):** You MUST NOT generate CharSheets, EnvSheets, or PropSheets in Phase 1 for ANY asset (character, environment, or prop) that appears in ONLY ONE clip. This is the #1 most common waste error. Before generating ANY sheet, you MUST perform a **Cross-Clip Appearance Audit**: scan ALL clips and count how many clips each asset appears in. If count = 1, DO NOT generate a sheet — describe it inline in [GLOBAL LOCK]. If count ≥ 2, generate a sheet. The ONLY exception is if the user explicitly requests a sheet for a specific asset.
+      - **Example (CORRECT):** Film has 3 clips. Character A appears in Clip 1+2+3 → Generate CharSheet. Character B appears ONLY in Clip 2 → NO CharSheet, describe inline. Environment X appears ONLY in Clip 1 → NO EnvSheet. Prop Y appears in Clip 1+3 → Generate PropSheet.
+      - **Example (WRONG):** Generating 5 CharSheets, 2 EnvSheets, and 1 PropSheet for a 2-clip film where most assets appear once. This wastes the user's time and AI credits.
+    - **Audio Single-Clip Exemption:** Do NOT generate Audio Persona prompts for characters who only speak in ONE clip. Let the native TTS engine handle them from the text description in [PROSE].
+    - **"No Ref" (Zero Reference Protocol):** If the user explicitly requests "no ref" or "tanpa referensi", you MUST completely skip Phase 1 (Asset Generation). In Phase 2, you MUST NOT use any \`@image\` or \`@audio\` tags anywhere in the prompt. All descriptions and voice characteristics must be purely textual without any \`@\` variables.
 
 6. **Output Structure (2-Phase Protocol)**:
-   - **PHASE 1: Asset & Audio Generation Sheet (MANDATORY)**: Before writing video prompts, identify which characters and locations need consistent references. 
-     - **Image Assets:** Write Image Generation Prompts (Midjourney/Flux style) for each required asset (e.g. @image1, @image2). Use CharSheet rules.
-       - **Environmental Asset Rule**: Any location/stadium/environment asset MUST be a dual-panel 16:9 prompt (Panel 1: Top-down infographic map with cardinal directions, Panel 2: Cinematic view).
-       - **PropSheet Enforcement (CRITICAL)**: If the scene features a significant object, weapon, vehicle, or artifact (e.g., a time bomb, a specific car, a magical sword) that characters interact with or focus on, you MUST generate a PropSheet (4-panel macro blueprint) for it in Phase 1. NEVER let the AI video generator hallucinate central story objects from pure text.
+   - **PHASE 1: Asset & Audio Generation Sheet (MULTI-CLIP ASSETS ONLY)**: Before writing video prompts, perform a **Cross-Clip Appearance Audit** to identify which assets appear in 2+ clips. ONLY generate sheets for those assets.
+     - **Image Assets (MULTI-CLIP ONLY):** Write Image Generation Prompts (Midjourney/Flux style) ONLY for characters/environments/props appearing in 2+ clips. Use CharSheet/EnvSheet/PropSheet rules respectively.
+       - **Environmental Asset Rule**: Any location appearing in 2+ clips MUST get a dual-panel 16:9 EnvSheet. Single-clip locations are described inline in [GLOBAL LOCK].
+       - **PropSheet Enforcement**: Generate PropSheets ONLY for props that appear in 2+ clips AND are central story objects. Single-clip props are described inline.
 
        - **State-Change Protocol (Character Evolution):** If the script contains a [STATE CHANGE] tag for a character (e.g., they get a permanent scar or change clothes), you MUST generate TWO CharSheets for them in Phase 1.
          - 1. @image1_Base: The clean/original version. (Generate this with a normal text prompt).
