@@ -87,17 +87,19 @@ export function getSystemPrompt(engine, userMessage, mode = 'mini') {
   const modeEnforcement = \`
 =================================
 ⚠️ ABSOLUTE CHARACTER LIMIT MANDATE (MODE: \${modeName}) ⚠️
-The user has selected \${modeName} mode. The ENTIRE video prompt block (from [SYS-LOG] to the final 7 Pillar tag) MUST be UNDER \${charLimit} characters total.
-\${mode === 'mini' ? 'TARGET LENGTH: 1800 - 1950 characters. DO NOT exceed 1950 characters.' : ''}
+The user has selected \${modeName} mode. The character limit is STRICTLY \${charLimit} characters.
+\${mode === 'mini' ? 'TARGET LENGTH: 1600 - 1850 characters to be absolutely safe. DO NOT exceed 1950 characters.' : ''}
 
-This is a HARD LIMIT. You MUST NOT exceed \${charLimit} characters for the prompt block under ANY circumstances.
+CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the individual Phase 2 Video Clip Prompt (the text from [SYS-LOG] down to the final 7-Pillar tag). It does NOT apply to the entire response, Phase 1 assets, or the audit table.
+
+This is a HARD, UNFORGIVING LIMIT for the video prompt. You MUST NOT exceed \${charLimit} characters for the clip prompt.
 DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this limit. Instead, use SURGICAL COMPRESSION:
 - Remove filler words and redundant adjectives (e.g. use "Window N, futon C, door S" instead of "Window North, futon center, door South").
 - Omit conversational explanations inside the prompt blocks.
 - Use precise, surgical vocabulary instead of verbose descriptions (e.g. "zero vignette/borders" instead of "zero vignette, zero borders").
 - Prioritize the most impactful visual beats.
 
-After generating the prompt, count the characters and confirm the count in the audit table.
+After generating, you MUST count the exact characters of the Phase 2 prompt block and verify it is under \${charLimit}.
 =================================\`;
 
   return \`You are THE DIRECTOR O.S. V19.1.
