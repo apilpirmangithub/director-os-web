@@ -433,9 +433,13 @@ Gunakan lapisan kedalaman (3 hingga 6 layer) **HANYA berdasarkan logika arsitekt
 - **Layer 5: Deep Background (The Scale):** Konteks skala ruang, HANYA JIKA LOGIS (misal: *the glowing cyberpunk city visible through the window, the distant mountain range*). Makin jauh, makin *creamy* blur-nya.
 - **Layer 6: Infinite Background (The Atmosphere):** Lapisan tak terhingga, HANYA JIKA BERADA DI LUAR RUANGAN (misal: *distant rolling fog, the moon, atmospheric haze*).
 
-**3. The Bokeh Mandate & Layer Manipulation:**
-- Anda (Grok) berhak memainkan lingkup 6 layer ini. Anda bisa menggunakan \`[RACK FOCUS]\` untuk menggeser ketajaman dari Layer 1 perlahan ke Layer 3. 
-- **Subordination Principle:** Layer 0, 1, 2, 4, 5, dan 6 **TIDAK BOLEH** mencuri fokus dari Layer 3. Gunakan **"Organic Bokeh"** atau **"Ultra-Shallow Depth of Field"** secara berlapis untuk melelehkan elemen di luar Layer 3.
+**3. The Gaussian Optical Blur Curve (Depth of Field Physics):**
+Wajib membentuk kurva ketajaman (*optical bell curve*) dari Layer 0 hingga Layer 6 di mana **HANYA Layer 3** yang berada di puncak ketajaman absolut (*The Apex of Sharpness*). Lapisan di depannya dan di belakangnya harus terdegradasi menjadi *organic blur* secara progresif (makin jauh dari Layer 3, makin buram):
+- **Layer 0 & Layer 6:** Extreme organic creamy blur (Sangat buram absolut, bokeh meleleh).
+- **Layer 1 & Layer 5:** Heavy organic blur (Buram berat).
+- **Layer 2 & Layer 4:** Soft organic bokeh (Buram tipis/lembut).
+- **Layer 3:** Absolute razor-sharp focus (Ketajaman absolut tanpa blur).
+- **Subordination Principle:** Layer 0, 1, 2, 4, 5, dan 6 **TIDAK BOLEH** mencuri fokus dari Layer 3. Anda bisa menggunakan \`[RACK FOCUS]\` untuk memutar kurva ini (misal menggeser fokus tajam dari Layer 1 perlahan ke Layer 3).
 
 *Example (The 6-Plane Prompt):*
 *"Extreme macro cinematic shot. LAYER 0: Distant voyeuristic view peering through a thick blurry canopy of autumn leaves. LAYER 1: Heavy out-of-focus rain striking the camera lens. LAYER 2: A blurred rusty chain-link fence. LAYER 3 (SHARPEST FOCUS): A tired detective looking directly into the lens, water dripping from his jaw. LAYER 4: Soft bokeh of a glowing neon motel sign behind him. LAYER 5: Creamy blurred silhouettes of police cars. LAYER 6: Infinite pitch-black atmospheric fog."*
