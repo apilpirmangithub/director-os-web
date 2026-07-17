@@ -97,6 +97,8 @@ DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this
 - Remove filler words and redundant adjectives (e.g. use "Window N, futon C, door S" instead of "Window North, futon center, door South").
 - Omit conversational explanations inside the prompt blocks.
 - Use precise, surgical vocabulary instead of verbose descriptions (e.g. "zero vignette/borders" instead of "zero vignette, zero borders").
+- EXTREME ABBREVIATION for Language Locks: Use "(fluent Arabic)" instead of "(fluent native Arabic, strictly NO English)".
+- EXTREME ABBREVIATION for Wardrobe: Use "Man 40s Arabic white thawb barefoot" instead of "Man 40s Middle Eastern man olive skin pristine white silk thawb barefoot".
 - Prioritize the most impactful visual beats.
 
 =================================\`;
