@@ -21,19 +21,19 @@ export default async function handler(req, res) {
   try {
     let resultText = '';
 
-    const endpoint = 'https://api.x.ai/v1/chat/completions';
-    const messages = [];
-    messages.push({
+    const endpoint = 'https://api.x.ai/v1/responses';
+    const input = [];
+    input.push({
       role: 'system',
       content: getSystemPrompt(engine, userMessage, mode)
     });
     history.forEach(msg => {
-      messages.push({
+      input.push({
         role: msg.role === 'ai' ? 'assistant' : 'user',
         content: msg.content
       });
     });
-    messages.push({
+    input.push({
       role: 'user',
       content: userMessage
     });
@@ -46,27 +46,20 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: model,
-        messages: messages,
-        temperature: 0.4
+        input: input,
+        temperature: 0.4,
+        max_output_tokens: 32768
       })
     });
 
     if (!response.ok) {
-      const errorText = await response.text();
-      let errorMsg = `API Error ${response.status}`;
-      try {
-        const errorData = JSON.parse(errorText);
-        errorMsg = errorData.error?.message || errorData.error || errorMsg;
-      } catch (e) {
-        errorMsg = `${errorMsg}: ${errorText.substring(0, 150)}`;
-      }
-      throw new Error(errorMsg);
+      const errorData = await response.json();
+      throw new Error(errorData.error?.message || "Failed to communicate with Grok API");
     }
-    
     const data = await response.json();
-    
-    if (data.choices && data.choices.length > 0) {
-      resultText = data.choices[0].message.content;
+    const msgOutput = data.output?.find(o => o.type === 'message');
+    if (msgOutput?.content?.length > 0) {
+      resultText = msgOutput.content[0].text;
     } else {
       throw new Error("No response generated from Grok.");
     }

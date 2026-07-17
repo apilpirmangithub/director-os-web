@@ -99,6 +99,9 @@ DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this
 - Use precise, surgical vocabulary instead of verbose descriptions (e.g. "zero vignette/borders" instead of "zero vignette, zero borders").
 - EXTREME ABBREVIATION for Language Locks: Use "(fluent Arabic)" instead of "(fluent native Arabic, strictly NO English)".
 - EXTREME ABBREVIATION for Wardrobe: Use "Man 40s Arabic white thawb barefoot" instead of "Man 40s Middle Eastern man olive skin pristine white silk thawb barefoot".
+- ANTI-FREEZE WORD BAN: NEVER use "freeze", "static", "still", "motionless", "hold pose" in [PROSE]. Replace with "settles into pose, continuous micro-tremors fingers hair fabric breathing". The Living Statue Rule: even stopped characters must have 3 micro-movements (breathing, hair drift, finger twitch).
+- ANTI-ZOOM-ZOOM BAN: NEVER zoom in then zoom out in ONE clip. Use mono-directional camera (only zoom IN or only zoom OUT or orbit). If you need both close-up and wide, use [HARD CUT: ANGLE SHIFT] between them.
+- SCREEN-RELATIVE COMPASS: Use screen-left/screen-right/toward camera/away from camera instead of North/South/East/West in [COMPASS RULE]. AI engines work in 2D screen space.
 - Prioritize the most impactful visual beats.
 
 =================================\`;
