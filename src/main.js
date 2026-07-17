@@ -1,7 +1,7 @@
 // src/main.js
 
 import { loadSettings, saveSettings, loadSessions, saveSessions, createSession, updateSession, defaultSettings } from './session.js';
-import { renderMessage, renderTypingIndicator, removeTypingIndicator, createStreamingMessage } from './chat.js';
+import { renderMessage, renderTypingIndicator, removeTypingIndicator } from './chat.js';
 import { updateResultPanel, copyToClipboard, downloadMarkdown, downloadPDF } from './result.js';
 
 // Global State
@@ -295,65 +295,23 @@ async function handleSendMessage() {
       throw new Error(errorData.error || "Failed to communicate with Serverless API");
     }
 
+    const data = await response.json();
+    const aiResponse = data.text;
+
     removeTypingIndicator();
     
-    // Create streaming UI
-    const streamUI = createStreamingMessage(els.chatMessages);
+    // Render AI message in chat
+    renderMessage(els.chatMessages, 'ai', aiResponse);
     
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder('utf-8');
-    let aiResponse = '';
-    let done = false;
-    let buffer = '';
-
-    // We might also update the Result Panel live if it's production output
-    const isProduction = () => /\[PROSE\]|\[GLOBAL LOCK\]|PHASE [012]/i.test(aiResponse);
-
-    while (!done) {
-      const { value, done: readerDone } = await reader.read();
-      done = readerDone;
-      if (value) {
-        buffer += decoder.decode(value, { stream: true });
-        
-        let boundary = buffer.indexOf('\n');
-        while (boundary !== -1) {
-          const line = buffer.slice(0, boundary).trim();
-          buffer = buffer.slice(boundary + 1);
-          
-          if (line.startsWith('data: ') && line !== 'data: [DONE]') {
-            try {
-              const data = JSON.parse(line.slice(6));
-              const delta = data.choices[0]?.delta?.content || '';
-              if (delta) {
-                aiResponse += delta;
-                
-                // Update Chat Bubble live
-                streamUI.updateContent(aiResponse);
-                
-                // Mirror live to the result panel
-                if (isProduction()) {
-                  updateResultPanel(aiResponse);
-                }
-              }
-            } catch (e) {
-              // Ignore parse errors from malformed lines
-            }
-          }
-          boundary = buffer.indexOf('\n');
-        }
-      }
-    }
-
-    // Finalize
-    streamUI.finalize(aiResponse);
+    // Update Result Panel
     updateResultPanel(aiResponse);
 
     // Save to session
     session.history.push({ role: 'ai', content: aiResponse });
     updateSession(sessions, currentSessionId, session.history);
 
-    // On mobile, auto switch to result tab if it was a production output
-    if (window.innerWidth <= 700 && isProduction()) {
+    // On mobile, auto switch to result tab
+    if (window.innerWidth <= 700) {
       switchMobileTab('result');
     }
 

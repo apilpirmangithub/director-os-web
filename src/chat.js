@@ -85,35 +85,3 @@ export function removeTypingIndicator() {
   const indicator = document.getElementById('typing-indicator');
   if (indicator) indicator.remove();
 }
-
-export function createStreamingMessage(container) {
-  const messageDiv = document.createElement('div');
-  messageDiv.className = 'message ai-message';
-  
-  messageDiv.innerHTML = `
-    <div class="message-avatar">🎬</div>
-    <div class="message-content">
-      <div class="message-bubble glass-bubble" style="white-space: pre-wrap;"></div>
-    </div>
-  `;
-  
-  container.appendChild(messageDiv);
-  container.scrollTop = container.scrollHeight;
-  
-  const bubble = messageDiv.querySelector('.message-bubble');
-  
-  return {
-    messageDiv,
-    updateContent: (content) => {
-      // Basic formatting for streaming
-      let displayContent = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-      bubble.innerHTML = displayContent;
-      container.scrollTop = container.scrollHeight;
-    },
-    finalize: (content) => {
-      // Re-render using the standard renderMessage logic to apply production truncations
-      messageDiv.remove();
-      renderMessage(container, 'ai', content);
-    }
-  };
-}

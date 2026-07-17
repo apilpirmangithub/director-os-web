@@ -21,19 +21,19 @@ export default async function handler(req, res) {
   try {
     let resultText = '';
 
-    const endpoint = 'https://api.x.ai/v1/chat/completions';
-    const messages = [];
-    messages.push({
+    const endpoint = 'https://api.x.ai/v1/responses';
+    const input = [];
+    input.push({
       role: 'system',
       content: getSystemPrompt(engine, userMessage, mode)
     });
     history.forEach(msg => {
-      messages.push({
+      input.push({
         role: msg.role === 'ai' ? 'assistant' : 'user',
         content: msg.content
       });
     });
-    messages.push({
+    input.push({
       role: 'user',
       content: userMessage
     });
@@ -46,10 +46,9 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         model: model,
-        messages: messages,
+        input: input,
         temperature: 0.4,
-        max_tokens: 32768, // Note: chat/completions uses max_tokens
-        stream: true
+        max_output_tokens: 32768
       })
     });
 
@@ -57,32 +56,17 @@ export default async function handler(req, res) {
       const errorData = await response.json();
       throw new Error(errorData.error?.message || "Failed to communicate with Grok API");
     }
-
-    // Set headers for Server-Sent Events
-    res.setHeader('Content-Type', 'text/event-stream');
-    res.setHeader('Cache-Control', 'no-cache');
-    res.setHeader('Connection', 'keep-alive');
-
-    // Pipe the response body to the client
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-
-    let done = false;
-    while (!done) {
-      const { value, done: readerDone } = await reader.read();
-      done = readerDone;
-      if (value) {
-        res.write(value);
-      }
+    const data = await response.json();
+    const msgOutput = data.output?.find(o => o.type === 'message');
+    if (msgOutput?.content?.length > 0) {
+      resultText = msgOutput.content[0].text;
+    } else {
+      throw new Error("No response generated from Grok.");
     }
-    res.end();
-    
+
+    res.status(200).json({ text: resultText });
   } catch (error) {
     console.error("API Route Error:", error);
-    if (!res.headersSent) {
-      res.status(500).json({ error: error.message || 'Internal Server Error' });
-    } else {
-      res.end();
-    }
+    res.status(500).json({ error: error.message || 'Internal Server Error' });
   }
 }
