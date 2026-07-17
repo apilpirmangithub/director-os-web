@@ -2033,14 +2033,16 @@ export function getSystemPrompt(engine, userMessage, mode = 'mini') {
   const modeEnforcement = `
 =================================
 ⚠️ ABSOLUTE CHARACTER LIMIT MANDATE (MODE: ${modeName}) ⚠️
-The user has selected ${modeName} mode. The ENTIRE video prompt block (from [SYS-LOG] through [CAMERA & PHYSICS LOCK] and all 7 Pillars) MUST be UNDER ${charLimit} characters total per clip.
+The user has selected ${modeName} mode. The ENTIRE video prompt block (from [SYS-LOG] to the final 7 Pillar tag) MUST be UNDER ${charLimit} characters total.
+${mode === 'mini' ? 'TARGET LENGTH: 1800 - 1950 characters. DO NOT exceed 1950 characters.' : ''}
+
 This is a HARD LIMIT. You MUST NOT exceed ${charLimit} characters for the prompt block under ANY circumstances.
-DO NOT sacrifice quality or protocol compliance. Instead, you MUST use "Surgical Compression":
-- Remove redundant filler words and adjectives. (e.g. use "Dirty OTS" instead of "Dirty over-shoulder looking down").
-- Use abbreviations (e.g. "JP" instead of "Japanese", "N, S, E, W" instead of "North, South, East, West").
-- Compress the 7 Pillars by stripping out conversational text (e.g., [COMPASS RULE]: Window N, futon C, door S).
-- Combine physical properties cleanly (e.g., "Clean frame: zero vignette/borders").
-- Target a length of ~1400-1600 characters to be safe.
+DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this limit. Instead, use SURGICAL COMPRESSION:
+- Remove filler words and redundant adjectives (e.g. use "Window N, futon C, door S" instead of "Window North, futon center, door South").
+- Omit conversational explanations inside the prompt blocks.
+- Use precise, surgical vocabulary instead of verbose descriptions (e.g. "zero vignette/borders" instead of "zero vignette, zero borders").
+- Prioritize the most impactful visual beats.
+
 After generating the prompt, count the characters and confirm the count in the audit table.
 =================================`;
 
