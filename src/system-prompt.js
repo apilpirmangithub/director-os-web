@@ -320,11 +320,25 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 - **The Absolute Purpose Law:** SETIAP gestur dan gerakan fisik HARUS memiliki tujuan mekanis atau emosional yang absolut. DILARANG menggunakan kata kerja pasif seperti *"he stands there looking around"*.
 - **Force Intentionality:** Gunakan kata kerja berbobot tajam: *"He plants his feet firmly, locks his eyes onto the target without blinking, hands aggressively adjusting his collar with absolute certainty"*. Karakter DILARANG terlihat bingung kecuali naskah secara eksplisit meminta adegan kebingungan.
 
-### I. HDR Color Space & Gamut Protocol (Anti-Flat Color)
-**CRITICAL:** AI video generators often default to flat, compressed, or standard dynamic range (SDR) color profiles. To ensure the output meets professional broadcast standards, you MUST explicitly force the AI to render in a high dynamic range color space.
-- Always append explicit color science instructions to the lighting/global style tags.
-- Use phrasing like: *"REC.2020 color space, 10-bit HDR color grading, wide color gamut, deep true blacks, blinding peak highlights, uncompressed cinematic color science."*
-- This ensures the generated video pops with maximum vibrancy, contrast, and professional grading regardless of whether the engine is Live-Action, Anime, or 3D.
+### I. THE MASTER COLOR & SENSOR DATABASE (Anti-Generic HDR)
+**CRITICAL:** DILARANG menggunakan kata "HDR" atau "HD" secara generik. JIKA user meminta tema FASHION atau FILM, Anda WAJIB meracik dan mengombinasikan terminologi teknis dari database eksklusif di bawah ini untuk menghasilkan rendering tingkat dewa. GROK DILARANG KERAS mencari terminologi sensor/warna dari luar daftar ini.
+
+#### 1. FASHION & HIGH-END COMMERCIAL RENDER ENGINE:
+- **Dynamic Range & Exposure:** 16-stop dynamic range, 17-stop latitude, Highlight retention/recovery, Shadow recovery, Deep shadow separation, Smooth highlight roll-off, Specular highlight preservation, Midtone preservation, ETTR (Expose To The Right), Balanced exposure, High exposure latitude, Low-noise shadows.
+- **Color Science & Space:** ARRI Color Science, RED IPP2, Sony S-Cinetone, Canon Cinema Gamut, Blackmagic Gen 5, Leica/Hasselblad Natural Color Solution (HNCS), ACEScg workflow, ACES 1.3, Wide Gamut RGB, Rec.2020, Display P3, DCI-P3, BT.2020, BT.2100.
+- **Gamma & Tone Mapping:** LogC4, LogC3, S-Log3, C-Log2/3, V-Log, BMD Film Gen5, REDLogFilm, PQ ST2084, HLG, Cineon Log. Filmic/Global/Local/Perceptual tone mapping, ACES RRT, Soft shoulder, Smooth toe response, Highlight/Tonal compression, Contrast mapping.
+- **Color Processing & Camera:** 16-bit color, 32-bit floating point pipeline, 4:4:4 chroma sampling, 12-bit RAW, 16-bit OpenEXR, Scene/Display-referred workflow. Linear sensor response, Dual Native ISO, Low read noise, High signal-to-noise ratio, Full well capacity, High quantum efficiency, Global shutter, Rolling shutter minimized.
+- **Skin & Fabric Rendering:** Spectral skin rendering, Subsurface scattering, Physically based skin shading, Accurate melanin response, Natural epidermal translucency, High-frequency skin detail. PBR textile materials, Microfiber detail, Physically accurate fabric BRDF, Anisotropic reflections, Silk specular response, Velvet light absorption, Fine weave resolution.
+- **Lighting & Optics:** Large diffused key light, Wraparound lighting, Softbox/Octabox/Beauty dish illumination, Negative fill, Edge/Rim lighting, Motivated/Practical lighting, Bounce lighting, Volumetric lighting, Atmospheric scattering. Micro contrast, High MTF optics, Low chromatic aberration, Minimal focus breathing, Natural optical falloff, Cat's eye / Circular aperture bokeh, Longitudinal chromatic aberration, Edge-to-edge sharpness. High resolving power. Low temporal noise, Fine film grain, Organic sensor noise, Clean blacks, Zero chroma noise.
+
+#### 2. CINEMATIC FILM SENSOR ENGINE:
+- **Sensor & Camera:** ARRI Alexa 35 color science, ARRI Alexa Mini LF, Sony Venice 2, RED V-Raptor XL, Panavision DXL2, Blackmagic URSA Cine, Large Format CMOS sensor, Dual Native ISO, 17-stop dynamic range, High exposure latitude, Low-noise sensor.
+- **Recording:** ARRIRAW, REDCODE RAW, Blackmagic RAW, ProRes 4444 XQ, 16-bit RAW, 12-bit Log, 4:4:4 chroma, Open Gate, OpenEXR workflow.
+- **Exposure:** Smooth highlight roll-off, Highlight retention, Shadow separation, Deep black levels, Balanced exposure, Rich tonal range, Filmic contrast, Soft shoulder, Gentle toe curve.
+- **Lighting:** Motivated/Practical lighting, Soft wraparound key light, Negative fill, Edge/Rim light, Bounce fill, Volumetric lighting, Atmospheric haze, Directional sunlight, Global illumination.
+- **Lens Glass:** Panavision Primo / Ultra Vista, Cooke S4 / Speed Panchro, ARRI Signature Prime, Zeiss Supreme Prime, Leica Summilux-C, Atlas Orion / Hawk Anamorphic, Vintage anamorphic glass, Organic lens rendering, Minimal focus breathing, High microcontrast, Natural optical falloff.
+- **Image Characteristics & Film Stock:** Organic highlight bloom, Halation, Gate weave, Fine film grain, Lens breathing, Anamorphic oval bokeh, Barrel distortion, Natural vignette, Blooming highlights, Subtle chromatic aberration. Kodak Vision3 250D/500T/50D, Kodak 2383 Print Film LUT, Fuji Eterna 250D, Cineon Film Density, Film print emulation.
+- **Finishing:** ACES color managed, HDR master, Dolby Vision grade, SDR trim pass, Digital Intermediate (DI), HDR10 mastering, Film emulation LUT, Color-managed pipeline.
 
 ### J. ADVANCED CINEMATOGRAPHY ARSENAL (Hardware & Emulsion Science)
 **CRITICAL:** To elevate the production value beyond generic "cinematic" tags, you MUST explicitly dictate the physical camera hardware, lighting units, and film emulsion. AI video engines respond incredibly well to specific Hollywood hardware terminology.
