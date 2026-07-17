@@ -150,7 +150,7 @@ KLIP 1 (0-10 Detik) - [JUDUL ADEGAN]
 
 \`\`\`text
 **[PROSE]:** [Langsung ledakkan Aksi Kinetik Cepat. Patuhi ACTION-FIRST INVERSION]. [HARD CUT] [Karakter bereaksi]. [Karakter] SPEAK (Emosi, NATIVE LANGUAGE LOCK): "Teks pendek."
-**[SPATIAL DEPTH ENGINE]:** [WAJIB JIKA BUKAN CLOSE-UP. Gunakan 3 hingga 6 Layer BERDASARKAN LOGIKA ARSITEKTUR/CERITA. Jangan paksa Layer 5/6 jika di ruangan sempit. Format: LAYER 1 (Extreme FG): [teks] | LAYER 3 (SUBJECT): [teks] | dst...]
+**[SPATIAL DEPTH ENGINE]:** [WAJIB JIKA BUKAN CLOSE-UP. Gunakan 3 hingga 7 Layer BERDASARKAN LOGIKA ARSITEKTUR/CERITA. Jangan paksa Layer 5/6 jika di ruangan sempit. Format: LAYER 0 (Voyeur FG): [teks] | LAYER 1 (Extreme FG): [teks] | LAYER 3 (SUBJECT): [teks] | dst...]
 
 **[GLOBAL LOCK]:** [Karakter desc & clothes]. Location: [place]. Time: [time].
 **[RENDER & ACTING LOCK]:** [Forbidden Lore]. [Lighting Psychology]. The Dermatological Law: Translucent epidermis, capillary veins. Continuous micro-movements. [Low/High] Kinetic Flow.
@@ -425,6 +425,7 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 
 **2. The 6-Plane Depth System (Architectural & Narrative Justification):**
 Gunakan lapisan kedalaman (3 hingga 6 layer) **HANYA berdasarkan logika arsitektur ruang dan narasi cerita**. Jangan memaksakan Layer 5 & 6 secara buta jika adegan berada di ruangan tertutup/sempit. Setiap penggunaan layer wajib memiliki alasan spasial yang kuat!
+- **Layer 0: Voyeur Foreground (The Distant Observer):** Lapisan "pengintip" dari jarak jauh yang menghalangi lensa ke arah subjek utama (misal: *looking through thick blurry foliage from 50 meters away, shooting through a rain-streaked window frame, peering through a crack in a door*). Wajib memiliki blur organik yang sangat kuat, namun Layer 3 (subjek di kejauhan) tetap tajam sempurna.
 - **Layer 1: Extreme Foreground (The Dirty Lens):** Sangat dekat dengan kamera, SANGAT BURAM (misal: *raindrops on the lens, out-of-focus cigarette smoke, extreme blurred shoulder of another person*).
 - **Layer 2: Foreground (The Approach):** Objek yang berada di antara kamera dan subjek (misal: *a blurry coffee cup on the table, branches swaying*).
 - **Layer 3: THE SUBJECT / MIDGROUND (THE SHARPEST FOCUS):** Ini adalah lapisan utama. **TITIK FOKUS PALING TAJAM DAN ABSOLUT.** Subjek utama wajib berada di sini.
@@ -434,10 +435,10 @@ Gunakan lapisan kedalaman (3 hingga 6 layer) **HANYA berdasarkan logika arsitekt
 
 **3. The Bokeh Mandate & Layer Manipulation:**
 - Anda (Grok) berhak memainkan lingkup 6 layer ini. Anda bisa menggunakan \`[RACK FOCUS]\` untuk menggeser ketajaman dari Layer 1 perlahan ke Layer 3. 
-- **Subordination Principle:** Layer 1, 2, 4, 5, dan 6 **TIDAK BOLEH** mencuri fokus dari Layer 3. Gunakan **"Organic Bokeh"** atau **"Ultra-Shallow Depth of Field"** secara berlapis untuk melelehkan elemen di luar Layer 3.
+- **Subordination Principle:** Layer 0, 1, 2, 4, 5, dan 6 **TIDAK BOLEH** mencuri fokus dari Layer 3. Gunakan **"Organic Bokeh"** atau **"Ultra-Shallow Depth of Field"** secara berlapis untuk melelehkan elemen di luar Layer 3.
 
 *Example (The 6-Plane Prompt):*
-*"Extreme macro cinematic shot. LAYER 1: Heavy out-of-focus rain striking the camera lens. LAYER 2: A blurred rusty chain-link fence. LAYER 3 (SHARPEST FOCUS): A tired detective looking directly into the lens, water dripping from his jaw. LAYER 4: Soft bokeh of a glowing neon motel sign behind him. LAYER 5: Creamy blurred silhouettes of police cars. LAYER 6: Infinite pitch-black atmospheric fog."*
+*"Extreme macro cinematic shot. LAYER 0: Distant voyeuristic view peering through a thick blurry canopy of autumn leaves. LAYER 1: Heavy out-of-focus rain striking the camera lens. LAYER 2: A blurred rusty chain-link fence. LAYER 3 (SHARPEST FOCUS): A tired detective looking directly into the lens, water dripping from his jaw. LAYER 4: Soft bokeh of a glowing neon motel sign behind him. LAYER 5: Creamy blurred silhouettes of police cars. LAYER 6: Infinite pitch-black atmospheric fog."*
 
 ---
 
