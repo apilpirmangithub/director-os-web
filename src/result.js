@@ -113,7 +113,13 @@ export function updateResultPanel(aiResponse) {
   // Perform V19.1 compliance audit
   const textLower = aiResponse.toLowerCase();
   
+  // Detect selected mode from UI to enforce limits
+  const engineSelect = document.getElementById('engine-select');
+  const isMini = engineSelect ? engineSelect.value.toLowerCase().includes('mini') : true;
+  const maxLimit = isMini ? 2000 : 3000;
+  
   const rules = [
+    { name: `Length Limit (Max ${maxLimit}) — Actual: ${promptText.length} chars`, pass: promptText.length <= maxLimit },
     { name: "SYS-LOG: RNG Initiative", pass: /sys.?log|rng.?initiative|rolled location|rolled wardrobe|rolled camera|rolled lighting/i.test(textLower) },
     { name: "Action-First Inversion", pass: /\[prose\]/.test(textLower) },
     { name: "Kinetic Syntax (3s Mandate)", pass: /hard.?cut|jump.?cut|smash.?cut|match.?cut|whip.?pan|fast.?tracking|dynamic.?swoop|rack.?focus|handheld.?reveal|crane|lateral.?track/i.test(textLower) },
