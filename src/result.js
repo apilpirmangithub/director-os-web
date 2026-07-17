@@ -118,8 +118,19 @@ export function updateResultPanel(aiResponse) {
   const isMini = engineSelect ? engineSelect.value.toLowerCase().includes('mini') : true;
   const maxLimit = isMini ? 2000 : 3000;
   
+  // Calculate max length of actual clip prompts (Phase 2), not the entire response
+  const clipSections = aiResponse.split(/(?=^(?:### |\*\*\[SYS-LOG|\*\*KLIP|\*\*CLIP|KLIP |CLIP ))/mi)
+    .filter(sec => /\[PROSE\]|SYS-LOG/i.test(sec));
+  
+  let maxClipLength = 0;
+  if (clipSections.length > 0) {
+    maxClipLength = Math.max(...clipSections.map(sec => sec.length));
+  } else {
+    maxClipLength = promptText.length; // Fallback to full text if no clips found
+  }
+
   const rules = [
-    { name: `Length Limit (Max ${maxLimit}) — Actual: ${promptText.length} chars`, pass: promptText.length <= maxLimit },
+    { name: `Length Limit (Max ${maxLimit}) — Actual: ${maxClipLength} chars`, pass: maxClipLength <= maxLimit },
     { name: "SYS-LOG: RNG Initiative", pass: /sys.?log|rng.?initiative|rolled location|rolled wardrobe|rolled camera|rolled lighting/i.test(textLower) },
     { name: "Action-First Inversion", pass: /\[prose\]/.test(textLower) },
     { name: "Kinetic Syntax (3s Mandate)", pass: /hard.?cut|jump.?cut|smash.?cut|match.?cut|whip.?pan|fast.?tracking|dynamic.?swoop|rack.?focus|handheld.?reveal|crane|lateral.?track/i.test(textLower) },
