@@ -114,12 +114,12 @@ export function updateResultPanel(aiResponse) {
   const textLower = aiResponse.toLowerCase();
   
   // Detect selected mode from UI to enforce limits
-  const engineSelect = document.getElementById('engine-select');
-  const isMini = engineSelect ? engineSelect.value.toLowerCase().includes('mini') : true;
+  const activeModeBtn = document.querySelector('.mode-btn[data-mode].active');
+  const isMini = activeModeBtn ? activeModeBtn.dataset.mode === 'mini' : true;
   const maxLimit = isMini ? 2000 : 3000;
   
-  // Calculate max length of actual clip prompts (Phase 2), not the entire response
-  const clipMatches = aiResponse.match(/(?:\[SYS-LOG|\[PROSE\])[\s\S]*?(?=\n(?:Phase |Fase |### |\*\*\[SYS-LOG|\*\*KLIP|\*\*CLIP|KLIP |CLIP )|$)/gmi);
+  // Extract Phase 2 clip prompts ONLY (from [SYS-LOG to next [SYS-LOG or end-of-string)
+  const clipMatches = aiResponse.match(/\[SYS-LOG[\s\S]*?(?=\[SYS-LOG|$)/gi);
   
   let maxClipLength = 0;
   if (clipMatches && clipMatches.length > 0) {

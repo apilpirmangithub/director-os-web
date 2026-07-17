@@ -90,11 +90,11 @@ export function getSystemPrompt(engine, userMessage, mode = 'mini') {
 The user has selected \${modeName} mode. The character limit is STRICTLY \${charLimit} characters.
 \${mode === 'mini' ? 'TARGET LENGTH: 1600 - 1850 characters to be absolutely safe. DO NOT exceed 1950 characters.' : ''}
 
-CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the individual Phase 2 Video Clip Prompt (the text from [SYS-LOG] down to the final 7-Pillar tag). It does NOT apply to the entire response, Phase 1 assets, or the audit table.
+CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the individual Phase 2 Video Clip Prompt (the text from [SYS-LOG] down to the final 7-Pillar tag). It does NOT apply to the entire response or Phase 1 assets. THIS OVERRIDES any other character limit rules (e.g. PromptSkill Section 10 which says 1900-1950). For this web session, the ONLY limit that matters is \${charLimit} characters.
 
 This is a HARD, UNFORGIVING LIMIT for the video prompt. You MUST NOT exceed \${charLimit} characters for the clip prompt.
 DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this limit. Instead, use SURGICAL COMPRESSION:
-- Remove filler words and redundant adjectives (e.g. use "Window N, futon C, door S" instead of "Window North, futon center, door South").
+- Remove filler words and redundant adjectives (e.g. use "Window screen-right, futon center, door screen-left" instead of verbose descriptions).
 - Omit conversational explanations inside the prompt blocks.
 - Use precise, surgical vocabulary instead of verbose descriptions (e.g. "zero vignette/borders" instead of "zero vignette, zero borders").
 - EXTREME ABBREVIATION for Language Locks: Use "(fluent Arabic)" instead of "(fluent native Arabic, strictly NO English)".

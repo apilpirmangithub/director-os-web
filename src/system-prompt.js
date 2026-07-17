@@ -425,7 +425,7 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 **CRITICAL:** Every character in a prompt costs processing attention from the AI. Wasted words = wasted quality. You MUST follow these rules to eliminate bloat:
 1. **NO Director Name-Drops:** AI Video engines do NOT know who Bresson, Wong Kar-Wai, Kurosawa, or Kitano are. NEVER use names as style labels (e.g., "Bressonian Anti-Acting"). Instead, write the EXPLICIT instruction only (e.g., "Zero theatrical expressions, mechanical deadpan focus").
 2. **NO Genre Label Padding:** Do NOT write labels like "Fashion-Docu Hybrid" or "Sports-Docu Hybrid". AI does not understand these compound labels. Write the actual camera and acting instructions instead.
-3. **NO Defensive Redundancy:** Do NOT write "Real-time playback speed 1.0x, no slow-motion" — AI will not add slow-motion unless asked. Only specify playback speed when requesting NON-default speeds.
+3. **NO Defensive Redundancy:** Do NOT write redundant negative phrases like \"zero generic plastic Instagram faces\" when you've already described specific physical features. However, \"Real-time 1.0x\" and \"Clean frame\" tags are MANDATORY and NOT considered redundant — keep them always.
 4. **NO Double-Describing Realism:** If character physical features are already described specifically (e.g., "slightly crooked nose, visible pores"), do NOT also add "zero generic plastic Instagram faces". The specific description already prevents plastic faces.
 5. **Film Stock Names — CONDITIONAL:** Use film stock names (e.g., "Kodak 500T") ONLY as a shorthand alongside explicit color descriptions. Never rely on the name alone. Preferred format: *"Warm amber tungsten tones, lifted blacks"* over *"Kodak Vision3 500T"*.
 6. **Clean Frame — Use Condensed Tag:** Use *"Clean frame: zero vignette, zero borders, zero film artifacts."* instead of the 5-phrase version.
@@ -579,6 +579,7 @@ You MUST structure every single video prompt exactly like this template. Do NOT 
 
 ### 9.2 ANTI-FREEZE WORD LAW (Anti-Still-Frame)
 **CRITICAL:** AI Video Engines interpret the words "freeze", "static", "still", "hold pose", "motionless", and "locked in place" LITERALLY — they will generate a completely frozen still image for the remaining duration.
+**SCOPE:** This ban applies ONLY to the \`[PROSE]\` narrative action paragraph and \`[MOMENTUM CARRY-OVER]\` tag. It does NOT apply to style engine descriptions (e.g., "static camera" in Comedy/Deadpan is a legitimate artistic direction for the CAMERA, not the CHARACTER).
 - **BLACKLISTED WORDS in [PROSE]:** \`freeze\`, \`frozen\`, \`static\`, \`still\`, \`motionless\`, \`hold pose\`, \`locked in place\`, \`stops moving\`.
 - **SAFE REPLACEMENT:** Instead of "contrapposto freeze", write: *"settles into contrapposto stance, continuous subtle micro-tremors in fingers, hair drifting, fabric settling, chest breathing."*
 - **THE LIVING STATUE RULE:** Even when a character "stops" moving, you MUST describe at least 3 continuous micro-movements: (1) breathing/chest rise, (2) hair/fabric drift, (3) finger/eye micro-twitch. This keeps the AI rendering motion instead of a still frame.
@@ -1654,8 +1655,8 @@ When user requests a film:
            * If the dialogue is (O.S.) or (V.O.): You MUST include the dialogue text for native TTS engines, but you MUST forcefully lock the on-screen character's mouth to prevent the AI from lip-syncing them. (e.g., \`Voice O.S. (Local @Audio1: fluent native Japanese, NO English): "System breach." [CRITICAL PHYSICS: Kenji's mouth is strictly CLOSED, zero lip movement, jaws locked, he is only listening]\`).
        - **MANDATORY 7 PILLARS CONTINUITY LOCK (MULTI-CLIP ONLY):** Dalam mode multi-clip, setiap klip WAJIB menyertakan 7 tag kontinuitas berikut SETELAH blok \`[LENS & CAMERA PHYSICS LOCK]\`. Tag-tag ini berfungsi sebagai "GPS spasial" agar AI Video Engine tidak berhalusinasi arah pandang, posisi tubuh, atau pencahayaan antar klip. Ketujuh tag tersebut adalah:
          1. \`[GAZE DIRECTION]:\` Ke mana mata setiap karakter melihat (off-screen ke arah mana, atau ke objek apa). DILARANG menatap lensa kecuali konteks UGC.
-         2. \`[BODY ORIENTATION]:\` Posisi dan arah tubuh karakter (menghadap utara, duduk bersila, berdiri menyamping, dll).
-         3. \`[COMPASS RULE]:\` Peta arah mata angin ruangan (Utara = jendela, Selatan = pintu, dst). Wajib konsisten antar klip dalam lokasi yang sama.
+         2. \`[BODY ORIENTATION]:\` Posisi dan arah tubuh karakter (menghadap screen-left, duduk bersila, berdiri menyamping ke kamera, dll).
+         3. \`[COMPASS RULE]:\` Peta arah relatif layar (screen-left = jendela, screen-right = pintu, toward camera = koridor, away from camera = dinding, dst). Gunakan arah kardinal (Utara/Selatan) HANYA jika ada EnvSheet top-down map. Wajib konsisten antar klip dalam lokasi yang sama.
          4. \`[MOMENTUM CARRY-OVER]:\` Bagaimana gerakan di akhir klip ini menyambung ke awal klip berikutnya (misal: "Pukulan tangan kanan bergerak ke kiri → klip berikutnya dimulai dari dampak pukulan").
          5. \`[TIME & LIGHTING LOCK]:\` Waktu dan pencahayaan yang dikunci (misal: "Malam; lampu fluorescent + cahaya neon biru dari jendela").
          6. \`[PROXIMITY LOCK]:\` Jarak fisik antar karakter dan objek penting (misal: "HP 30cm dari wajah; Aiko 2m dari futon").
@@ -1694,7 +1695,7 @@ Every clip must produce video indistinguishable from real footage shot by a real
 
 When character reference sheets are available (generated by CharSheet skill):
 - Use CharSheet images as \`@image\` references for identity lock across all clips.
-- CharSheet provides 9-view references (extreme close-up, close-up, side profile, medium front/side/back, full body front/side/back).
+- CharSheet provides 6-panel references (extreme close-up face, left profile, right profile, medium shot, front full body, back full body).
 - Reference the appropriate CharSheet view based on the clip's camera angle for strongest identity match.
 - Repeat key identity descriptors from CharSheet in every clip prompt — never rely on "same as previous."
 
@@ -1961,7 +1962,7 @@ Example Output Format:
 This skill is a **Level 1 Priority Dependency** for \`videoorchestra\` and \`anime_orchestra\`. When Phase 1 of those skills calls for an environment asset, it MUST utilize the exact output structure generated by \`EnvSheet\`.
 
 `,
-  propsheet: `﻿---
+  propsheet: `---
 name: "PropSheet — Cinematic Object & Weapon Reference Generator v1.0"
 description: >
   Generates high-priority, standalone reference sheets for significant props, weapons, tools,
@@ -1974,7 +1975,7 @@ description: >
 ## Purpose
 AI Video models often hallucinate or duplicate objects if a character is holding a complex item in their main character reference sheet (e.g. an AI might render a Viking holding two axes if the axe was baked into his character sheet). 
 
-To prevent this, **every significant prop, weapon, vehicle, logo, or symbol MUST have its own standalone reference sheet**.
+To prevent this, **every significant prop, weapon, vehicle, logo, or symbol that appears in 2 or more clips MUST have its own standalone reference sheet**. Props appearing in only ONE clip should be described inline in [GLOBAL LOCK] unless the user explicitly requests a sheet.
 
 ---
 
@@ -2069,11 +2070,11 @@ export function getSystemPrompt(engine, userMessage, mode = 'mini') {
 The user has selected ${modeName} mode. The character limit is STRICTLY ${charLimit} characters.
 ${mode === 'mini' ? 'TARGET LENGTH: 1600 - 1850 characters to be absolutely safe. DO NOT exceed 1950 characters.' : ''}
 
-CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the individual Phase 2 Video Clip Prompt (the text from [SYS-LOG] down to the final 7-Pillar tag). It does NOT apply to the entire response, Phase 1 assets, or the audit table.
+CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the individual Phase 2 Video Clip Prompt (the text from [SYS-LOG] down to the final 7-Pillar tag). It does NOT apply to the entire response or Phase 1 assets. THIS OVERRIDES any other character limit rules (e.g. PromptSkill Section 10 which says 1900-1950). For this web session, the ONLY limit that matters is ${charLimit} characters.
 
 This is a HARD, UNFORGIVING LIMIT for the video prompt. You MUST NOT exceed ${charLimit} characters for the clip prompt.
 DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this limit. Instead, use SURGICAL COMPRESSION:
-- Remove filler words and redundant adjectives (e.g. use "Window N, futon C, door S" instead of "Window North, futon center, door South").
+- Remove filler words and redundant adjectives (e.g. use "Window screen-right, futon center, door screen-left" instead of verbose descriptions).
 - Omit conversational explanations inside the prompt blocks.
 - Use precise, surgical vocabulary instead of verbose descriptions (e.g. "zero vignette/borders" instead of "zero vignette, zero borders").
 - EXTREME ABBREVIATION for Language Locks: Use "(fluent Arabic)" instead of "(fluent native Arabic, strictly NO English)".
