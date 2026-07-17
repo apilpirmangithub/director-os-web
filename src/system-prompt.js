@@ -338,7 +338,10 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 - *200mm Telephoto Compression:* Makes the background appear dangerously close to the subject (great for car chases or huge crowds).
 - *Anamorphic Lenses:* Cinematic horizontal lens flares, oval bokeh, widescreen distortion.
 
-**3. Lighting Units (The Physics of Light):**
+**3. Lighting Units (The Physics of Light & Anti-Flat Lighting):**
+- **The Anti-Flat Lighting Law:** DILARANG KERAS menggunakan pencahayaan datar/rata (*flat lighting*) tanpa bayangan (kecuali gaya komedi/sitkom TV). WAJIB memahat wajah dan ruang dengan bayangan dramatis dan pantulan cahaya.
+- **Gobo & Shadow Play:** Paksa AI merender bayangan fisik dari lingkungan yang jatuh menimpa karakter. (Misal: *"Harsh shadows of venetian blinds slicing across his eyes"*, *"dappled tree branch shadows dancing on her skin"*, *"chainlink fence shadow cast over his torso"*).
+- **Reflections & Catchlights:** Wajib menyertakan detail pantulan cahaya untuk memberi volume 3D nyata. (Misal: *"Neon pink light reflecting off the wet pavement onto her jawline"*, *"sharp rectangular softbox catchlights in his pupils"*, *"sweat glinting under the harsh rim light"*).
 - *ARRI Skypanel (Soft):* Even, soft, flawless commercial beauty lighting.
 - *Kino Flo (Fluorescent):* Sickly, green/blue-tinted urban or hospital lighting.
 - *HMI (Hard Daylight):* Harsh, directional, punchy contrast simulating a spotlight or full moon.
