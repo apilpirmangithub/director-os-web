@@ -119,12 +119,11 @@ export function updateResultPanel(aiResponse) {
   const maxLimit = isMini ? 2000 : 3000;
   
   // Calculate max length of actual clip prompts (Phase 2), not the entire response
-  const clipSections = aiResponse.split(/(?=^(?:### |\*\*\[SYS-LOG|\*\*KLIP|\*\*CLIP|KLIP |CLIP ))/mi)
-    .filter(sec => /\[PROSE\]|SYS-LOG/i.test(sec));
+  const clipMatches = aiResponse.match(/(?:\[SYS-LOG|\[PROSE\])[\s\S]*?(?=\n(?:Phase |Fase |### |\*\*\[SYS-LOG|\*\*KLIP|\*\*CLIP|KLIP |CLIP )|$)/gmi);
   
   let maxClipLength = 0;
-  if (clipSections.length > 0) {
-    maxClipLength = Math.max(...clipSections.map(sec => sec.length));
+  if (clipMatches && clipMatches.length > 0) {
+    maxClipLength = Math.max(...clipMatches.map(sec => sec.trim().length));
   } else {
     maxClipLength = promptText.length; // Fallback to full text if no clips found
   }
