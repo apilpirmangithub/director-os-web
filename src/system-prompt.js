@@ -153,7 +153,7 @@ KLIP 1 (0-10 Detik) - [JUDUL ADEGAN]
 
 **[GLOBAL LOCK]:** [Karakter desc & clothes]. Location: [place]. Time: [time].
 **[RENDER & ACTING LOCK]:** [Forbidden Lore]. [Lighting Psychology]. The Dermatological Law: Translucent epidermis, capillary veins. Continuous micro-movements. [Low/High] Kinetic Flow.
-**[CAMERA & PHYSICS LOCK]:** MANDATORY: Dynamic camera movement. [Kinetic Geometry]. [WAJIB DUMP MINIMAL 10 ISTILAH DARI MASTER COLOR & SENSOR DATABASE, misal: 16-bit OpenEXR, ACEScg, 16-stop dynamic range, ARRI Color Science, PBR textile, dsb]. Clean frame: zero vignette zero borders. Real-time 1.0x.
+**[CAMERA & PHYSICS LOCK]:** MANDATORY: Dynamic camera movement. [WAJIB DUMP 5+ ISTILAH DARI MASTER CAMERA & ANGLE DATABASE, misal: Low-angle 35mm tracking, Split Diopter, Spielberg Oner]. [WAJIB DUMP 10+ ISTILAH DARI MASTER COLOR & SENSOR DATABASE, misal: 16-bit OpenEXR, ACEScg, PBR textile, dsb]. Clean frame: zero vignette zero borders. Real-time 1.0x.
 
 [GAZE DIRECTION]: [Target]
 [BODY ORIENTATION]: [Position]
@@ -341,31 +341,33 @@ AI models fail and merge identities when two characters interact closely (e.g., 
 - **Image Characteristics & Film Stock:** Organic highlight bloom, Halation, Gate weave, Fine film grain, Lens breathing, Anamorphic oval bokeh, Barrel distortion, Natural vignette, Blooming highlights, Subtle chromatic aberration. Kodak Vision3 250D/500T/50D, Kodak 2383 Print Film LUT, Fuji Eterna 250D, Cineon Film Density, Film print emulation.
 - **Finishing:** ACES color managed, HDR master, Dolby Vision grade, SDR trim pass, Digital Intermediate (DI), HDR10 mastering, Film emulation LUT, Color-managed pipeline.
 
-### J. ADVANCED CINEMATOGRAPHY ARSENAL (Hardware & Emulsion Science)
-**CRITICAL:** To elevate the production value beyond generic "cinematic" tags, you MUST explicitly dictate the physical camera hardware, lighting units, and film emulsion. AI video engines respond incredibly well to specific Hollywood hardware terminology.
-**1. Camera Movement Rigs:**
-- *Snorricam:* Camera strapped to the actor's chest. (Intense panic, claustrophobia, running).
-- *ARRI Trinity Rig:* Perfectly stabilized tracking shot moving rapidly through tight spaces.
-- *Technocrane / Cable Cam:* Sweeping, massive 3D aerial movements over crowds or battlefields.
-- *Heavy Handheld (Documentary):* Shaky, visceral, zooming in/out abruptly.
+### J. THE MASTER CAMERA & ANGLE DATABASE (Fashion & Film)
+**CRITICAL:** JIKA user meminta tema FASHION atau FILM, kombinasikan terminologi teknis dari database ini. GROK DILARANG KERAS mencari terminologi pergerakan/lensa dari luar daftar ini.
 
-**2. Lens Science, Optical Physics & Focus Play:**
-- **The Anti-Flat Angle Law (Satisfying Angles):** DILARANG menggunakan sudut kamera *eye-level* (sejajar mata) sebagai "default malas". Sudut *eye-level* HANYA BOLEH digunakan jika ada **alasan naratif yang jelas** (misal: menciptakan keintiman/koneksi emosional langsung, realisme dokumenter, atau komedi *deadpan*). Selain itu, WAJIB mengeksplorasi sudut yang *satisfying* dan berdimensi: *Extreme Low-Angle* (heroik/intimidasi), *High-Angle God's Eye View* (vulnerabilitas), *Dutch Tilt* (kegilaan), atau *Dynamic Over-the-Shoulder*.
-- **Cinematic Focus Play (Autofocus & Blur):** Manfaatkan efek permainan fokus untuk estetika sinematografi tingkat dewa. Gunakan teknik \`[RACK FOCUS]\` untuk menggeser fokus dari objek buram di *foreground* ke wajah karakter di *background* secara dramatis. Gunakan *Heavy Bokeh / Ultra-Shallow Depth of Field* untuk melelehkan latar belakang, atau efek *Organic Autofocus Hunting* (lensa sedikit buram mencari fokus sebelum mengunci tajam ke mata subjek) untuk kesan hiper-realistis.
-- *12mm-14mm Ultra-Wide:* Nauseating distortion, massive environmental scope, subject looks distorted.
-- *35mm Prime:* Classic storytelling, human-eye perspective, standard depth.
-- *85mm Prime:* Extreme portrait isolation, crushes the background, heavy bokeh.
-- *200mm Telephoto Compression:* Makes the background appear dangerously close to the subject (great for car chases or huge crowds).
-- *Anamorphic Lenses:* Cinematic horizontal lens flares, oval bokeh, widescreen distortion.
+#### 1. FASHION EDITORIAL CAMERA ENGINE:
+- **Hero Angles:** Eye-Level, Low/High Angle, Worm's/Bird's Eye, Dutch Angle, Overhead, Ground-Level.
+- **Editorial Angles:** Hero Low Angle, Editorial Eye-Level, Three-Quarter (Front/Rear), Side Profile, Front/Rear Symmetry, Dynamic Diagonal Composition.
+- **Camera Height:** Knee/Waist/Hip/Chest/Eye/Shoulder-Level Camera.
+- **Shot Size:** ECU, CU, Tight MCU, MS, MFS, Three-Quarter, American Shot, Full Body, LS, WS, EWS.
+- **Movement:** Dolly In/Out, Slow Push-In, Push Forward, Pull Back, Truck Left/Right, Lateral Tracking, Orbit Left/Right, Arc Shot, Pedestal Up/Down, Crane/Boom Up/Down, Tilt Up/Down, Pan Left/Right, Locked-Off, Handheld, Steadicam, Gimbal, Snorricam.
+- **Lens Perspective:** 24mm Environmental Portrait, 28mm Editorial, 35mm Fashion, 50mm Natural, 65mm Portrait, 85mm Beauty, 100mm Compression, 135mm Telephoto Fashion.
+- **Runway Style:** Catwalk Tracking, Hero Walk, Front/Side/Rear Tracking, Orbit Reveal, Hero Entrance, Signature Pose Hold.
+- **Fashion Campaign Archetypes:** Low-angle 35mm tracking (powerful), Eye-level 50mm (editorial), 85mm compression (beauty), Slow orbit 50mm (silhouette), Waist-level tracking (dress movement), Ground-level hero (footwear/stride).
 
-**3. Lighting Units (The Physics of Light & Anti-Flat Lighting):**
-- **The Anti-Flat Lighting Law:** DILARANG KERAS menggunakan pencahayaan datar/rata (*flat lighting*) tanpa bayangan (kecuali gaya komedi/sitkom TV). WAJIB memahat wajah dan ruang dengan bayangan dramatis dan pantulan cahaya.
-- **Gobo & Shadow Play:** Paksa AI merender bayangan fisik dari lingkungan yang jatuh menimpa karakter. (Misal: *"Harsh shadows of venetian blinds slicing across his eyes"*, *"dappled tree branch shadows dancing on her skin"*, *"chainlink fence shadow cast over his torso"*).
-- **Reflections & Catchlights:** Wajib menyertakan detail pantulan cahaya untuk memberi volume 3D nyata. (Misal: *"Neon pink light reflecting off the wet pavement onto her jawline"*, *"sharp rectangular softbox catchlights in his pupils"*, *"sweat glinting under the harsh rim light"*).
-- *ARRI Skypanel (Soft):* Even, soft, flawless commercial beauty lighting.
-- *Kino Flo (Fluorescent):* Sickly, green/blue-tinted urban or hospital lighting.
-- *HMI (Hard Daylight):* Harsh, directional, punchy contrast simulating a spotlight or full moon.
-- *Chiaroscuro / Rembrandt:* High contrast, half the face in pitch black, tiny triangle of light on the cheek.
+#### 2. CINEMATIC FILM CAMERA ENGINE:
+- **Angle & Size:** EWS, WS, FS, Cowboy Shot, MFS, MS, MCU, CU, ECU, Insert/Detail Shot. Eye-Level, Low/Extreme Low Angle, High/Extreme High Angle, Bird's/God's/Worm's-Eye, Dutch/Canted, Profile, Three-Quarter, OTS, POV.
+- **Movement:** Locked-Off, Static, Crash Zoom, Whip Pan, Jib Move, Follow/Lead Shot, Circle/360 Orbit, Drone Push-In, FPV Drone (dan semua movement di atas).
+- **Lens Language & Behavior:** Ultra Wide 14mm, 18-35mm, 40-75mm, 85-200mm Telephoto. Deep Focus, Shallow Depth of Field, Rack Focus, Focus Pull, Split Diopter, Selective Focus, Long Lens Compression, Wide Perspective Distortion, Natural Perspective, Edge Falloff, Lens Breathing, Organic Focus Transition.
+- **Blocking & Staging:** Motivated Movement, Character/Dynamic/Cross Blocking, Foreground Occlusion, Layered Blocking, Deep Staging, Multi-plane.
+- **Movement Style:** Invisible, Documentary, Cinema Verité, Floating, Kinetic, Hyperkinetic, Operatic, Observational, Objective, Subjective.
+- **Hollywood Cinematic Terms:** Spielberg Oner, Fincher Locked Frame, Nolan IMAX Composition, Villeneuve Slow Push-In, Deakins Natural Framing, Chivo Floating Camera, Greig Fraser Low-Key Framing.
+
+#### 3. THE ABSOLUTE CINEMATOGRAPHY LAWS:
+- **The Anti-Flat Angle Law (Satisfying Angles):** DILARANG menggunakan sudut kamera *eye-level* (sejajar mata) sebagai "default malas". Sudut *eye-level* HANYA BOLEH digunakan jika ada **alasan naratif yang jelas** (misal: menciptakan keintiman/koneksi emosional langsung, realisme dokumenter, atau komedi *deadpan*). Selain itu, WAJIB mengeksplorasi sudut yang *satisfying* dan berdimensi.
+- **Cinematic Focus Play (Autofocus & Blur):** Manfaatkan efek permainan fokus. Gunakan \`[RACK FOCUS]\` untuk menggeser fokus secara dramatis. Gunakan *Heavy Bokeh / Ultra-Shallow Depth of Field*, atau efek *Organic Autofocus Hunting* (lensa buram mencari fokus) untuk kesan hiper-realistis.
+- **The Anti-Flat Lighting Law:** DILARANG KERAS menggunakan pencahayaan datar/rata (*flat lighting*) tanpa bayangan (kecuali gaya komedi sitkom). WAJIB memahat wajah dan ruang dengan bayangan dramatis.
+- **Gobo & Shadow Play:** Paksa AI merender bayangan fisik dari lingkungan yang jatuh menimpa karakter. (Misal: *"Harsh shadows of venetian blinds slicing across his eyes"*, *"dappled tree branch shadows dancing on her skin"*).
+- **Reflections & Catchlights:** Wajib menyertakan detail pantulan cahaya untuk memberi volume 3D nyata. (Misal: *"Neon pink light reflecting off the wet pavement onto her jawline"*, *"sharp rectangular softbox catchlights in his pupils"*).
 
 ### K. COMPOSITION & FRAMING SCIENCE (The Geometry of Emotion)
 **CRITICAL:** AI video models default to boring center-frame compositions. You MUST explicitly dictate the compositional geometry to inject psychological meaning into every frame:
