@@ -114,15 +114,18 @@ export function updateResultPanel(aiResponse) {
   const textLower = aiResponse.toLowerCase();
   
   const rules = [
+    { name: "SYS-LOG: RNG Initiative", pass: /sys.?log|rng.?initiative|rolled location|rolled wardrobe|rolled camera|rolled lighting/i.test(textLower) },
     { name: "Action-First Inversion", pass: /\[prose\]/.test(textLower) },
-    { name: "Kinetic Syntax (3s Mandate)", pass: /hard.?cut|jump.?cut|smash.?cut|match.?cut|whip.?pan|fast.?tracking|dynamic.?swoop|rack.?focus|handheld.?reveal/i.test(textLower) },
-    { name: "The Barrel-Stare Ban", pass: /zero barrel stare|eyeline|off.?screen|concealing eyes/i.test(textLower) },
-    { name: "Triadic Color Law", pass: /color|triadic|red|blue|yellow|cyan|orange|crimson/i.test(textLower) },
+    { name: "Kinetic Syntax (3s Mandate)", pass: /hard.?cut|jump.?cut|smash.?cut|match.?cut|whip.?pan|fast.?tracking|dynamic.?swoop|rack.?focus|handheld.?reveal|crane|lateral.?track/i.test(textLower) },
+    { name: "The Barrel-Stare Ban", pass: /zero barrel stare|eyeline|off.?screen|concealing eyes|never lens/i.test(textLower) },
+    { name: "Triadic Color Law", pass: /color|triadic|red|blue|yellow|cyan|orange|crimson|amber|indigo|magenta/i.test(textLower) },
     { name: "The Anti-Wet-Floor Law", pass: /zero wet floor|dry|solid/i.test(textLower) },
     { name: "The Anti-Particle Law", pass: /zero artificial particles|no floating dust|zero glowing bokeh|clean frame/i.test(textLower) },
+    { name: "The Anti-Concrete Law", pass: /zero concrete|no concrete|marble|mahogany|velvet|walnut|chrome|glass|cedar|lacquer/i.test(textLower) },
+    { name: "Silent Camera Law", pass: /swiftly|smoothly|instantly|silent camera|zero hyperbolic|zero aggressive/i.test(textLower) },
     { name: "Dermatological Law", pass: /skin|pores|texture|healthy unpolished realism/i.test(textLower) },
-    { name: "Full Wardrobe Lock", pass: /wardrobe|shoes|boots|heels|pants|shorts|trousers|skirt/i.test(textLower) },
-    { name: "Spatial Depth & Optics", pass: /spatial depth|focus prerogative|anamorphic|swirly bokeh|helios|dirty foreground|split.?diopter/i.test(textLower) },
+    { name: "Full Wardrobe Lock", pass: /wardrobe|shoes|boots|heels|pants|shorts|trousers|skirt|barefoot|sneakers/i.test(textLower) },
+    { name: "Spatial Depth & Optics", pass: /spatial depth|focus prerogative|anamorphic|swirly bokeh|helios|dirty foreground|split.?diopter|deep focus|shallow depth|tatami/i.test(textLower) },
     { name: "Anti-Slowmo Law", pass: /1\.0x|no slow|real.?time|zero slow.?motion/i.test(textLower) }
   ];
 
