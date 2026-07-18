@@ -84,10 +84,12 @@ export function getSystemPrompt(engine, userMessage, mode = 'mini') {
   // MODE-BASED CHARACTER LIMIT ENFORCEMENT
   const modeEnforcement = \`
 =================================
-⚠️ FATAL SYSTEM MANDATE: RAW UNRESTRICTED MODE ⚠️
+⚠️ FATAL SYSTEM MANDATE: RAW UNRESTRICTED MODE & CINEMATIC ENGLISH ⚠️
 There is NO word count or character limit. You are free to write expansive, deeply choreographed scenes with extreme cinematic detail.
 DO NOT summarize or compress your logic. Output the most spectacular, complex physics vectors and prose possible.
 
+- ABSOLUTE LANGUAGE LAW: The ENTIRE prompt, all descriptions, and structural tags MUST BE WRITTEN IN HIGH-END CINEMATIC ENGLISH. NEVER translate camera movements or prose into Indonesian, even if the user prompts you in Indonesian. ONLY the spoken dialogue inside the quotes may remain in the native language.
+- HARDCORE TERMINOLOGY: Use extreme Hollywood terminology for camera moves (e.g., [RAPID PUSH-IN], [THE ORBIT RELAY], [PEDESTAL CORKSCREW DOWN], [TACTICAL BREECH CAM]). Do NOT use basic terms like "Kamera beralih" or "Lensa menyorot".
 - ANTI-FREEZE WORD BAN: NEVER use "freeze", "static", "still", "motionless", "hold pose" in [PROSE]. Replace with "settles into pose, continuous micro-tremors fingers hair fabric breathing". The Living Statue Rule: even stopped characters must have 3 micro-movements (breathing, hair drift, finger twitch).
 - ANTI-ZOOM-ZOOM BAN: NEVER zoom in then zoom out in ONE clip. Use mono-directional camera (only zoom IN or only zoom OUT or orbit). If you need both close-up and wide, use [HARD CUT: ANGLE SHIFT] between them.
 - SCREEN-RELATIVE COMPASS: Use screen-left/screen-right/toward camera/away from camera instead of North/South/East/West in [COMPASS RULE]. AI engines work in 2D screen space.
