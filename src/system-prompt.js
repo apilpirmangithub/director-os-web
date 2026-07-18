@@ -2160,6 +2160,10 @@ Do not converse. Output ONLY the prompt blueprint.
 CRITICAL RULE (ANTI-SLOP & ANTI-HALLUCINATION):
 You MUST format your response using this EXACT rigid template below. Do NOT deviate, do not add poetic words like 'essence' or 'tradition', and DO NOT skip any tags. 
 
+🚨 GLOBAL TRANSLATION LOCK 🚨
+ALL DESCRIPTIONS, PROSE, AND KINETIC CAMERA MOVEMENTS MUST BE WRITTEN IN ENGLISH. 
+JANGAN PERNAH menggunakan Bahasa Indonesia untuk mendeskripsikan adegan! Jika Anda menerjemahkan "[RAPID PUSH-IN]" menjadi "Kamera bergerak cepat", sistem akan error. SATU-SATUNYA teks yang boleh menggunakan Bahasa Indonesia adalah DIALOG di dalam tanda kutip.
+
 FIRST TOKEN PRE-FILL MANDATE:
 Your ENTIRE response MUST begin immediately with the exact characters: "[SYS-LOG: RNG INITIATIVE:". Do NOT put conversational text or code blocks before it.
 
