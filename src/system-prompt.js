@@ -161,13 +161,12 @@ HAPUS SEMUA PARAMETER AUDIO. Prompt murni Lensa & Cahaya. **ATURAN MUTLAK UI/UX:
 
 \`\`\`text
 [PROSE]: [Langsung ledakkan Aksi Kinetik Cepat. Patuhi ACTION-FIRST INVERSION]. [RAPID PUSH-IN] [Karakter bereaksi]. [Karakter] SPEAK (Emosi, NATIVE LANGUAGE LOCK): "Teks pendek."
-[SPATIAL DEPTH ENGINE]: [WAJIB CETAK PENUH LAYER 1 HINGGA 6 TANPA TERKECUALI. Jika ada layer yang secara logika ruang atau optik harus kosong (misal: ruang belakang pada adegan lensa makro), JANGAN gunakan kata "Empty air". WAJIB kunci layer tersebut dengan status absolut: "[PURGED: PURE OPTICAL BLUR - ZERO OBJECTS]". WAJIB patuhi kurva ketajaman ekstrem. Tentukan SATU layer sebagai titik ketajaman absolut (Apex of Sharpness) berdasarkan naskah, lalu buramkan sisanya: Jauh (Total Optical Obliteration), Sedang (Heavy Defocus), Dekat (Soft Falloff). Format: LAYER 1 (Extreme FG): [teks] (Total Optical Obliteration) | LAYER 2 (FG): [teks] (Heavy Defocus) | LAYER 3 (Midground): [teks] (Apex of Sharpness) | LAYER 4 (Near BG): [teks] (Soft Falloff) | LAYER 5 (Deep BG): [teks] (Heavy Defocus) | LAYER 6 (Infinite BG): [PURGED: PURE OPTICAL BLUR - ZERO OBJECTS] (Total Optical Obliteration). Catatan: Apex of Sharpness TIDAK harus di Layer 3 dan subjek tidak harus di Layer 3. Jika ada transisi Rack Focus, status ketajaman WAJIB BERPINDAH secara eksplisit di layer yang bersangkutan!]
-
-[GLOBAL LOCK]: [Karakter desc & clothes]. Location: [place]. Time: [time].
-[RENDER & ACTING LOCK]: [Forbidden Lore]. [Lighting Psychology]. The Dermatological Law: Translucent epidermis, capillary veins. Continuous micro-movements. [Low/High] Kinetic Flow.
-[CAMERA & PHYSICS LOCK]: MANDATORY: Dynamic camera movement. [WAJIB DUMP 5+ ISTILAH DARI MASTER CAMERA & ANGLE DATABASE, misal: Low-angle 35mm tracking, Split Diopter, Spielberg Oner]. [WAJIB DUMP 10+ ISTILAH DARI MASTER COLOR & SENSOR DATABASE, misal: 16-bit OpenEXR, ACEScg, PBR textile, dsb]. Clean frame: zero vignette zero borders. Real-time 1.0x.
-
-[PHYSICS VECTORS]: Gaze: [val] | Body: [val] | Compass: [val] | Momentum: [val] | Light: [val] | Prox: [val] | Relativity: [val]
+[SPATIAL DEPTH ENGINE]: L1: [PURGED] | L2: [teks] (Heavy Defocus) | L3: [teks] (Apex of Sharpness) | L4: [teks] (Soft Falloff) | L5: [teks] (Heavy Defocus) | L6: [PURGED]. Jika ada transisi Rack Focus, status ketajaman WAJIB BERPINDAH secara eksplisit!
+[GLOBAL LOCK]: [Minimalisir karakter, 20 kata max]. [Wardrobe + Physical Identity Lock: age, hair, detailed clothes, distinct props]. [Location Lock]. [Time/Weather Lock].
+[RENDER]: [Forbidden Lore]. [Lighting Psychology]. The Dermatological Law: Translucent epidermis, capillary veins. Continuous micro-movements. [Low/High] Kinetic Flow.
+[CAMERA]: MANDATORY: Dynamic camera movement. [WAJIB DUMP 5+ ISTILAH DARI MASTER CAMERA & ANGLE DATABASE, misal: Low-angle 35mm tracking]. [WAJIB DUMP 10+ ISTILAH COLOR & SENSOR, misal: 16-bit OpenEXR, ACEScg, PBR textile]. Clean frame zero vignette borders. Real-time 1.0x.
+[PROMPT INJECTION AREA]
+[PHYSICS VECTORS]: Gaze: [val] | Body: [val] | Compass: [val] | Momentum: [val] | Prox: [val]
 \`\`\`
 ***
 ---
@@ -2103,15 +2102,15 @@ CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the in
 This is a HARD, UNFORGIVING LIMIT for the video prompt. You MUST NOT exceed ${charLimit} characters for the clip prompt.
 DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this limit. Instead, use SURGICAL COMPRESSION:
 ${mode === 'mini' ? `🚨 STRICT WORD COUNT LIMITER ACTIVE (MINI MODE):
-1. [PROSE]: MAX 35 WORDS (Max 2 kalimat).
-2. [GLOBAL LOCK]: MAX 25 WORDS.
-3. [RENDER & ACTING LOCK]: MAX 25 WORDS.
-4. [CAMERA & PHYSICS LOCK]: MAX 25 WORDS.
+1. [PROSE]: MAX 55 WORDS (Max 3 kalimat).
+2. [GLOBAL LOCK]: MAX 20 WORDS.
+3. [RENDER]: MAX 20 WORDS.
+4. [CAMERA]: MAX 20 WORDS.
 5. [PHYSICS VECTORS]: MAX 3-5 words per vector.` : `🚨 RELAXED WORD COUNT LIMITER ACTIVE (STANDARD MODE):
 1. [PROSE]: MAX 60 WORDS (Max 4 kalimat).
 2. [GLOBAL LOCK]: MAX 40 WORDS.
-3. [RENDER & ACTING LOCK]: MAX 40 WORDS.
-4. [CAMERA & PHYSICS LOCK]: MAX 40 WORDS.
+3. [RENDER]: MAX 40 WORDS.
+4. [CAMERA]: MAX 40 WORDS.
 5. [PHYSICS VECTORS]: MAX 5-7 words per vector.`}
 - Remove filler words and redundant adjectives (e.g. use "Window screen-right, futon center, door screen-left" instead of verbose descriptions).
 - Omit conversational explanations inside the prompt blocks.
