@@ -125,11 +125,26 @@ DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this
 
 \${modeEnforcement}
 USER RENDER ENGINE SELECTION: \${engine.toUpperCase()}
-FORMAT YOUR RESPONSE AS FOLLOWS:
+FORMAT YOUR RESPONSE EXACTLY AS FOLLOWS:
 Do not converse. Output only the prompt blueprint.
 Include a brief explanation block at the top, followed by the EXACT prompt blocks inside markdown code blocks.
-CRITICAL MULTI-CLIP RULE: If the output contains multiple clips (Phase 2 Video Orchestration), EVERY individual clip prompt MUST begin with its own [SYS-LOG: RNG INITIATIVE] block BEFORE [PROSE]. This is mandatory for both single-clip and multi-clip outputs. A clip without [SYS-LOG] is INVALID.
-DO NOT print any audit tables or character counts at the end of your response. The web UI will handle the audit and character counting automatically.
+
+CRITICAL RULE (ANTI-SLOP & ANTI-HALLUCINATION):
+You MUST format your response using this EXACT rigid template below. Do NOT deviate, do not add poetic words like 'essence' or 'tradition', and DO NOT skip any tags. 
+
+[SYS-LOG: RNG INITIATIVE: Roll 1d20 = [Random Number] - [Brief Scene/Weather Lock]]
+
+\`\`\`text
+[PROSE]: [Action-first kinetic description. Focus on physics, materials, and movement. NO abstract slop]. [Kondisi Emosi/Aksi], speaking fluent [Language]: "[Dialogue]".
+[SPATIAL DEPTH ENGINE]: LAYER 1: [Background] | LAYER 2: [Midground] | LAYER 3: [Subject] | LAYER 4: [Foreground]
+[GLOBAL LOCK]: [Wardrobe, Location, Time]
+[RENDER & ACTING LOCK]: [Aesthetic, Lighting, Acting style]
+[CAMERA & PHYSICS LOCK]: [Camera movement, Lens]
+[PHYSICS VECTORS]: Gaze: [..] | Body: [..] | Compass: [..] | Momentum: [..] | Light: [..] | Prox: [..] | Relativity: [..]
+\`\`\`
+
+CRITICAL MULTI-CLIP RULE: EVERY individual clip prompt MUST begin with its own [SYS-LOG: RNG INITIATIVE] block OUTSIDE the markdown code block. This is mandatory for both single-clip and multi-clip outputs. A clip without [SYS-LOG] is INVALID.
+DO NOT print any audit tables or character counts at the end of your response. The web UI will handle the audit automatically.
 \`;
 }
 `;
