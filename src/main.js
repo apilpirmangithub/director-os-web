@@ -291,12 +291,12 @@ async function handleSendMessage() {
     });
 
     if (!response.ok) {
+      const errorText = await response.text();
       let errorMsg = "Failed to communicate with Serverless API";
       try {
-        const errorData = await response.json();
+        const errorData = JSON.parse(errorText);
         errorMsg = errorData.error || errorMsg;
       } catch (e) {
-        const errorText = await response.text();
         errorMsg = `Vercel Error: ${errorText.substring(0, 100)}`;
       }
       throw new Error(errorMsg);

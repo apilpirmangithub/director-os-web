@@ -45,8 +45,15 @@ export default async function handler(req, res) {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error?.message || "Failed to communicate with OpenAI API");
+        const errText = await response.text();
+        let errMsg = "Failed to communicate with OpenAI API";
+        try {
+          const errData = JSON.parse(errText);
+          errMsg = errData.error?.message || errMsg;
+        } catch (e) {
+          errMsg = `OpenAI API Error: ${response.status} ${response.statusText}`;
+        }
+        throw new Error(errMsg);
       }
       
       const data = await response.json();
@@ -82,8 +89,15 @@ export default async function handler(req, res) {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error?.message || "Failed to communicate with Grok API");
+        const errText = await response.text();
+        let errMsg = "Failed to communicate with Grok API";
+        try {
+          const errData = JSON.parse(errText);
+          errMsg = errData.error?.message || errMsg;
+        } catch (e) {
+          errMsg = `Grok API Error: ${response.status} ${response.statusText}`;
+        }
+        throw new Error(errMsg);
       }
       
       const data = await response.json();
