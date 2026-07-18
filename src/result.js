@@ -82,26 +82,36 @@ export function updateResultPanel(aiResponse) {
     const isSysLog = firstLine.includes('SYS-LOG') || firstLine.includes('RNG');
 
     if (isSysLog) {
-      // The user sees RNG in the chat panel, so we completely hide it from the Result panel!
-      // We also strip it from the raw text so the Copy button only copies the prompt.
-      promptText = promptText.replace(section, '').trim();
-      return;
+      blocksHtml += `
+        <details class="sys-log-accordion">
+          <summary>
+            <div class="summary-content">
+              <span class="accordion-icon">🎲</span>
+              <span class="accordion-title">RNG Initiative Log (Behind the Scenes)</span>
+            </div>
+            <span class="accordion-arrow">▼</span>
+          </summary>
+          <div class="accordion-content">
+            <div class="result-prompt-text">${displayHtml}</div>
+          </div>
+        </details>
+      `;
+    } else {
+      blocksHtml += `
+        <div class="result-block">
+          <div class="result-block-header">
+            ${title}
+          </div>
+          <div class="result-block-body">
+            <div class="result-prompt-text">${displayHtml}</div>
+          </div>
+        </div>
+      `;
     }
-
-    blocksHtml += `
-      <div class="result-block">
-        <div class="result-block-header">
-          ${title}
-        </div>
-        <div class="result-block-body">
-          <div class="result-prompt-text">${displayHtml}</div>
-        </div>
-      </div>
-    `;
   });
 
   // Render Result Block
-  resultContainer.innerHTML = blocksHtml + `<div id="raw-prompt-text" data-raw="${encodeURIComponent(promptText.trim())}" style="display:none;"></div>`;
+  resultContainer.innerHTML = blocksHtml + `<div id="raw-prompt-text" data-raw="${encodeURIComponent(promptText)}" style="display:none;"></div>`;
 
   // Attach event listeners for dynamic copy buttons
   document.querySelectorAll('.btn-copy-code').forEach(btn => {
