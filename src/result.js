@@ -31,8 +31,12 @@ export function updateResultPanel(aiResponse) {
     promptText = promptMatch ? promptMatch[1].trim() : aiResponse.trim();
   }
 
+  // The user sees RNG in the chat panel, so we completely hide it from the Result panel!
+  // Strip anything from [SYS-LOG] up to the start of the code block or [PROSE]
+  promptText = promptText.replace(/\[SYS-LOG[\s\S]*?(?=\s*```|\[PROSE\])/gi, '').trim();
+
   // Split into sections/phases
-  const sections = promptText.split(/(?=^(?:### |\*\*\[SYS-LOG|\[SYS-LOG|\*\*KLIP|\*\*CLIP|KLIP |CLIP |Phase |Fase |```|\[PROSE\]))/mi);
+  const sections = promptText.split(/(?=^(?:### |\*\*\[SYS-LOG|\*\*KLIP|\*\*CLIP|KLIP |CLIP |Phase |Fase ))/mi);
   
   let blocksHtml = '';
 
