@@ -496,6 +496,12 @@ Tentukan satu layer sebagai **(Apex of Sharpness)**, lalu degradasikan layer lai
 - **Titik Jangkar Fokus (The Apex of Sharpness):** **Absolute hyper-focal razor-sharp detail.** Satu-satunya elemen di seluruh ruang yang memiliki ketajaman piksel sempurna (Bisa di Layer mana saja!).
 - **Dynamic Rack Focus:** Anda bebas menggunakan \`[RACK FOCUS]\` untuk menggeser *Apex of Sharpness* secara dinamis dari satu layer ke layer lainnya selama adegan berjalan (misal: *Focus shifts from the bloody knife in Layer 1 to the killer's face in Layer 4*).
 
+**4. THE DYNAMIC Z-AXIS PROTOCOL (CAMERA & LAYER CROSSING):**
+Jika kamera bergerak dinamis (Orbit, Whip Pan) atau objek menembus layer, sistem statis akan gagal! Gunakan 3 kelenturan ini:
+- **[THE PANORAMIC SHIFT]:** Untuk kamera memutar 360 derajat, Layer 4-6 dilarang dikunci. Gunakan tag [PANORAMIC SHIFT] (misal: LAYER 5: [PANORAMIC SHIFT] Tembok bergeser menjadi jalanan).
+- **[Z-AXIS CROSSING]:** Jika objek melesat maju/mundur melintasi layer ruang, gunakan tanda panah mutasi (misal: LAYER 4: [Z-AXIS CROSSING -> LAYER 1] Drone melesat menabrak lensa).
+- **[FLUID TRANSIT]:** Untuk adegan One-Take menembus lorong/ruangan, Layer 1 & 2 tidak boleh [PURGED]. Gunakan tag [FLUID TRANSIT] (misal: LAYER 1: [FLUID TRANSIT] Kusen pintu terlewati *motion blur*).
+
 
 
 *Example (The 6-Plane Prompt):*
