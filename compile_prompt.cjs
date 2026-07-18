@@ -95,10 +95,10 @@ CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the in
 This is a HARD, UNFORGIVING LIMIT for the video prompt. You MUST NOT exceed \${charLimit} characters for the clip prompt.
 DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this limit. Instead, use SURGICAL COMPRESSION:
 \${mode === 'mini' ? \`🚨 STRICT WORD COUNT LIMITER ACTIVE (MINI MODE):
-1. [OMNI-PROSE]: MAX 120 WORDS (Fuses Camera, Global Lock, Spatial Depth, and Action).
-2. [RENDER & LENS MATH]: MAX 40 WORDS.\` : \`🚨 RELAXED WORD COUNT LIMITER ACTIVE (STANDARD MODE):
-1. [OMNI-PROSE]: MAX 150 WORDS (Fuses Camera, Global Lock, Spatial Depth, and Action).
-2. [RENDER & LENS MATH]: MAX 60 WORDS.\`}
+1. [GLOBAL LOCK]: MAX 20 WORDS.
+2. [MASTER PROSE]: MAX 120 WORDS. (This single block absorbs Camera, Action, Spatial Depth, Lighting, and Physics Vectors).\` : \`🚨 RELAXED WORD COUNT LIMITER ACTIVE (STANDARD MODE):
+1. [GLOBAL LOCK]: MAX 40 WORDS.
+2. [MASTER PROSE]: MAX 150 WORDS. (This single block absorbs Camera, Action, Spatial Depth, Lighting, and Physics Vectors).\`}
 - Remove filler words and redundant adjectives (e.g. use "Window screen-right, futon center, door screen-left" instead of verbose descriptions).
 - Omit conversational explanations inside the prompt blocks.
 - Use precise, surgical vocabulary instead of verbose descriptions (e.g. "zero vignette/borders" instead of "zero vignette, zero borders").
