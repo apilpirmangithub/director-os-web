@@ -1,0 +1,11 @@
+{
+  "id":  "406ea8a1-2b45-4e8c-8124-5938801389ab",
+  "name":  "sub",
+  "projectResources":  {},
+  "settings":  {
+    "fileAccessPolicy":  "AGENT_SETTING_POLICY_ASK",
+    "internetPolicy":  "AGENT_SETTING_POLICY_ASK",
+    "autoExecutionPolicy":  "CASCADE_COMMANDS_AUTO_EXECUTION_OFF",
+    "artifactReviewMode":  "ARTIFACT_REVIEW_MODE_ALWAYS"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "621a73a7-fafb-4c5a-bbd8-0d9a958388b6",
+  "name": "video_360_ultra_app",
+  "projectResources": {
+    "resources": [
+      {
+        "gitFolder": {
+          "folderUri": "file:///c%3A/Users/apilp/.gemini/antigravity/scratch/video_360_ultra_app",
+          "allowWrite": true
+        }
+      }
+    ]
+  }
+}

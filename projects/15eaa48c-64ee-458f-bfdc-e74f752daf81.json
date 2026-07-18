@@ -1,0 +1,11 @@
+{
+  "id":  "15eaa48c-64ee-458f-bfdc-e74f752daf81",
+  "name":  "predik",
+  "projectResources":  {},
+  "settings":  {
+    "fileAccessPolicy":  "AGENT_SETTING_POLICY_ASK",
+    "internetPolicy":  "AGENT_SETTING_POLICY_ASK",
+    "autoExecutionPolicy":  "CASCADE_COMMANDS_AUTO_EXECUTION_OFF",
+    "artifactReviewMode":  "ARTIFACT_REVIEW_MODE_ALWAYS"
+  }
+}

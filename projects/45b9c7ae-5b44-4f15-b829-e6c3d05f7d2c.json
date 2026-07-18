@@ -1,0 +1,18 @@
+{
+  "id":  "45b9c7ae-5b44-4f15-b829-e6c3d05f7d2c",
+  "name":  "polymarket-bot",
+  "projectResources":  {
+    "resources":  [
+      {
+        "folderUri":  "file:///c%3A/Users/apilp/.gemini/antigravity/scratch/polymarket-bot"
+      }
+    ]
+  },
+  "permissionGrants":  {
+    "permissionGrants":  {
+      "allow":  [
+        "read_url(1.berbagi.app)"
+      ]
+    }
+  }
+}

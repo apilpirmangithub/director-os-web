@@ -1,0 +1,14 @@
+{
+  "id": "8ece253d-ae87-4501-9493-2478e3f07a8d",
+  "name": "eleven_clone",
+  "projectResources": {
+    "resources": [
+      {
+        "gitFolder": {
+          "folderUri": "file:///c%3A/Users/apilp/.gemini/antigravity/scratch/eleven_clone",
+          "allowWrite": true
+        }
+      }
+    ]
+  }
+}

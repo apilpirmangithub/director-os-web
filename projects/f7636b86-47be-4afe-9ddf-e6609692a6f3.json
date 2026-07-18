@@ -1,0 +1,14 @@
+{
+  "id": "f7636b86-47be-4afe-9ddf-e6609692a6f3",
+  "name": "GimiOutreach",
+  "projectResources": {
+    "resources": [
+      {
+        "gitFolder": {
+          "folderUri": "file:///c%3A/Users/apilp/.gemini/antigravity/scratch/GimiOutreach",
+          "allowWrite": true
+        }
+      }
+    ]
+  }
+}

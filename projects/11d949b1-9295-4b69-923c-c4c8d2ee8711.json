@@ -1,0 +1,11 @@
+{
+  "id":  "11d949b1-9295-4b69-923c-c4c8d2ee8711",
+  "name":  "skills",
+  "projectResources":  {},
+  "settings":  {
+    "fileAccessPolicy":  "AGENT_SETTING_POLICY_ALLOW",
+    "internetPolicy":  "AGENT_SETTING_POLICY_ASK",
+    "autoExecutionPolicy":  "CASCADE_COMMANDS_AUTO_EXECUTION_EAGER",
+    "artifactReviewMode":  "ARTIFACT_REVIEW_MODE_ALWAYS"
+  }
+}

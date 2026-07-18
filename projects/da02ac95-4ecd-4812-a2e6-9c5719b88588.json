@@ -1,0 +1,14 @@
+{
+  "id": "da02ac95-4ecd-4812-a2e6-9c5719b88588",
+  "name": "MOTION",
+  "projectResources": {
+    "resources": [
+      {
+        "gitFolder": {
+          "folderUri": "file:///g%3A/MOTION",
+          "allowWrite": true
+        }
+      }
+    ]
+  }
+}

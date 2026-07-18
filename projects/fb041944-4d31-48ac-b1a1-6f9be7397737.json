@@ -1,0 +1,15 @@
+{
+  "id": "fb041944-4d31-48ac-b1a1-6f9be7397737",
+  "name": "HyperScalperX",
+  "projectResources": {
+    "resources": [
+      {
+        "gitFolder": {
+          "folderUri": "file:///c%3A/Users/apilp/.gemini/antigravity/scratch/HyperScalperX",
+          "defaultBranch": "main",
+          "allowWrite": true
+        }
+      }
+    ]
+  }
+}

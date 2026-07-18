@@ -1,0 +1,14 @@
+{
+  "id": "2199ea94-9599-436b-875f-2d57f743ae91",
+  "name": "WebClonerPro",
+  "projectResources": {
+    "resources": [
+      {
+        "gitFolder": {
+          "folderUri": "file:///c%3A/Users/apilp/.gemini/antigravity/scratch/WebClonerPro",
+          "allowWrite": true
+        }
+      }
+    ]
+  }
+}

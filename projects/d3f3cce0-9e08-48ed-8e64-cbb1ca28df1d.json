@@ -1,0 +1,14 @@
+{
+  "id": "d3f3cce0-9e08-48ed-8e64-cbb1ca28df1d",
+  "name": "3d-timeline-studio",
+  "projectResources": {
+    "resources": [
+      {
+        "gitFolder": {
+          "folderUri": "file:///g%3A/3d/3d-timeline-studio",
+          "allowWrite": true
+        }
+      }
+    ]
+  }
+}

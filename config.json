@@ -1,0 +1,9 @@
+{
+  "userSettings": {
+    "globalPermissionGrants": {
+      "allow": [
+        "read_url(play.simplepaste.site)"
+      ]
+    }
+  }
+}

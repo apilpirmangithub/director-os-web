@@ -1,0 +1,14 @@
+{
+  "id": "e83ae31b-7878-40d8-8879-f0b62313f8a0",
+  "name": "polymarket_btc_bot",
+  "projectResources": {
+    "resources": [
+      {
+        "gitFolder": {
+          "folderUri": "file:///c%3A/Users/apilp/.gemini/antigravity/scratch/polymarket_btc_bot",
+          "allowWrite": true
+        }
+      }
+    ]
+  }
+}
