@@ -95,10 +95,16 @@ CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the in
 This is a HARD, UNFORGIVING LIMIT for the video prompt. You MUST NOT exceed \${charLimit} characters for the clip prompt.
 DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this limit. Instead, use SURGICAL COMPRESSION:
 \${mode === 'mini' ? \`🚨 STRICT WORD COUNT LIMITER ACTIVE (MINI MODE):
-1. [GLOBAL LOCK]: MAX 20 WORDS.
-2. [MASTER PROSE]: MAX 120 WORDS. (This single block absorbs Camera, Action, Spatial Depth, Lighting, and Physics Vectors).\` : \`🚨 RELAXED WORD COUNT LIMITER ACTIVE (STANDARD MODE):
-1. [GLOBAL LOCK]: MAX 40 WORDS.
-2. [MASTER PROSE]: MAX 150 WORDS. (This single block absorbs Camera, Action, Spatial Depth, Lighting, and Physics Vectors).\`}
+1. [PROSE]: MAX 35 WORDS (Max 2 kalimat).
+2. [GLOBAL LOCK]: MAX 25 WORDS.
+3. [RENDER & ACTING LOCK]: MAX 25 WORDS.
+4. [CAMERA & PHYSICS LOCK]: MAX 25 WORDS.
+5. [PHYSICS VECTORS]: MAX 3-5 words per vector.\` : \`🚨 RELAXED WORD COUNT LIMITER ACTIVE (STANDARD MODE):
+1. [PROSE]: MAX 60 WORDS (Max 4 kalimat).
+2. [GLOBAL LOCK]: MAX 40 WORDS.
+3. [RENDER & ACTING LOCK]: MAX 40 WORDS.
+4. [CAMERA & PHYSICS LOCK]: MAX 40 WORDS.
+5. [PHYSICS VECTORS]: MAX 5-7 words per vector.\`}
 - Remove filler words and redundant adjectives (e.g. use "Window screen-right, futon center, door screen-left" instead of verbose descriptions).
 - Omit conversational explanations inside the prompt blocks.
 - Use precise, surgical vocabulary instead of verbose descriptions (e.g. "zero vignette/borders" instead of "zero vignette, zero borders").
