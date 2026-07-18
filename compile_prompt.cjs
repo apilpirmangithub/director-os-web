@@ -27,7 +27,7 @@ const dynamicSkills = {
 
 function readSafe(filePath) {
   if (fs.existsSync(filePath)) {
-    return fs.readFileSync(filePath, 'utf-8').replace(/`/g, '\\`').replace(/\$/g, '\\$');
+    return fs.readFileSync(filePath, 'utf-8').replace(/\\/g, '\\\\').replace(/`/g, '\\`').replace(/\$/g, '\\$');
   }
   return '';
 }
