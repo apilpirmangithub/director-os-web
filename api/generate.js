@@ -1,7 +1,5 @@
 import { getSystemPrompt } from '../src/system-prompt.js';
 
-export const maxDuration = 60; // Set max execution time to 60 seconds
-
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
