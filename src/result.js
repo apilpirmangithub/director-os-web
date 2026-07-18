@@ -32,7 +32,7 @@ export function updateResultPanel(aiResponse) {
   }
 
   // Split into sections/phases
-  const sections = promptText.split(/(?=^(?:### |\*\*\[SYS-LOG|\*\*KLIP|\*\*CLIP|KLIP |CLIP |Phase |Fase ))/mi);
+  const sections = promptText.split(/(?=^(?:### |\*\*\[SYS-LOG|\[SYS-LOG|\*\*KLIP|\*\*CLIP|KLIP |CLIP |Phase |Fase |```|\[PROSE\]))/mi);
   
   let blocksHtml = '';
 
