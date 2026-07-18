@@ -18,7 +18,7 @@ export function updateResultPanel(aiResponse) {
   if (isProduction) {
     // For production output, use the FULL response as the result
     // But strip any brief conversational preamble before the first production marker
-    const firstMarker = aiResponse.search(/(?:#{1,3}\\s|PHASE\\s[012]|\\*{3}\\s*\\n|\\[SYS-LOG|\\[PROSE\\]|BRIEF EXPLANATION|implementation_plan|Total Runtime)/i);
+    const firstMarker = aiResponse.search(/(?:#{1,3}\s|PHASE\s[012]|\*{3}\s*\n|\[SYS-LOG|\[PROSE\]|BRIEF EXPLANATION|implementation_plan|Total Runtime)/i);
     
     if (firstMarker > 0) {
       promptText = aiResponse.substring(firstMarker).trim();
