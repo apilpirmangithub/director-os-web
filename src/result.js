@@ -82,20 +82,10 @@ export function updateResultPanel(aiResponse) {
     const isSysLog = firstLine.includes('SYS-LOG') || firstLine.includes('RNG');
 
     if (isSysLog) {
-      blocksHtml += `
-        <details class="sys-log-accordion">
-          <summary>
-            <div class="summary-content">
-              <span class="accordion-icon">🎲</span>
-              <span class="accordion-title">RNG Initiative Log (Behind the Scenes)</span>
-            </div>
-            <span class="accordion-arrow">▼</span>
-          </summary>
-          <div class="accordion-content">
-            <div class="result-prompt-text">${displayHtml}</div>
-          </div>
-        </details>
-      `;
+      // The user sees RNG in the chat panel, so we completely hide it from the Result panel!
+      // We also strip it from the raw text so the Copy button only copies the prompt.
+      promptText = promptText.replace(section, '').trim();
+      return;
     } else {
       blocksHtml += `
         <div class="result-block">
