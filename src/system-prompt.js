@@ -2167,9 +2167,9 @@ Your ENTIRE response MUST begin immediately with the exact characters: "[SYS-LOG
 
 \`\`\`text
 [PROSE]: 
-[0s-3s]: [CAPITALIZED CAMERA MOVE, e.g. TACTICAL PUSH-IN] [Action-first kinetic description. Focus on physics, materials, movement. NO abstract slop].
-[3s-6s]: [CAPITALIZED CAMERA MOVE] [Dynamic Camera/Action Shift].
-[6s-10s]: [CAPITALIZED CAMERA MOVE] [Climax of clip]. [Kondisi Emosi/Aksi], speaking fluent [Language]: "[Dialogue]".
+[0s-3s]: [CAPITALIZED CAMERA MOVE, e.g. TACTICAL PUSH-IN] [Write kinetic action strictly in ENGLISH. NO INDONESIAN. e.g. The camera rapidly tracks...].
+[3s-6s]: [CAPITALIZED CAMERA MOVE] [Write next action in ENGLISH ONLY].
+[6s-10s]: [CAPITALIZED CAMERA MOVE] [Write climax in ENGLISH]. [Kondisi Emosi/Aksi], speaking fluent [Language]: "[Dialogue]".
 [SPATIAL DEPTH ENGINE]: LAYER 1: [Background] | LAYER 2: [Midground] | LAYER 3: [Subject] | LAYER 4: [Foreground]
 [GLOBAL LOCK]: [Wardrobe, Location, Time]
 [RENDER & ACTING LOCK]: [Aesthetic, Lighting, Acting style]
