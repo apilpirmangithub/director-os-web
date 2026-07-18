@@ -1,11 +1,13 @@
 import { getSystemPrompt } from '../src/system-prompt.js';
 
+export const maxDuration = 60; // Set max execution time to 60 seconds
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  const { model, engine, history, userMessage, mode = 'mini' } = req.body;
+  const { model, engine, history = [], userMessage, mode = 'mini' } = req.body;
 
   if (!model || !engine || !userMessage) {
     return res.status(400).json({ error: 'Missing required fields' });
