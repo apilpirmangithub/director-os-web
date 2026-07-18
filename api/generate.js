@@ -11,57 +11,88 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
-  // We exclusively use Grok models via x.ai API
-  const apiKey = process.env.GROK_API_KEY;
-
-  if (!apiKey) {
-    return res.status(500).json({ error: `API Key for Grok is not configured in Vercel ENV.` });
-  }
+  const isOpenAI = model.startsWith('gpt-');
+  const isGrok = model.startsWith('grok-');
 
   try {
     let resultText = '';
+    const systemPrompt = getSystemPrompt(engine, userMessage, mode);
 
-    const endpoint = 'https://api.x.ai/v1/responses';
-    const input = [];
-    input.push({
-      role: 'system',
-      content: getSystemPrompt(engine, userMessage, mode)
-    });
-    history.forEach(msg => {
-      input.push({
-        role: msg.role === 'ai' ? 'assistant' : 'user',
-        content: msg.content
+    if (isOpenAI) {
+      const apiKey = process.env.OPENAI_API_KEY;
+      if (!apiKey) return res.status(500).json({ error: "OPENAI_API_KEY is not configured in Vercel ENV." });
+      
+      const endpoint = 'https://api.openai.com/v1/chat/completions';
+      const messages = [{ role: 'system', content: systemPrompt }];
+      history.forEach(msg => {
+        messages.push({ role: msg.role === 'ai' ? 'assistant' : 'user', content: msg.content });
       });
-    });
-    input.push({
-      role: 'user',
-      content: userMessage
-    });
+      messages.push({ role: 'user', content: userMessage });
 
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`
-      },
-      body: JSON.stringify({
-        model: model,
-        input: input,
-        temperature: 0.4,
-        max_output_tokens: 32768
-      })
-    });
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          model: model,
+          messages: messages,
+          temperature: 0.4
+        })
+      });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error?.message || "Failed to communicate with Grok API");
-    }
-    const data = await response.json();
-    const msgOutput = data.output?.find(o => o.type === 'message');
-    if (msgOutput?.content?.length > 0) {
-      resultText = msgOutput.content[0].text;
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error?.message || "Failed to communicate with OpenAI API");
+      }
+      
+      const data = await response.json();
+      if (data.choices && data.choices.length > 0) {
+        resultText = data.choices[0].message.content;
+      } else {
+        throw new Error("No response generated from OpenAI.");
+      }
+
+    } else if (isGrok) {
+      const apiKey = process.env.GROK_API_KEY;
+      if (!apiKey) return res.status(500).json({ error: "GROK_API_KEY is not configured in Vercel ENV." });
+
+      const endpoint = 'https://api.x.ai/v1/responses';
+      const input = [{ role: 'system', content: systemPrompt }];
+      history.forEach(msg => {
+        input.push({ role: msg.role === 'ai' ? 'assistant' : 'user', content: msg.content });
+      });
+      input.push({ role: 'user', content: userMessage });
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          model: model,
+          input: input,
+          temperature: 0.4,
+          max_output_tokens: 32768
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error?.message || "Failed to communicate with Grok API");
+      }
+      
+      const data = await response.json();
+      const msgOutput = data.output?.find(o => o.type === 'message');
+      if (msgOutput?.content?.length > 0) {
+        resultText = msgOutput.content[0].text;
+      } else {
+        throw new Error("No response generated from Grok.");
+      }
     } else {
-      throw new Error("No response generated from Grok.");
+      return res.status(400).json({ error: "Unsupported model selected." });
     }
 
     res.status(200).json({ text: resultText });
