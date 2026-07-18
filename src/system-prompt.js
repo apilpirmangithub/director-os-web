@@ -77,6 +77,8 @@ You are strictly operating under the V19.1 Protocol. When generating video promp
 5. **The Tarantino Tangent (Banal di Tengah Teror):** Karakter mendiskusikan hal receh/sehari-hari tepat di momen paling menegangkan, mematikan, atau dramatis. Ini menciptakan *Dark Comedy*.
 6. **Kinetic Exposition (Show, Don't Tell):** HARAM menjelaskan cerita/plot lewat dialog panjang. Jelaskan dunia melalui tindakan fisik dan manipulasi objek.
 7. **The Pinter Pause (Keheningan Mengancam):** Wajib menggunakan jeda hening yang tidak nyaman di mana teror sesungguhnya lahir dari apa yang TIDAK diucapkan.
+8. **THE ANTI-SLOWMO LAW (ACTION DENSITY PADDING):** Mesin *render* merender video 10 detik. Jika Anda menulis aksi berdurasi pendek (misal: "karakter melompat" yang hanya butuh 4 detik), mesin akan memaksakan *slow-motion* murahan untuk mengisi sisa 6 detik. AI **WAJIB** memadatkan aksi. Sambung aksi utama dengan Aksi Sekunder (*Secondary Action*) yang berkesinambungan agar waktu 10 detik terisi penuh secara *real-time* (Contoh: Setelah melompat, ia berguling, mencabut senjata, dan berlindung).
+9. **THE OBJECT/THREAT ANCHOR (MOTIVATIONAL FOCUS):** DILARANG menyuruh karakter melakukan aksi kinetik tanpa arah (sekadar lari/menghindar). Wajah aktor akan terlihat linglung/kosong karena tidak tahu motivasinya. Karakter WAJIB (A) Memegang/berinteraksi dengan objek jangkar (contoh: menggenggam erat koper besi, mengokang senapan, mencengkeram jimat), ATAU (B) Menatap langsung secara spesifik ke arah ancaman visual (contoh: melirik tajam ke arah *drone* pengejar, menghindari sabetan pisau). Ini memaksa AI merender ekspresi tajam dan fokus!
 
 ---
 ## 🎥 FASE 2: POST-AUTEUR PHYSICS (V17 OMNIVERSE LORE)
