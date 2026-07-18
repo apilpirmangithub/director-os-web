@@ -140,17 +140,8 @@ You are strictly operating under the V19.1 Protocol. When generating video promp
 2. **THE SILENT CAMERA LAW (ANTI-SFX TRIGGER):** Model AI Video modern sering otomatis men-generate audio/SFX (seperti Kling/Runway). DILARANG menggunakan kata-kata hiperbolik yang memicu suara (seperti *"violently", "aggressively", "deafening"*) KETIKA mendeskripsikan gerakan kamera (*Whip Pan, Tracking*). Pergerakan kamera di dunia nyata TIDAK BERSUARA. Jangan sampai AI merender suara "WHOOSH" murahan setiap kali kamera bergerak. Gunakan kata yang sunyi untuk kamera: *"swiftly", "instantly", "smoothly"*. Kata-kata agresif hanya boleh digunakan untuk objek fisik (ledakan, kaca pecah).
 3. **Instant Action Law:** WAJIB ledakkan aksi kinetik di kalimat PERTAMA \`[PROSE]\`. Dilarang *First-Frame Buffering*.
 
-### B. THE V19.1 SKELETON TEMPLATE (PURE VIDEO LAW)
-HAPUS SEMUA PARAMETER AUDIO. Prompt murni Lensa & Cahaya. **ATURAN MUTLAK UI/UX:** Anda WAJIB meletakkan blok \`[SYS-LOG: RNG INITIATIVE]\` **DI LUAR** kotak kode (\`\`\`\`text\`\`\`\`). HANYA bagian \`[PROSE]\` hingga \`[PHYSICS VECTORS]\` yang masuk ke kotak kode.
-
-***
-**[SYS-LOG: RNG INITIATIVE]**
-- Rolled Location: [Sebutkan lokasi Avant-Garde/Surealis]
-- Rolled Wardrobe & Prop: [Sebutkan desainer/tekstur pakaian & properti avant-garde]
-- Rolled Camera & Framing: [Sebutkan pilihan dari FASE 2 ATAU rig/angle eksperimental luar]
-KLIP 1 (0-10 Detik) - [JUDUL ADEGAN]
-
-HAPUS SEMUA PARAMETER AUDIO. Prompt murni Lensa & Cahaya. **ATURAN MUTLAK UI/UX:** Anda WAJIB meletakkan blok \`[SYS-LOG: RNG INITIATIVE]\` **DI LUAR** kotak kode. HANYA bagian \`[PROSE]\` hingga \`[PHYSICS VECTORS]\` yang masuk ke kotak kode.
+### B. THE V19.1 SKELETON TEMPLATE (OMNI-FUSION PROTOCOL)
+HAPUS SEMUA PARAMETER AUDIO. Prompt murni Lensa & Cahaya. **ATURAN MUTLAK UI/UX:** Anda WAJIB meletakkan blok \`[SYS-LOG: RNG INITIATIVE]\` **DI LUAR** kotak kode. HANYA bagian \`[OMNI-PROSE]\` hingga \`[RENDER & LENS MATH]\` yang masuk ke kotak kode.
 
 ***
 [SYS-LOG: RNG INITIATIVE]
@@ -162,12 +153,9 @@ HAPUS SEMUA PARAMETER AUDIO. Prompt murni Lensa & Cahaya. **ATURAN MUTLAK UI/UX:
 - Rolled Kinetics: [Action details]
 
 \`\`\`text
-[PROSE]: [Langsung ledakkan Aksi Kinetik Cepat & Kedalaman Ruang. Patuhi ACTION-FIRST INVERSION]. [Karakter] berlari di (Midground, Apex of Sharpness). [Objek] melintas di (Extreme Foreground, Heavy Motion blur).
-[GLOBAL LOCK]: [Minimalisir karakter, 20 kata max]. [Wardrobe + Physical Identity Lock: age, hair, detailed clothes, distinct props]. [Location Lock]. [Time/Weather Lock].
-[RENDER]: Hyper-expressive facial acting. [Lighting Psychology]. The Dermatological Law: Translucent epidermis, capillary veins. Continuous micro-movements. [Low/High] Kinetic Flow.
-[CAMERA]: MANDATORY: Dynamic camera movement. [WAJIB DUMP 5+ ISTILAH DARI MASTER CAMERA & ANGLE DATABASE, misal: Low-angle 35mm tracking]. [WAJIB DUMP 10+ ISTILAH COLOR & SENSOR, misal: 16-bit OpenEXR, ACEScg, PBR textile]. Clean frame zero vignette borders. Real-time 1.0x.
+[OMNI-PROSE]: [Kamera & Lensa] merekam [Karakter & Baju] di [Lokasi & Cahaya]. [Aksi Kinetik] + [Kedalaman Ruang] + [Emosi Wajah]. Contoh: Kamera *heavy handheld* 24mm merekam pria paruh baya berkemeja putih di dalam lorong beton raksasa. Keringat bercucuran dengan mata terbelalak panik (midground, apex of sharpness), ia berlari putus asa menghindari serbuan drone... dst.
 [PROMPT INJECTION AREA]
-[PHYSICS VECTORS]: Gaze: [val] | Body: [val] | Compass: [val] | Momentum: [val] | Prox: [val]
+[RENDER & LENS MATH]: 16-bit OpenEXR, ACEScg, PBR textile. Hyper-expressive facial acting. Cinematic Noir. Unpolished realism. Continuous micro-movements. Clean frame zero vignette borders. Real-time 1.0x. High Kinetic Flow.
 \`\`\`
 ***
 ---
@@ -2103,16 +2091,10 @@ CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the in
 This is a HARD, UNFORGIVING LIMIT for the video prompt. You MUST NOT exceed ${charLimit} characters for the clip prompt.
 DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this limit. Instead, use SURGICAL COMPRESSION:
 ${mode === 'mini' ? `🚨 STRICT WORD COUNT LIMITER ACTIVE (MINI MODE):
-1. [PROSE]: MAX 70 WORDS (Prose now includes Spatial Depth mapping. Max 4 kalimat).
-2. [GLOBAL LOCK]: MAX 20 WORDS.
-3. [RENDER]: MAX 20 WORDS.
-4. [CAMERA]: MAX 20 WORDS.
-5. [PHYSICS VECTORS]: MAX 3-5 words per vector.` : `🚨 RELAXED WORD COUNT LIMITER ACTIVE (STANDARD MODE):
-1. [PROSE]: MAX 85 WORDS (Prose now includes Spatial Depth mapping. Max 5 kalimat).
-2. [GLOBAL LOCK]: MAX 40 WORDS.
-3. [RENDER]: MAX 40 WORDS.
-4. [CAMERA]: MAX 40 WORDS.
-5. [PHYSICS VECTORS]: MAX 5-7 words per vector.`}
+1. [OMNI-PROSE]: MAX 120 WORDS (Fuses Camera, Global Lock, Spatial Depth, and Action).
+2. [RENDER & LENS MATH]: MAX 40 WORDS.` : `🚨 RELAXED WORD COUNT LIMITER ACTIVE (STANDARD MODE):
+1. [OMNI-PROSE]: MAX 150 WORDS (Fuses Camera, Global Lock, Spatial Depth, and Action).
+2. [RENDER & LENS MATH]: MAX 60 WORDS.`}
 - Remove filler words and redundant adjectives (e.g. use "Window screen-right, futon center, door screen-left" instead of verbose descriptions).
 - Omit conversational explanations inside the prompt blocks.
 - Use precise, surgical vocabulary instead of verbose descriptions (e.g. "zero vignette/borders" instead of "zero vignette, zero borders").
