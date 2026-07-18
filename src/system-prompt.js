@@ -2092,18 +2092,23 @@ export function getSystemPrompt(engine, userMessage, mode = 'mini') {
 =================================
 ⚠️ FATAL SYSTEM MANDATE: ABSOLUTE CHARACTER LIMIT (MODE: ${modeName}) ⚠️
 The user has selected ${modeName} mode.
-${mode === 'mini' ? 'TARGET LENGTH: 1800 - 1900 CHARACTERS MAXIMUM.\nFATAL ERROR TRIGGER: IF YOUR PROMPT EXCEEDS 2000 CHARACTERS, THE RENDER ENGINE WILL CRASH. YOU MUST BE EXTREMELY SURGICAL.' : 'TARGET LENGTH: Under 3000 characters.'}
+${mode === 'mini' ? 'TARGET LENGTH: 1800 - 1900 CHARACTERS MAXIMUM.\nFATAL ERROR TRIGGER: IF YOUR PROMPT EXCEEDS 2000 CHARACTERS, THE RENDER ENGINE WILL CRASH. YOU MUST BE EXTREMELY SURGICAL.' : 'TARGET LENGTH: 2500 - 2800 CHARACTERS MAXIMUM.\nFATAL ERROR TRIGGER: IF YOUR PROMPT EXCEEDS 3000 CHARACTERS, THE RENDER ENGINE WILL CRASH.'}
 
 CRITICAL CLARIFICATION: This character limit applies STRICTLY AND ONLY to the individual Phase 2 Video Clip Prompt (the text from [SYS-LOG] down to the final [PHYSICS VECTORS] tag). This OVERRIDES any other rules.
 
 This is a HARD, UNFORGIVING LIMIT for the video prompt. You MUST NOT exceed ${charLimit} characters for the clip prompt.
 DO NOT sacrifice quality, cinematic physics, or protocol compliance to meet this limit. Instead, use SURGICAL COMPRESSION:
-${mode === 'mini' ? `🚨 STRICT WORD COUNT LIMITER ACTIVE:
+${mode === 'mini' ? `🚨 STRICT WORD COUNT LIMITER ACTIVE (MINI MODE):
 1. [PROSE]: MAX 35 WORDS (Max 2 kalimat).
 2. [GLOBAL LOCK]: MAX 25 WORDS.
 3. [RENDER & ACTING LOCK]: MAX 25 WORDS.
 4. [CAMERA & PHYSICS LOCK]: MAX 25 WORDS.
-5. [PHYSICS VECTORS]: MAX 3-5 words per vector.` : ''}
+5. [PHYSICS VECTORS]: MAX 3-5 words per vector.` : `🚨 RELAXED WORD COUNT LIMITER ACTIVE (STANDARD MODE):
+1. [PROSE]: MAX 60 WORDS (Max 4 kalimat).
+2. [GLOBAL LOCK]: MAX 40 WORDS.
+3. [RENDER & ACTING LOCK]: MAX 40 WORDS.
+4. [CAMERA & PHYSICS LOCK]: MAX 40 WORDS.
+5. [PHYSICS VECTORS]: MAX 5-7 words per vector.`}
 - Remove filler words and redundant adjectives (e.g. use "Window screen-right, futon center, door screen-left" instead of verbose descriptions).
 - Omit conversational explanations inside the prompt blocks.
 - Use precise, surgical vocabulary instead of verbose descriptions (e.g. "zero vignette/borders" instead of "zero vignette, zero borders").
